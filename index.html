@@ -1,1 +1,122 @@
-Coming soon
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Broker™ — Coming Soon</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="green-rings.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0B2918;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    body::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(61,163,102,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 24px;
+    }
+    .logo-badge {
+      width: 64px;
+      height: 64px;
+      margin-bottom: 32px;
+    }
+    .logo-text {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin-bottom: 40px;
+    }
+    .logo-tm {
+      font-size: 0.55em;
+      vertical-align: super;
+      font-weight: 400;
+      margin-left: 1px;
+    }
+    .coming-soon {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #5FBF80;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.85);
+      max-width: 440px;
+      margin: 0 auto 40px;
+    }
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #5FBF80;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border: 1px solid rgba(95,191,128,0.3);
+      border-radius: 6px;
+      transition: all 0.25s;
+    }
+    .contact-link:hover {
+      background: rgba(95,191,128,0.08);
+      border-color: rgba(95,191,128,0.5);
+    }
+    .footer {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer a {
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+    }
+    .footer a:hover { color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="green-rings.png" alt="Secure Broker" class="logo-badge">
+    <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+    <div class="coming-soon">Coming Soon</div>
+    <h1>Independent certification for brokers in alternative finance.</h1>
+    <a href="mailto:info@aquamark.io" class="contact-link">
+      Get in Touch
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+  <div class="footer">
+    &copy; 2026 Secure Broker™ &middot; Administered by <a href="https://aquamark.io" target="_blank">Aquamark</a>
+  </div>
+</body>
+</html>
