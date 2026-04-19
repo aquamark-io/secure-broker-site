@@ -15,8 +15,8 @@
       --utility-height: 42px;
       --utility-height-mobile: 56px;
       --nav-height: 68px;
-      --forest: #0B2918;
-      --forest-mid: #133D24;
+      --forest: #11352A;
+      --forest-mid: #1A4A34;
       --sage: #2D5A3D;
       --fern: #4A8B60;
       --moss: #6BAF7E;
@@ -50,7 +50,7 @@
 
     /* ===== UTILITY BAR ===== */
     .utility-bar {
-      background: linear-gradient(90deg, #071E12 0%, #0D2D1B 52%, #123A22 100%);
+      background: linear-gradient(90deg, #0D2A1C 0%, #123820 52%, #174528 100%);
       color: var(--white);
       font-size: 0.82rem;
       font-weight: 600;
@@ -219,55 +219,61 @@
 
     /* ===== HERO ===== */
     .hero {
-      background: var(--forest);
+      background: var(--meadow);
+      border-bottom: 1px solid var(--border-light);
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; top: -200px; right: -100px;
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(61,163,102,0.18) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(61,163,102,0.13) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
       content: ''; position: absolute; bottom: -150px; left: -80px;
       width: 550px; height: 550px;
-      background: radial-gradient(circle, rgba(61,163,102,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(61,163,102,0.09) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-inner {
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      padding: 80px 24px 88px;
+      display: grid; grid-template-columns: 1.2fr 1fr; min-height: 480px; align-items: center; gap: 48px;
+    }
+    .hero-image {
       position: relative;
-      z-index: 1;
-    }
-    .hero-badge-row {
-      display: inline-flex;
+      overflow: hidden;
+      border-radius: 16px;
+      display: flex;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 24px;
+      justify-content: center;
+      aspect-ratio: 16 / 9;
     }
-    .hero-badge-row img {
-      width: 56px; height: 56px;
-      border-radius: 999px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
-      border: 1px solid rgba(255,255,255,0.18);
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px;
+    }
+    .hero-content {
+      padding: 72px 0 72px 24px;
+      display: flex; flex-direction: column; justify-content: center;
     }
     .hero-label {
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--green-accent-soft);
+      text-transform: uppercase; color: var(--green-accent); margin-bottom: 18px;
       display: flex; align-items: center; gap: 10px;
     }
+    .hero-label::before { content: ''; width: 22px; height: 1.5px; background: var(--green-accent); }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: 2.8rem; font-weight: 700; line-height: 1.12;
-      letter-spacing: -0.02em; color: var(--white); margin-bottom: 22px;
-      max-width: 680px;
+      font-size: 2.5rem; font-weight: 700; line-height: 1.15;
+      letter-spacing: -0.02em; color: var(--forest); margin-bottom: 22px;
     }
     .hero p {
-      font-size: 1.08rem; line-height: 1.75; color: rgba(255,255,255,0.78);
-      margin-bottom: 36px; max-width: 560px;
+      font-size: 1.05rem; line-height: 1.75; color: var(--text-secondary);
+      margin-bottom: 34px; max-width: 520px;
     }
-    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
     .hero-btn {
       display: inline-flex; align-items: center; justify-content: center;
       font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
@@ -275,7 +281,7 @@
       text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
       text-align: center;
     }
-    .hero-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+    .hero-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(11,53,42,0.12); }
 
     /* ===== MISSION BANNER ===== */
     .mission-banner {
@@ -689,7 +695,7 @@
     .cta-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
     .cta-bg-image::after {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(0deg, rgba(11,41,24,0.92), rgba(11,41,24,0.82));
+      background: linear-gradient(0deg, rgba(17,53,42,0.92), rgba(17,53,42,0.82));
     }
     .cta-bg .container-narrow { position: relative; z-index: 1; }
     .cta-section .section-title { color: var(--white); font-size: 1.75rem; }
@@ -750,8 +756,20 @@
     }
 
     @media (max-width: 900px) {
-      .hero h1 { font-size: 2.1rem; }
-      .hero-inner { padding: 56px 24px 64px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-content { padding: 48px 0 12px; padding-left: 0; }
+      .hero-image {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 32px;
+        aspect-ratio: 16 / 9;
+      }
+      .hero h1 { font-size: 1.95rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .hero-content { text-align: center; align-items: center; }
+      .hero-label { justify-content: flex-start; align-self: flex-start; }
+      .hero-label::before { display: inline-block; }
+      .hero h1, .hero p { text-align: left; }
       .about-columns { grid-template-columns: 1fr; gap: 32px; }
       .how-grid { grid-template-columns: 1fr; max-width: 400px; }
       .focus-layout { grid-template-columns: 1fr; gap: 32px; }
@@ -803,9 +821,12 @@
       .main-nav .container { height: 56px; }
       .logo-badge-lg { width: 32px; height: 32px; }
       .logo-text { font-size: 1.15rem; }
-      .hero h1 { font-size: 1.7rem; }
+      .hero h1 { font-size: 1.6rem; }
       .hero p { font-size: 0.95rem; }
-      .hero-inner { padding: 40px 16px 52px; }
+      .hero-content { padding: 36px 0 8px; }
+      .hero-label { font-size: 0.7rem; }
+      .hero-image { border-radius: 10px; }
+      .hero-image img { border-radius: 10px; }
       .btn-primary, .btn-ghost, .btn-ghost-white, .hero-btn {
         padding: 12px 22px; font-size: 0.86rem; width: 100%; justify-content: center; min-width: unset;
       }
@@ -888,7 +909,8 @@
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .hero-inner { animation: fadeUp 0.6s ease-out; }
+    .hero-content { animation: fadeUp 0.6s ease-out; }
+    .hero-image { animation: fadeUp 0.6s ease-out 0.15s both; }
 
     .reveal {
       opacity: 0;
@@ -937,20 +959,22 @@
     </div>
   </nav>
 
-  <!-- Hero — centered layout (different from Secure Funder's split layout) -->
+  <!-- Hero — split layout: image left, content right -->
   <section class="hero">
     <div class="container">
       <div class="hero-inner">
-        <div class="hero-badge-row">
-          <img src="green-rings.png" alt="Secure Broker">
-          <div class="hero-label">Est. 2026</div>
+        <div class="hero-image">
+          <img src="broker-hero.png" alt="Secure Broker" />
         </div>
-        <h1>Certification for Brokers Who Protect Merchant Data</h1>
-        <p>Brokers are the first point of contact. Prove to merchants and funders that their sensitive information is handled responsibly from the start.</p>
-        <div class="hero-actions">
-          <a href="#membership" class="hero-btn" style="background: var(--white); color: var(--forest);">Apply</a>
-          <a href="#membership" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
-          <a href="https://securebroker.org/directory/" class="hero-btn" style="background: rgba(255,255,255,0.12); color: var(--white); border: 1px solid rgba(255,255,255,0.25);" target="_blank" rel="noopener noreferrer">Directory</a>
+        <div class="hero-content">
+          <div class="hero-label">Est. 2026</div>
+          <h1>Independent Certification for Alternative Finance</h1>
+          <p>Join the list of brokers committed to greater transparency and integrity — backed by independent verification.</p>
+          <div class="hero-actions">
+            <a href="#membership" class="hero-btn" style="background: var(--forest); color: var(--white);">Apply</a>
+            <a href="#membership" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
+            <a href="https://securebroker.org/directory/" class="hero-btn" style="background: rgba(61,163,102,0.15); color: var(--green-accent); border: 1px solid rgba(61,163,102,0.3);" target="_blank" rel="noopener noreferrer">Directory</a>
+          </div>
         </div>
       </div>
     </div>
