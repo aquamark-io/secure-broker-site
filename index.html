@@ -10,9 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      overflow: hidden;
+    }
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,6 +25,7 @@
       color: #fff;
       position: relative;
       overflow: hidden;
+      padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
     }
     body::before {
       content: '';
@@ -36,18 +42,19 @@
       text-align: center;
       position: relative;
       z-index: 1;
-      padding: 24px;
+      padding: clamp(12px, 2.5vh, 24px);
+      width: min(100%, 560px);
     }
     .logo-badge {
-      width: 64px;
-      height: 64px;
-      margin-bottom: 32px;
+      width: clamp(52px, 7vh, 64px);
+      height: clamp(52px, 7vh, 64px);
+      margin-bottom: clamp(14px, 2.8vh, 24px);
     }
     .logo-text {
-      font-size: 1.6rem;
+      font-size: clamp(1.35rem, 3.2vw, 1.6rem);
       font-weight: 700;
       letter-spacing: -0.01em;
-      margin-bottom: 40px;
+      margin-bottom: clamp(20px, 4vh, 32px);
     }
     .logo-tm {
       font-size: 0.55em;
@@ -56,20 +63,21 @@
       margin-left: 1px;
     }
     .coming-soon {
-      font-size: 0.72rem;
+      font-size: clamp(0.68rem, 1.6vh, 0.72rem);
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: #5FBF80;
-      margin-bottom: 16px;
+      margin-bottom: clamp(10px, 1.8vh, 16px);
     }
     h1 {
-      font-size: 1.4rem;
+      font-size: clamp(1.12rem, 2.8vw, 1.4rem);
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.42;
       color: rgba(255,255,255,0.85);
       max-width: 440px;
-      margin: 0 auto 40px;
+      margin: 0 auto clamp(20px, 4vh, 32px);
+      text-wrap: balance;
     }
     .contact-link {
       display: inline-flex;
@@ -77,9 +85,9 @@
       gap: 8px;
       color: #5FBF80;
       text-decoration: none;
-      font-size: 0.88rem;
+      font-size: clamp(0.84rem, 1.9vh, 0.88rem);
       font-weight: 600;
-      padding: 12px 28px;
+      padding: 11px 24px;
       border: 1px solid rgba(95,191,128,0.3);
       border-radius: 6px;
       transition: all 0.25s;
@@ -90,18 +98,47 @@
     }
     .footer {
       position: absolute;
-      bottom: 28px;
       left: 0;
       right: 0;
+      bottom: max(16px, env(safe-area-inset-bottom));
+      padding: 0 16px;
       text-align: center;
-      font-size: 0.75rem;
+      font-size: clamp(0.68rem, 1.5vh, 0.75rem);
       color: rgba(255,255,255,0.3);
+      line-height: 1.35;
     }
     .footer a {
       color: rgba(255,255,255,0.4);
       text-decoration: none;
     }
     .footer a:hover { color: rgba(255,255,255,0.6); }
+
+    @media (max-height: 760px) {
+      body::before {
+        top: -260px;
+        width: 640px;
+        height: 640px;
+      }
+      .container {
+        transform: translateY(-18px);
+      }
+      .footer {
+        bottom: max(10px, env(safe-area-inset-bottom));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+      h1 {
+        max-width: 320px;
+      }
+      .footer {
+        font-size: 0.68rem;
+      }
+    }
   </style>
 </head>
 <body>
