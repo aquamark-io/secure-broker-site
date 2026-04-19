@@ -336,6 +336,8 @@
     }
 
     /* ===== SECTIONS ===== */
+    .mobile-break { display: none; }
+    @media (max-width: 600px) { .mobile-break { display: block; } }
     section { padding: 88px 0; }
     .section-label {
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
@@ -978,6 +980,8 @@
       .footer-brand p { max-width: 100%; }
       .membership-includes-grid { grid-template-columns: 1fr !important; }
       .membership-includes-grid .mi-item { border-right: none !important; }
+      .ecosystem-risk-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+      .ecosystem-risk-grid > div { max-width: 260px; margin: 0 auto; }
       .membership-btn-row { flex-direction: column !important; }
       .membership-btn-row a { width: 100%; }
       .pricing-tiers { grid-template-columns: 1fr !important; gap: 20px !important; }
@@ -1136,7 +1140,7 @@
     <div class="container">
       <div class="section-header" style="text-align: center;">
         <h2 class="section-title">Membership Benefits</h2>
-        <p class="section-subtitle" style="margin: 0 auto; text-align: center; max-width: 760px;">A secure ecosystem. When members come together, the entire data chain is protected.</p>
+        <p class="section-subtitle" style="margin: 0 auto; text-align: center; max-width: 760px;">When members on both sides come together,<br class="mobile-break"> the entire data chain is protected.</p>
       </div>
       <div class="benefits-grid reveal">
         <!-- Ecosystem Card — full width -->
@@ -1166,7 +1170,7 @@
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11.5 14.5 16 9.5" fill="none"/></svg>
           </div>
           <h4>Verified Trust</h4>
-          <p>Independent verification that tells merchants and funders you take their sensitive documents seriously.</p>
+          <p>Independent third-party verification that carries more weight than simply saying you operate responsibly.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
@@ -1264,37 +1268,29 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="about-section">
+  <!-- Ecosystem Risk -->
+  <section id="about" style="background: var(--white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 88px 0;">
     <div class="container">
-      <div class="about-content">
-        <div style="text-align: center;">
-          <div class="section-label">About</div>
-          <h2 class="section-title">Why Secure Broker Exists</h2>
-        </div>
-        <div class="about-columns reveal">
-          <div class="about-col">
-            <p>Brokers are the first link in the chain. When a merchant submits their bank statements, tax returns, or financial documents, those files land in a broker's hands before anyone else sees them.</p>
-            <p>Yet there's no standard for how brokers store, share, or protect that data. Some brokerages have strong internal controls. Many don't — and merchants have no way to tell the difference.</p>
+      <div style="max-width: 960px; margin: 0 auto; text-align: center;">
+        <div class="section-label">The Bigger Picture</div>
+        <h2 class="section-title" style="margin-bottom: 48px;">The Cost of No Standards</h2>
+        <div class="ecosystem-risk-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: start; text-align: center;">
+          <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Leak</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Other funders mishandle a deal — your broker gets backdoored.</p>
           </div>
-          <div class="about-col">
-            <p>Secure Broker was created to close that gap. It gives brokers a way to demonstrate to merchants, funders, and partners that they handle sensitive data responsibly.</p>
-            <div class="about-callout">
-              <p>The program is independent, the requirements are public, and verification is conducted by a third party — not the broker themselves.</p>
-            </div>
+          <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Stack</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Stolen deals lead to excessive stacking and increased PTI.</p>
+          </div>
+          <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Impact</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">When merchants are overextended, every funder in the stack takes the hit.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Photo Break -->
-  <div class="photo-break">
-    <div class="photo-break-overlay">
-      <div class="photo-break-text">
-        <h2>The industry is growing.<br>Its standards should grow with it.</h2>
-      </div>
-    </div>
-  </div>
 
   <!-- Leadership -->
   <section id="leadership" class="leadership-section">
@@ -1348,34 +1344,6 @@
           </div>
         </div>
         <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-accent-soft); margin-top: -30px; margin-bottom: 44px; font-weight: 600; text-align: center;">Monthly installments available</div>
-
-        <!-- Includes grid -->
-        <div class="membership-includes-grid">
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Independent verification</span>
-          </div>
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Public directory listing</span>
-          </div>
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Secure Funder™ network access</span>
-          </div>
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Digital certification badge</span>
-          </div>
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Logo placement at industry events</span>
-          </div>
-          <div class="mi-item">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Preferred partner status with funders</span>
-          </div>
-        </div>
 
         <!-- Buttons -->
         <div class="membership-btn-row">
