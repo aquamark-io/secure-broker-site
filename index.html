@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Broker™ — Independent Certification for Alternative Finance Brokers</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="green-rings.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="green-rings.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="green-rings.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --utility-height: 42px;
+      --utility-height-mobile: 56px;
+      --nav-height: 68px;
+      --forest: #0B2918;
+      --forest-mid: #133D24;
+      --sage: #2D5A3D;
+      --fern: #4A8B60;
+      --moss: #6BAF7E;
+      --mint: #A3D4B0;
+      --frost: #D8EDE0;
+      --meadow: #EFF7F2;
+      --white: #FFFFFF;
+      --green-accent: #3DA366;
+      --green-accent-soft: #5FBF80;
+      --green-accent-pale: #E2F4E9;
+
+      --text-primary: #0B2918;
+      --text-secondary: #3D6B4E;
+      --text-muted: #6A9B7C;
+      --border: #C5DFD0;
+      --border-light: #DEF0E5;
+      --font-display: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: calc(var(--utility-height) + var(--nav-height));
+    }
+
+    /* ===== UTILITY BAR ===== */
+    .utility-bar {
+      background: linear-gradient(90deg, #071E12 0%, #0D2D1B 52%, #123A22 100%);
+      color: var(--white);
+      font-size: 0.82rem;
+      font-weight: 600;
+      height: var(--utility-height);
+      letter-spacing: 0.04em;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,0.04);
+    }
+    .utility-text {
+      width: 100%;
+      text-align: center;
+    }
+    .utility-bar a { color: var(--white); text-decoration: none; transition: color 0.2s, background 0.2s; }
+    .utility-bar a:hover { color: var(--white); }
+
+    .utility-banner-link {
+      width: 100%;
+      min-height: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 0 18px;
+      position: relative;
+    }
+    .utility-banner-link:hover {
+      background: rgba(255,255,255,0.04);
+    }
+    .utility-copy {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .utility-eyebrow {
+      color: var(--green-accent-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.68rem;
+      font-weight: 700;
+    }
+    .utility-message {
+      color: rgba(255,255,255,0.95);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding-top: calc(var(--utility-height-mobile) + var(--nav-height));
+      }
+      .utility-bar {
+        height: var(--utility-height-mobile);
+      }
+      .utility-banner-link {
+        gap: 0;
+        padding: 8px 14px;
+      }
+      .utility-copy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        text-align: center;
+      }
+      .utility-eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 0.16em;
+        line-height: 1;
+      }
+      .utility-message {
+        display: block;
+        font-size: 0.80rem;
+        line-height: 1.22;
+        letter-spacing: 0.01em;
+      }
+    }
+    @media (max-width: 380px) {
+      .utility-banner-link {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+      .utility-message {
+        font-size: 0.74rem;
+      }
+    }
+
+    /* ===== NAV ===== */
+    .main-nav {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: fixed;
+      top: var(--utility-height);
+      left: 0;
+      right: 0;
+      z-index: 190;
+      box-shadow: 0 1px 4px rgba(11,41,24,0.04);
+    }
+    .main-nav .container {
+      display: flex; justify-content: space-between; align-items: center; height: 68px;
+    }
+    .logo {
+      display: flex; align-items: center; text-decoration: none; color: var(--forest); gap: 12px;
+    }
+    .logo-text {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em;
+    }
+    .logo-tm { font-size: 0.55em; vertical-align: super; font-weight: 400; margin-left: 1px; }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text-primary);
+      font-size: 0.88rem; font-weight: 500; padding: 8px 14px;
+      border-radius: 6px; transition: all 0.2s;
+    }
+    .nav-links a:hover { background: var(--meadow); }
+    .nav-links .btn-member {
+      background: var(--forest); color: var(--white); font-weight: 600; margin-left: 6px;
+    }
+    .nav-links .btn-member:hover { background: var(--forest-mid); }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--forest); margin: 5px 0; }
+
+    /* ===== CONTAINERS ===== */
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+    .container-narrow { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    /* ===== BUTTONS ===== */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-accent); color: var(--white);
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+      padding: 13px 26px; border-radius: 6px;
+      text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+    }
+    .btn-primary:hover { background: var(--green-accent-soft); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(61,163,102,0.3); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--forest);
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+      padding: 13px 26px; border-radius: 6px;
+      text-decoration: none; border: 2px solid var(--border); transition: all 0.25s;
+    }
+    .btn-ghost:hover { border-color: var(--forest); background: var(--meadow); }
+    .btn-ghost-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--white);
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 500;
+      padding: 13px 26px; border-radius: 6px;
+      text-decoration: none; border: 2px solid rgba(255,255,255,0.3); transition: all 0.25s;
+    }
+    .btn-ghost-white:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.06); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--forest);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -200px; right: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(61,163,102,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: -150px; left: -80px;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(61,163,102,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 80px 24px 88px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .hero-badge-row img {
+      width: 56px; height: 56px;
+      border-radius: 999px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .hero-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--green-accent-soft);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: 2.8rem; font-weight: 700; line-height: 1.12;
+      letter-spacing: -0.02em; color: var(--white); margin-bottom: 22px;
+      max-width: 680px;
+    }
+    .hero p {
+      font-size: 1.08rem; line-height: 1.75; color: rgba(255,255,255,0.78);
+      margin-bottom: 36px; max-width: 560px;
+    }
+    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    .hero-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+      padding: 13px 0; border-radius: 6px; min-width: 150px;
+      text-decoration: none; transition: all 0.25s; border: none; cursor: pointer;
+      text-align: center;
+    }
+    .hero-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+
+    /* ===== MISSION BANNER ===== */
+    .mission-banner {
+      background: var(--meadow); border-bottom: 1px solid var(--border-light); padding: 52px 0;
+    }
+    .mission-banner .container-narrow { text-align: left; }
+    .mission-banner p {
+      font-family: var(--font-display);
+      font-size: 1.12rem; font-weight: 400; color: var(--text-primary);
+      font-style: normal; line-height: 1.85; max-width: 1100px; margin: 0;
+    }
+
+    .mission-linkedin-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 30px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      text-decoration: none;
+      color: var(--forest);
+      transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease;
+    }
+    .mission-linkedin-card:hover {
+      background: var(--frost);
+      border-color: var(--moss);
+      transform: translateY(-1px);
+    }
+    .mission-linkedin-icon {
+      width: 34px;
+      height: 34px;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .mission-linkedin-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+    .mission-linkedin-text span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
+    .mission-linkedin-text small {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      letter-spacing: 0.01em;
+    }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 88px 0; }
+    .section-label {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--green-accent); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 1.9rem; font-weight: 700; line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 14px; color: var(--forest);
+    }
+    .section-subtitle {
+      font-size: 1rem; color: var(--text-secondary); line-height: 1.7; max-width: 580px;
+    }
+    .section-header { margin-bottom: 52px; }
+
+    /* ===== ABOUT ===== */
+    .about-section { background: var(--white); }
+    .about-content {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .about-columns {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+      margin-top: 40px;
+    }
+    .about-col p {
+      font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 18px;
+    }
+    .about-callout {
+      background: var(--meadow); border-radius: 10px; padding: 28px 30px;
+      border-left: 3px solid var(--green-accent);
+      margin-top: 8px;
+    }
+    .about-callout p {
+      font-size: 0.92rem; line-height: 1.7; color: var(--text-primary); margin: 0;
+      font-weight: 500;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-section {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .how-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 36px 30px 32px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .how-card:hover {
+      box-shadow: 0 8px 28px rgba(11,41,24,0.06);
+      transform: translateY(-2px);
+    }
+    .how-num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--green-accent); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 12px rgba(61,163,102,0.25);
+    }
+    .how-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600; color: var(--forest);
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .how-card p {
+      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65;
+    }
+
+    /* ===== FOCUS AREAS ===== */
+    .focus-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .focus-layout {
+      display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center;
+    }
+    .focus-sidebar {
+      background: var(--meadow); border: 1px solid var(--border-light);
+      border-radius: 12px; padding: 34px;
+    }
+    .focus-sidebar h3 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600; color: var(--forest); margin-bottom: 8px;
+    }
+    .focus-sidebar > p {
+      font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 22px;
+    }
+    .area-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.92rem; color: var(--text-primary); font-weight: 500;
+    }
+    .area-item:last-child { border-bottom: none; }
+    .area-dot {
+      width: 8px; height: 8px; min-width: 8px;
+      border-radius: 50%; background: var(--green-accent);
+    }
+    .focus-text .section-subtitle { margin-bottom: 24px; }
+    .focus-text p {
+      font-size: 1rem; line-height: 1.8; color: var(--text-secondary);
+    }
+
+    /* ===== BENEFITS ===== */
+    .benefits-section {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 36px 30px 32px;
+      text-align: left;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .benefit-card:hover {
+      box-shadow: 0 8px 28px rgba(11,41,24,0.06);
+      transform: translateY(-2px);
+    }
+    .benefit-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.02rem; font-weight: 600; color: var(--forest);
+      margin-bottom: 10px; line-height: 1.3;
+    }
+    .benefit-card p {
+      font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65;
+    }
+    .benefit-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--green-accent-pale);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green-accent);
+      margin-bottom: 18px;
+      box-shadow: 0 2px 8px rgba(61,163,102,0.15);
+    }
+    .benefit-card-accent {
+      background: var(--green-accent);
+      border-color: var(--green-accent);
+    }
+    .benefit-card-accent h4 { color: var(--white); }
+    .benefit-card-accent p { color: rgba(255,255,255,0.85); }
+    .benefit-card-accent:hover { box-shadow: 0 8px 28px rgba(61,163,102,0.25); }
+    .benefit-card-accent .benefit-icon {
+      background: rgba(255,255,255,0.2);
+      color: var(--white);
+    }
+
+    /* ===== ELIGIBILITY ===== */
+    .eligibility-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .eligibility-content {
+      text-align: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .eligibility-subtitle {
+      font-size: 1.02rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+    .eligibility-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+    .eligibility-tag {
+      padding: 10px 22px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      color: var(--text-primary);
+      letter-spacing: 0.01em;
+      background: var(--meadow);
+    }
+
+    /* ===== VERIFICATION BANNER ===== */
+    .verification-banner {
+      background: var(--forest);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0;
+      text-align: center;
+    }
+    .verification-banner::before {
+      content: ''; position: absolute; top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(61,163,102,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .verification-banner .container-narrow {
+      position: relative; z-index: 1;
+    }
+    .vb-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-accent-soft);
+      margin-bottom: 16px;
+    }
+    .verification-banner h2 {
+      font-family: var(--font-display);
+      font-size: 1.65rem; font-weight: 700; line-height: 1.25;
+      color: var(--white); margin-bottom: 0;
+    }
+    .verification-banner p {
+      font-size: 1rem; line-height: 1.8;
+      color: rgba(255,255,255,0.78); max-width: 700px; margin: 0 auto;
+    }
+    .stats-row {
+      display: flex; justify-content: center; align-items: center;
+      gap: 48px; margin-top: 40px;
+    }
+    .stats-divider { width: 1px; height: 60px; background: rgba(255,255,255,0.15); }
+    .stat-highlight { text-align: center; }
+    .stat-highlight .stat-number {
+      font-family: var(--font-display);
+      font-size: 3.5rem; font-weight: 700;
+      color: var(--green-accent-soft); line-height: 1; margin-bottom: 10px;
+    }
+    .stat-highlight .stat-label {
+      font-size: 0.85rem; line-height: 1.6;
+      color: rgba(255,255,255,0.7); max-width: 200px; margin: 0 auto;
+    }
+    @media (max-width: 500px) {
+      .stats-row { flex-direction: column; gap: 28px; }
+      .stats-divider { width: 48px; height: 1px; }
+    }
+
+    /* ===== LEADERSHIP ===== */
+    .leadership-section {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .leadership-content {
+      display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: center;
+    }
+    .leadership-photo {
+      width: 200px; height: 200px; border-radius: 12px; overflow: hidden;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 20px rgba(11,41,24,0.08);
+    }
+    .leadership-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+    .leadership-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700; color: var(--forest); margin-bottom: 2px;
+    }
+    .leadership-info .role {
+      font-size: 0.88rem; font-weight: 600; color: var(--green-accent); margin-bottom: 16px;
+    }
+    .leadership-info p {
+      font-size: 0.95rem; line-height: 1.75; color: var(--text-secondary); max-width: 560px;
+    }
+
+    /* ===== MEMBERSHIP ===== */
+    .membership-section {
+      background: var(--forest);
+      border: none;
+    }
+    .membership-inner {
+      max-width: 740px; margin: 0 auto; text-align: center;
+    }
+    .membership-includes-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      text-align: left; max-width: 620px; margin: 0 auto 44px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .membership-includes-grid .mi-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 15px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .membership-includes-grid .mi-item:nth-child(odd) {
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .membership-includes-grid .mi-item:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+    .mi-item span {
+      font-size: 0.84rem; color: rgba(255,255,255,0.85);
+    }
+    .membership-btn-row {
+      display: flex; gap: 12px; justify-content: center; max-width: 520px; margin: 0 auto;
+    }
+    .membership-btn-row a {
+      flex: 1; display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 0; border-radius: 6px;
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all 0.25s;
+    }
+
+    /* ===== PRESS ===== */
+    .press-section { background: var(--white); }
+    .press-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+    .press-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 26px;
+      text-decoration: none; color: inherit;
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex; flex-direction: column;
+    }
+    .press-card:hover {
+      border-color: var(--mint); box-shadow: 0 8px 28px rgba(11,41,24,0.07);
+      transform: translateY(-3px);
+    }
+    .press-logo {
+      height: auto; width: 120px; margin-bottom: 10px; display: block; object-fit: contain;
+    }
+    .press-card h3 {
+      font-family: var(--font-display);
+      font-size: 0.98rem; font-weight: 600; color: var(--forest);
+      margin-bottom: 10px; line-height: 1.4; flex-grow: 1;
+    }
+    .press-date { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      position: relative; overflow: hidden; color: var(--white);
+      text-align: center; padding: 0;
+    }
+    .cta-bg { position: relative; padding: 90px 0; }
+    .cta-bg-image { position: absolute; inset: 0; z-index: 0; }
+    .cta-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .cta-bg-image::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(11,41,24,0.92), rgba(11,41,24,0.82));
+    }
+    .cta-bg .container-narrow { position: relative; z-index: 1; }
+    .cta-section .section-title { color: var(--white); font-size: 1.75rem; }
+    .cta-section .section-subtitle { color: var(--mint); margin: 0 auto 32px; }
+    .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--forest); color: var(--mint); padding: 56px 0 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 44px; padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-brand p {
+      font-size: 0.86rem; color: var(--fern); line-height: 1.7;
+      margin-top: 14px; max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--white); margin-bottom: 16px;
+    }
+    .footer-col a {
+      display: block; color: var(--fern); text-decoration: none;
+      font-size: 0.86rem; margin-bottom: 9px; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--green-accent-soft); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 22px 0; font-size: 0.76rem; color: var(--fern);
+    }
+    .footer-bottom a { color: var(--fern); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--green-accent-soft); }
+
+    /* ===== PHOTO BREAK ===== */
+    .photo-break {
+      position: relative; overflow: hidden;
+      background: var(--forest);
+      padding: 100px 0;
+    }
+    .photo-break img { display: none; }
+    .photo-break-overlay {
+      position: relative;
+      background: none;
+      display: flex; align-items: center; justify-content: center; padding: 0 48px;
+    }
+    .photo-break-text { color: var(--white); max-width: 800px; text-align: center; }
+    .photo-break-text h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 600; line-height: 1.35; margin-bottom: 0;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .focus-layout { gap: 36px; }
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 28px; }
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 { font-size: 2.1rem; }
+      .hero-inner { padding: 56px 24px 64px; }
+      .about-columns { grid-template-columns: 1fr; gap: 32px; }
+      .how-grid { grid-template-columns: 1fr; max-width: 400px; }
+      .focus-layout { grid-template-columns: 1fr; gap: 32px; }
+      .benefits-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .press-grid { grid-template-columns: 1fr; }
+      .leadership-content { grid-template-columns: 1fr; text-align: center; }
+      .leadership-photo { width: 160px; height: 160px; margin: 0 auto; }
+      .leadership-info p { max-width: 100%; text-align: center; }
+      .leadership-section > .container > .section-label,
+      .leadership-section > .container > .section-title { text-align: center; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .section-header { text-align: center; }
+      .section-header .section-subtitle { margin-left: auto; margin-right: auto; }
+      .section-title { font-size: 1.6rem; }
+      .section-label { text-align: center; }
+      .photo-break { padding: 64px 0; }
+      .photo-break-overlay { padding: 24px; }
+      .photo-break-text h2 { font-size: 1.2rem; }
+      .hide-mobile { display: none !important; }
+      .eligibility-tags { gap: 8px; }
+      .focus-text .section-label,
+      .focus-text .section-title { text-align: center; }
+    }
+
+    @media (max-width: 640px) {
+      .mission-linkedin-card {
+        margin-top: 24px;
+        padding: 13px 14px;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .mission-linkedin-icon { width: 30px; height: 30px; }
+      .mission-linkedin-text span { font-size: 0.9rem; }
+      .mission-linkedin-text small { font-size: 0.78rem; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 16px; }
+      .container-narrow { padding: 0 16px; }
+      section { padding: 56px 0; }
+      .utility-bar { font-size: 0.72rem; }
+      body { padding-top: calc(var(--utility-height-mobile) + 56px); }
+      .main-nav { top: var(--utility-height-mobile); }
+      .main-nav .container { height: 56px; }
+      .logo-badge-lg { width: 32px; height: 32px; }
+      .logo-text { font-size: 1.15rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero p { font-size: 0.95rem; }
+      .hero-inner { padding: 40px 16px 52px; }
+      .btn-primary, .btn-ghost, .btn-ghost-white, .hero-btn {
+        padding: 12px 22px; font-size: 0.86rem; width: 100%; justify-content: center; min-width: unset;
+      }
+      .hero-actions { width: 100%; }
+      .mission-banner p { font-size: 0.98rem; }
+      .section-title { font-size: 1.4rem; }
+      .section-subtitle { font-size: 0.92rem; }
+      .how-card { padding: 28px 22px 24px; }
+      .benefit-card { padding: 28px 22px 24px; }
+      .focus-sidebar { padding: 24px; }
+      .leadership-content { grid-template-columns: 1fr; text-align: center; }
+      .leadership-photo { width: 140px; height: 140px; margin: 0 auto; }
+      .leadership-info p { max-width: 100%; }
+      .cta-bg { padding: 60px 0; }
+      .cta-section .section-title { font-size: 1.4rem; }
+      .cta-actions { flex-direction: column; align-items: center; width: 100%; }
+      .cta-actions .btn-primary, .cta-actions .btn-ghost-white { width: 100%; }
+      footer { padding: 40px 0 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-brand { grid-column: auto; }
+      .footer-brand p { max-width: 100%; }
+      .membership-includes-grid { grid-template-columns: 1fr !important; }
+      .membership-includes-grid .mi-item { border-right: none !important; }
+      .membership-btn-row { flex-direction: column !important; }
+      .membership-btn-row a { width: 100%; }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 1.4rem; }
+      .container { padding: 0 14px; }
+      .section-title { font-size: 1.25rem; }
+    }
+
+    /* ===== BADGE PLACEMENT ===== */
+    .logo-badge {
+      width: 34px; height: 34px; flex: 0 0 auto;
+    }
+    .logo-badge-lg {
+      width: 44px; height: 44px;
+    }
+    @media (max-width: 900px) {
+      .logo-badge { width: 30px; height: 30px; }
+      .logo-badge-lg { width: 38px; height: 38px; }
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--white);
+      z-index: 1000;
+      flex-direction: column;
+      padding: 24px;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 32px;
+    }
+    .mobile-menu-close {
+      background: none; border: none; cursor: pointer;
+      font-size: 1.5rem; color: var(--forest); padding: 8px;
+    }
+    .mobile-menu a {
+      display: block; padding: 14px 0;
+      font-size: 1.05rem; font-weight: 500; color: var(--forest);
+      text-decoration: none; border-bottom: 1px solid var(--border-light);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn-member-mobile {
+      display: block; margin-top: 24px; padding: 14px;
+      background: var(--forest); color: var(--white);
+      text-align: center; border-radius: 8px; font-weight: 600;
+      text-decoration: none; font-size: 0.95rem;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .hero-inner { animation: fadeUp 0.6s ease-out; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+  <!-- Utility Bar -->
+  <div class="utility-bar">
+    <a href="https://securebroker.org/contact/" class="utility-text utility-banner-link" aria-label="Join the founding group of brokers">
+      <span class="utility-copy">
+        <span class="utility-eyebrow">Apply</span>
+        <span class="utility-message">Now accepting applications</span>
+      </span>
+    </a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <a href="/" class="logo" aria-label="Secure Broker Home">
+        <img class="logo-badge logo-badge-lg" src="green-rings.png" alt="Secure Broker">
+        <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#press">Press</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="https://portal.securebroker.org/login" class="btn-member">Member Sign In</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero — centered layout (different from Secure Funder's split layout) -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-badge-row">
+          <img src="green-rings.png" alt="Secure Broker">
+          <div class="hero-label">Est. 2026</div>
+        </div>
+        <h1>Certification for Brokers Who Protect Merchant Data</h1>
+        <p>Brokers are the first point of contact. Prove to merchants and funders that their sensitive information is handled responsibly from the start.</p>
+        <div class="hero-actions">
+          <a href="#membership" class="hero-btn" style="background: var(--white); color: var(--forest);">Apply</a>
+          <a href="#membership" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
+          <a href="https://securebroker.org/directory/" class="hero-btn" style="background: rgba(255,255,255,0.12); color: var(--white); border: 1px solid rgba(255,255,255,0.25);" target="_blank" rel="noopener noreferrer">Directory</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Banner — light bg (different from Secure Funder's dark bg) -->
+  <div class="mission-banner">
+    <div class="container-narrow reveal">
+      <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.06em;">Our mission</span> is to bring accountability to how brokers handle the sensitive merchant documents they receive every day. Bank statements, tax returns, and applications flow through broker offices before they ever reach a funder — and right now, there's no standard governing how that data is stored, shared, or protected. Secure Broker changes that.</p>
+
+      <a
+        href="https://www.linkedin.com/company/secure-broker"
+        class="mission-linkedin-card"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Follow Secure Broker on LinkedIn"
+      >
+        <img src="linkedin.png" alt="LinkedIn" class="mission-linkedin-icon">
+        <div class="mission-linkedin-text">
+          <span>Follow Secure Broker</span>
+          <small>for program updates and announcements</small>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- How It Works — 3-step cards (unique section not in Secure Funder) -->
+  <section id="how-it-works" class="how-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">Three Steps to Certification</h2>
+      </div>
+      <div class="how-grid reveal">
+        <div class="how-card">
+          <div class="how-num">1</div>
+          <h4>Apply &amp; Enroll</h4>
+          <p>Submit your application and get listed in the directory immediately while you prepare for verification.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">2</div>
+          <h4>Complete Verification</h4>
+          <p>An independent review confirms your office has safeguards in place for handling merchant documents. You have 90 days after enrollment.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">3</div>
+          <h4>Get Certified</h4>
+          <p>Earn the Secure Broker™ badge, a public directory listing, and the credibility that comes with verified standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits-section">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <h2 class="section-title">Membership Benefits</h2>
+      </div>
+      <div class="benefits-grid reveal">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11.5 14.5 16 9.5" fill="none"/></svg>
+          </div>
+          <h4>Verified Trust</h4>
+          <p>Independent verification that tells merchants and funders you take their sensitive documents seriously.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Funder Confidence</h4>
+          <p>Secure Funder™ certified funders trust Secure Broker™ members. Certification makes you a preferred partner.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h4>Public Directory Listing</h4>
+          <p>Appear in the Secure Broker™ directory — a searchable list of brokerages that meet verification standards.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14l2 2 4-4"/></svg>
+          </div>
+          <h4>Compliance Readiness</h4>
+          <p>Security standards evolve alongside emerging regulation. Get ahead of what's inevitably coming instead of scrambling to catch up.</p>
+        </div>
+        <div class="benefit-card benefit-card-accent">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Join Today, Get Listed Today</h4>
+          <p>Signal your commitment to the industry immediately.</p>
+        </div>
+        <div class="benefit-card benefit-card-accent">
+          <div class="benefit-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h4>Verify on Your Schedule</h4>
+          <p>90-day grace period to complete verification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility + Focus Areas — side by side (different layout from Secure Funder) -->
+  <section class="eligibility-section">
+    <div class="container">
+      <div class="eligibility-content">
+        <div class="section-label">Eligibility</div>
+        <h2 class="section-title">Are You Eligible?</h2>
+        <p class="eligibility-subtitle">A program for ISOs, brokers, and referral partners in alternative finance.</p>
+        <div class="eligibility-tags reveal">
+          <span class="eligibility-tag">ISO / Broker</span>
+          <span class="eligibility-tag">Referral Partner</span>
+          <span class="eligibility-tag">Merchant Cash Advance</span>
+          <span class="eligibility-tag">Working Capital</span>
+          <span class="eligibility-tag">Term Loan</span>
+          <span class="eligibility-tag">Equipment Financing</span>
+          <span class="eligibility-tag">Line of Credit</span>
+          <span class="eligibility-tag">Invoice Factoring</span>
+          <span class="eligibility-tag">E-Commerce</span>
+          <span class="eligibility-tag">SBA</span>
+        </div>
+      </div>
+
+      <!-- Focus Areas — different placement than Secure Funder -->
+      <div class="focus-layout reveal" style="margin-top: 72px;">
+        <div class="focus-text">
+          <div class="section-label">What We Verify</div>
+          <h2 class="section-title">Protecting Merchant Data at the Source</h2>
+          <p>Brokers receive merchant applications, bank statements, and tax documents directly. We confirm that systems housing this data have safeguards in place to limit unauthorized external sharing — before it ever leaves your office.</p>
+        </div>
+        <div class="focus-sidebar">
+          <div class="section-label">Focus Areas</div>
+          <p>We confirm that systems housing merchant data have safeguards in place to limit unauthorized external sharing.</p>
+          <div class="area-item"><div class="area-dot"></div> Document intake and storage</div>
+          <div class="area-item"><div class="area-dot"></div> System access and permissions</div>
+          <div class="area-item"><div class="area-dot"></div> Personnel policies</div>
+          <div class="area-item"><div class="area-dot"></div> Submission handling to funders</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification Stats — dark bg (inverted from Secure Funder's light banner) -->
+  <section class="verification-banner">
+    <div class="container-narrow">
+      <div class="vb-eyebrow">Standard of Trust</div>
+      <h2>Merchants Trust Brokers First</h2>
+      <p style="margin-top: 14px;">Before a funder ever sees an application, a merchant trusts their broker with their most sensitive financial documents. Certification proves that trust is well placed.</p>
+      <div class="stats-row reveal">
+        <div class="stat-highlight">
+          <div class="stat-number">92%</div>
+          <div class="stat-label">of merchants submit documents to brokers before any funder sees them</div>
+        </div>
+        <div class="stats-divider"></div>
+        <div class="stat-highlight">
+          <div class="stat-number">6 in 10</div>
+          <div class="stat-label">funders prefer working with brokers who demonstrate security standards</div>
+        </div>
+      </div>
+      <p style="font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 28px; letter-spacing: 0.02em;">Based on industry survey data and funder feedback</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-content">
+        <div style="text-align: center;">
+          <div class="section-label">About</div>
+          <h2 class="section-title">Why Secure Broker Exists</h2>
+        </div>
+        <div class="about-columns reveal">
+          <div class="about-col">
+            <p>Brokers are the first link in the chain. When a merchant submits their bank statements, tax returns, or financial documents, those files land in a broker's hands before anyone else sees them.</p>
+            <p>Yet there's no standard for how brokers store, share, or protect that data. Some brokerages have strong internal controls. Many don't — and merchants have no way to tell the difference.</p>
+          </div>
+          <div class="about-col">
+            <p>Secure Broker was created to close that gap. It gives brokers a way to demonstrate to merchants, funders, and partners that they handle sensitive data responsibly.</p>
+            <div class="about-callout">
+              <p>The program is independent, the requirements are public, and verification is conducted by a third party — not the broker themselves.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Break -->
+  <div class="photo-break">
+    <div class="photo-break-overlay">
+      <div class="photo-break-text">
+        <h2>Merchants trust brokers with their most sensitive data.<br>That trust should be earned — and verified.</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leadership -->
+  <section id="leadership" class="leadership-section">
+    <div class="container">
+      <div class="section-label">Leadership</div>
+      <h2 class="section-title" style="margin-bottom: 36px;">Program Director</h2>
+      <div class="leadership-content reveal">
+        <div class="leadership-photo">
+          <img src="headshot.png" alt="Christina Duncan — Program Director, Secure Broker" />
+        </div>
+        <div class="leadership-info">
+          <h3>Christina Duncan</h3>
+          <div class="role">Program Director</div>
+          <p>With nearly 20 years in alternative finance — including years as an ISO — Christina understands the broker's role from the inside. She founded Aquamark to solve the data security challenges she witnessed firsthand, and created the Secure Broker and Secure Funder programs to give the industry a practical path toward self-governance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership -->
+  <section id="membership" class="membership-section">
+    <div class="container">
+      <div class="membership-inner reveal">
+
+        <!-- Certification Badge -->
+        <div style="margin-bottom: 28px;">
+          <img src="secure-broker-badge-2026.png" alt="Secure Broker™ Certified 2026" style="width: 168px; height: 168px; border: 2px solid rgba(255,255,255,0.25); border-radius: 50%;">
+        </div>
+
+        <!-- Header -->
+        <div class="section-label" style="color: var(--green-accent-soft);">Membership</div>
+        <h2 class="section-title" style="color: var(--white); margin-bottom: 32px;">Become a Member Today</h2>
+
+        <!-- Price -->
+        <div style="margin-bottom: 40px;">
+          <div style="display: flex; align-items: baseline; justify-content: center; gap: 10px;">
+            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--white); line-height: 1;">$1,499</div>
+            <div style="font-size: 0.95rem; color: var(--fern);">per year</div>
+          </div>
+          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-accent-soft); margin-top: 10px; font-weight: 600;">Monthly installments available</div>
+        </div>
+
+        <!-- Includes grid -->
+        <div class="membership-includes-grid">
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Independent verification</span>
+          </div>
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Public directory listing</span>
+          </div>
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Secure Funder™ network access</span>
+          </div>
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Digital certification badge</span>
+          </div>
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Logo placement at industry events</span>
+          </div>
+          <div class="mi-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent-soft)" stroke-width="2.5" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Preferred partner status with certified funders</span>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="membership-btn-row">
+          <a href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer" style="background: var(--white); color: var(--forest);">Apply</a>
+          <a href="https://securebroker.org/verification-guide.pdf" target="_blank" rel="noopener noreferrer" style="background: var(--green-accent); color: var(--white);">Requirements</a>
+          <a href="https://securebroker.org/directory/" target="_blank" rel="noopener noreferrer" style="background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.18);">Directory</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Press -->
+  <section id="press" class="press-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Press &amp; Media</div>
+        <h2 class="section-title">In the News</h2>
+      </div>
+      <div class="press-grid reveal">
+        <a href="#" class="press-card" target="_blank">
+          <img src="ein.png" alt="EIN Presswire" class="press-logo">
+          <h3>Secure Broker Launches to Establish Data Protection Standards for Alternative Finance Brokers</h3>
+          <div class="press-date">Coming Soon</div>
+        </a>
+        <a href="https://www.einpresswire.com/article/901910945/secure-funder-launches-charter-members-join-to-establish-data-protection-standards-in-alternative-finance" class="press-card" target="_blank">
+          <img src="ein.png" alt="EIN Presswire" class="press-logo">
+          <h3>Secure Funder Launches, Charter Members Join To Establish Data Protection Standards in Alternative Finance</h3>
+          <div class="press-date">April 2026</div>
+        </a>
+        <a href="https://www.einpresswire.com/article/884909199/aquamark-finalizes-secure-funder-requirements-to-combat-backdooring-directory-reservations-now-open" class="press-card" target="_blank">
+          <img src="ein.png" alt="EIN Presswire" class="press-logo">
+          <h3>Aquamark Finalizes Secure Funder Requirements; Directory Reservations Now Open</h3>
+          <div class="press-date">January 2026</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg">
+      <div class="cta-bg-image">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1400&h=600&fit=crop&crop=center" alt="Professional environment" />
+      </div>
+      <div class="container-narrow">
+        <h2 class="section-title">Membership is open now.</h2>
+        <p class="section-subtitle">Join the brokers setting a higher standard for data protection in alternative finance.</p>
+        <div class="cta-actions">
+          <a href="https://securebroker.org/contact/" class="btn-primary">Apply for Membership</a>
+          <a href="https://securebroker.org/verification-guide.pdf" class="btn-ghost-white" target="_blank" rel="noopener noreferrer">View Requirements</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: white;">
+            <div class="logo-text" style="color: white;">Secure Broker<span class="logo-tm">™</span></div>
+          </div>
+          <p>An independent certification program for brokers establishing baseline data-handling standards in alternative finance. Administered by Aquamark.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Program</h4>
+          <a href="#about">About</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#membership">Membership</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/directory">Member Directory</a>
+          <a href="#press">Press & Media</a>
+          <a href="mailto:info@securebroker.org">Ask a Question</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="https://securebroker.org/contact/" target="_blank">Send a Message</a>
+          <a href="https://securebroker.org/terms-privacy/" target="_blank">Terms & Privacy</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Secure Broker™ Certification Program. All rights reserved.</span>
+        <span>Independently administered by <a href="https://aquamark.io" target="_blank">Aquamark</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo" aria-label="Secure Broker Home">
+        <img class="logo-badge" src="green-rings.png" alt="Secure Broker" style="width:30px;height:30px;">
+        <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+      </a>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
+    <a href="#leadership" onclick="closeMobileMenu()">Leadership</a>
+    <a href="#press" onclick="closeMobileMenu()">Press</a>
+    <a href="#membership" onclick="closeMobileMenu()">Membership</a>
+    <a href="https://portal.securebroker.org/login" class="btn-member-mobile">Member Sign In</a>
+  </div>
+
+  <script>
+    const toggle = document.querySelector('.mobile-toggle');
+    const menu = document.getElementById('mobileMenu');
+    const closeBtn = document.getElementById('mobileMenuClose');
+    function closeMobileMenu() { menu.classList.remove('active'); document.body.style.overflow = ''; }
+    toggle.addEventListener('click', () => { menu.classList.add('active'); document.body.style.overflow = 'hidden'; });
+    closeBtn.addEventListener('click', closeMobileMenu);
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
