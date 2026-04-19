@@ -522,14 +522,14 @@
       margin-bottom: 28px;
     }
     .eligibility-tags {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       gap: 10px;
-      justify-content: center;
       margin-bottom: 32px;
+      max-width: 100%;
     }
     .eligibility-tag {
-      padding: 10px 22px;
+      padding: 10px 20px;
       border: 1px solid var(--border);
       border-radius: 20px;
       font-size: 0.85rem;
@@ -537,6 +537,13 @@
       color: var(--text-primary);
       letter-spacing: 0.01em;
       background: var(--meadow);
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .eligibility-tags { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .eligibility-tags { grid-template-columns: repeat(2, 1fr); }
     }
 
     /* ===== VERIFICATION BANNER ===== */
