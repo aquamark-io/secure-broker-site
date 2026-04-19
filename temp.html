@@ -423,7 +423,7 @@
       border-bottom: 1px solid var(--border-light);
     }
     .focus-layout {
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: center;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: center;
     }
     .focus-sidebar {
       background: var(--meadow); border: 1px solid var(--border-light);
@@ -450,6 +450,7 @@
     .focus-text .section-subtitle { margin-bottom: 24px; }
     .focus-text p {
       font-size: 1rem; line-height: 1.8; color: var(--text-secondary);
+      max-width: 440px;
     }
 
     /* ===== BENEFITS ===== */
@@ -460,9 +461,9 @@
     }
     .benefits-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 24px;
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
     }
     .benefit-card {
@@ -512,7 +513,7 @@
     }
     .eligibility-content {
       text-align: center;
-      max-width: 960px;
+      max-width: 880px;
       margin: 0 auto;
     }
     .eligibility-subtitle {
@@ -780,7 +781,7 @@
       .about-columns { grid-template-columns: 1fr; gap: 32px; }
       .how-grid { grid-template-columns: 1fr; max-width: 400px; }
       .focus-layout { grid-template-columns: 1fr; gap: 32px; }
-      .benefits-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .benefits-grid { grid-template-columns: 1fr; max-width: 440px; }
       .press-grid { grid-template-columns: 1fr; }
       .leadership-content { grid-template-columns: 1fr; text-align: center; }
       .leadership-photo { width: 160px; height: 160px; margin: 0 auto; }
@@ -954,7 +955,6 @@
       </a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#press">Press</a></li>
         <li><a href="#membership">Membership</a></li>
@@ -1008,32 +1008,6 @@
     </div>
   </div>
 
-  <!-- How It Works — 3-step cards (unique section not in Secure Funder) -->
-  <section id="how-it-works" class="how-section">
-    <div class="container">
-      <div class="section-header" style="text-align: center;">
-        <div class="section-label">How It Works</div>
-        <h2 class="section-title">Three Steps to Certification</h2>
-      </div>
-      <div class="how-grid reveal">
-        <div class="how-card">
-          <div class="how-num">1</div>
-          <h4>Apply &amp; Enroll</h4>
-          <p>Submit your application and get listed in the directory immediately while you prepare for verification.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-num">2</div>
-          <h4>Complete Verification</h4>
-          <p>An independent review confirms your office has safeguards in place for handling merchant documents. You have 90 days after enrollment.</p>
-        </div>
-        <div class="how-card">
-          <div class="how-num">3</div>
-          <h4>Get Certified</h4>
-          <p>Earn the Secure Broker™ badge, a public directory listing, and the credibility that comes with verified standards.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Benefits -->
   <section class="benefits-section">
@@ -1185,7 +1159,7 @@
   <!-- Leadership -->
   <section id="leadership" class="leadership-section">
     <div class="container">
-      <div class="section-label">Leadership</div>
+      <div class="section-label">Program Director</div>
       <h2 class="section-title" style="margin-bottom: 36px;">Program Director</h2>
       <div class="leadership-content reveal">
         <div class="leadership-photo">
@@ -1319,7 +1293,6 @@
         <div class="footer-col">
           <h4>Program</h4>
           <a href="#about">About</a>
-          <a href="#how-it-works">How It Works</a>
           <a href="#membership">Membership</a>
         </div>
         <div class="footer-col">
@@ -1351,7 +1324,6 @@
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
     </div>
     <a href="#about" onclick="closeMobileMenu()">About</a>
-    <a href="#how-it-works" onclick="closeMobileMenu()">How It Works</a>
     <a href="#leadership" onclick="closeMobileMenu()">Leadership</a>
     <a href="#press" onclick="closeMobileMenu()">Press</a>
     <a href="#membership" onclick="closeMobileMenu()">Membership</a>
