@@ -38,7 +38,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
       font-family: var(--font-body);
       color: var(--text-primary);
@@ -46,6 +46,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       padding-top: calc(var(--utility-height) + var(--nav-height));
+      overflow-x: hidden;
     }
 
     /* ===== UTILITY BAR ===== */
