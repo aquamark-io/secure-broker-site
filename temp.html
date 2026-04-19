@@ -926,6 +926,7 @@
       .eligibility-tags { gap: 8px; }
       .focus-text .section-label,
       .focus-text .section-title { text-align: center; }
+      .focus-text p { text-align: center; }
     }
 
     @media (max-width: 640px) {
@@ -984,7 +985,7 @@
       .ecosystem-risk-grid > div { max-width: 260px; margin: 0 auto; }
       .membership-btn-row { flex-direction: column !important; }
       .membership-btn-row a { width: 100%; }
-      .pricing-tiers { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .pricing-tiers { grid-template-columns: 1fr !important; gap: 20px !important; max-width: 280px !important; margin-left: auto !important; margin-right: auto !important; }
       .pricing-tiers img { width: 140px !important; height: 140px !important; }
     }
 
@@ -1232,7 +1233,7 @@
       <div class="focus-layout reveal" style="margin-top: 72px;">
         <div class="focus-text">
           <h2 class="section-title">Who Should Join?</h2>
-          <p>Some applicants already have safeguards in place. Others use the framework to work toward certified status. The program supports both, including brokers seeking to demonstrate a commitment to doing things the right way.</p>
+          <p>Some applicants already have safeguards in place. Others use the framework to work toward certified status. The program supports both.</p>
         </div>
         <div class="focus-sidebar">
           <div class="section-label">Focus Areas</div>
@@ -1277,7 +1278,7 @@
         <div class="ecosystem-risk-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: start; text-align: center;">
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
             <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Leak</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Other funders mishandle a deal — your broker gets backdoored.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Unsecured funders mishandle a deal — you get backdoored.</p>
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
             <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Stack</div>
@@ -1285,7 +1286,7 @@
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
             <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Impact</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">When merchants are overextended, every funder in the stack takes the hit.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">When merchants are overextended, everyone in the stack takes the hit.</p>
           </div>
         </div>
       </div>
@@ -1321,7 +1322,7 @@
         <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 32px;">Founding member enrollment open through July 1, 2026</p>
 
         <!-- Pricing Tiers with Badge -->
-        <div class="pricing-tiers" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; max-width: 720px; margin: 0 auto 44px; align-items: center;">
+        <div class="pricing-tiers" style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; max-width: 780px; margin: 0 auto 44px; align-items: center;">
           <!-- Small Team -->
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 32px 24px; text-align: center;">
             <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-accent-soft); margin-bottom: 14px;">Under 10 Salespeople</div>
@@ -1337,9 +1338,9 @@
           <!-- Larger Team -->
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 32px 24px; text-align: center;">
             <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-accent-soft); margin-bottom: 14px;">Over 10 Salespeople</div>
-            <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px; flex-wrap: nowrap;">
               <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--white); line-height: 1;">$1,499</div>
-              <div style="font-size: 0.88rem; color: var(--fern);">per year</div>
+              <div style="font-size: 0.88rem; color: var(--fern); white-space: nowrap;">per year</div>
             </div>
           </div>
         </div>
