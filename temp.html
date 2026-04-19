@@ -594,14 +594,32 @@
       margin: 28px auto 0;
     }
     @media (max-width: 600px) {
-      .ecosystem-inner { flex-direction: column; gap: 16px; }
-      .ecosystem-side { min-width: auto; gap: 10px; }
-      .ecosystem-badge { width: 46px; height: 46px; }
-      .ecosystem-label { font-size: 1.15rem; }
-      .ecosystem-center { padding: 0; }
-      .ecosystem-connector { flex-direction: column; }
-      .ecosystem-line { width: 2px; height: 20px; }
-      .benefit-ecosystem { padding: 28px 18px 24px; }
+      .ecosystem-inner {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        flex-wrap: nowrap;
+      }
+      .ecosystem-side {
+        min-width: 0;
+        gap: 6px;
+      }
+      .ecosystem-badge { width: 44px; height: 44px; }
+      .ecosystem-label {
+        font-size: 0.78rem;
+        line-height: 1.05;
+        white-space: nowrap;
+      }
+      .ecosystem-center { padding: 0 6px; }
+      .ecosystem-connector {
+        flex-direction: row;
+        align-items: center;
+      }
+      .ecosystem-line { width: 20px; height: 2px; }
+      .ecosystem-shield { width: 32px; height: 32px; }
+      .ecosystem-shield svg { width: 16px; height: 16px; }
+      .benefit-ecosystem { padding: 24px 12px 20px; }
     }
 
     /* ===== ELIGIBILITY ===== */
@@ -1115,6 +1133,7 @@
     <div class="container">
       <div class="section-header" style="text-align: center;">
         <h2 class="section-title">Membership Benefits</h2>
+        <p class="section-subtitle" style="margin: 0 auto; text-align: center; max-width: 760px;">A secure ecosystem. When members come together, the entire data chain is protected.</p>
       </div>
       <div class="benefits-grid reveal">
         <!-- Ecosystem Card — full width -->
@@ -1122,7 +1141,7 @@
           <div class="ecosystem-inner">
             <div class="ecosystem-side">
               <img src="green-rings.png" alt="Secure Broker" class="ecosystem-badge">
-              <div class="ecosystem-label">Secure Broker<span style="font-size: 0.6em; vertical-align: super; font-weight: 400;">™</span></div>
+              <div class="ecosystem-label">Secure Broker</div>
             </div>
             <div class="ecosystem-center">
               <div class="ecosystem-connector">
@@ -1135,7 +1154,7 @@
             </div>
             <a href="https://securefunder.org/" target="_blank" rel="noopener noreferrer" class="ecosystem-side" style="text-decoration: none; color: inherit;">
               <img src="blue-ring.png" alt="Secure Funder" class="ecosystem-badge">
-              <div class="ecosystem-label">Secure Funder<span style="font-size: 0.6em; vertical-align: super; font-weight: 400;">™</span></div>
+              <div class="ecosystem-label">Secure Funder</div>
             </a>
           </div>
         </div>
