@@ -860,6 +860,7 @@
       .membership-includes-grid .mi-item { border-right: none !important; }
       .membership-btn-row { flex-direction: column !important; }
       .membership-btn-row a { width: 100%; }
+      .pricing-tiers { grid-template-columns: 1fr !important; }
     }
 
     @media (max-width: 380px) {
@@ -1159,7 +1160,7 @@
   <!-- Leadership -->
   <section id="leadership" class="leadership-section">
     <div class="container">
-      <div class="section-label">Program Director</div>
+      <div class="section-label">Leadership</div>
       <h2 class="section-title" style="margin-bottom: 36px;">Program Director</h2>
       <div class="leadership-content reveal">
         <div class="leadership-photo">
@@ -1188,14 +1189,26 @@
         <div class="section-label" style="color: var(--green-accent-soft);">Membership</div>
         <h2 class="section-title" style="color: var(--white); margin-bottom: 32px;">Become a Member Today</h2>
 
-        <!-- Price -->
-        <div style="margin-bottom: 40px;">
-          <div style="display: flex; align-items: baseline; justify-content: center; gap: 10px;">
-            <div style="font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: var(--white); line-height: 1;">$1,499</div>
-            <div style="font-size: 0.95rem; color: var(--fern);">per year</div>
+        <!-- Pricing Tiers -->
+        <div class="pricing-tiers" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 620px; margin: 0 auto 44px;">
+          <!-- Small Team -->
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 32px 24px; text-align: center;">
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-accent-soft); margin-bottom: 14px;">Staff of less than 10</div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+              <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--white); line-height: 1;">$499</div>
+              <div style="font-size: 0.88rem; color: var(--fern);">per year</div>
+            </div>
           </div>
-          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-accent-soft); margin-top: 10px; font-weight: 600;">Monthly installments available</div>
+          <!-- Larger Team -->
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 32px 24px; text-align: center;">
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green-accent-soft); margin-bottom: 14px;">Staff of 10 or more</div>
+            <div style="display: flex; align-items: baseline; justify-content: center; gap: 8px;">
+              <div style="font-family: var(--font-display); font-size: 2.8rem; font-weight: 700; color: var(--white); line-height: 1;">$1,499</div>
+              <div style="font-size: 0.88rem; color: var(--fern);">per year</div>
+            </div>
+          </div>
         </div>
+        <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-accent-soft); margin-top: -30px; margin-bottom: 44px; font-weight: 600; text-align: center;">Monthly installments available</div>
 
         <!-- Includes grid -->
         <div class="membership-includes-grid">
