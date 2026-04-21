@@ -577,7 +577,7 @@
     }
     .ecosystem-shield {
       width: 40px;
-      height: 40px;
+      height: 54px;
       border-radius: 50%;
       background: var(--green-accent-pale);
       display: flex;
@@ -626,6 +626,72 @@
       .ecosystem-shield { width: 32px; height: 32px; }
       .ecosystem-shield svg { width: 16px; height: 16px; }
       .benefit-ecosystem { padding: 24px 12px 20px; }
+    }
+
+
+    /* ===== CHARTER MEMBERS ===== */
+    .charter-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .charter-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .charter-card {
+      background: var(--meadow);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 24px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: box-shadow 0.3s ease;
+      min-width: 0;
+    }
+    .charter-card:hover {
+      box-shadow: 0 6px 22px rgba(11,41,24,0.06);
+    }
+    .charter-quote-mark {
+      font-family: Georgia, serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--green-accent);
+      opacity: 0.45;
+      margin-bottom: 2px;
+    }
+    .charter-card blockquote {
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--forest);
+      font-style: normal;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .charter-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+    .charter-logo {
+      height: 40px;
+      width: auto;
+      max-width: 190px;
+      object-fit: contain;
+    }
+    @media (max-width: 1100px) {
+      .charter-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    }
+    @media (max-width: 800px) {
+      .charter-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 600px) {
+      .charter-grid { grid-template-columns: 1fr !important; }
     }
 
     /* ===== ELIGIBILITY ===== */
@@ -1155,6 +1221,68 @@
     </div>
   </div>
 
+
+
+  <!-- Charter Members -->
+  <section class="charter-section" style="padding: 56px 0;">
+    <div class="container" style="max-width: 1600px;">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <div class="section-label">Trusted by Brokers and Funders</div>
+      </div>
+      <div class="charter-grid reveal">
+        <div class="charter-card">
+          <div>
+            <div class="charter-quote-mark">&ldquo;</div>
+            <blockquote>1,000% count us in. The industry has needed this for a long time and sets the path for pairing Secure Brokers with members of <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" style="color: var(--green-accent); font-weight: 700; text-decoration: none;">Secure Funder</a>.</blockquote>
+          </div>
+          <div class="charter-footer">
+            <img src="united.png" alt="United" class="charter-logo">
+          </div>
+        </div>
+      
+        <div class="charter-card">
+          <div>
+            <div class="charter-quote-mark">&ldquo;</div>
+            <blockquote>Excited to be a part of this!</blockquote>
+          </div>
+          <div class="charter-footer">
+            <img src="kalamata-new.png" alt="Kalamata Capital" class="charter-logo">
+          </div>
+        </div>
+        <div class="charter-card">
+          <div>
+            <div class="charter-quote-mark">&ldquo;</div>
+            <blockquote>This is an important step forward toward tightening things up in this industry.</blockquote>
+          </div>
+          <div class="charter-footer">
+            <img src="brite.png" alt="BriteCap" class="charter-logo">
+          </div>
+        </div>
+        <div class="charter-card">
+          <div>
+            <div class="charter-quote-mark">&ldquo;</div>
+            <blockquote>The data security of our referral partners and borrowers is a top priority for us.</blockquote>
+          </div>
+          <div class="charter-footer">
+            <img src="breakout.png" alt="Breakout Capital" class="charter-logo">
+          </div>
+        </div>
+        <div class="charter-card">
+          <div>
+            <div class="charter-quote-mark">&ldquo;</div>
+            <blockquote>We are excited to be part of your program and look forward to what's ahead.</blockquote>
+          </div>
+          <div class="charter-footer">
+            <img src="vox-funding.png" alt="Vox Funding" class="charter-logo">
+          </div>
+        </div>
+</div>
+
+      <div style="text-align: center; margin-top: 30px; font-size: 0.84rem; font-weight: 600; color: var(--green-accent);">
+        Apply before July 2026 to join as Charter Member
+      </div>
+    </div>
+  </section>
 
   <!-- Benefits -->
   <section class="benefits-section">
