@@ -636,21 +636,20 @@
     }
     .charter-grid {
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 18px;
-      max-width: 1600px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      max-width: 1700px;
       margin: 0 auto;
     }
     .charter-card {
       background: var(--meadow);
       border: 1px solid var(--border-light);
       border-radius: 12px;
-      padding: 24px 20px 20px;
+      padding: 28px 28px 24px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: box-shadow 0.3s ease;
-      min-width: 0;
     }
     .charter-card:hover {
       box-shadow: 0 6px 22px rgba(11,41,24,0.06);
@@ -660,15 +659,15 @@
       font-size: 2.5rem;
       line-height: 1;
       color: var(--green-accent);
-      opacity: 0.45;
+      opacity: 0.55;
       margin-bottom: 2px;
     }
     .charter-card blockquote {
-      font-size: 0.88rem;
-      line-height: 1.55;
+      font-size: 0.95rem;
+      line-height: 1.65;
       color: var(--forest);
       font-style: normal;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       flex-grow: 1;
     }
     .charter-footer {
@@ -679,15 +678,25 @@
       border-top: 1px solid var(--border-light);
     }
     .charter-logo {
-      height: 40px;
+      height: 56px;
       width: auto;
-      max-width: 190px;
+      max-width: 180px;
       object-fit: contain;
     }
-    @media (max-width: 1100px) {
-      .charter-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    .charter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--green-accent);
+      background: var(--green-accent-pale);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .charter-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
     @media (max-width: 600px) {
@@ -1225,7 +1234,7 @@
 
   <!-- Charter Members -->
   <section class="charter-section" style="padding: 56px 0;">
-    <div class="container" style="max-width: 1600px;">
+    <div class="container" style="max-width: 1700px;">
       <div style="text-align: center; margin-bottom: 28px;">
         <div class="section-label">Trusted by Brokers and Funders</div>
       </div>
@@ -1239,15 +1248,7 @@
             <img src="united.png" alt="United" class="charter-logo">
           </div>
         </div>
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>We fully support this program and want to help in any way we can. The long-term benefits of distinguishing secure shops from insecure ones are clear.</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="big.png" alt="Big" class="charter-logo">
-          </div>
-        </div>
+      
         <div class="charter-card">
           <div>
             <div class="charter-quote-mark">&ldquo;</div>
