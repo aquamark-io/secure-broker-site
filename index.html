@@ -275,6 +275,51 @@
       margin-bottom: 34px; max-width: 520px;
     }
     .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .hero-admin-note {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--border);
+      color: var(--forest);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(11,41,24,0.05);
+      transition: all 0.22s ease;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .hero-admin-note:hover {
+      background: var(--white);
+      border-color: var(--mint);
+      transform: translateY(-1px);
+    }
+    .hero-admin-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .hero-admin-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .hero-admin-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 3px;
+    }
+    .hero-admin-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
     .hero-btn {
       display: inline-flex; align-items: center; justify-content: center;
       font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
@@ -1048,6 +1093,7 @@
         padding: 12px 22px; font-size: 0.86rem; width: 100%; justify-content: center; min-width: unset;
       }
       .hero-actions { width: 100%; }
+      .hero-admin-note { width: 100%; justify-content: center; }
       .mission-banner p { font-size: 0.98rem; }
       .section-title { font-size: 1.4rem; }
       .section-subtitle { font-size: 0.92rem; }
@@ -1204,6 +1250,13 @@
 <a href="/requirements-for-secure-broker.pdf" target="_blank" rel="noopener noreferrer" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
             <a href="https://securebroker.org/directory/" class="hero-btn" style="background: rgba(61,163,102,0.15); color: var(--green-accent); border: 1px solid rgba(61,163,102,0.3);" target="_blank" rel="noopener noreferrer">Directory</a>
           </div>
+          <a href="https://aquamark.io" class="hero-admin-note" target="_blank" rel="noopener noreferrer" aria-label="Secure Broker is administered by Aquamark">
+            <img src="aquamark.png" alt="Aquamark" class="hero-admin-logo">
+            <span class="hero-admin-text">
+              <span class="hero-admin-eyebrow">Program Administration</span>
+              <span class="hero-admin-title">Secure Broker is administered by Aquamark</span>
+            </span>
+          </a>
         </div>
       </div>
     </div>
@@ -1212,8 +1265,7 @@
   <!-- Mission Banner — light bg (different from Secure Funder's dark bg) -->
   <div class="mission-banner">
     <div class="container-narrow reveal">
-      <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.06em;">Our mission</span> is to address a longstanding gap in alternative finance: the lack of clear oversight around how sensitive merchant data is handled. As a result, misuse and theft of that data has become far too common.  Paired with Secure Funder, it supports a more transparent and secure framework across both sides of alternative finance.
-</p>
+      <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.06em;">Our mission</span> is to address a longstanding gap in alternative finance: the lack of clear oversight around how sensitive merchant data is handled. As a result, misuse and theft of that data has become far too common. Secure Broker gives brokers a way to stand out as a trusted source.</p>
 
       <a
         href="https://www.linkedin.com/company/secure-broker™"
