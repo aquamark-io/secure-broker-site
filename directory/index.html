@@ -17,7 +17,7 @@
 
   <style>
     :root {
-      --utility-height: 34px;
+      --utility-height: 42px;
       --forest: #11352A;
       --forest-mid: #1A4A34;
       --sage: #2D5A3D;
@@ -51,13 +51,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ===== UTILITY BAR ===== */
+    /* ===== ANNOUNCEMENT BANNER ===== */
     .utility-bar {
-      background: linear-gradient(90deg, #0D2A1C 0%, #123820 52%, #174528 100%);
-      color: var(--mint);
-      font-size: 0.8rem;
+      background: var(--sage);
+      color: var(--white);
+      font-size: 0.88rem;
       height: var(--utility-height);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       position: sticky;
       top: 0;
       z-index: 200;
@@ -65,9 +65,28 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .utility-text { width: 100%; text-align: center; pointer-events: none; }
+    .utility-text {
+      width: 100%;
+      text-align: center;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 500;
+    }
+    .utility-text .banner-cta {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.45);
+      padding-bottom: 1px;
+      margin-left: 4px;
+      transition: border-color 0.2s;
+    }
+    .utility-text .banner-cta:hover {
+      border-color: var(--white);
+    }
 
     /* ===== NAV ===== */
     .main-nav {
@@ -750,7 +769,9 @@
     @media (max-width: 600px) {
       .container { padding: 0 16px; }
       .container-narrow { padding: 0 16px; }
-      .utility-bar { font-size: 0.72rem; height: 30px; }
+      .utility-bar { font-size: 0.74rem; height: auto; min-height: 36px; padding: 8px 16px; }
+      .utility-text { flex-wrap: wrap; }
+      .utility-text .banner-cta { margin-left: 0; }
       :root { --utility-height: 30px; }
       .main-nav .container { height: 56px; }
       .logo-badge { width: 32px; height: 32px; }
@@ -842,7 +863,7 @@
 <body>
   <!-- Banner -->
   <div class="utility-bar">
-    <span class="utility-text">Directory Opens — June 2026</span>
+    <span class="utility-text">Program Grand Opening — June 2026 · Membership is now open <a class="banner-cta" href="https://securebroker.org/contact/">Apply today →</a></span>
   </div>
 
   <!-- Navigation -->
