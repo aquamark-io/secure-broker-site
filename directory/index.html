@@ -646,6 +646,22 @@
     .charter-star svg {
       color: #FFD000;
     }
+    .charter-badge {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #F0B400;
+      margin-top: 10px;
+      margin-bottom: -10px;
+    }
+
+    /* Divider section styling */
+    .section-alt {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
 
     /* ===== CTA (lightweight) ===== */
     .mini-cta {
@@ -920,27 +936,16 @@
   <!-- Search & Filter Toolbar -->
   <div class="directory-toolbar">
     <div class="container">
-      <div class="toolbar-inner">
+      <div class="toolbar-inner" style="grid-template-columns: 1fr auto;">
         <!-- Name Search -->
         <div class="filter-field">
           <label class="filter-label" for="searchInput">Search by company name</label>
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input id="searchInput" class="filter-input" type="search" placeholder="e.g. 'Broker'" autocomplete="off" />
-        </div>
-
-        <!-- Product Type Multi-Select -->
-        <div class="filter-field" style="position:relative;">
-          <label class="filter-label">Specialization</label>
-          <button type="button" class="filter-select" id="productDropdownBtn">
-            <span id="productDropdownLabel" style="color:#8FBFA0;">All specializations</span>
-          </button>
-          <div class="product-dropdown" id="productDropdown">
-            <div class="product-dropdown-list" id="productDropdownList"></div>
-          </div>
+          <input id="searchInput" class="filter-input" type="search" placeholder="e.g. 'Big Think'" autocomplete="off" />
         </div>
 
         <!-- Clear All -->
-        <button class="btn-clear-all" type="button" id="clearAllBtn">Clear all</button>
+        <button class="btn-clear-all" type="button" id="clearAllBtn">Clear</button>
       </div>
 
       <div class="results-bar" aria-live="polite">
@@ -952,25 +957,59 @@
 
   <main>
 
-    <!-- Members -->
-    <section>
+    <!-- Certified Members -->
+    <section id="sectionCertified">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-label">Members</div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7; max-width: 860px; margin-top: 4px;">Each member is listed with their current status: <strong style="color: var(--text-primary);">Applied</strong>, <strong style="color: var(--text-primary);">Verification</strong>, or <strong style="color: var(--text-primary);">Certified</strong>. Certification is not guaranteed. Organizations that withdraw or do not pass verification are removed from the directory.</p>
+          <h2 class="section-title" style="display:flex;align-items:center;gap:10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A7F37" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Certified Members
+          </h2>
+          <p class="section-subtitle">These organizations have completed the verification process and meet all certification guidelines.</p>
         </div>
-
         <div class="registry-card">
           <div class="empty-state" data-empty="true">
-            <div class="empty-state-content">
-              <div class="empty-state-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <p>The Secure Broker™ Directory opens in <span class="date">June 2026</span>.</p>
-              <p class="launch-note">Apply for membership to reserve your spot.</p>
-            </div>
+            <p>Program opens <span class="date">June 2026</span>.</p>
           </div>
-          <div class="logo-grid" id="gridAll" aria-label="Member directory grid"></div>
+          <div class="logo-grid" id="gridCertified" aria-label="Certified members grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verification In Progress -->
+    <section class="section-alt" id="sectionVerification">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" style="display:flex;align-items:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Verification In Progress
+          </h2>
+          <p class="section-subtitle">These organizations are actively completing the verification process.</p>
+        </div>
+        <div class="registry-card">
+          <div class="empty-state" data-empty="true">
+            <p>Program opens <span class="date">June 2026</span>.</p>
+          </div>
+          <div class="logo-grid" id="gridVerification" aria-label="Verification in progress grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applicants -->
+    <section id="sectionApplicants">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" style="display:flex;align-items:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Applicants
+          </h2>
+          <p class="section-subtitle">These organizations have applied for Secure Broker™ certification and are preparing for the verification process.</p>
+        </div>
+        <div class="registry-card">
+          <div class="empty-state" data-empty="true">
+            <p>No applicants listed yet.</p>
+          </div>
+          <div class="logo-grid" id="gridApplicants" aria-label="Applicants grid"></div>
         </div>
       </div>
     </section>
@@ -1081,66 +1120,50 @@
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
     /* ===== Directory Data =====
-       SPECIALIZATIONS: the picklist options for filtering.
        MEMBERS: add organizations here when populating the directory.
-       Each member needs: name, status ('applied'|'review'|'passed'|'failed'),
-       charter (boolean), products (array of product keys),
-       and optionally logo (URL) and url (website).
+       Each member needs: name, status ('applied'|'Verification'|'Certified'),
+       charter (bool), and optionally logo (URL), url (website), logoScale.
     */
-    const PRODUCTS = [
-      { key: "working-capital",       label: "Working Capital" },
-      { key: "merchant-cash-advance", label: "Merchant Cash Advance" },
-      { key: "term-loan",             label: "Term Loan" },
-      { key: "equipment-financing",   label: "Equipment Financing" },
-      { key: "line-of-credit",        label: "Line of Credit" },
-      { key: "factoring",             label: "Invoice Factoring" },
-      { key: "ecommerce",             label: "E-Commerce" },
-      { key: "asset-based-lending",   label: "Asset-Based Lending" },
-      { key: "SBA",                   label: "SBA" },
-      { key: "credit-card-split",     label: "Credit Card Split" }
-    ];
 
-    // ── Members (empty until June 2026 launch) ──
-    const MEMBERS = [];
+    const MEMBERS = [
+      { name: "Big Think Capital", status: "applied", charter: true, logo: "/big.png", url: "https://bigthinkcapital.com/" },
+      { name: "GreenBridge Capital", status: "applied", charter: true, logo: "/green.png", url: "https://www.greenbridgecapital.com/" },
+      { name: "PG Strategic", status: "applied", charter: true, logo: "/pg.png", url: "https://pgstrategic.com/" },
+      { name: "QualiFi", status: "applied", charter: true, logo: "/qualify.png", url: "https://goqualifi.com/" },
+      { name: "Shore Funding Solutions", status: "applied", charter: true, logo: "/shore.png", url: "https://shorefundingsolutions.com/" },
+      { name: "The Accredited Group", status: "applied", charter: true, logo: "/tag.png", url: "https://www.theaccreditedgroup.com/" },
+      { name: "United Capital Source", status: "applied", charter: true, logo: "/united.png", url: "https://www.unitedcapitalsource.com/" },
+      { name: "VIP Capital Funding", status: "applied", charter: true, logo: "/vip.png", url: "https://vipcapitalfunding.com/" }
+    ];
 
     /* ===== DOM refs ===== */
     const els = {
       search:           document.getElementById('searchInput'),
-      productBtn:       document.getElementById('productDropdownBtn'),
-      productLabel:     document.getElementById('productDropdownLabel'),
-      productDropdown:  document.getElementById('productDropdown'),
-      productList:      document.getElementById('productDropdownList'),
       clearAllBtn:      document.getElementById('clearAllBtn'),
       resultsCount:     document.getElementById('resultsCount'),
       resultsHint:      document.getElementById('resultsHint'),
-      gridAll:          document.getElementById('gridAll')
+      gridCertified:    document.getElementById('gridCertified'),
+      gridVerification: document.getElementById('gridVerification'),
+      gridApplicants:   document.getElementById('gridApplicants'),
+      sectionCertified: document.getElementById('sectionCertified'),
+      sectionVerification: document.getElementById('sectionVerification'),
+      sectionApplicants: document.getElementById('sectionApplicants')
     };
 
-    const state = { query: "", selectedProducts: new Set() };
+    let searchQuery = "";
 
     function normalize(s) { return (s || "").toLowerCase().trim(); }
 
-    function matchesProducts(member) {
-      if (state.selectedProducts.size === 0) return true;
-      return (member.products || []).some(p => state.selectedProducts.has(p));
-    }
-
     function matchesQuery(member) {
-      if (!state.query) return true;
-      return normalize(member.name).includes(state.query);
+      if (!searchQuery) return true;
+      return normalize(member.name).includes(searchQuery);
     }
-
-    function filterMembers() {
-      return MEMBERS.filter(m => matchesQuery(m) && matchesProducts(m));
-    }
-
-    const PRODUCT_MAP = {};
-    PRODUCTS.forEach(p => { PRODUCT_MAP[p.key] = p.label; });
 
     function buildTile(member) {
       const card = document.createElement('div');
       card.className = 'member-card';
 
+      // Logo area
       const logoWrap = document.createElement('div');
       logoWrap.className = 'member-card-logo';
 
@@ -1163,131 +1186,69 @@
       logoWrap.appendChild(linkEl);
       card.appendChild(logoWrap);
 
-      const statusLine = document.createElement('div');
-      statusLine.className = 'member-card-status-line';
-
-      const pill = document.createElement('span');
-      pill.className = 'status-pill';
-      pill.textContent = 'Certification Status:';
-      statusLine.appendChild(pill);
-
-      const statusText = document.createElement('span');
-      statusText.className = 'status-detail';
-      const statusLabels = { applied: 'Applied', review: 'Verification', passed: 'Pass', failed: 'Fail' };
-      statusText.textContent = statusLabels[member.status] || member.status;
-      if (member.status === 'passed') statusText.classList.add('status-pass');
-      if (member.status === 'failed') statusText.classList.add('status-fail');
-      statusLine.appendChild(statusText);
-
-      card.appendChild(statusLine);
-
+      // Charter badge
       if (member.charter) {
-        const star = document.createElement('div');
-        star.className = 'charter-star';
-        star.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> Charter Member';
-        card.appendChild(star);
+        const badge = document.createElement('div');
+        badge.className = 'charter-badge';
+        badge.textContent = member.status === 'Certified' ? 'Charter Member' : 'Charter Applicant';
+        card.appendChild(badge);
       }
 
       return card;
     }
 
-    function renderDirectory() {
-      const filtered = filterMembers();
-
-      els.gridAll.innerHTML = "";
-
-      const section = document.querySelector('main > section:not(.mini-cta)');
-      const card = section.querySelector('.registry-card');
+    function renderSection(gridEl, sectionEl, members) {
+      gridEl.innerHTML = "";
+      const card = sectionEl.querySelector('.registry-card');
       const empty = card.querySelector('[data-empty="true"]');
 
-      if (filtered.length > 0) {
+      if (members.length > 0) {
         empty.style.display = 'none';
-        els.gridAll.style.display = 'grid';
-        filtered.forEach(m => els.gridAll.appendChild(buildTile(m)));
+        gridEl.style.display = 'grid';
+        members.forEach(m => gridEl.appendChild(buildTile(m)));
+        sectionEl.style.display = '';
       } else {
-        els.gridAll.style.display = 'none';
-        empty.style.display = 'flex';
-        if (MEMBERS.length > 0) {
-          empty.innerHTML = '<p>No matches for the current filters.</p>';
+        if (searchQuery) {
+          sectionEl.style.display = 'none';
+        } else {
+          sectionEl.style.display = '';
+          empty.style.display = 'flex';
+          gridEl.style.display = 'none';
         }
       }
+    }
+
+    function renderDirectory() {
+      const filtered = MEMBERS.filter(matchesQuery);
+
+      const certified = filtered.filter(m => m.status === 'Certified');
+      const verification = filtered.filter(m => m.status === 'Verification');
+      const applicants = filtered.filter(m => m.status === 'applied');
+
+      renderSection(els.gridCertified, els.sectionCertified, certified);
+      renderSection(els.gridVerification, els.sectionVerification, verification);
+      renderSection(els.gridApplicants, els.sectionApplicants, applicants);
 
       const total = filtered.length;
       els.resultsCount.textContent = `Showing ${total} organization${total === 1 ? '' : 's'}`;
-      if (MEMBERS.length === 0) {
-        els.resultsHint.textContent = "Filters will apply as listings are added.";
-      } else if (total === 0) {
+      if (total === 0 && searchQuery) {
         els.resultsHint.textContent = "No matches — try adjusting your search.";
       } else {
         els.resultsHint.textContent = "Results update as you type.";
       }
     }
 
-    /* ===== Product Multi-Select Dropdown ===== */
-    function updateProductLabel() {
-      if (state.selectedProducts.size === 0) {
-        els.productLabel.textContent = 'All specializations';
-        els.productLabel.style.color = '#8FBFA0';
-      } else if (state.selectedProducts.size === 1) {
-        const key = [...state.selectedProducts][0];
-        els.productLabel.textContent = PRODUCT_MAP[key] || key;
-        els.productLabel.style.color = 'var(--text-primary)';
-      } else {
-        els.productLabel.textContent = state.selectedProducts.size + ' selected';
-        els.productLabel.style.color = 'var(--text-primary)';
-      }
-    }
-
-    function buildProductDropdown() {
-      PRODUCTS.forEach(p => {
-        const item = document.createElement('label');
-        item.className = 'product-dropdown-item';
-
-        const cb = document.createElement('input');
-        cb.type = 'checkbox';
-        cb.value = p.key;
-        cb.addEventListener('change', () => {
-          if (cb.checked) state.selectedProducts.add(p.key);
-          else state.selectedProducts.delete(p.key);
-          updateProductLabel();
-          renderDirectory();
-        });
-
-        const label = document.createElement('span');
-        label.textContent = p.label;
-
-        item.appendChild(cb);
-        item.appendChild(label);
-        els.productList.appendChild(item);
-      });
-    }
-
-    els.productBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      els.productDropdown.classList.toggle('open');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!els.productDropdown.contains(e.target) && e.target !== els.productBtn) {
-        els.productDropdown.classList.remove('open');
-      }
-    });
-
     /* ===== Wire up ===== */
-    buildProductDropdown();
     renderDirectory();
 
     els.search.addEventListener('input', (e) => {
-      state.query = normalize(e.target.value);
+      searchQuery = normalize(e.target.value);
       renderDirectory();
     });
 
     els.clearAllBtn.addEventListener('click', () => {
       els.search.value = "";
-      state.query = "";
-      state.selectedProducts.clear();
-      els.productList.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-      updateProductLabel();
+      searchQuery = "";
       renderDirectory();
     });
   </script>
