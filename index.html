@@ -1297,6 +1297,10 @@
       gap: 64px;
       width: max-content;
       animation: carousel-scroll 80s linear infinite;
+      animation-play-state: paused;
+    }
+    .carousel-track.is-visible {
+      animation-play-state: running;
     }
     .carousel-slide {
       flex-shrink: 0;
@@ -1760,6 +1764,21 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Start carousel only when visible — observe the wrapper, not the track
+    const carouselWrapper = document.querySelector('.carousel-track-wrapper');
+    const carouselTrack = document.querySelector('.carousel-track');
+    if (carouselWrapper && carouselTrack) {
+      const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            carouselTrack.classList.add('is-visible');
+            carouselObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      carouselObserver.observe(carouselWrapper);
+    }
   </script>
 
 </body>
