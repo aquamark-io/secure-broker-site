@@ -845,6 +845,171 @@
       .eligibility-review-card { padding: 28px 22px 24px; }
     }
 
+
+    /* ===== CERTIFICATION PATH ===== */
+    .integrity-section {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 64px 0;
+    }
+    .integrity-header {
+      max-width: 780px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .cert-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* Nodes */
+    .cert-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      min-width: 90px;
+    }
+    .cert-node-ring {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .cert-node-ring-default {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(11,41,24,0.06), 0 0 0 1px var(--border-light);
+      color: var(--sage);
+    }
+    .cert-node-ring-pass {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(61,163,102,0.1), 0 0 0 2px var(--green-accent);
+      color: var(--green-accent);
+    }
+    .cert-node-ring-fail {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(180,100,100,0.08), 0 0 0 2px #D4AAAA;
+      color: #B07070;
+    }
+
+    .cert-node-label {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+    .cert-node-label-pass { color: var(--sage); }
+    .cert-node-label-fail { color: #A07070; }
+
+    .cert-node-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: -8px;
+      line-height: 1.35;
+    }
+
+    /* Connecting line with chevron */
+    .cert-connector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 6px;
+      margin-bottom: 22px;
+    }
+    .cert-connector-line {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-connector-chevron {
+      color: var(--border);
+      display: flex;
+      align-items: center;
+      margin-left: -3px;
+    }
+
+    /* Fork area */
+    .cert-fork-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0;
+    }
+    /* Horizontal line going into the fork */
+    .cert-fork-stem {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0;
+    }
+    .cert-fork-stem-line {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-fork-stem-chevron {
+      color: var(--border);
+      display: flex;
+      align-items: center;
+      margin-left: -3px;
+    }
+
+    .cert-fork-visual {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    /* The bracket lines */
+    .cert-fork-visual::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 32px;
+      right: 32px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-fork-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      min-width: 80px;
+    }
+    .cert-fork-branch::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      width: 1px;
+      height: 16px;
+      background: var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .integrity-section { padding: 48px 0; }
+      .integrity-header { margin-bottom: 32px; }
+      .cert-node-ring { width: 52px; height: 52px; }
+      .cert-node-ring svg { width: 20px; height: 20px; }
+      .cert-node-label { font-size: 0.8rem; }
+      .cert-node-sub { font-size: 0.66rem; }
+      .cert-connector-line { width: 24px; }
+      .cert-fork-stem-line { width: 24px; }
+      .cert-fork-visual { gap: 24px; }
+      .cert-connector { padding: 0 2px; }
+    }
+
     /* ===== VERIFICATION BANNER ===== */
     .verification-banner {
       background: var(--forest);
@@ -1552,8 +1717,13 @@
           </div>
         </div>
       </div>
+
+      <p style="text-align: center; font-size: 0.78rem; color: var(--text-muted); line-height: 1.65; margin: 40px auto 0; max-width: 640px;">Listing does not constitute endorsement and certification is not guaranteed. Applicants must schedule verification within 90 days of applying. Organizations that do not meet all requirements are removed.</p>
     </div>
   </section>
+
+
+
 
   <!-- Verification Stats — dark bg (inverted from Secure Funder's light banner) -->
   <section class="verification-banner">
