@@ -569,6 +569,32 @@
       margin-bottom: 16px;
     }
 
+    .program-notice-card {
+      grid-column: 1 / -1;
+      background: var(--forest);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: left;
+      box-shadow: 0 8px 28px rgba(11,41,24,0.08);
+    }
+    .program-notice-card p {
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .program-notice-label {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
     /* ===== ECOSYSTEM CARD ===== */
     .benefit-ecosystem {
       grid-column: 1 / -1;
@@ -1670,6 +1696,9 @@
           <h4>Verify on Your Schedule</h4>
           <p>90-day grace period to complete verification.</p>
         </div>
+        <div class="program-notice-card">
+          <p><span class="program-notice-label">Program Notice</span>Listing does not constitute endorsement and certification is not guaranteed. Applicants must schedule verification within 90 days. Organizations that do not meet all requirements are removed.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -1716,7 +1745,6 @@
         </div>
       </div>
 
-      <p style="text-align: center; font-size: 0.8rem; color: var(--text-muted); line-height: 1.65; margin: 40px auto 0; max-width: 640px;">Listing does not constitute endorsement and certification is not guaranteed. Applicants must schedule verification within 90 days. Organizations that do not meet all requirements are removed.</p>
     </div>
   </section>
 
