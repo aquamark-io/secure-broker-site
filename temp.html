@@ -275,6 +275,51 @@
       margin-bottom: 34px; max-width: 520px;
     }
     .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .hero-admin-note {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--border);
+      color: var(--forest);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(11,41,24,0.05);
+      transition: all 0.22s ease;
+      width: fit-content;
+      max-width: 100%;
+    }
+    .hero-admin-note:hover {
+      background: var(--white);
+      border-color: var(--mint);
+      transform: translateY(-1px);
+    }
+    .hero-admin-logo {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .hero-admin-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .hero-admin-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 3px;
+    }
+    .hero-admin-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--forest);
+    }
     .hero-btn {
       display: inline-flex; align-items: center; justify-content: center;
       font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
@@ -524,6 +569,32 @@
       margin-bottom: 16px;
     }
 
+    .program-notice-card {
+      grid-column: 1 / -1;
+      background: var(--forest);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: left;
+      box-shadow: 0 8px 28px rgba(11,41,24,0.08);
+    }
+    .program-notice-card p {
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.7;
+      margin: 0;
+    }
+    .program-notice-label {
+      display: inline;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-right: 8px;
+    }
+
     /* ===== ECOSYSTEM CARD ===== */
     .benefit-ecosystem {
       grid-column: 1 / -1;
@@ -636,9 +707,9 @@
     }
     .charter-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 20px;
-      max-width: 1700px;
+      max-width: 1840px;
       margin: 0 auto;
     }
     .charter-card {
@@ -723,8 +794,8 @@
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 10px;
-      margin-bottom: 32px;
-      max-width: 100%;
+      margin: 26px auto 0;
+      max-width: 900px;
     }
     .eligibility-tag {
       padding: 10px 20px;
@@ -737,11 +808,232 @@
       background: var(--meadow);
       text-align: center;
     }
+    .eligibility-review-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 960px;
+      margin: 48px auto 0;
+      align-items: stretch;
+    }
+    .eligibility-review-card {
+      background: var(--meadow);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 34px 34px 30px;
+      text-align: left;
+      height: 100%;
+    }
+    .eligibility-review-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--forest);
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .eligibility-review-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin: 0 0 24px;
+    }
+    .eligibility-review-card p:last-child { margin-bottom: 0; }
+    .review-list {
+      display: grid;
+      gap: 0;
+      margin-top: 4px;
+    }
+    .review-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 0;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .review-dot {
+      width: 8px;
+      height: 8px;
+      min-width: 8px;
+      border-radius: 50%;
+      background: var(--green-accent);
+    }
     @media (max-width: 900px) {
       .eligibility-tags { grid-template-columns: repeat(3, 1fr); }
+      .eligibility-review-grid { grid-template-columns: 1fr; max-width: 520px; }
     }
     @media (max-width: 600px) {
       .eligibility-tags { grid-template-columns: repeat(2, 1fr); }
+      .eligibility-review-grid { margin-top: 34px; }
+      .eligibility-review-card { padding: 28px 22px 24px; }
+    }
+
+
+    /* ===== CERTIFICATION PATH ===== */
+    .integrity-section {
+      background: var(--meadow);
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 64px 0;
+    }
+    .integrity-header {
+      max-width: 780px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .cert-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* Nodes */
+    .cert-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      min-width: 90px;
+    }
+    .cert-node-ring {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .cert-node-ring-default {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(11,41,24,0.06), 0 0 0 1px var(--border-light);
+      color: var(--sage);
+    }
+    .cert-node-ring-pass {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(61,163,102,0.1), 0 0 0 2px var(--green-accent);
+      color: var(--green-accent);
+    }
+    .cert-node-ring-fail {
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(180,100,100,0.08), 0 0 0 2px #D4AAAA;
+      color: #B07070;
+    }
+
+    .cert-node-label {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--forest);
+      line-height: 1.2;
+    }
+    .cert-node-label-pass { color: var(--sage); }
+    .cert-node-label-fail { color: #A07070; }
+
+    .cert-node-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: -8px;
+      line-height: 1.35;
+    }
+
+    /* Connecting line with chevron */
+    .cert-connector {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 0 6px;
+      margin-bottom: 22px;
+    }
+    .cert-connector-line {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-connector-chevron {
+      color: var(--border);
+      display: flex;
+      align-items: center;
+      margin-left: -3px;
+    }
+
+    /* Fork area */
+    .cert-fork-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0;
+    }
+    /* Horizontal line going into the fork */
+    .cert-fork-stem {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 0;
+    }
+    .cert-fork-stem-line {
+      width: 40px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-fork-stem-chevron {
+      color: var(--border);
+      display: flex;
+      align-items: center;
+      margin-left: -3px;
+    }
+
+    .cert-fork-visual {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    /* The bracket lines */
+    .cert-fork-visual::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 32px;
+      right: 32px;
+      height: 1px;
+      background: var(--border);
+    }
+    .cert-fork-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      min-width: 80px;
+    }
+    .cert-fork-branch::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      width: 1px;
+      height: 16px;
+      background: var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .integrity-section { padding: 48px 0; }
+      .integrity-header { margin-bottom: 32px; }
+      .cert-node-ring { width: 52px; height: 52px; }
+      .cert-node-ring svg { width: 20px; height: 20px; }
+      .cert-node-label { font-size: 0.8rem; }
+      .cert-node-sub { font-size: 0.66rem; }
+      .cert-connector-line { width: 24px; }
+      .cert-fork-stem-line { width: 24px; }
+      .cert-fork-visual { gap: 24px; }
+      .cert-connector { padding: 0 2px; }
     }
 
     /* ===== VERIFICATION BANNER ===== */
@@ -802,9 +1094,12 @@
 
     /* ===== LEADERSHIP ===== */
     .leadership-section {
-      background: var(--meadow);
+      background: var(--white);
       border-top: 1px solid var(--border-light);
       border-bottom: 1px solid var(--border-light);
+    }
+    .leadership-columns {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
     }
     .leadership-content {
       display: grid; grid-template-columns: 200px 1fr; gap: 48px; align-items: center;
@@ -824,6 +1119,18 @@
     }
     .leadership-info p {
       font-size: 0.95rem; line-height: 1.75; color: var(--text-secondary); max-width: 560px;
+    }
+    .leadership-video {
+      display: flex; flex-direction: column; justify-content: center; height: 100%;
+    }
+    .leadership-video video {
+      width: 100%; border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(11,41,24,0.10);
+      background: var(--forest);
+    }
+    .leadership-video .video-caption {
+      margin-top: 12px; font-size: 0.85rem; color: var(--text-light);
+      font-style: italic; text-align: center;
     }
 
     /* ===== MEMBERSHIP ===== */
@@ -981,6 +1288,7 @@
       .focus-layout { grid-template-columns: 1fr; gap: 28px; }
       .benefits-grid { grid-template-columns: 1fr; max-width: 440px; }
       .press-grid { grid-template-columns: 1fr; }
+      .leadership-columns { grid-template-columns: 1fr; gap: 32px; }
       .leadership-content { grid-template-columns: 1fr; text-align: center; }
       .leadership-photo { width: 160px; height: 160px; margin: 0 auto; }
       .leadership-info p { max-width: 100%; text-align: center; }
@@ -1048,12 +1356,14 @@
         padding: 12px 22px; font-size: 0.86rem; width: 100%; justify-content: center; min-width: unset;
       }
       .hero-actions { width: 100%; }
+      .hero-admin-note { width: 100%; justify-content: center; }
       .mission-banner p { font-size: 0.98rem; }
       .section-title { font-size: 1.4rem; }
       .section-subtitle { font-size: 0.92rem; }
       .how-card { padding: 28px 22px 24px; }
       .benefit-card { padding: 28px 22px 24px; }
       .focus-sidebar { padding: 24px; }
+      .leadership-columns { grid-template-columns: 1fr; gap: 28px; }
       .leadership-content { grid-template-columns: 1fr; text-align: center; }
       .leadership-photo { width: 140px; height: 140px; margin: 0 auto; }
       .leadership-info p { max-width: 100%; }
@@ -1089,6 +1399,13 @@
       .section-title { font-size: 1.25rem; }
     }
 
+    @media (max-width: 600px) {
+  .hero-admin-eyebrow {
+    text-align: left;
+    justify-content: flex-start;
+    align-self: flex-start;
+  }
+}
     /* ===== BADGE PLACEMENT ===== */
     .logo-badge {
       width: 34px; height: 34px; flex: 0 0 auto;
@@ -1153,6 +1470,86 @@
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== PARTICIPANT CAROUSEL ===== */
+    .carousel-section {
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 52px 0 56px;
+      overflow: hidden;
+    }
+    .carousel-track-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+    .carousel-fade {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .carousel-fade-left {
+      left: 0;
+      background: linear-gradient(90deg, var(--white) 0%, transparent 100%);
+    }
+    .carousel-fade-right {
+      right: 0;
+      background: linear-gradient(270deg, var(--white) 0%, transparent 100%);
+    }
+    .carousel-track {
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      width: max-content;
+      animation: carousel-scroll 80s linear infinite;
+      animation-play-state: paused;
+    }
+    .carousel-track.is-visible {
+      animation-play-state: running;
+    }
+    .carousel-slide {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 52px;
+    }
+    .carousel-slide img {
+      max-height: 52px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+    .carousel-slide-lg {
+      height: 65px;
+    }
+    .carousel-slide-lg img {
+      max-height: 65px;
+      max-width: 188px;
+    }
+    @keyframes carousel-scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 900px) {
+      .carousel-track { gap: 48px; animation-duration: 60s; }
+      .carousel-slide { height: 44px; }
+      .carousel-slide img { max-height: 44px; max-width: 120px; }
+      .carousel-fade { width: 60px; }
+    }
+    @media (max-width: 600px) {
+      .carousel-section { padding: 40px 0 44px; }
+      .carousel-track { gap: 36px; animation-duration: 50s; }
+      .carousel-slide { height: 36px; }
+      .carousel-slide img { max-height: 36px; max-width: 100px; }
+      .carousel-fade { width: 36px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1162,7 +1559,7 @@
     <a href="https://securebroker.org/contact/" class="utility-text utility-banner-link" aria-label="Join the founding group of brokers">
       <span class="utility-copy">
         <span class="utility-eyebrow">Join Now, Become Charter Member</span>
-        <span class="utility-message">Program opens July 2026</span>
+        <span class="utility-message">Program opens June 2026</span>
       </span>
     </a>
   </div>
@@ -1175,12 +1572,12 @@
         <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
       </a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>    
+        <li><a href="/contact">Contact</a></li>    
         <li><a href="/directory" target="_blank" rel="noopener">Directory</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#press">Press</a></li>
         <li><a href="#membership">Membership</a></li>
-        <li><a href="https://securebroker.org/coming-soon" class="btn-member">Member Sign In</a></li>
+        <li><a href="https://portal.securebroker.org/login" class="btn-member">Member Sign In</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Menu">
         <span></span><span></span><span></span>
@@ -1197,11 +1594,11 @@
         </div>
         <div class="hero-content">
           <div class="hero-label">Est. 2026</div>
-          <h1>Independent Certification for Alternative Finance</h1>
-          <p>Join the list of brokers committed to greater transparency and integrity — backed by independent verification.</p>
+          <h1>Broker Certification for Alternative Finance</h1>
+          <p>Join the brokers making responsible data handling visible through independent verification.</p>
           <div class="hero-actions">
             <a href="#membership" class="hero-btn" style="background: var(--forest); color: var(--white);">Apply</a>
-<a href="/requirements-for-secure-broker.pdf" target="_blank" rel="noopener noreferrer" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
+<a href="/get-certified-brokers.pdf" target="_blank" rel="noopener noreferrer" class="hero-btn" style="background: var(--green-accent); color: var(--white);">Requirements</a>
             <a href="https://securebroker.org/directory/" class="hero-btn" style="background: rgba(61,163,102,0.15); color: var(--green-accent); border: 1px solid rgba(61,163,102,0.3);" target="_blank" rel="noopener noreferrer">Directory</a>
           </div>
         </div>
@@ -1212,18 +1609,16 @@
   <!-- Mission Banner — light bg (different from Secure Funder's dark bg) -->
   <div class="mission-banner">
     <div class="container-narrow reveal">
-      <p><span style="font-size: 1.25rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.06em;">Our mission</span> is to address a longstanding gap in alternative finance: the lack of clear oversight around how sensitive merchant data is handled. As a result, misuse and theft of that data has become far too common. Secure Broker gives brokers a way to stand out as a trusted source.</p>
-
-      <a
+<p><span style="font-size: 1.25rem; font-weight: 700; color: var(--forest); text-transform: uppercase; letter-spacing: 0.06em;">Our mission</span> is to help establish a standard for how merchant data is handled in alternative finance. Secure Broker™ and Secure Funder™ give the industry a way to identify responsible operators through independent, evidence-based verification — not questionnaires, self-attestation, or paid placement. The goal is simple: help brokers and funders make better partnership decisions and reduce the data misuse that harms small business owners and the companies that serve them.</p>           <a
         href="https://www.linkedin.com/company/secure-broker™"
         class="mission-linkedin-card"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Follow Secure Broker on LinkedIn"
+        aria-label="Follow Us on LinkedIn"
       >
         <img src="linkedin.png" alt="LinkedIn" class="mission-linkedin-icon">
         <div class="mission-linkedin-text">
-          <span>Follow Secure Broker</span>
+          <span>Follow Us</span>
           <small>for program updates and announcements</small>
         </div>
       </a>
@@ -1232,63 +1627,52 @@
 
 
 
-  <!-- Charter Members -->
-  <section class="charter-section" style="padding: 56px 0;">
-    <div class="container" style="max-width: 1700px;">
-      <div style="text-align: center; margin-bottom: 28px;">
-        <div class="section-label">Trusted by Brokers and Funders</div>
-      </div>
-      <div class="charter-grid reveal">
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>1,000% count us in. The industry has needed this for a long time and sets the path for pairing Secure Brokers with members of <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" style="color: var(--green-accent); font-weight: 700; text-decoration: none;">Secure Funder</a>.</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="united.png" alt="United" class="charter-logo">
-          </div>
-        </div>
-      
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>Excited to be a part of this!</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="kalamata-new.png" alt="Kalamata Capital" class="charter-logo">
-          </div>
-        </div>
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>This is an important step forward toward tightening things up in this industry.</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="brite.png" alt="BriteCap" class="charter-logo">
-          </div>
-        </div>
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>The data security of our referral partners and borrowers is a top priority for us.</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="breakout.png" alt="Breakout Capital" class="charter-logo">
-          </div>
-        </div>
-        <div class="charter-card">
-          <div>
-            <div class="charter-quote-mark">&ldquo;</div>
-            <blockquote>We are excited to be part of your program and look forward to what's ahead.</blockquote>
-          </div>
-          <div class="charter-footer">
-            <img src="vox-funding.png" alt="Vox Funding" class="charter-logo">
-          </div>
-        </div>
-</div>
-
-      <div style="text-align: center; margin-top: 30px; font-size: 0.84rem; font-weight: 600; color: var(--green-accent);">
-        Apply before July 2026 to join as Charter Member
+  <!-- Participant Carousel -->
+  <section class="carousel-section">
+    <div style="text-align: center; margin-bottom: 32px;">
+      <div class="section-label">Trusted by Brokers and Funders</div>
+    </div>
+    <div class="carousel-track-wrapper">
+      <div class="carousel-fade carousel-fade-left"></div>
+      <div class="carousel-fade carousel-fade-right"></div>
+      <div class="carousel-track">
+        <div class="carousel-slide carousel-slide-lg"><img src="lynks.png" alt="Lynks"></div>
+        <div class="carousel-slide"><img src="kalamata.png" alt="Kalamata Capital"></div>
+        <div class="carousel-slide"><img src="big.png" alt="BIG"></div>
+         <div class="carousel-slide"><img src="capfront.png" alt="CapFront"></div>
+        <div class="carousel-slide"><img src="qualifi.png" alt="Qualifi"></div>
+        <div class="carousel-slide"><img src="united.png" alt="United Capital Source"></div>
+        <div class="carousel-slide"><img src="green.png" alt="Green"></div>
+        <div class="carousel-slide"><img src="breakout.png" alt="Breakout Capital"></div>
+        <div class="carousel-slide"><img src="flexibility.png" alt="Flexibility"></div>
+        <div class="carousel-slide"><img src="vox-funding.png" alt="Vox Funding"></div>
+        <div class="carousel-slide carousel-slide-lg"><img src="brite.png" alt="BriteCap"></div>
+        <div class="carousel-slide"><img src="shore.png" alt="Shore"></div>
+        <div class="carousel-slide"><img src="fintap.png" alt="Fintap"></div>
+        <div class="carousel-slide"><img src="capitawize.png" alt="Capitawize"></div>
+        <div class="carousel-slide"><img src="pg-new.png" alt="PG"></div>
+        <div class="carousel-slide"><img src="tag-new.png" alt="TAG"></div>
+        <div class="carousel-slide"><img src="vip-new.png" alt="VIP"></div>
+        <div class="carousel-slide"><img src="5-core-cap.png" alt="5 Core Capital"></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="carousel-slide carousel-slide-lg"><img src="lynks.png" alt="Lynks"></div>
+        <div class="carousel-slide"><img src="kalamata.png" alt="Kalamata Capital"></div>
+        <div class="carousel-slide"><img src="big.png" alt="BIG"></div>
+        <div class="carousel-slide"><img src="capfront.png" alt="CapFront"></div>
+        <div class="carousel-slide"><img src="qualifi.png" alt="Qualifi"></div>
+        <div class="carousel-slide"><img src="united.png" alt="United Capital Source"></div>
+        <div class="carousel-slide"><img src="green.png" alt="Green"></div>
+        <div class="carousel-slide"><img src="breakout.png" alt="Breakout Capital"></div>
+        <div class="carousel-slide"><img src="flexibility.png" alt="Flexibility"></div>
+        <div class="carousel-slide"><img src="vox-funding.png" alt="Vox Funding"></div>
+        <div class="carousel-slide carousel-slide-lg"><img src="brite.png" alt="BriteCap"></div>
+        <div class="carousel-slide"><img src="shore.png" alt="Shore"></div>
+        <div class="carousel-slide"><img src="fintap.png" alt="Fintap"></div>
+        <div class="carousel-slide"><img src="capitawize.png" alt="Capitawize"></div>
+        <div class="carousel-slide"><img src="pg-new.png" alt="PG"></div>
+        <div class="carousel-slide"><img src="tag-new.png" alt="TAG"></div>
+        <div class="carousel-slide"><img src="vip-new.png" alt="VIP"></div>
+        <div class="carousel-slide"><img src="5-core-cap.png" alt="5 Core Capital"></div>
       </div>
     </div>
   </section>
@@ -1300,30 +1684,7 @@
         <h2 class="section-title">Membership Benefits</h2>
         <p class="section-subtitle" style="margin: 0 auto; text-align: center; max-width: 760px;">When members on both sides come together,<br class="mobile-break"> the entire data chain is protected.</p>
       </div>
-      <!-- Ecosystem Visual — standalone -->
-      <div class="ecosystem-standalone reveal" style="display: flex; justify-content: center; padding: 32px 0 40px;">
-        <div style="background: var(--white); border-radius: 12px; padding: 32px clamp(16px, 4vw, 48px); box-shadow: 0 2px 12px rgba(0,0,0,0.06); max-width: 100%; overflow: hidden;">
-          <div class="ecosystem-inner">
-            <div class="ecosystem-side">
-              <img src="green-rings.png" alt="Secure Broker" class="ecosystem-badge">
-              <div class="ecosystem-label">Secure Broker</div>
-            </div>
-            <div class="ecosystem-center">
-              <div class="ecosystem-connector">
-                <div class="ecosystem-line"></div>
-                <div class="ecosystem-shield">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11.5 14.5 16 9.5" fill="none"/></svg>
-                </div>
-                <div class="ecosystem-line"></div>
-              </div>
-            </div>
-            <a href="https://securefunder.org/" target="_blank" rel="noopener noreferrer" class="ecosystem-side" style="text-decoration: none; color: inherit;">
-              <img src="blue-ring.png" alt="Secure Funder" class="ecosystem-badge">
-              <div class="ecosystem-label">Secure Funder</div>
-            </a>
-          </div>
-        </div>
-      </div>
+
       <div class="benefits-grid reveal">
         <div class="benefit-card">
           
@@ -1337,7 +1698,7 @@
         <div class="benefit-card">
           
           <h4>Verified Trust</h4>
-          <p>Independent third-party verification that carries more weight than simply saying you operate responsibly.</p>
+          <p>Receive digital badge. Independent third-party verification that carries more weight than simply saying you operate responsibly.</p>
         </div>
         <div class="benefit-card">
         
@@ -1354,6 +1715,7 @@
           <h4>Verify on Your Schedule</h4>
           <p>90-day grace period to complete verification.</p>
         </div>
+
       </div>
     </div>
   </section>
@@ -1364,7 +1726,6 @@
       <div class="eligibility-content">
         <div class="section-label">Eligibility</div>
         <h2 class="section-title">Are You Eligible?</h2>
-        <p class="eligibility-subtitle">A program for ISOs and brokers <br class="mobile-break"> in alternative finance.</p>
         <div class="eligibility-tags reveal">
           <span class="eligibility-tag">Working Capital</span>
           <span class="eligibility-tag">Merchant Cash Advance</span>
@@ -1379,23 +1740,33 @@
         </div>
       </div>
 
-      <!-- Focus Areas — different placement than Secure Funder -->
-      <div class="focus-layout reveal" style="margin-top: 90px;">
-        <div class="focus-text">
-          <h2 class="section-title">Who Should Join?</h2>
-          <p>Some applicants already have safeguards in place. Others use the framework to work toward certified status. The program supports both.</p>
+      <div class="eligibility-review-grid reveal">
+        <div class="eligibility-review-card">
+          <div class="section-label" style="text-align: left;">Who Should Join</div>
+          <h3>Brokers and ISOs</h3>
+          <p>For brokers with safeguards already in place, or those who use the framework as a path to improve.</p>
+          <a href="https://calendly.com/christina-aquamark" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; padding: 11px 22px; border-radius: 6px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; text-decoration: none; background: var(--green-accent); color: var(--white); transition: all 0.25s;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Schedule a Call
+          </a>
         </div>
-        <div class="focus-sidebar">
-          <div class="section-label">Focus Areas</div>
-          <p>We confirm that merchant data is protected to limit unauthorized external sharing.</p>
-          <div class="area-item"><div class="area-dot"></div> Process for vetting funders</div>
-          <div class="area-item"><div class="area-dot"></div> Document intake and storage</div>
-          <div class="area-item"><div class="area-dot"></div> System access and permissions</div>
-          <div class="area-item"><div class="area-dot"></div> Personnel policies</div>
+        <div class="eligibility-review-card">
+          <div class="section-label" style="text-align: left;">What We Review</div>
+          <p>Evidence-based verification, not attestations.</p>
+          <div class="review-list">
+            <div class="review-item"><div class="review-dot"></div> Process for vetting funders</div>
+            <div class="review-item"><div class="review-dot"></div> Document intake and storage</div>
+            <div class="review-item"><div class="review-dot"></div> System access and permissions</div>
+            <div class="review-item"><div class="review-dot"></div> Personnel policies</div>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
+
+
+
 
   <!-- Verification Stats — dark bg (inverted from Secure Funder's light banner) -->
   <section class="verification-banner">
@@ -1427,36 +1798,48 @@
         <h2 class="section-title" style="margin-bottom: 48px;">The Cost of No Standards</h2>
         <div class="ecosystem-risk-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: start; text-align: center;">
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
-            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Leak</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Unsecured brokers risk internal backdooring.</p>
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">Data Exposure</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Weak controls create opportunities for unauthorized use.</p>
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
-            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Stack</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Stolen deals lead to excessive stacking and increased PTI.</p>
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">Deal Misuse</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Stolen submissions can lead to unauthorized solicitation and stacking.</p>
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
-            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">The Impact</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">When merchants are overextended, everyone in the stack takes the hit.</p>
+            <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">Market Impact</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Overextended merchants struggle with repayment.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
   <!-- Leadership -->
   <section id="leadership" class="leadership-section">
     <div class="container">
       <div class="section-label">Leadership</div>
       <h2 class="section-title" style="margin-bottom: 36px;">Program Director</h2>
-      <div class="leadership-content reveal">
-        <div class="leadership-photo">
-          <img src="headshot.png" alt="Christina Duncan — Program Director, Secure Broker" />
+      <div class="leadership-columns reveal">
+        <div class="leadership-content">
+          <div class="leadership-photo">
+            <img src="headshot.png" alt="Christina Duncan — Program Director, Secure Broker" />
+          </div>
+          <div class="leadership-info">
+            <h3>Christina Duncan</h3>
+            <div class="role">ABOUT</div>
+            <p>With nearly 20 years in alternative finance, Christina brings deep operational experience spanning ISO operations, funder relationships, and the day-to-day realities of how merchant data moves through the industry. She founded <a href="https://aquamark.io" target="_blank" rel="noopener noreferrer" style="color: var(--green-accent); font-weight: 600; text-decoration: none;">Aquamark</a> to address industry-wide data security challenges she witnessed firsthand, and created Secure Funder and Secure Broker to establish a practical framework for self-governance.</p>
+          </div>
         </div>
-        <div class="leadership-info">
-          <h3>Christina Duncan</h3>
-          <div class="role">Program Director</div>
-          <p>With nearly 20 years in alternative finance, Christina brings deep operational experience spanning ISO operations, funder relationships, and the day-to-day realities of how merchant data moves through the industry. She founded Aquamark to address industry-wide data security challenges she witnessed firsthand, and created Secure Funder and Secure Broker to establish a practical framework for self-governance.</p>
+        <div class="leadership-video">
+          <video controls preload="metadata" poster="">
+            <source src="video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption">Christina explains the Secure Broker™ program</div>
         </div>
+      </div>
+      
       </div>
     </div>
   </section>
@@ -1475,15 +1858,15 @@
         <div style="text-align: left;">
           <div class="section-label" style="color: var(--green-accent-soft);">Membership</div>
           <h2 class="section-title" style="color: var(--white); margin-bottom: 12px; text-align: left;">Become a Member</h2>
-          <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 20px;">Founding member enrollment until July 2026</p>
+          <p style="font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 20px;">Founding member enrollment until June 2026</p>
           <div style="font-size: 1rem; color: var(--fern); letter-spacing: 0.01em; margin-bottom: 4px;">Under 10 salespeople — <span style="font-weight: 600; color: var(--white);">$499</span>/year</div>
           <div style="font-size: 1rem; color: var(--fern); letter-spacing: 0.01em; margin-bottom: 4px;">Over 10 salespeople — <span style="font-weight: 600; color: var(--white);">$1,499</span>/year</div>
-          <div style="font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 28px;">Flexible payment options available</div>
+          <div style="font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 28px;">Monthly payment options available</div>
 
           <!-- Buttons -->
           <div style="display: flex; gap: 12px;" class="membership-btn-row">
             <a href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: var(--white); color: var(--forest); white-space: nowrap;">Apply for Membership</a>
-            <a href="https://securebroker.org/requirements-for-secure-broker.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.18);">View Requirements</a>
+            <a href="https://securebroker.org/get-certified-brokers.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 28px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.18);">View Requirements</a>
           </div>
         </div>
 
@@ -1524,7 +1907,7 @@
         <p class="section-subtitle">Join the founding group of brokers setting a higher standard.</p>
         <div class="cta-actions">
           <a href="https://securebroker.org/contact/" class="btn-primary">Apply for Charter Membership</a>
-          <a href="https://securebroker.org/requirements-for-secure-broker.pdf" class="btn-ghost-white" target="_blank" rel="noopener noreferrer">View Requirements</a>
+          <a href="https://securebroker.org/get-certified-brokers.pdf" class="btn-ghost-white" target="_blank" rel="noopener noreferrer">View Requirements</a>
         </div>
       </div>
     </div>
@@ -1553,7 +1936,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="https://securebroker.org/contact/" target="_blank">Send a Message</a>
+          <a href="https://securebroker.org/contact/" target="_blank">Contact Us</a>
           <a href="https://securebroker.org/terms-privacy/" target="_blank">Terms & Privacy</a>
         </div>
       </div>
@@ -1573,7 +1956,7 @@
       </a>
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
     </div>
-    <a href="#about" onclick="closeMobileMenu()">About</a>
+    <a href="/contact" onclick="closeMobileMenu()">Contact</a>
 
     <a href="/directory" target="_blank" rel="noopener" onclick="closeMobileMenu()">Directory</a>
     <a href="#leadership" onclick="closeMobileMenu()">Leadership</a>
@@ -1601,6 +1984,21 @@
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Start carousel only when visible — observe the wrapper, not the track
+    const carouselWrapper = document.querySelector('.carousel-track-wrapper');
+    const carouselTrack = document.querySelector('.carousel-track');
+    if (carouselWrapper && carouselTrack) {
+      const carouselObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            carouselTrack.classList.add('is-visible');
+            carouselObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      carouselObserver.observe(carouselWrapper);
+    }
   </script>
 
 </body>
