@@ -1578,8 +1578,16 @@
       height: 160px;
       border: 2px solid var(--border-light);
       border-radius: 50%;
-      object-fit: cover;
-      object-position: center;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+    }
+    .hiw-badge img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
     }
     .hiw-grid {
       display: grid;
@@ -1974,7 +1982,9 @@
       <div class="hiw-layout reveal">
         <div class="hiw-left">
           <h2 class="section-title">The Verification Process</h2>
-          <img src="secure-broker-badge-2026.png" alt="Secure Broker™ Certified 2026" class="hiw-badge">
+          <div class="hiw-badge">
+            <img src="secure-broker-badge-2026.png" alt="Secure Broker™ Certified 2026">
+          </div>
         </div>
         <div class="hiw-grid">
           <div class="hiw-item">
