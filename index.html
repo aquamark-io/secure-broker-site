@@ -1552,6 +1552,90 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* ===== HOW VERIFICATION WORKS ===== */
+    .how-it-works-section {
+      background: var(--white);
+      padding: 88px 0;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .hiw-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 56px;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .hiw-left {
+      text-align: left;
+    }
+    .hiw-left .section-title {
+      margin-bottom: 28px;
+    }
+    .hiw-badge {
+      width: 160px;
+      height: 160px;
+      border: 2px solid var(--border-light);
+      border-radius: 50%;
+    }
+    .hiw-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .hiw-item {
+      padding: 24px;
+      background: var(--cloud);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+    }
+    .hiw-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--green-accent);
+    }
+    .hiw-item h4 {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+    .hiw-item p {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .hiw-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+      }
+      .hiw-left {
+        text-align: center;
+      }
+      .hiw-badge {
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 480px) {
+      .hiw-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* ===== PARTICIPANT CAROUSEL ===== */
     .carousel-section {
       background: var(--white);
@@ -1882,33 +1966,45 @@
     </div>
   </section>
 
-
-  <!-- Verification Stats — dark bg (inverted from Secure Funder's light banner) -->
-  <section class="verification-banner">
-    <div class="container-narrow">
-      <div class="vb-eyebrow">Standard of Trust</div>
-      <h2>It Begins with Brokers</h2>
-      <p style="margin-top: 14px;">The industry runs on trust. Certification sets you apart.</p>
-      <div class="stats-row reveal">
-        <div class="stat-highlight">
-          <div class="stat-number">1 in 3</div>
-          <div class="stat-label">funders have cut ties with a broker over trust issues</div>
+  <!-- How Verification Works -->
+  <section class="how-it-works-section">
+    <div class="container">
+      <div class="hiw-layout reveal">
+        <div class="hiw-left">
+          <h2 class="section-title">The Verification Process</h2>
+          <img src="secure-broker-badge-2026.png" alt="Secure Broker™ Certified 2026" class="hiw-badge">
         </div>
-        <div class="stats-divider"></div>
-        <div class="stat-highlight">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">of merchants expect their data to be handled securely</div>
+        <div class="hiw-grid">
+          <div class="hiw-item">
+            <div class="hiw-num">1</div>
+            <h4>Secure Portal</h4>
+            <p>Hosted on SOC 2 infrastructure.</p>
+          </div>
+          <div class="hiw-item">
+            <div class="hiw-num">2</div>
+            <h4>Upload Evidence</h4>
+            <p>Screen recordings, screenshots, documents.</p>
+          </div>
+          <div class="hiw-item">
+            <div class="hiw-num">3</div>
+            <h4>On Your Schedule</h4>
+            <p>90-day grace period, extensions available.</p>
+          </div>
+          <div class="hiw-item">
+            <div class="hiw-num">4</div>
+            <h4>Collaborate</h4>
+            <p>Message program team and other members.</p>
+          </div>
         </div>
       </div>
-      <p style="font-size: 0.72rem; color: rgba(255,255,255,0.5); margin-top: 28px; letter-spacing: 0.02em;">Based on industry survey data and funder feedback</p>
     </div>
   </section>
 
   <!-- About -->
   <!-- Ecosystem Risk -->
-  <section id="about" style="background: var(--white); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 88px 0;">
+  <section id="about" style="background: var(--cloud); border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); padding: 88px 0;">
     <div class="container">
-      <div style="max-width: 960px; margin: 0 auto; text-align: center;">
+      <div style="max-width: 1020px; margin: 0 auto; text-align: center;">
         <div class="section-label">The Bigger Picture</div>
         <h2 class="section-title" style="margin-bottom: 48px;">The Cost of No Standards</h2>
         <div class="ecosystem-risk-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: start; text-align: center;">
@@ -1918,11 +2014,11 @@
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
             <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">Deal Misuse</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Stolen submissions can lead to unauthorized solicitation and stacking.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Stolen submissions leads to unauthorized solicitation and excessive stacking.</p>
           </div>
           <div style="padding: 28px 24px; border: 1px solid var(--green-accent); border-radius: 12px;">
             <div style="display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); background: var(--green-accent); padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;">Market Impact</div>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Overextended merchants struggle with repayment.</p>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.75; margin: 0;">Overextended merchants struggle to repay and don't renew.</p>
           </div>
         </div>
       </div>
