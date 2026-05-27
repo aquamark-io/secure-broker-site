@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Broker x Levr.ai</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .card {
+    width: 1200px;
+    height: 628px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1a2e 0%, #0d2240 40%, #0f2d4f 100%);
+  }
+
+  /* Subtle grid pattern */
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+  }
+
+  /* Green glow behind Secure Broker logo area */
+  .glow-green {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(46, 184, 92, 0.12) 0%, transparent 70%);
+    top: 80px;
+    left: 160px;
+    z-index: 0;
+  }
+
+  /* Purple glow behind Levr logo area */
+  .glow-purple {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    background: radial-gradient(circle, rgba(88, 80, 236, 0.12) 0%, transparent 70%);
+    top: 80px;
+    right: 160px;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 60px;
+  }
+
+  .top-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 36px;
+  }
+
+  .logos-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 44px;
+  }
+
+  .logo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sb-logo img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+  }
+
+  .sb-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  /* Levr logo block */
+  .levr-box {
+    width: 120px;
+    height: 120px;
+    background: #5850EC;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .levr-box span {
+    font-family: 'Sora', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .levr-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  /* Connector "x" */
+  .connector {
+    font-family: 'Sora', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 20px;
+  }
+
+  /* Divider line */
+  .divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #2eb85c, #5850EC);
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+
+  .headline {
+    font-family: 'Sora', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .headline .highlight-green {
+    color: #4ade80;
+  }
+
+  .headline .highlight-purple {
+    color: #a5b4fc;
+  }
+
+  .subtext {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  /* Bottom accent bar */
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2eb85c 0%, #4ade80 30%, #5850EC 70%, #818cf8 100%);
+  }
+
+  /* Corner accents */
+  .corner-tl, .corner-br {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+  }
+  .corner-tl {
+    top: 24px;
+    left: 24px;
+    border-top: 2px solid rgba(46,184,92,0.3);
+    border-left: 2px solid rgba(46,184,92,0.3);
+  }
+  .corner-br {
+    bottom: 24px;
+    right: 24px;
+    border-bottom: 2px solid rgba(88,80,236,0.3);
+    border-right: 2px solid rgba(88,80,236,0.3);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="glow-green"></div>
+  <div class="glow-purple"></div>
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+
+  <div class="content">
+    <div class="top-label">Partnership Announcement</div>
+
+    <div class="logos-row">
+      <div class="logo-block">
+        <!-- Secure Broker interlocking rings -->
+        <div class="sb-logo">
+          <img src="https://securebroker.org/green-rings.png" alt="Secure Broker">
+        </div>
+        <span class="sb-name">Secure Broker™</span>
+      </div>
+
+      <div class="connector">×</div>
+
+      <div class="logo-block">
+        <div class="levr-box">
+          <span>Levr</span>
+        </div>
+        <span class="levr-name">Levr.ai</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="headline">
+      Meeting Brokers Where They Are
+    </div>
+
+    <div class="subtext">
+      Coming together to elevate alternative finance brokers across the US.
+    </div>
+  </div>
+
+  <div class="bottom-bar"></div>
+</div>
+</body>
+</html>
