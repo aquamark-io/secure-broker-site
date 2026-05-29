@@ -905,6 +905,26 @@
     }
 
 
+    /* ===== SCALE BANNER ===== */
+    .scale-banner {
+      background: var(--forest);
+      padding: 52px 0;
+      text-align: center;
+    }
+    .scale-banner p {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .scale-banner { padding: 40px 0; }
+      .scale-banner p { font-size: 1.02rem; }
+    }
+
     /* ===== FOUNDER QUOTE CALLOUT ===== */
     .founder-quote-section {
       padding: 64px 0 36px;
@@ -1966,6 +1986,13 @@
 
     </div>
   </section>
+
+  <!-- Scale Banner -->
+  <div class="scale-banner">
+    <div class="container-narrow">
+      <p>Practical enough for companies of all sizes. Credible enough to mean something.</p>
+    </div>
+  </div>
 
 
   <!-- Founder Quote Callout -->
