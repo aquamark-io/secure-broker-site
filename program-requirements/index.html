@@ -14,37 +14,27 @@
     :root {
       --forest: #11352A;
       --forest-mid: #1A4A34;
-      --sage: #2D5A3D;
-      --fern: #4A8B60;
-      --moss: #6BAF7E;
-      --mint: #A3D4B0;
-      --frost: #D8EDE0;
-      --meadow: #EFF7F2;
-      --white: #FFFFFF;
       --green-accent: #3DA366;
       --green-accent-soft: #5FBF80;
+      --white: #FFFFFF;
       --text-primary: #0B2918;
       --text-secondary: #3D6B4E;
-      --text-muted: #6A9B7C;
       --border: #C5DFD0;
       --border-light: #DEF0E5;
+      --meadow: #EFF7F2;
       --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-x: hidden; }
+    html, body { height: 100%; overflow: hidden; }
     body {
       font-family: var(--font);
       color: var(--text-primary);
       background: var(--white);
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Nav */
     .nav {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -53,13 +43,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
     .nav-inner {
       max-width: 1240px;
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
     }
     .logo {
       display: flex;
@@ -68,59 +58,18 @@
       color: var(--forest);
       gap: 12px;
     }
-    .logo-badge {
-      width: 30px;
-      height: 30px;
-    }
-    .logo-text {
-      font-size: 1.3rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .logo-tm {
-      font-size: 0.55em;
-      vertical-align: super;
-      font-weight: 400;
-      margin-left: 1px;
-    }
-    .nav-back {
-      font-size: 0.88rem;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: all 0.2s;
-    }
-    .nav-back:hover {
-      background: var(--meadow);
-      color: var(--text-primary);
-    }
+    .logo-badge { width: 30px; height: 30px; }
+    .logo-text { font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
+    .logo-tm { font-size: 0.55em; vertical-align: super; font-weight: 400; margin-left: 1px; }
 
-    /* Main */
     .main {
       flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 60px 24px 80px;
+      padding: 0 24px;
     }
-    .content {
-      text-align: center;
-      max-width: 640px;
-      width: 100%;
-    }
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--green-accent);
-      margin-bottom: 12px;
-    }
+    .content { text-align: center; }
     .title {
       font-size: 1.9rem;
       font-weight: 700;
@@ -129,103 +78,35 @@
       color: var(--forest);
       margin-bottom: 36px;
     }
-    .subtitle {
-      font-size: 1rem;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      margin-bottom: 44px;
-    }
-
-    /* Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-    .card {
-      background: var(--forest);
-      border: 1px solid var(--forest-mid);
-      border-radius: 14px;
-      padding: 36px 28px 32px;
-      text-align: center;
-      text-decoration: none;
-      color: var(--white);
-      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    .buttons {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .card:hover {
-      border-color: var(--green-accent);
-      box-shadow: 0 8px 28px rgba(11,41,24,0.18);
-      transform: translateY(-3px);
-    }
-    .card-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      display: flex;
-      align-items: center;
+      gap: 14px;
       justify-content: center;
-      margin-bottom: 20px;
     }
-    .card-icon svg {
-      color: var(--mint);
-    }
-    .card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 8px;
-      letter-spacing: -0.01em;
-    }
-    .card p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-      margin: 0;
-    }
-    .card .view-btn {
-      margin-top: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--white);
-      background: var(--green-accent);
-      border: none;
-      border-radius: 6px;
-      padding: 10px 24px;
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
-    .card:hover .view-btn {
-      background: var(--green-accent-soft);
-    }
-
-    @media (max-width: 520px) {
-      .cards { grid-template-columns: 1fr; max-width: 320px; }
-      .title { font-size: 1.5rem; }
-      .main { padding: 40px 20px 60px; }
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 24px;
-      border-top: 1px solid var(--border-light);
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-    .footer a {
-      color: var(--green-accent);
+      justify-content: center;
+      padding: 14px 32px;
+      min-width: 200px;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 0.92rem;
+      font-weight: 600;
       text-decoration: none;
+      transition: all 0.25s;
+      background: var(--forest);
+      color: var(--white);
     }
-    .footer a:hover {
-      text-decoration: underline;
+    .btn:hover {
+      background: var(--forest-mid);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(11,41,24,0.12);
+    }
+
+    @media (max-width: 480px) {
+      .buttons { flex-direction: column; gap: 10px; }
+      .title { font-size: 1.5rem; margin-bottom: 28px; }
     }
   </style>
 </head>
@@ -237,44 +118,18 @@
         <img class="logo-badge" src="/green-rings.png" alt="Secure Broker">
         <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
       </a>
-      <a href="/" class="nav-back">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        Back to Home
-      </a>
     </div>
   </nav>
 
   <main class="main">
     <div class="content">
       <h1 class="title">Program Requirements</h1>
-
-      <div class="cards">
-        <a href="/broker_standards_v2.pdf" target="_blank" rel="noopener noreferrer" class="card">
-          <div class="card-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="7" r="4"/><path d="M12 13c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"/></svg>
-          </div>
-          <h3>Solo Operators</h3>
-          <p>For independent brokers</p>
-          <div class="view-btn">View
-          </div>
-        </a>
-
-        <a href="/broker_standards_v2.pdf" target="_blank" rel="noopener noreferrer" class="card">
-          <div class="card-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75C23 14.08 18.67 13 16.5 13zM12.5 17.5H2.5v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0h-7.5v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm9-1c1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3 1.34 3 3 3z"/></svg>
-          </div>
-          <h3>Teams</h3>
-          <p>For brokerages of all sizes</p>
-          <div class="view-btn">View
-          </div>
-        </a>
+      <div class="buttons">
+        <a href="/broker_standards_v2.pdf" target="_blank" rel="noopener noreferrer" class="btn">Solo Operators</a>
+        <a href="/broker_standards_v2.pdf" target="_blank" rel="noopener noreferrer" class="btn">Teams</a>
       </div>
     </div>
   </main>
-
-  <div class="footer">
-    <span>&copy; 2026 Secure Broker™ · Administered by <a href="https://aquamark.io" target="_blank">Aquamark</a></span>
-  </div>
 
 </body>
 </html>
