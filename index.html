@@ -1553,6 +1553,60 @@
     }
 
     /* ===== ANIMATIONS ===== */
+    /* ===== STAND APART SECTION ===== */
+    .stand-apart {
+      padding: 80px 0;
+      background: var(--meadow);
+    }
+    .stand-apart-inner {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .stand-apart-photo {
+      flex: 0 0 340px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+    .stand-apart-photo img {
+      display: block;
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+    .stand-apart-copy {
+      flex: 1;
+    }
+    .stand-apart-copy h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--forest);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .stand-apart-copy p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 420px;
+    }
+    @media (max-width: 768px) {
+      .stand-apart { padding: 48px 0; }
+      .stand-apart-inner {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+      }
+      .stand-apart-photo { flex: none; width: 100%; max-width: 320px; margin: 0 auto; }
+      .stand-apart-photo img { height: 360px; }
+      .stand-apart-copy p { max-width: none; }
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1940,6 +1994,19 @@
           <p>90-day grace period to complete verification.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Stand Apart -->
+  <section class="stand-apart">
+    <div class="stand-apart-inner">
+      <div class="stand-apart-copy">
+        <h2>Stand apart.</h2>
+        <p>Join the brokers building a more trusted funding process — and give merchants and funders a clear reason to choose you. As more companies participate, bad actors have fewer places to hide.</p>
+      </div>
+      <div class="stand-apart-photo">
+        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" alt="Professional smiling">
       </div>
     </div>
   </section>
