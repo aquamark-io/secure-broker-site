@@ -1553,6 +1553,60 @@
     }
 
     /* ===== ANIMATIONS ===== */
+    /* ===== STAND APART SECTION ===== */
+    .stand-apart {
+      padding: 80px 0;
+      background: var(--meadow);
+    }
+    .stand-apart-inner {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .stand-apart-graphic {
+      flex: 0 0 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .stand-apart-graphic img {
+      display: block;
+      width: 160px;
+      height: 160px;
+      opacity: 0.35;
+    }
+    .stand-apart-copy {
+      flex: 1;
+    }
+    .stand-apart-copy h2 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--forest);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .stand-apart-copy p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-width: 420px;
+    }
+    @media (max-width: 768px) {
+      .stand-apart { padding: 48px 0; }
+      .stand-apart-inner {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+      }
+      .stand-apart-graphic { flex: none; width: 120px; margin: 0 auto; }
+      .stand-apart-graphic img { width: 120px; height: 120px; }
+      .stand-apart-copy p { max-width: none; }
+    }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
@@ -1940,6 +1994,19 @@
           <p>90-day grace period to complete verification.</p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Stand Apart -->
+  <section class="stand-apart">
+    <div class="stand-apart-inner">
+      <div class="stand-apart-copy">
+        <h2>Stand apart.</h2>
+        <p>Join the brokers building a more trusted funding process — and give merchants and funders a clear reason to choose you. As more companies participate, bad actors have fewer places to hide.</p>
+      </div>
+      <div class="stand-apart-graphic">
+        <img src="green-rings.png" alt="">
       </div>
     </div>
   </section>
