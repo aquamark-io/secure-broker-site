@@ -1508,6 +1508,7 @@
       .ecosystem-risk-grid > div { max-width: 260px; margin: 0 auto; }
       .membership-btn-row { flex-direction: column !important; }
       .membership-btn-row a { width: 100%; }
+      .pricing-cards { max-width: 100% !important; }
       .membership-layout {
         flex-direction: column !important;
         gap: 32px !important;
@@ -2114,42 +2115,32 @@
     <div class="container">
       <div class="reveal" style="max-width: 720px; margin: 0 auto; text-align: center;">
 
-        <!-- Badge -->
-        <img src="secure-broker-badge-2026.png" alt="Secure Broker™ Certified 2026" style="width: 140px; height: 140px; border-radius: 50%; margin-bottom: 2rem; display: inline-block;">
-
         <!-- Header -->
         <div class="section-label" style="color: var(--green-accent-soft);">Membership</div>
-        <h2 class="section-title" style="color: var(--white); margin-bottom: 1.5rem;">Become a Member</h2>
+        <h2 class="section-title" style="color: var(--white); margin-bottom: 2rem;">Become a Member</h2>
 
-        <!-- Pricing -->
-        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
-          <div>
-            <div style="font-size: 2rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em;">$499<span style="font-size: 0.9rem; font-weight: 500; color: var(--fern);">/year</span></div>
-            <div style="font-size: 0.78rem; color: var(--fern); font-weight: 600;">Small Teams</div>
+        <!-- Pricing Cards -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 480px; margin: 0 auto 1.5rem;" class="pricing-cards">
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 2rem 1.5rem; text-align: center;">
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-accent-soft); margin-bottom: 0.75rem;">Small Teams</div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$499</div>
+            <div style="font-size: 0.85rem; color: var(--fern); margin-top: 0.25rem;">/year</div>
           </div>
-          <div>
-            <div style="font-size: 2rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em;">$1,499<span style="font-size: 0.9rem; font-weight: 500; color: var(--fern);">/year</span></div>
-            <div style="font-size: 0.78rem; color: var(--fern); font-weight: 600;">Standard</div>
+          <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 2rem 1.5rem; text-align: center;">
+            <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-accent-soft); margin-bottom: 0.75rem;">Standard</div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$1,499</div>
+            <div style="font-size: 0.85rem; color: var(--fern); margin-top: 0.25rem;">/year</div>
           </div>
         </div>
-        <div style="font-size: 0.75rem; color: var(--white); margin-bottom: 2.5rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Monthly Available</div>
+        <div style="font-size: 0.75rem; color: var(--white); margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Monthly Available</div>
 
-        <!-- Details -->
-        <div class="membership-details">
-          <div class="membership-detail">
-            <div class="membership-detail-label">Payment</div>
-            <div class="membership-detail-value">Not due until you submit your evidence</div>
-          </div>
-          <div class="membership-detail">
-            <div class="membership-detail-label">Verification window</div>
-            <div class="membership-detail-value">90 days to complete verification</div>
-          </div>
-        </div>
+        <!-- What's included -->
+        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 640px; margin: 0 auto 2.5rem;">Covers program administration, evidence reviews, background checks, and directory listing. Payment begins when you're ready to submit — with a 90-day verification window after joining.</p>
 
         <!-- Buttons -->
-        <div style="display: flex; gap: 12px; justify-content: center; margin-top: 2.5rem;" class="membership-btn-row">
+        <div style="display: flex; gap: 12px; justify-content: center;" class="membership-btn-row">
           <a href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: var(--white); color: var(--forest);">Apply for Membership</a>
-          <a href="https://securebroker.org/standards-broker.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.18);">View Requirements</a>
+          <a href="https://securebroker.org/standards-broker.pdf" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; padding: 14px 32px; border-radius: 6px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: all 0.25s; background: var(--green-accent); color: var(--white);">View Requirements</a>
         </div>
 
       </div>
