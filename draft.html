@@ -3,175 +3,430 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Secure Broker™ certification requirements and evidence expectations for alternative finance brokerages.">
   <title>Certification Requirements — Secure Broker™</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/green-rings.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--forest:#11352A;--green-accent:#3DA366;--fern:#A3C9B0;--white:#FFF;--off-white:#FAFBFA;--text-primary:#0B2918;--text-secondary:#3D6B4E;--text-muted:#7C9E8A;--border:#D4E2DA;--border-light:#E8F0EC;--font:'Inter',system-ui,sans-serif}
+    :root{
+      --forest:#11352A;
+      --forest-mid:#1A4A34;
+      --sage:#2D5A3D;
+      --fern:#4A8B60;
+      --mint:#A3D4B0;
+      --frost:#D8EDE0;
+      --meadow:#EFF7F2;
+      --white:#FFFFFF;
+      --green-accent:#3DA366;
+      --green-accent-soft:#5FBF80;
+      --green-accent-pale:#E2F4E9;
+      --text-primary:#0B2918;
+      --text-secondary:#3D6B4E;
+      --text-muted:#6A9B7C;
+      --border:#C5DFD0;
+      --border-light:#DEF0E5;
+      --font-display:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      --font-body:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
+
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:var(--font);color:var(--text-primary);background:var(--white);-webkit-font-smoothing:antialiased}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--font-body);color:var(--text-primary);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit}
 
-    .nav{background:var(--white);border-bottom:1px solid var(--border-light);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:center}
-    .nav-inner{max-width:860px;width:100%;display:flex;align-items:center;justify-content:space-between}
-    .logo{display:flex;align-items:center;text-decoration:none;color:var(--forest);gap:10px}
-    .logo-badge{width:28px;height:28px}.logo-text{font-size:1.15rem;font-weight:700}.logo-tm{font-size:.5em;vertical-align:super;font-weight:400}
-    .nav-btn{padding:9px 20px;background:var(--forest);color:var(--white);border-radius:5px;font-size:.82rem;font-weight:600;text-decoration:none}
+    .main-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;box-shadow:0 1px 4px rgba(11,41,24,.04)}
+    .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:flex;align-items:center;text-decoration:none;color:var(--forest);gap:12px}
+    .logo-badge{width:30px;height:30px;display:block}
+    .logo-text{font-family:var(--font-display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+    .logo-tm{font-size:.55em;vertical-align:super;font-weight:400;margin-left:1px}
+    .nav-links{display:flex;align-items:center;gap:6px}
+    .nav-links a{text-decoration:none;color:var(--text-primary);font-size:.88rem;font-weight:500;padding:8px 12px;border-radius:6px;transition:background .2s,color .2s}
+    .nav-links a:hover{background:var(--meadow)}
+    .nav-links .btn-member{background:var(--forest);color:var(--white);font-weight:600;margin-left:4px;padding:10px 18px}
+    .nav-links .btn-member:hover{background:var(--forest-mid)}
 
-    .container{max-width:860px;margin:0 auto;padding:0 24px}
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .container-narrow{max-width:900px;margin:0 auto;padding:0 24px}
 
-    /* Header */
-    .page-header{padding:72px 0 56px;border-bottom:1px solid var(--border-light)}
-    .page-header h1{font-size:2rem;font-weight:800;color:var(--forest);letter-spacing:-.02em;margin-bottom:12px}
-    .page-header p{font-size:1rem;color:var(--text-secondary);line-height:1.7;max-width:580px}
+    .hero{background:var(--meadow);border-bottom:1px solid var(--border-light);position:relative;overflow:hidden}
+    .hero::before{content:"";position:absolute;top:-220px;right:-160px;width:620px;height:620px;background:radial-gradient(circle,rgba(61,163,102,.13) 0%,transparent 70%);pointer-events:none}
+    .hero-inner{position:relative;z-index:1;padding:82px 0 72px;max-width:860px}
+    .hero-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-accent);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+    .hero-label::before{content:"";width:22px;height:1.5px;background:var(--green-accent)}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.35rem,5vw,3.65rem);font-weight:700;line-height:1.08;letter-spacing:-.035em;color:var(--forest);max-width:780px;margin-bottom:22px}
+    .hero p{font-size:1.06rem;line-height:1.78;color:var(--text-secondary);max-width:650px;margin-bottom:30px}
+    .hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green-accent);color:var(--white);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:6px;text-decoration:none;transition:all .25s}
+    .btn-primary:hover{background:var(--green-accent-soft);transform:translateY(-1px);box-shadow:0 4px 14px rgba(61,163,102,.3)}
+    .btn-ghost{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--forest);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:6px;text-decoration:none;border:2px solid var(--border);transition:all .25s}
+    .btn-ghost:hover{border-color:var(--forest);background:rgba(255,255,255,.45)}
 
-    /* Content sections */
-    .content-section{padding:48px 0;border-bottom:1px solid var(--border-light)}
-    .content-section:last-of-type{border-bottom:none}
-    .section-label{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:20px}
-    .content-section h2{font-size:1.3rem;font-weight:700;color:var(--forest);margin-bottom:12px;letter-spacing:-.01em}
-    .content-section p{font-size:.95rem;color:var(--text-secondary);line-height:1.75;margin-bottom:12px}
-    .content-section p:last-child{margin-bottom:0}
+    section{padding:76px 0;border-bottom:1px solid var(--border-light)}
+    section:last-of-type{border-bottom:none}
+    .section-header{max-width:700px;margin-bottom:42px}
+    .section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-accent);margin-bottom:12px}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;line-height:1.2;letter-spacing:-.015em;color:var(--forest);margin-bottom:14px}
+    .section-subtitle{font-size:1rem;color:var(--text-secondary);line-height:1.75;max-width:650px}
 
-    /* Principles list */
-    .principles{list-style:none;margin-top:24px}
-    .principles li{font-size:.92rem;color:var(--text-primary);padding:14px 0;border-bottom:1px solid var(--border-light);line-height:1.6;display:flex;gap:12px}
-    .principles li:last-child{border-bottom:none}
-    .principles .check{color:var(--green-accent);font-weight:600;flex-shrink:0;margin-top:1px}
+    .overview-section{background:var(--white)}
+    .overview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)}
+    .overview-item{padding:24px 28px;border-bottom:1px solid var(--border-light)}
+    .overview-item:nth-child(odd){border-right:1px solid var(--border-light)}
+    .overview-item:nth-last-child(-n+2){border-bottom:none}
+    .overview-item h3{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--forest);margin-bottom:8px}
+    .overview-item p{font-size:.92rem;color:var(--text-secondary);line-height:1.68}
 
-    /* Requirements */
-    .req-list{margin-top:32px}
-    .req-item{padding:28px 0;border-bottom:1px solid var(--border-light)}
-    .req-item:last-child{border-bottom:none}
-    .req-item-header{display:flex;align-items:center;gap:14px;margin-bottom:8px}
-    .req-item-num{font-size:.75rem;font-weight:700;color:var(--text-muted);min-width:20px}
-    .req-item h3{font-size:1.05rem;font-weight:700;color:var(--forest)}
-    .req-item p{font-size:.92rem;color:var(--text-secondary);line-height:1.7;padding-left:34px}
-    .req-examples{font-size:.88rem !important;color:var(--text-muted) !important;font-style:italic;margin-top:4px}
+    .process-section{background:var(--frost)}
+    .process-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .process-card{background:rgba(255,255,255,.62);border:1px solid rgba(11,41,24,.1);border-radius:14px;padding:28px 26px;box-shadow:0 8px 28px rgba(11,41,24,.04)}
+    .process-num{width:42px;height:42px;border-radius:50%;background:var(--green-accent);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;margin-bottom:20px;box-shadow:0 4px 12px rgba(61,163,102,.25)}
+    .process-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--forest);margin-bottom:10px}
+    .process-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.68}
 
-    /* Process */
-    .process{margin-top:28px}
-    .process-step{display:flex;gap:20px;padding:20px 0}
-    .process-num{font-size:.7rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;min-width:48px;padding-top:2px}
-    .process-step h4{font-size:.95rem;font-weight:700;color:var(--forest);margin-bottom:4px}
-    .process-step p{font-size:.9rem;color:var(--text-secondary);line-height:1.65}
+    .requirements-section{background:var(--white)}
+    .requirements-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:48px;align-items:start}
+    .sidebar{position:sticky;top:92px;background:var(--meadow);border:1px solid var(--border-light);border-radius:14px;padding:24px}
+    .sidebar h3{font-family:var(--font-display);font-size:1rem;color:var(--forest);margin-bottom:14px}
+    .sidebar a{display:block;text-decoration:none;color:var(--text-secondary);font-size:.9rem;font-weight:500;padding:11px 0;border-top:1px solid var(--border-light)}
+    .sidebar a:hover{color:var(--green-accent)}
+    .req-list{display:grid;gap:22px}
+    .req-card{border:1px solid var(--border-light);border-radius:16px;background:var(--white);overflow:hidden;box-shadow:0 8px 28px rgba(11,41,24,.04)}
+    .req-top{padding:28px 30px 22px;background:linear-gradient(180deg,var(--white),var(--meadow));border-bottom:1px solid var(--border-light)}
+    .req-kicker{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--green-accent);margin-bottom:10px}
+    .req-top h3{font-family:var(--font-display);font-size:1.35rem;font-weight:700;color:var(--forest);letter-spacing:-.01em;margin-bottom:8px}
+    .req-top p{font-size:.95rem;color:var(--text-secondary);line-height:1.7;max-width:680px}
+    .req-body{padding:24px 30px 28px}
+    .evidence-block{padding:18px 0;border-top:1px solid var(--border-light)}
+    .evidence-block:first-child{border-top:none;padding-top:0}
+    .evidence-block h4{font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--forest);margin-bottom:8px}
+    .evidence-block p{font-size:.9rem;color:var(--text-secondary);line-height:1.68;margin-bottom:10px}
+    .example-label{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green-accent);margin:14px 0 8px}
+    .example-list{list-style:none;display:grid;gap:8px;margin:0}
+    .example-list li{position:relative;padding-left:18px;font-size:.88rem;color:var(--text-secondary);line-height:1.58}
+    .example-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green-accent)}
+    .note{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.18);border-radius:10px;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
+    .recommended{margin-top:12px;padding:14px 16px;background:#fbfbef;border:1px solid #ece8be;border-radius:10px;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
 
+    .notice-section{background:var(--forest);color:var(--white);text-align:center;position:relative;overflow:hidden}
+    .notice-section::before{content:"";position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:620px;height:620px;background:radial-gradient(circle,rgba(61,163,102,.16) 0%,transparent 70%);pointer-events:none}
+    .notice-section .container-narrow{position:relative;z-index:1}
+    .notice-section .section-label{color:var(--green-accent-soft)}
+    .notice-section .section-title{color:var(--white);font-size:clamp(1.55rem,3vw,2rem)}
+    .notice-section p{font-size:.98rem;line-height:1.8;color:rgba(255,255,255,.78);max-width:720px;margin:0 auto}
 
+    .cta-section{background:var(--white);text-align:center;padding:82px 0}
+    .cta-card{background:var(--meadow);border:1px solid var(--border-light);border-radius:18px;padding:46px 30px;max-width:760px;margin:0 auto}
+    .cta-card h2{font-family:var(--font-display);font-size:clamp(1.55rem,3vw,2rem);font-weight:700;color:var(--forest);letter-spacing:-.01em;margin-bottom:10px}
+    .cta-card p{font-size:.96rem;color:var(--text-secondary);line-height:1.75;max-width:560px;margin:0 auto 26px}
+    .footer-note{text-align:center;padding:0 24px 42px;font-size:.78rem;color:var(--text-muted);line-height:1.7;max-width:760px;margin:0 auto}
 
-    /* CTA */
-    .page-cta{padding:64px 0 80px;text-align:center}
-    .page-cta h2{font-size:1.3rem;font-weight:700;color:var(--forest);margin-bottom:8px}
-    .page-cta p{font-size:.92rem;color:var(--text-secondary);margin-bottom:24px}
-    .cta-btn{display:inline-flex;padding:14px 36px;background:var(--forest);color:var(--white);border-radius:6px;font-size:.9rem;font-weight:600;text-decoration:none}
-
-    .footer-note{text-align:center;padding:0 24px 40px;font-size:.78rem;color:var(--text-muted);line-height:1.7;max-width:580px;margin:0 auto}
-
+    @media(max-width:900px){
+      .requirements-layout{grid-template-columns:1fr;gap:30px}
+      .sidebar{position:relative;top:auto}
+      .process-list{grid-template-columns:1fr}
+      .overview-grid{grid-template-columns:1fr}
+      .overview-item:nth-child(odd){border-right:none}
+      .overview-item:nth-last-child(-n+2){border-bottom:1px solid var(--border-light)}
+      .overview-item:last-child{border-bottom:none}
+    }
     @media(max-width:640px){
-      .page-header h1{font-size:1.6rem}
-      .req-item p{padding-left:0}
+      .nav-inner{height:64px;padding:0 18px}
+      .nav-links a:not(.btn-member){display:none}
+      .container,.container-narrow{padding:0 20px}
+      .hero-inner{padding:62px 0 54px}
+      section{padding:58px 0}
+      .hero-actions{align-items:stretch}
+      .btn-primary,.btn-ghost{width:100%}
+      .overview-item,.req-top,.req-body{padding-left:22px;padding-right:22px}
+      .sidebar{display:none}
     }
   </style>
 </head>
 <body>
-
-  <nav class="nav"><div class="nav-inner"><a href="/" class="logo"><img class="logo-badge" src="/green-rings.png" alt="Secure Broker"><div class="logo-text">Secure Broker<span class="logo-tm">™</span></div></a><a href="https://securebroker.org/contact/" class="nav-btn">Apply</a></div></nav>
-
-  <div class="container">
-
-    <div class="page-header">
-      <h1>Certification Requirements</h1>
-      <p>Designed to be practical and achievable by companies of all sizes.</p>
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Secure Broker home">
+        <img class="logo-badge" src="/green-rings.png" alt="Secure Broker">
+        <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#requirements">Requirements</a>
+        <a href="#apply" class="btn-member">Apply</a>
+      </div>
     </div>
+  </nav>
 
-    <!-- Approach -->
-    <div class="content-section">
-      <div class="section-label">Our Approach</div>
-      <h2>Standards that are accessible, not exclusionary</h2>
-      <p>The program is built so that any brokerage — regardless of size, budget, or tech stack — can qualify. We verify that safeguards exist, not how you get there.</p>
-
-      <ul class="principles">
-        <li><span class="check">✓</span>Example pathways provided for every requirement — use them or bring your own</li>
-        <li><span class="check">✓</span>No specific software or vendors required</li>
-        <li><span class="check">✓</span>We never access your systems — verification is based on evidence you submit</li>
-        <li><span class="check">✓</span>Requirements don't need to be met at the time of application</li>
-      </ul>
-
-
-    <!-- Requirements -->
-    <div class="content-section">
-      <div class="section-label">What We Verify</div>
-      <h2>Five areas of verification</h2>
-      <p>Here's what they cover.</p>
-
-      <div class="req-list">
-        <div class="req-item">
-          <div class="req-item-header"><span class="req-item-num">01</span><h3>Personnel Controls</h3></div>
-          <p>People are the most common point of failure in data security. This section covers the policies and practices at the human layer.</p>
-          <p class="req-examples">What we look for: background checks are conducted on personnel with access to sensitive information, a password policy or enforcement settings, automatic screen lock on workstations, a process for revoking access when personnel leave or change roles, and controls for remote system access if applicable.</p>
-        </div>
-        <div class="req-item">
-          <div class="req-item-header"><span class="req-item-num">02</span><h3>Email Security</h3></div>
-          <p>Email is often where merchant documents first arrive and where they're most vulnerable.</p>
-          <p class="req-examples">What we look for: MFA or 2FA enabled, and at least one safeguard for attachments that pass through email — e.g. automated CRM routing, Aquamark's email watermarking tool (or equivelant provider), forwarding or downloading restrictions, etc.</p>
-        </div>
-        <div class="req-item">
-          <div class="req-item-header"><span class="req-item-num">03</span><h3>CRM / Portal Security</h3></div>
-          <p>Your CRM or deal management platform houses sensitive merchant data and documents.</p>
-          <p class="req-examples">What we look for: MFA or 2FA enabled, role-based access so personnel only see what their role requires, and at least one control on document access — such as view-only settings (documents not downloadable), watermarking, DLP policies, etc.</p>
-        </div>
-        <div class="req-item">
-          <div class="req-item-header"><span class="req-item-num">04</span><h3>Document Storage</h3></div>
-          <p>Applicable if documents are also stored in cloud storage, e.g.  Google Drive, Dropbox, OneDrive</p>
-          <p class="req-examples">What we look for: sharing or download restrictions, watermarking, etcw.</p>
-        </div>
-        <div class="req-item">
-          <div class="req-item-header"><span class="req-item-num">05</span><h3>Outsourcing</h3></div>
-          <p>Applicable when using third-party teams for deal processing..</p>
-          <p class="req-examples">What we look for: download restrictions, watermarking documents, or other controls that limit external distribution.</p>
+  <header class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-label">Certification Requirements</div>
+        <h1>What to expect during Secure Broker™ verification.</h1>
+        <p>Secure Broker™ confirms that brokerages have safeguards in place to protect sensitive merchant information from unauthorized use.</p>
+        <div class="hero-actions">
+          <a href="#requirements" class="btn-primary">View Requirements</a>
+          <a href="#process" class="btn-ghost">How It Works</a>
         </div>
       </div>
     </div>
+  </header>
 
-    <!-- Process -->
-    <div class="content-section">
-      <div class="section-label">Process</div>
-      <h2>How certification works</h2>
+  <main>
+    <section id="overview" class="overview-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Program Overview</div>
+          <h2 class="section-title">A clear path from application to review.</h2>
+          <p class="section-subtitle">The requirements do not need to be met at the time of application. Applicants are listed in the directory upon applying to signal intent, then complete verification through the online portal.</p>
+        </div>
 
-      <div class="process">
-        <div class="process-step">
-          <div class="process-num">Step 1</div>
-          <div>
-            <h4>Apply</h4>
-            <p>Submit request to apply and get listed in the directory. Requirements don't need to be met at the time of application — you'll have 90 days to complete verification.</p>
+        <div class="overview-grid" aria-label="Secure Broker program overview">
+          <div class="overview-item">
+            <h3>Application & timeline</h3>
+            <p>Organizations are listed in the directory immediately upon applying. Verification must be completed within 90 days of application, with extensions available under special circumstances.</p>
           </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">Step 2</div>
-          <div>
-            <h4>Verify</h4>
-            <p>You will receive access to the self-guided portal where you can submit payment for the membership fee, and upload your evidence. Each section explains what's needed and provides example pathways. Message our team directly inside the portal if you have questions about any requirement.</p>
+          <div class="overview-item">
+            <h3>Evidence-based review</h3>
+            <p>Verification is completed through a self-guided online portal using specific evidence, including screenshots and screen recordings demonstrating active controls.</p>
           </div>
-        </div>
-        <div class="process-step">
-          <div class="process-num">Step 3</div>
-          <div>
-            <h4>Review</h4>
-            <p>We review your evidence, run business background check, and provide a Results Summary Report indicating the status of each requirement. If everything checks out, your certification is issued. If further information is required, it'll be noted on your report.</p>
+          <div class="overview-item">
+            <h3>Equivalent controls accepted</h3>
+            <p>Example pathways are provided to clarify each requirement. Equivalent controls are accepted when they meet the intent of the requirement.</p>
+          </div>
+          <div class="overview-item">
+            <h3>Final review</h3>
+            <p>The annual membership fee must be remitted before a final review can be conducted. A Results Summary Report is provided after review.</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- CTA -->
-    <div class="page-cta">
-      <h2>Ready to get started?</h2>
-      <p>Membership is open — apply today.</p>
-      <a href="https://securebroker.org/contact/" class="cta-btn">Apply for Membership</a>
-    </div>
+    <section id="process" class="process-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">How It Works</div>
+          <h2 class="section-title">Three steps to complete verification.</h2>
+          <p class="section-subtitle">The process is designed to make the requirements easier to understand without replacing the need to demonstrate active safeguards.</p>
+        </div>
 
-  </div>
+        <div class="process-list">
+          <article class="process-card">
+            <div class="process-num">1</div>
+            <h3>Apply</h3>
+            <p>Submit your application and receive directory listing as an applicant. The requirements do not need to be met at the time of application.</p>
+          </article>
+          <article class="process-card">
+            <div class="process-num">2</div>
+            <h3>Upload evidence</h3>
+            <p>Use the portal to answer questions and upload the requested screenshots, screen recordings, policies, or other documentation.</p>
+          </article>
+          <article class="process-card">
+            <div class="process-num">3</div>
+            <h3>Receive results</h3>
+            <p>Secure Broker™ reviews the evidence and provides a report showing the status of each requirement and whether additional information is needed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
+    <section id="requirements" class="requirements-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Verification Requirements</div>
+          <h2 class="section-title">Five areas of verification.</h2>
+          <p class="section-subtitle">Each section below summarizes what will be reviewed and the types of evidence requested in the portal.</p>
+        </div>
 
+        <div class="requirements-layout">
+          <aside class="sidebar" aria-label="Requirement navigation">
+            <h3>Jump to section</h3>
+            <a href="#personnel">1. Personnel Controls</a>
+            <a href="#email">2. Email Security</a>
+            <a href="#crm">3. CRM / Portal Security</a>
+            <a href="#storage">4. Document Storage</a>
+            <a href="#outsourcing">5. Outsourcing</a>
+          </aside>
+
+          <div class="req-list">
+            <article id="personnel" class="req-card">
+              <div class="req-top">
+                <div class="req-kicker">Requirement 01</div>
+                <h3>Personnel Controls</h3>
+                <p>Organizational policies to limit risk at the human layer.</p>
+              </div>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Background Checks</h4>
+                  <p>Documentation confirming background checks are conducted for personnel with access to sensitive data.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Blank copy of your background check authorization form.</li>
+                    <li>Screenshot from your provider showing active account or recent checks, with PII redacted.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Password Policy</h4>
+                  <p>A documented password policy or enforcement settings. At minimum, passwords should meet a required length and complexity standard.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Copy of password policy or screenshot of admin panel showing enforcement settings, such as minimum length or complexity requirements.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Workstation & Screen Security</h4>
+                  <p>A policy or technical setting requiring workstations to lock when unattended.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Screenshot of auto-lock timeout setting enabled in device management or admin panel.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Off-Boarding Process</h4>
+                  <p>A process for immediately revoking system access when employees leave or change roles.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Offboarding checklist or policy.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Remote Access</h4>
+                  <p>If personnel access company systems outside of the office, controls should be in place to secure that access.</p>
+                  <div class="note">Examples include MFA, endpoint management, MDM solutions, VPN, or IP-based restrictions.</div>
+                  <div class="recommended"><strong>Recommended, not required:</strong> Organizations are encouraged to maintain practices that reduce the risk of sensitive merchant information being captured using cell phone cameras near workstations.</div>
+                </div>
+              </div>
+            </article>
+
+            <article id="email" class="req-card">
+              <div class="req-top">
+                <div class="req-kicker">Requirement 02</div>
+                <h3>Email Security</h3>
+                <p>If staff have access to emails containing merchant documents, safeguards must be in place to reduce opportunities of misuse.</p>
+              </div>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Multi-Factor Authentication</h4>
+                  <p>MFA must be enabled on your email system.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Screenshot of MFA setting enabled in your email admin panel.</li>
+                    <li>Screen recording of a login showing MFA prompt triggering and being completed.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Email Inbox Access</h4>
+                  <p>If merchant documents ever arrive in or get routed to an email inbox, safeguards must be in place. At least one email safeguard is required.</p>
+                  <div class="example-label">Email safeguards</div>
+                  <ul class="example-list">
+                    <li>Submissions route directly to CRM through an automated workflow.</li>
+                    <li>Implementation of Aquamark email watermarking tool, or an alternative provider.</li>
+                    <li>Restricted forwarding and personal email access.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article id="crm" class="req-card">
+              <div class="req-top">
+                <div class="req-kicker">Requirement 03</div>
+                <h3>CRM / Portal Security</h3>
+                <p>System-level controls to limit access to merchant data and deter unauthorized distribution.</p>
+              </div>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Multi-Factor Authentication</h4>
+                  <p>MFA must be enabled on your CRM or portal.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Screenshot of MFA setting enabled in your CRM admin panel.</li>
+                    <li>Screen recording of a login showing MFA prompt triggering and being completed.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Role-Based Access</h4>
+                  <p>Personnel should only be able to access accounts and information required for their role. Sensitive fields, such as SSN, should be restricted based on business necessity.</p>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>Screenshot of your CRM's role list showing that separate roles exist.</li>
+                    <li>Screen recording logging in as two different roles showing that sensitive fields like SSN are visible to one role and restricted for another.</li>
+                  </ul>
+                </div>
+                <div class="evidence-block">
+                  <h4>Document Access Controls</h4>
+                  <p>If documents are accessible within your CRM or portal, safeguards must be in place to limit external distribution. At least one document protection safeguard is required.</p>
+                  <div class="example-label">Document protection</div>
+                  <ul class="example-list">
+                    <li>View-only access, where documents cannot be downloaded.</li>
+                    <li>Document watermarking through Aquamark or an alternative provider.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article id="storage" class="req-card">
+              <div class="req-top">
+                <div class="req-kicker">Requirement 04</div>
+                <h3>Document Storage</h3>
+                <p>Controls on secondary storage locations outside your main systems.</p>
+              </div>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Storage Safeguards</h4>
+                  <p>If documents are stored outside your main CRM or portal, such as Google Drive, Dropbox, or OneDrive, at least one storage safeguard is required.</p>
+                  <div class="example-label">Storage safeguards</div>
+                  <ul class="example-list">
+                    <li>View-only or restricted access.</li>
+                    <li>Document watermarking through Aquamark or an alternative provider.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article id="outsourcing" class="req-card">
+              <div class="req-top">
+                <div class="req-kicker">Requirement 05</div>
+                <h3>Outsourcing</h3>
+                <p>Safeguards for third-party and BPO access to merchant documents.</p>
+              </div>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>BPO Safeguards</h4>
+                  <p>If BPO teams, onshore or offshore, have access to merchant data, at least one BPO safeguard is required.</p>
+                  <div class="example-label">BPO safeguards</div>
+                  <ul class="example-list">
+                    <li>View-only access, where BPO personnel cannot download files.</li>
+                    <li>Document watermarking before BPO access through Aquamark or an alternative provider.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="notice-section">
+      <div class="container-narrow">
+        <div class="section-label">Certification Guarantee</div>
+        <h2 class="section-title">Certification is not guaranteed.</h2>
+        <p>Participants that do not satisfy all requirements will be removed from the directory, but may reapply once and if eligible. The final review includes an assessment of uploaded evidence, verification that the applicant is an active and registered business, and a review of the Experian business credit report limited to lawsuits related to misuse of customer data.</p>
+      </div>
+    </section>
+
+    <section id="apply" class="cta-section">
+      <div class="container-narrow">
+        <div class="cta-card">
+          <h2>Ready to begin?</h2>
+          <p>Apply to signal intent, receive portal access, and begin working through the verification requirements.</p>
+          <a href="https://securebroker.org/contact/" class="btn-primary">Apply for Membership</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="footer-note">Secure Broker™ | Certification Requirements | Version 2.0</p>
 </body>
 </html>
