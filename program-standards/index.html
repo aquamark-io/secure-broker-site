@@ -35,6 +35,8 @@
     html{scroll-behavior:smooth;overflow-x:hidden}
     body{font-family:var(--font-body);color:var(--text-primary);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     a{color:inherit}
+    .inline-link{color:#2563EB;font-weight:700;text-decoration:none}
+    .inline-link:hover{text-decoration:underline}
 
     .main-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;box-shadow:0 1px 4px rgba(11,41,24,.04)}
     .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -177,7 +179,7 @@
         <div class="section-header">
           <div class="section-label">Program Overview</div>
           <h2 class="section-title">A clear path from applied to certified.</h2>
-          <p class="section-subtitle">Self-guided portal and member support.</p>
+          <p class="section-subtitle">Complete verification through a self-guided portal with support available as needed.</p>
         </div>
 
         <div class="overview-grid" aria-label="Secure Broker program overview">
@@ -187,7 +189,7 @@
           </div>
           <div class="overview-item">
             <h3>Evidence-based review</h3>
-            <p>Upload screenshots, screen recordings, documents.</p>
+            <p>Upload screenshots, screen recordings, and documents.</p>
           </div>
           <div class="overview-item">
             <h3>Flexible approach</h3>
@@ -195,7 +197,7 @@
           </div>
           <div class="overview-item">
             <h3>Final review</h3>
-            <p>Program fee due before final review. Review Summary provided.</p>
+            <p>The program fee is due before final review. A Review Summary is provided.</p>
           </div>
         </div>
       </div>
@@ -206,7 +208,7 @@
         <div class="section-header">
           <div class="section-label">Verification Requirements</div>
           <h2 class="section-title">Five areas of verification.</h2>
-          <p class="section-subtitle">Narrowly focused and lightweight.</p>
+          <p class="section-subtitle">Focused on core safeguards for protecting merchant data.</p>
         </div>
 
         <div class="requirements-layout">
@@ -214,7 +216,7 @@
             <h3>Jump to section</h3>
             <a href="#personnel">1. Personnel Controls</a>
             <a href="#email">2. Email Security</a>
-            <a href="#crm">3. CRM / Portal Security</a>
+            <a href="#crm">3. CRMs or Equivalent Systems</a>
             <a href="#storage">4. Document Storage</a>
             <a href="#outsourcing">5. Outsourcing</a>
           </aside>
@@ -241,7 +243,7 @@
                   <p>A documented password policy or enforcement settings. At minimum, passwords should meet a required length and complexity standard.</p>
                   <div class="example-label">Example pathways</div>
                   <ul class="example-list">
-                    <li>Copy of password policy or screenshot of admin panel showing enforcement settings, such as minimum length or complexity requirements.</li>
+                    <li>Copy of password policy or screenshot of admin panel showing enforcement settings.</li>
                   </ul>
                 </div>
                 <div class="evidence-block">
@@ -251,7 +253,7 @@
                   <ul class="example-list">
                     <li>Screenshot of auto-lock timeout setting enabled in device management or admin panel.</li>
                   </ul>
-                  <div class="recommended"><strong>Recommended:</strong> Organizations are encouraged to maintain a policy prohibting the use of cell phone cameras at workstations.</div>
+                  <div class="recommended"><strong>Recommended:</strong> Organizations are encouraged to maintain a policy prohibiting the use of cell phone cameras at workstations.</div>
                 </div>
                 <div class="evidence-block">
                   <h4>Off-Boarding Process</h4>
@@ -264,7 +266,12 @@
                 <div class="evidence-block">
                   <h4>Remote Access</h4>
                   <p>If personnel access company systems outside of the office, controls should be in place to secure that access.</p>
-                  <div class="note">Examples include MFA, endpoint management, MDM solutions, VPN, or IP-based restrictions.</div>
+                  <div class="example-label">Example pathways</div>
+                  <ul class="example-list">
+                    <li>MFA.</li>
+                    <li>Endpoint management or MDM solution.</li>
+                    <li>VPN or IP-based restrictions.</li>
+                  </ul>
                 </div>
               </div>
             </article>
@@ -288,10 +295,10 @@
                 <div class="evidence-block">
                   <h4>Email Inbox Access</h4>
                   <p>If merchant documents ever arrive in or get routed to an email inbox, at least one email safeguard is required.</p>
-                  <div class="example-label">Email safeguards</div>
+                  <div class="example-label">Example pathways</div>
                   <ul class="example-list">
                     <li>Submissions route directly to CRM through an automated workflow.</li>
-                    <li>Inbound email watermarking tool, Aquamark or equivalent.</li>
+                    <li>Inbound email watermarking tool, <a class="inline-link" href="https://www.aquamark.io/email-watermarking" target="_blank" rel="noopener">Aquamark</a> or equivalent.</li>
                     <li>Restricted forwarding and personal email access.</li>
                   </ul>
                 </div>
@@ -301,13 +308,13 @@
             <article id="crm" class="req-card">
               <div class="req-top">
                 <div class="req-kicker">Requirement 03</div>
-                <h3>CRM / Portal Security</h3>
-                <p>System-level controls to limit access to merchant data and deter unauthorized distribution.</p>
+                <h3>CRMs or Equivalent Systems</h3>
+                <p>System-level controls to limit the ability to extract data and documents.</p>
               </div>
               <div class="req-body">
                 <div class="evidence-block">
                   <h4>Multi-Factor Authentication</h4>
-                  <p>MFA must be enabled on your CRM or portal.</p>
+                  <p>MFA must be enabled on your CRM, portal, or equivalent system.</p>
                   <div class="example-label">Example pathways</div>
                   <ul class="example-list">
                     <li>Screenshot of MFA setting enabled in your CRM admin panel.</li>
@@ -325,8 +332,8 @@
                 </div>
                 <div class="evidence-block">
                   <h4>Document Access Controls</h4>
-                  <p>If documents are accessible within your CRM or portal, at least one document safeguard is required.</p>
-                  <div class="example-label">Document protection</div>
+                  <p>If documents are accessible within your CRM, portal, or equivalent system, at least one document safeguard is required.</p>
+                  <div class="example-label">Example pathways</div>
                   <ul class="example-list">
                     <li>View-only access, where documents cannot be downloaded.</li>
                     <li>Document watermarking to deter sharing.</li>
@@ -344,10 +351,10 @@
               <div class="req-body">
                 <div class="evidence-block">
                   <h4>Storage Safeguards</h4>
-                  <p>If documents are stored in Google Drive, Dropbox, OneDrive, etc - at least one safeguard is required.</p>
-                  <div class="example-label">Storage safeguards</div>
+                  <p>If documents are stored in Google Drive, Dropbox, OneDrive, etc., at least one safeguard is required.</p>
+                  <div class="example-label">Example pathways</div>
                   <ul class="example-list">
-                    <li>View-only or restricted access.</li>
+                    <li>View-only access, where documents cannot be downloaded.</li>
                     <li>Document watermarking to deter sharing.</li>
                   </ul>
                 </div>
@@ -363,8 +370,8 @@
               <div class="req-body">
                 <div class="evidence-block">
                   <h4>BPO Safeguards</h4>
-                  <p>If BPO teams, onshore or offshore, have access to submission packages.</p>
-                  <div class="example-label">BPO safeguards</div>
+                  <p>If BPO teams, onshore or offshore, have access to submission packages, at least one safeguard is required.</p>
+                  <div class="example-label">Example pathways</div>
                   <ul class="example-list">
                     <li>View-only access, where BPO personnel cannot download files.</li>
                     <li>Document watermarking to deter sharing.</li>
@@ -379,15 +386,16 @@
 
     <section class="notice-section">
       <div class="container-narrow">
-        <h2 class="section-title">Program Credibility</h2>
-<p>Participants who do not meet all requirements will be removed from the directory, but may reapply if eligible. Final review includes evidence assessment, business registration verification, and a business credit report review.</p>      </div>
+        <h2 class="section-title">Program credibility</h2>
+        <p>Participants who do not meet all requirements will be removed from the directory, but may reapply if eligible. Final review includes evidence assessment, business registration verification, and a business credit report review limited to lawsuits related to misuse of customer data.</p>
+      </div>
     </section>
 
     <section id="apply" class="cta-section">
       <div class="container-narrow">
         <div class="cta-card">
           <h2>Ready to begin?</h2>
-          <p>Apply to signal intent and receive portal access.</p>
+          <p>Apply to signal intent and receive access to the verification portal.</p>
           <a href="https://securebroker.org/contact/" class="btn-primary">Apply for Membership</a>
         </div>
       </div>
