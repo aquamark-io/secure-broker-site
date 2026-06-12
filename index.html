@@ -1227,6 +1227,16 @@
     }
 
     /* ===== MEMBERSHIP ===== */
+    .price-year {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--fern);
+      margin-top: 0.5rem;
+      letter-spacing: 0;
+      line-height: 1.2;
+      font-family: var(--font-body);
+    }
     .membership-section {
       background: var(--forest);
       border: none;
@@ -1509,6 +1519,9 @@
       .membership-btn-row { flex-direction: column !important; }
       .membership-btn-row a { width: 100%; }
       .pricing-cards { max-width: 100% !important; }
+      .pricing-cards > div { padding: 1.5rem 1rem !important; }
+      .price-year { display: inline; margin-top: 0; margin-left: 3px; font-size: 0.9rem; }
+      .price-qualifier { margin-top: 0.6rem !important; }
       .membership-layout {
         flex-direction: column !important;
         gap: 32px !important;
@@ -2107,15 +2120,13 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; max-width: 480px; margin: 0 auto 1.5rem;" class="pricing-cards">
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 2rem 1.5rem; text-align: center;">
             <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-accent-soft); margin-bottom: 0.75rem;">Small Teams</div>
-            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$499</div>
-            <div style="font-size: 0.85rem; color: var(--fern); margin-top: 0.25rem;">/year</div>
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.75rem;">Less than 10 sales reps</div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$499<span class="price-year">/year</span></div>
+            <div class="price-qualifier" style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.75rem;">Less than 10 sales reps</div>
           </div>
           <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 2rem 1.5rem; text-align: center;">
             <div style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-accent-soft); margin-bottom: 0.75rem;">Standard</div>
-            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$1,499</div>
-            <div style="font-size: 0.85rem; color: var(--fern); margin-top: 0.25rem;">/year</div>
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.75rem;">More than 10 sales reps</div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--white); font-family: var(--font-display); letter-spacing: -0.03em; line-height: 1;">$1,499<span class="price-year">/year</span></div>
+            <div class="price-qualifier" style="font-size: 0.8rem; color: rgba(255,255,255,0.55); margin-top: 0.75rem;">More than 10 sales reps</div>
           </div>
         </div>
         <!-- What's included -->
