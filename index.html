@@ -1844,10 +1844,20 @@
 
   <!-- Outseta Chat Widget -->
   <style>
-    /* Force Outseta chat widget to use brand font (fixes iOS Safari serif fallback) */
-    .o--App,
-    .o--App * {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
+    /*
+      Outseta chat font fix
+      Uses Outseta's current widget selectors instead of only .o--App.
+      This helps prevent Safari/desktop fallback to a serif font in the chat UI.
+    */
+    .o--Trigger--trigger,
+    .o--Trigger--trigger *,
+    .o--App--chatWidget,
+    .o--App--chatWidget *,
+    .o--Reset--scope .o--Widget--widget,
+    .o--Reset--scope .o--Widget--widget *,
+    .o--Widget--popup,
+    .o--Widget--popup * {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     }
   </style>
   <script>
