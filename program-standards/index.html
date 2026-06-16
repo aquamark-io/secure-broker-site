@@ -33,12 +33,12 @@
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth;overflow-x:hidden}
-    body{font-family:var(--font-body);color:var(--text-primary);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body{font-family:var(--font-body);color:var(--text-primary);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:68px}
     a{color:inherit}
     .inline-link{color:#2563EB;font-weight:700;text-decoration:none}
     .inline-link:hover{text-decoration:underline}
 
-    .main-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:20;box-shadow:0 1px 4px rgba(11,41,24,.04)}
+    .main-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:50;box-shadow:0 1px 4px rgba(11,41,24,.04)}
     .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .logo{display:flex;align-items:center;text-decoration:none;color:var(--forest);gap:12px}
     .logo-badge{width:30px;height:30px;display:block}
@@ -138,6 +138,7 @@
       .overview-item:last-child{border-bottom:none}
     }
     @media(max-width:640px){
+      body{padding-top:64px}
       .nav-inner{height:64px;padding:0 18px}
       .nav-links a:not(.btn-member){display:none}
       .container,.container-narrow{padding:0 20px}
@@ -393,14 +394,15 @@
     <section class="notice-section">
       <div class="container-narrow">
         <span class="disclaimer-label">Program disclosures</span>
-        <p>Participants who do not meet all requirements will be removed from the directory, but they may reapply when ready.</p>
-        <p>Final review includes evidence assessment, business registration verification, and public records checks for lawsuits related to the misuse of customer data.</p>
-        <p>Members receive access to the verification portal and support as they gather evidence, review technical controls, and prepare for final review. Companies may also contact us for guidance on how the requirements apply to their current setup.</p>
+<p>Continued listing requires timely resolution of any open items identified during review.</p>
+
+<p>Final review includes an evidence assessment, business registration verification, and limited public records checks focused specifically on lawsuits involving the misuse, unauthorized sharing, or fraudulent use of customer data.</p>
+
+<p>Members receive access to the verification portal and support throughout the process, including guidance as they gather evidence, review technical controls, and prepare for final review. Members may continue working toward certification with full program support included.</p>
+
       </div>
     </section>
   </main>
-
-  <p class="footer-note">Secure Broker™ | Certification Requirements</p>
 
   <script>
     (function(){
