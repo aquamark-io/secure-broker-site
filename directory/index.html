@@ -924,7 +924,7 @@
   <header class="page-hero">
     <div class="container">
       <div class="page-hero-inner">
-        <div class="hero-label">Broker Directory</div>
+        <div class="hero-label">Member Directory</div>
         <h1>Secure Broker™ Directory</h1>
         <p>The public record of trusted and verified brokers in alternative finance.</p>
         <div class="hero-disclaimer">
@@ -977,40 +977,21 @@
       </div>
     </section>
 
-    <!-- Verification In Progress -->
-    <section class="section-alt" id="sectionVerification">
+    <!-- Pending Review -->
+    <section class="section-alt" id="sectionPendingReview">
       <div class="container">
         <div class="section-header reveal">
           <h2 class="section-title" style="display:flex;align-items:center;gap:10px;">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green-accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Verification In Progress
+            Pending Review
           </h2>
-          <p class="section-subtitle">These organizations have started the verification process. Certification is not guaranteed.</p>
+          <p class="section-subtitle">These organizations have applied and are pending review.</p>
         </div>
         <div class="registry-card">
           <div class="empty-state" data-empty="true">
-            <p>Applicants are preparing for verification.</p>
+            <p>No organizations pending review yet.</p>
           </div>
-          <div class="logo-grid" id="gridVerification" aria-label="Verification in progress grid"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Applicants -->
-    <section id="sectionApplicants">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title" style="display:flex;align-items:center;gap:10px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-            Applicants
-          </h2>
-          <p class="section-subtitle">These organizations have applied and are preparing for the verification process. Certification is not guaranteed.</p>
-        </div>
-        <div class="registry-card">
-          <div class="empty-state" data-empty="true">
-            <p>No applicants listed yet.</p>
-          </div>
-          <div class="logo-grid" id="gridApplicants" aria-label="Applicants grid"></div>
+          <div class="logo-grid" id="gridPendingReview" aria-label="Pending review grid"></div>
         </div>
       </div>
     </section>
@@ -1024,7 +1005,7 @@
             <div>
               <h3>Enrollment is open.</h3>
               <p>
-                Organizations may apply now and will progress through the verification stages publicly. A 90-day grace period is provided to complete implementation of certification requirements.
+                Organizations may apply now and will be listed as pending review while preparing for certification. A 90-day grace period is provided to complete implementation of certification requirements.
               </p>
             </div>
             <div class="mini-cta-actions">
@@ -1151,11 +1132,9 @@
       resultsCount:     document.getElementById('resultsCount'),
       resultsHint:      document.getElementById('resultsHint'),
       gridCertified:    document.getElementById('gridCertified'),
-      gridVerification: document.getElementById('gridVerification'),
-      gridApplicants:   document.getElementById('gridApplicants'),
+      gridPendingReview: document.getElementById('gridPendingReview'),
       sectionCertified: document.getElementById('sectionCertified'),
-      sectionVerification: document.getElementById('sectionVerification'),
-      sectionApplicants: document.getElementById('sectionApplicants')
+      sectionPendingReview: document.getElementById('sectionPendingReview')
     };
 
     let searchQuery = "";
@@ -1230,12 +1209,10 @@
       const filtered = MEMBERS.filter(matchesQuery);
 
       const certified = filtered.filter(m => m.status === 'Certified');
-      const verification = filtered.filter(m => m.status === 'Verification');
-      const applicants = filtered.filter(m => m.status === 'applied');
+      const pendingReview = filtered.filter(m => m.status !== 'Certified');
 
       renderSection(els.gridCertified, els.sectionCertified, certified);
-      renderSection(els.gridVerification, els.sectionVerification, verification);
-      renderSection(els.gridApplicants, els.sectionApplicants, applicants);
+      renderSection(els.gridPendingReview, els.sectionPendingReview, pendingReview);
 
       const total = filtered.length;
       els.resultsCount.textContent = `Showing ${total} organization${total === 1 ? '' : 's'}`;
