@@ -898,6 +898,30 @@
       margin: 0 0 24px;
     }
     .eligibility-review-card p:last-child { margin-bottom: 0; }
+    .criteria-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      border: 1.5px solid var(--green-accent);
+      border-radius: 6px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      background: var(--green-accent);
+      transition: background 0.22s ease, border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+    .criteria-btn:hover {
+      background: var(--green-accent-soft);
+      border-color: var(--green-accent-soft);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(61,163,102,0.3);
+    }
     .review-list {
       display: grid;
       gap: 0;
@@ -2046,9 +2070,9 @@ is to establish a visible standard in alternative finance. Unlike traditional le
 
       <div class="eligibility-review-grid reveal">
         <div class="eligibility-review-card">
-          <div class="section-label" style="text-align: left;">Who Should Join</div>
-          <h3>Brokers and ISOs</h3>
-          <p>For brokers with safeguards already in place, or those who use the framework as a path to improve.</p>
+          <div class="section-label" style="text-align: left;">Who Should Join?</div>
+          <p>For companies that want to be recognized for doing things the right way.</p>
+          <a href="#membership" class="criteria-btn" onclick="event.preventDefault(); slowScrollTo('membership', 3800);">Requirements</a>
         </div>
         <div class="eligibility-review-card">
           <div class="section-label" style="text-align: left;">What We Review</div>
@@ -2252,6 +2276,42 @@ is to establish a visible standard in alternative finance. Unlike traditional le
   </div>
 
   <script>
+    // Custom slow scroll — bypasses CSS smooth-scroll for a deliberate, cancellable glide
+    function slowScrollTo(targetId, duration) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      const navOffset = 90;
+      const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navOffset;
+      const startPosition = window.pageYOffset;
+      const distance = targetPosition - startPosition;
+      if (Math.abs(distance) < 4) return;
+      let startTime = null;
+      let cancelled = false;
+      const cancel = () => { cancelled = true; cleanup(); };
+      const cleanup = () => {
+        window.removeEventListener('wheel', cancel);
+        window.removeEventListener('touchstart', cancel);
+        window.removeEventListener('keydown', cancel);
+      };
+      window.addEventListener('wheel', cancel, { passive: true });
+      window.addEventListener('touchstart', cancel, { passive: true });
+      window.addEventListener('keydown', cancel, { passive: true });
+      const easeInOutCubic = (t) => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      function step(currentTime) {
+        if (cancelled) return;
+        if (!startTime) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        window.scrollTo(0, startPosition + distance * easeInOutCubic(progress));
+        if (elapsed < duration) {
+          requestAnimationFrame(step);
+        } else {
+          cleanup();
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
     const toggle = document.querySelector('.mobile-toggle');
     const menu = document.getElementById('mobileMenu');
     const closeBtn = document.getElementById('mobileMenuClose');
