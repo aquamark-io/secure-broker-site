@@ -984,6 +984,46 @@
       }
     }
 
+    /* ===== ATTACHED DOCUMENT LINK (inside Why Join callout) ===== */
+    .article-attachment {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+      padding-top: 22px;
+      border-top: 1px dashed var(--border);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.22s ease;
+    }
+    .article-attachment:hover {
+      transform: translateX(3px);
+    }
+    .article-attachment:hover .attachment-icon,
+    .article-attachment:hover .attachment-title {
+      color: var(--green-accent);
+    }
+    .attachment-icon {
+      width: 28px;
+      height: 38px;
+      flex-shrink: 0;
+      color: var(--text-secondary);
+      transition: color 0.22s ease;
+    }
+    .attachment-title {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      transition: color 0.22s ease;
+    }
+    .attachment-arrow {
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-left: 4px;
+      font-size: 0.88em;
+    }
+
 
     /* ===== SCALE BANNER ===== */
     .scale-banner {
@@ -2130,8 +2170,16 @@
         </div>
         <div class="why-join-callout" style="margin: 0; height: 100%;">
           <div class="section-label">Why Join?</div>
-<p>Strengthen relationships in a competitive market, protect small business owners and contribute to change.
-</p>        </div>
+<p>Strengthen relationships in a competitive market, protect small business owners and contribute to change.</p>
+          <a href="/backdooring/" target="_blank" rel="noopener noreferrer" class="article-attachment" aria-label="Read article: A message to stakeholders">
+            <svg class="attachment-icon" viewBox="0 0 32 44" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+              <path d="M 6 10 L 20 10 L 26 16 L 26 40 L 6 40 Z"/>
+              <path d="M 20 10 L 20 16 L 26 16"/>
+              <path d="M 13 4 v 14 a 3 3 0 0 0 6 0 v -10 a 2 2 0 0 0 -4 0 v 9"/>
+            </svg>
+            <span class="attachment-title">A message to stakeholders <span class="attachment-arrow" aria-hidden="true">&#8599;</span></span>
+          </a>
+        </div>
       </div>
 
     </div>
