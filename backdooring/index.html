@@ -349,6 +349,52 @@
       margin: 44px 0 36px;
     }
 
+    /* ===== ARTICLE CTAs ===== */
+    .article-ctas {
+      display: flex;
+      gap: 14px;
+      margin: 36px 0 8px;
+      flex-wrap: wrap;
+    }
+    .article-body a.article-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      border: 1.5px solid transparent;
+    }
+    .article-body a.article-cta:hover { text-decoration: none; }
+    .article-body a.article-cta-broker {
+      background: var(--forest);
+      color: var(--white);
+      border-color: var(--forest);
+    }
+    .article-body a.article-cta-broker:hover {
+      background: var(--forest-mid);
+      border-color: var(--forest-mid);
+      color: var(--white);
+    }
+    .article-body a.article-cta-funder {
+      background: #FFFFFF;
+      color: #11295C;
+      border-color: #11295C;
+    }
+    .article-body a.article-cta-funder:hover {
+      background: #11295C;
+      color: var(--white);
+    }
+    @media (max-width: 600px) {
+      .article-ctas { flex-direction: column; gap: 10px; }
+      .article-cta { width: 100%; }
+    }
+
     /* ===== SIGNOFF ===== */
     .article-signoff {
       margin-top: 56px;
@@ -589,6 +635,11 @@
 
       <h2>My Final Thoughts</h2>
       <p>If you go back a decade, <a href="https://debanked.com/2015/10/did-your-deal-slip-out-the-back-door/" target="_blank" rel="noopener noreferrer">you&rsquo;ll find backdooring</a>. It has only gotten worse and largely accepted as part of doing business. The industry does not need to solve everything overnight, but it does need to start somewhere. <a href="https://securebroker.org" target="_blank" rel="noopener noreferrer">Secure Broker</a> and <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer">Secure Funder</a> give companies an independent way to take that first step. And over time, the companies doing things the right way will be the easiest to find.</p>
+
+      <div class="article-ctas">
+        <a href="https://securebroker.org/contact/" class="article-cta article-cta-broker" target="_blank" rel="noopener noreferrer">For Brokers</a>
+        <a href="https://securefunder.org/contact/" class="article-cta article-cta-funder" target="_blank" rel="noopener noreferrer">For Funders</a>
+      </div>
 
     </div>
 
