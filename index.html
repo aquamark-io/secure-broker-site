@@ -372,9 +372,9 @@
     }
     .mission-eyebrow {
       font-family: var(--font-display);
-      font-size: 1.55rem;
+      font-size: 1.95rem;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--forest);
     }
@@ -393,60 +393,20 @@
       margin: 0;
     }
     .mission-body p .mission-brand {
-      font-weight: 700;
-      color: var(--green-accent);
+      font-weight: 400;
+      color: inherit;
     }
-    .mission-divider {
-      height: 1px;
-      background: rgba(11,41,24,0.18);
-      max-width: 760px;
-      margin: 40px auto;
-    }
-    .mission-points-row {
-      display: flex;
-      justify-content: center;
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .mission-point {
-      flex: 1;
-      padding: 0 32px;
-    }
-    .mission-point + .mission-point {
-      border-left: 1px solid rgba(11,41,24,0.18);
-    }
-    .mission-point-label {
-      font-size: 0.74rem;
+    .mission-body p .mission-closer {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      color: var(--forest);
       font-weight: 700;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--green-accent);
-      margin-bottom: 10px;
-      line-height: 1.4;
-    }
-    .mission-point-text {
-      font-family: var(--font-display);
-      font-size: 1.02rem;
-      font-weight: 400;
-      color: var(--text-primary);
-      line-height: 1.5;
     }
     @media (max-width: 600px) {
       .mission-section { padding: 56px 0; }
       .mission-eyebrow { font-size: 1.25rem; }
       .mission-body p { font-size: 0.96rem; }
-      .mission-divider { margin: 28px auto; }
-      .mission-points-row {
-        flex-direction: column;
-        gap: 20px;
-        max-width: 320px;
-      }
-      .mission-point { padding: 0; }
-      .mission-point + .mission-point {
-        border-left: none;
-        border-top: 1px solid rgba(11,41,24,0.18);
-        padding-top: 20px;
-      }
     }
 
     .mission-links-row {
@@ -2332,18 +2292,7 @@
         <div class="mission-eyebrow">Our Mission</div>
         <div class="mission-eyebrow-rule"></div>
         <div class="mission-body">
-          <p><span class="mission-brand">Secure Broker™</span> is a new industry initiative helping lead alternative finance toward stronger standards around trust and accountability. In a market with limited barriers and inconsistent oversight, data misuse continues to harm business owners and undermine brokers who choose to operate with care. Paired with <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" class="brand-link">Secure Funder™</a>, the programs independently verify companies taking practical steps to protect merchant data and move the industry forward.</p>
-        </div>
-        <div class="mission-divider"></div>
-        <div class="mission-points-row">
-          <div class="mission-point">
-            <div class="mission-point-label">No Controls Yet?</div>
-            <div class="mission-point-text">We&rsquo;ll help you get there.</div>
-          </div>
-          <div class="mission-point">
-            <div class="mission-point-label">Already Have Controls?</div>
-            <div class="mission-point-text">We&rsquo;ll help make them visible.</div>
-          </div>
+          <p><span class="mission-brand">Secure Broker™</span> is a new industry initiative helping lead alternative finance toward stronger standards around trust and accountability. In a market with limited barriers and inconsistent oversight, data misuse continues to harm business owners and undermine brokers who choose to operate with care. Paired with <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" class="brand-link">Secure Funder™</a>, the programs independently verify companies taking practical steps to protect merchant data and move the industry forward.<br><br><span class="mission-closer">Need controls? We&rsquo;ll help. Have controls? We&rsquo;ll make them visible.</span></p>
         </div>
       </div>
     </div>
