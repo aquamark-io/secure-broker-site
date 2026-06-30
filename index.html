@@ -360,17 +360,93 @@
     .hero-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(11,53,42,0.12); }
 
     /* ===== MISSION BANNER ===== */
-    .mission-banner {
-      background: var(--frost); border-bottom: 1px solid var(--border-light); padding: 52px 0;
+    .mission-section {
+      background: var(--frost);
+      border-bottom: 1px solid var(--border-light);
+      padding: 88px 0;
+      text-align: center;
     }
-    .mission-banner .container-narrow { text-align: left; }
-    .mission-banner p {
+    .mission-inner {
+      max-width: 905px;
+      margin: 0 auto;
+    }
+    .mission-eyebrow {
       font-family: var(--font-display);
-      font-size: 1.15rem; font-weight: 400; color: var(--text-primary);
-      font-style: normal; line-height: 2.0; max-width: 1100px; margin: 0;
-      border-left: 3px solid #3DA366;
-      border-right: 3px solid #3DA366;
-      padding: 4px 28px;
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--forest);
+    }
+    .mission-eyebrow-rule {
+      width: 32px;
+      height: 2px;
+      background: var(--green-accent);
+      margin: 18px auto 40px;
+    }
+    .mission-body p {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.85;
+      margin: 0;
+    }
+    .mission-body p .mission-brand {
+      font-weight: 700;
+      color: var(--green-accent);
+    }
+    .mission-divider {
+      height: 1px;
+      background: rgba(11,41,24,0.18);
+      max-width: 760px;
+      margin: 40px auto;
+    }
+    .mission-points-row {
+      display: flex;
+      justify-content: center;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .mission-point {
+      flex: 1;
+      padding: 0 32px;
+    }
+    .mission-point + .mission-point {
+      border-left: 1px solid rgba(11,41,24,0.18);
+    }
+    .mission-point-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green-accent);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .mission-point-text {
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .mission-section { padding: 56px 0; }
+      .mission-eyebrow { font-size: 1.25rem; }
+      .mission-body p { font-size: 0.96rem; }
+      .mission-divider { margin: 28px auto; }
+      .mission-points-row {
+        flex-direction: column;
+        gap: 20px;
+        max-width: 320px;
+      }
+      .mission-point { padding: 0; }
+      .mission-point + .mission-point {
+        border-left: none;
+        border-top: 1px solid rgba(11,41,24,0.18);
+        padding-top: 20px;
+      }
     }
 
     .mission-links-row {
@@ -1797,7 +1873,7 @@
       }
       .hero-actions { width: 100%; }
       .hero-admin-note { width: 100%; justify-content: center; }
-      .mission-banner p { font-size: 0.95rem; padding: 4px 16px; border-left-width: 2px; border-right-width: 2px; }
+      .mission-section { padding: 48px 0; }
       .section-title { font-size: 1.4rem; }
       .section-subtitle { font-size: 0.92rem; }
       .how-card { padding: 28px 22px 24px; }
@@ -2249,12 +2325,29 @@
     </div>
   </section>
 
-   <!-- Mission Banner — light bg (different from Secure Funder's dark bg) -->
-  <div class="mission-banner">
-    <div class="container-narrow reveal">
-<p><span style="font-size: 1.35rem; font-weight: 750; color: #3DA366; text-transform: uppercase; letter-spacing: 0.06em;">Secure Broker™</span> is a new industry initiative helping lead alternative finance toward stronger standards around trust and accountability. In a market with limited barriers and inconsistent oversight, data misuse continues to harm business owners and undermine brokers who choose to operate with care. Paired with <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" class="brand-link">Secure Funder™</a>, the programs independently verify companies taking practical steps to protect merchant data and move the industry forward.</p>
+   <!-- Mission Section — centered institutional layout -->
+  <section class="mission-section">
+    <div class="container">
+      <div class="mission-inner reveal">
+        <div class="mission-eyebrow">Our Mission</div>
+        <div class="mission-eyebrow-rule"></div>
+        <div class="mission-body">
+          <p><span class="mission-brand">Secure Broker™</span> is a new industry initiative helping lead alternative finance toward stronger standards around trust and accountability. In a market with limited barriers and inconsistent oversight, data misuse continues to harm business owners and undermine brokers who choose to operate with care. Paired with <a href="https://securefunder.org" target="_blank" rel="noopener noreferrer" class="brand-link">Secure Funder™</a>, the programs independently verify companies taking practical steps to protect merchant data and move the industry forward.</p>
+        </div>
+        <div class="mission-divider"></div>
+        <div class="mission-points-row">
+          <div class="mission-point">
+            <div class="mission-point-label">No Controls Yet?</div>
+            <div class="mission-point-text">We&rsquo;ll help you get there.</div>
+          </div>
+          <div class="mission-point">
+            <div class="mission-point-label">Already Have Controls?</div>
+            <div class="mission-point-text">We&rsquo;ll help make them visible.</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- Benefits -->
   <section class="benefits-section">
