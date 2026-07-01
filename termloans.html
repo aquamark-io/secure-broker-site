@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>TermLoans — The Fastest Way to Fund &amp; Fuel Your Business</title>
+<meta name="description" content="Prequalify for multiple offers from 400+ financial institutions. No hidden fees, no impact to your credit score."/>
+<meta property="og:title" content="TermLoans — Fund Your Business Faster"/>
+<meta property="og:description" content="Compare capital products from 400+ lenders in minutes. Bank-grade encryption, 24/7 monitoring."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b243e;
+    --navy-mid:#123457;
+    --green:#4e9e2e;
+    --green-dark:#438a28;
+    --green-tint:#eef6ea;
+    --navy-tint:#eceff3;
+    --bg:#ffffff;
+    --card:#ffffff;
+    --fg:#111318;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --accent-bg:#f4f5f7;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-font-smoothing:antialiased;}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--fg);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+  a{color:inherit;text-decoration:none;}
+  svg{display:block;}
+
+  /* ===== HEADER ===== */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 24px;
+    border-bottom:1px solid var(--border);
+    flex-shrink:0;
+  }
+  .logo{display:flex;align-items:center;gap:8px;}
+  .logo-mark{
+    height:28px;width:28px;border-radius:8px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:14px;font-weight:700;flex-shrink:0;
+  }
+  .logo-text{font-weight:600;letter-spacing:-0.01em;font-size:15px;}
+  .logo-text .g{color:var(--green);}
+  .logo-text .m{color:var(--muted);}
+  .header-actions{display:flex;align-items:center;gap:12px;}
+  .signin{font-size:14px;color:var(--muted);}
+  .signin:hover{color:var(--fg);}
+  .btn-create{
+    font-size:14px;font-weight:500;background:var(--navy);color:#fff;
+    padding:8px 16px;border-radius:999px;transition:background .15s;
+    white-space:nowrap;
+  }
+  .btn-create:hover{background:var(--navy-mid);}
+  @media (max-width:640px){ .signin{display:none;} }
+
+  /* ===== MAIN / LAYOUT ===== */
+  main{flex:1;display:flex;align-items:center;padding:24px;}
+  .wrap{max-width:1320px;margin:0 auto;width:100%;}
+  .grid{display:grid;grid-template-columns:1fr;gap:24px;}
+  @media (min-width:1024px){
+    .grid{grid-template-columns:repeat(12,1fr);gap:32px;align-items:stretch;}
+    .col-left{grid-column:span 7;display:flex;flex-direction:column;justify-content:space-between;}
+    .col-right{grid-column:span 5;display:flex;flex-direction:column;gap:16px;}
+  }
+
+  /* ===== LEFT COLUMN ===== */
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;font-weight:500;padding:5px 12px;border-radius:999px;
+    background:var(--accent-bg);border:1px solid var(--border);color:var(--fg);
+  }
+  .badge .dot{height:6px;width:6px;border-radius:999px;background:var(--green);}
+  h1{
+    margin-top:16px;font-weight:600;letter-spacing:-0.02em;line-height:1.05;
+    font-size:38px;
+  }
+  h1 .accent{color:var(--green-dark);}
+  @media (min-width:1280px){ h1{font-size:60px;} }
+  .lede{margin-top:16px;font-size:16px;line-height:1.6;color:var(--muted);max-width:560px;}
+  @media (min-width:1024px){ .lede{font-size:18px;} }
+  .lede strong{color:var(--fg);font-weight:600;}
+
+  .cta-row{margin-top:24px;}
+  .btn-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--green);color:#fff;font-size:14px;font-weight:600;
+    padding:13px 22px;border-radius:999px;
+    box-shadow:0 10px 24px -8px rgba(78,158,46,.35);
+    transition:background .15s, transform .15s;
+  }
+  .btn-cta:hover{background:var(--green-dark);transform:translateY(-1px);}
+  .btn-cta svg{height:16px;width:16px;}
+
+  .stats{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:460px;}
+  .stats p:first-child{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
+  .stats p:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
+
+  .features{margin-top:24px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  @media (min-width:1280px){ .features{grid-template-columns:repeat(4,1fr);} }
+  .feature{
+    border:1px solid var(--border);border-radius:14px;padding:12px;
+    background:var(--card);transition:border-color .15s;
+  }
+  .feature.green:hover{border-color:rgba(78,158,46,.5);}
+  .feature.navy:hover{border-color:rgba(11,36,62,.4);}
+  .feature-icon{
+    height:28px;width:28px;border-radius:10px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:10px;
+  }
+  .feature-icon svg{height:16px;width:16px;}
+  .feature-icon.green{background:rgba(78,158,46,.1);color:var(--green-dark);}
+  .feature-icon.navy{background:rgba(11,36,62,.1);color:var(--navy);}
+  .feature-title{font-size:14px;font-weight:500;}
+  .feature-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+
+  /* ===== RIGHT COLUMN ===== */
+  .funding-card{
+    position:relative;border:1px solid var(--border);border-radius:16px;
+    padding:20px;overflow:hidden;flex:1;
+    background:linear-gradient(135deg,#f4f7f2 0%,#fff 60%);
+  }
+  .funding-blob{
+    position:absolute;top:-40px;right:-40px;height:160px;width:160px;
+    border-radius:999px;background:rgba(78,158,46,.1);filter:blur(48px);
+  }
+  .funding-top{display:flex;align-items:center;justify-content:space-between;position:relative;}
+  .funding-label{font-size:12px;color:var(--muted);}
+  .funding-amount{font-size:24px;font-weight:600;letter-spacing:-0.01em;}
+  .funding-status{
+    font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;
+    background:rgba(78,158,46,.1);color:var(--green-dark);
+  }
+  .funding-metrics{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;}
+  .metric{border-radius:10px;padding:10px;}
+  .metric.grey{background:#f3f4f6;color:#374151;}
+  .metric.navy{background:rgba(11,36,62,.1);color:var(--navy);}
+  .metric.green{background:rgba(78,158,46,.1);color:var(--green-dark);}
+  .metric-label{font-size:10px;text-transform:uppercase;letter-spacing:.04em;opacity:.7;}
+  .metric-value{font-size:14px;font-weight:600;margin-top:2px;}
+  .checklist{margin-top:16px;display:flex;flex-direction:column;gap:8px;position:relative;}
+  .check-item{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(17,19,24,.8);}
+  .check-item svg{height:16px;width:16px;color:var(--green-dark);flex-shrink:0;}
+
+  .steps{
+    border:1px solid var(--border);border-radius:16px;background:var(--card);
+    padding:16px;display:grid;grid-template-columns:repeat(3,1fr);
+  }
+  .step{display:flex;align-items:center;gap:8px;padding:0 12px;min-width:0;}
+  .step:first-child{padding-left:0;}
+  .step:last-child{padding-right:0;}
+  .step + .step{border-left:1px solid var(--border);}
+  .step-num{
+    height:24px;width:24px;border-radius:999px;background:var(--navy);color:#fff;
+    font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .step-title{font-size:14px;font-weight:500;line-height:1.2;}
+  .step-sub{font-size:11px;color:var(--muted);line-height:1.2;}
+
+  .security-banner{
+    border-radius:16px;background:var(--navy);color:#fff;padding:14px 16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .security-banner svg{height:16px;width:16px;color:var(--green);flex-shrink:0;}
+  .security-banner p{font-size:12px;line-height:1.4;}
+  .security-banner .muted{color:rgba(255,255,255,.7);}
+
+  /* ===== FOOTER ===== */
+  footer{
+    padding:12px 24px;border-top:1px solid var(--border);
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;
+    font-size:12px;color:var(--muted);flex-shrink:0;
+  }
+  .footer-links{display:flex;align-items:center;gap:20px;}
+  .footer-links a:hover{color:var(--fg);}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-mark">T</div>
+    <span class="logo-text">Term<span class="g">loans</span><span class="m">.com</span></span>
+  </div>
+  <div class="header-actions">
+    <a href="https://app.termloans.com/login" class="signin">Sign in</a>
+    <a href="https://app.termloans.com/register" class="btn-create">Create Account</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="grid">
+
+      <section class="col-left">
+        <div>
+          <span class="badge"><span class="dot"></span>Trusted by 10,000+ businesses</span>
+          <h1>The Fastest Way to <span class="accent">Fund</span> &amp; Fuel Your Business</h1>
+          <p class="lede">Prequalify for multiple offers from <strong>400+ financial institutions</strong>. No hidden fees and zero impact to your credit score.</p>
+          <div class="cta-row">
+            <a href="https://app.termloans.com/register" class="btn-cta">
+              Get Prequalified in 2 mins
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+          <div class="stats">
+            <div><p>10,000+</p><p>Businesses</p></div>
+            <div><p>400+</p><p>Lenders</p></div>
+            <div><p>40+</p><p>Languages</p></div>
+          </div>
+        </div>
+
+        <div class="features">
+          <div class="feature green">
+            <div class="feature-icon green">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+            </div>
+            <p class="feature-title">2-min Apply</p>
+            <p class="feature-sub">Fast intake</p>
+          </div>
+          <div class="feature navy">
+            <div class="feature-icon navy">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"></path><path d="M10 8h4"></path><path d="M14 21v-3a2 2 0 0 0-4 0v3"></path><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>
+            </div>
+            <p class="feature-title">Compare Offers</p>
+            <p class="feature-sub">Side-by-side</p>
+          </div>
+          <div class="feature green">
+            <div class="feature-icon green">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <p class="feature-title">Bank-grade</p>
+            <p class="feature-sub">256-bit SSL</p>
+          </div>
+          <div class="feature navy">
+            <div class="feature-icon navy">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.54 15H17a2 2 0 0 0-2 2v4.54"></path><path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17"></path><path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05"></path><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+            <p class="feature-title">40+ Languages</p>
+            <p class="feature-sub">Global reach</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-right">
+        <div class="funding-card">
+          <div class="funding-blob"></div>
+          <div class="funding-top">
+            <div>
+              <p class="funding-label">Your Funding</p>
+              <p class="funding-amount">$182,500</p>
+            </div>
+            <span class="funding-status">Approved</span>
+          </div>
+          <div class="funding-metrics">
+            <div class="metric grey"><p class="metric-label">Term</p><p class="metric-value">24 mo</p></div>
+            <div class="metric navy"><p class="metric-label">APR</p><p class="metric-value">6.4%</p></div>
+            <div class="metric green"><p class="metric-label">Payment</p><p class="metric-value">$3.2k</p></div>
+          </div>
+          <div class="checklist">
+            <div class="check-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Identity verified</span>
+            </div>
+            <div class="check-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Bank connection secured</span>
+            </div>
+            <div class="check-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>
+              <span>Offers ready to compare</span>
+            </div>
+          </div>
+        </div>
+
+        <ol class="steps">
+          <li class="step"><span class="step-num">1</span><div><p class="step-title">Apply</p><p class="step-sub">Fill info</p></div></li>
+          <li class="step"><span class="step-num">2</span><div><p class="step-title">Compare</p><p class="step-sub">Best offers</p></div></li>
+          <li class="step"><span class="step-num">3</span><div><p class="step-title">Receive</p><p class="step-sub">Funds fast</p></div></li>
+        </ol>
+
+        <div class="security-banner">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          <p><strong>Advanced encryption &amp; 24/7 monitoring.</strong> <span class="muted">Your data stays private and protected.</span></p>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Termloans. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Disclosures</a>
+  </div>
+</footer>
+
+</body>
+</html>
