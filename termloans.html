@@ -119,25 +119,10 @@
   .stats p:first-child{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
   .stats p:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
 
-  .features{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);}
-  .feature{
-    padding:16px 20px 0 0;
-    position:relative;
-  }
-  .feature + .feature{padding-left:20px;}
-  .feature + .feature::before{
-    content:"";position:absolute;left:0;top:16px;bottom:0;width:1px;background:var(--border);
-  }
-  .feature-bar{height:2px;width:28px;border-radius:2px;margin-bottom:12px;}
-  .feature-bar.green{background:var(--green);}
-  .feature-bar.navy{background:var(--navy);}
-  .feature-title{font-size:14px;font-weight:600;letter-spacing:-0.005em;}
-  .feature-sub{font-size:13px;color:var(--muted);margin-top:3px;}
-  @media (max-width:640px){
-    .features{grid-template-columns:1fr;}
-    .feature + .feature::before{display:none;}
-    .feature + .feature{padding-left:0;border-top:1px solid var(--border);margin-top:16px;padding-top:16px;}
-  }
+  .highlights{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
+  .highlights .hl{display:inline-flex;align-items:center;gap:6px;}
+  .highlights .hl-dot{height:4px;width:4px;border-radius:999px;background:var(--muted);flex-shrink:0;}
+  .highlights strong{color:var(--fg);font-weight:600;}
 
   /* ===== RIGHT COLUMN ===== */
   .funding-card{
@@ -240,22 +225,10 @@
           </div>
         </div>
 
-        <div class="features">
-          <div class="feature">
-            <div class="feature-bar green"></div>
-            <p class="feature-title">2-min Apply</p>
-            <p class="feature-sub">Fast intake, no paperwork upfront</p>
-          </div>
-          <div class="feature">
-            <div class="feature-bar navy"></div>
-            <p class="feature-title">Compare Offers</p>
-            <p class="feature-sub">Side-by-side, no guesswork</p>
-          </div>
-          <div class="feature">
-            <div class="feature-bar green"></div>
-            <p class="feature-title">Bank-grade Security</p>
-            <p class="feature-sub">256-bit SSL, always encrypted</p>
-          </div>
+        <div class="highlights">
+          <span class="hl"><strong>2-min</strong> application</span>
+          <span class="hl-dot"></span>
+          <span class="hl">Compare offers <strong>side-by-side</strong></span>
         </div>
       </section>
 
