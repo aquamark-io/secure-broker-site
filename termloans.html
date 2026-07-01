@@ -26,7 +26,7 @@
     --accent-bg:#f4f5f7;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{-webkit-font-smoothing:antialiased;}
+  html{-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   body{
     font-family:'Inter',system-ui,-apple-system,sans-serif;
     background:var(--bg);
@@ -34,6 +34,7 @@
     min-height:100vh;
     display:flex;
     flex-direction:column;
+    overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none;}
   svg{display:block;}
@@ -70,6 +71,12 @@
   }
   .btn-create:hover{background:var(--navy-mid);}
   @media (max-width:640px){ .signin{display:none;} }
+  @media (max-width:480px){
+    header{padding:10px 16px;}
+    .logo-text{font-size:14px;}
+    .header-actions{gap:12px;}
+    .btn-create{padding:7px 14px;font-size:13px;}
+  }
 
   /* ===== MAIN / LAYOUT ===== */
   main{flex:1;display:flex;align-items:center;padding:24px;}
@@ -80,6 +87,10 @@
     .col-left{grid-column:span 7;display:flex;flex-direction:column;justify-content:space-between;}
     .col-right{grid-column:span 5;display:flex;flex-direction:column;gap:16px;}
   }
+  @media (max-width:480px){
+    main{padding:20px 16px;}
+    .grid{gap:32px;}
+  }
 
   /* ===== LEFT COLUMN ===== */
   .badge{
@@ -89,10 +100,11 @@
   }
   .badge .dot{height:6px;width:6px;border-radius:999px;background:var(--green);}
   h1{
-    margin-top:16px;font-weight:600;letter-spacing:-0.02em;line-height:1.05;
-    font-size:38px;
+    margin-top:16px;font-weight:600;letter-spacing:-0.02em;line-height:1.08;
+    font-size:32px;
   }
   h1 .accent{color:var(--green-dark);}
+  @media (min-width:480px){ h1{font-size:38px;line-height:1.05;} }
   @media (min-width:1280px){ h1{font-size:60px;} }
   .lede{margin-top:16px;font-size:16px;line-height:1.6;color:var(--muted);max-width:560px;}
   @media (min-width:1024px){ .lede{font-size:18px;} }
@@ -102,7 +114,8 @@
     background:var(--green-tint);
     padding:2px 10px;border-radius:6px;
     font-size:1.08em;
-    white-space:nowrap;
+    display:inline-block;
+    line-height:1.5;
   }
 
   .cta-row{margin-top:24px;}
@@ -119,6 +132,11 @@
   .stats{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:460px;}
   .stats p:first-child{font-size:20px;font-weight:600;letter-spacing:-0.01em;}
   .stats p:last-child{font-size:12px;color:var(--muted);margin-top:2px;}
+  @media (max-width:360px){
+    .stats{gap:10px;}
+    .stats p:first-child{font-size:17px;}
+    .stats p:last-child{font-size:11px;}
+  }
 
   .highlights{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:13px;color:var(--muted);}
   .highlights .hl{display:inline-flex;align-items:center;gap:6px;}
@@ -143,12 +161,17 @@
     background:rgba(78,158,46,.1);color:var(--green-dark);
   }
   .funding-metrics{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;}
-  .metric{border-radius:10px;padding:10px;}
+  .metric{border-radius:10px;padding:10px;min-width:0;}
   .metric.grey{background:#f3f4f6;color:#374151;}
   .metric.navy{background:rgba(11,36,62,.1);color:var(--navy);}
   .metric.green{background:rgba(78,158,46,.1);color:var(--green-dark);}
-  .metric-label{font-size:10px;text-transform:uppercase;letter-spacing:.04em;opacity:.7;}
+  .metric-label{font-size:10px;text-transform:uppercase;letter-spacing:.04em;opacity:.7;white-space:nowrap;}
   .metric-value{font-size:14px;font-weight:600;margin-top:2px;}
+  @media (max-width:360px){
+    .funding-metrics{gap:6px;}
+    .metric{padding:8px 6px;}
+    .metric-value{font-size:13px;}
+  }
   .checklist{margin-top:16px;display:flex;flex-direction:column;gap:8px;position:relative;}
   .check-item{display:flex;align-items:center;gap:8px;font-size:14px;color:rgba(17,19,24,.8);}
   .check-item svg{height:16px;width:16px;color:var(--green-dark);flex-shrink:0;}
@@ -167,6 +190,13 @@
   }
   .step-title{font-size:14px;font-weight:500;line-height:1.2;}
   .step-sub{font-size:11px;color:var(--muted);line-height:1.2;}
+  @media (max-width:360px){
+    .steps{padding:12px 8px;}
+    .step{padding:0 6px;gap:6px;}
+    .step-num{height:20px;width:20px;font-size:11px;}
+    .step-title{font-size:12.5px;}
+    .step-sub{font-size:10px;}
+  }
 
   .security-banner{
     border-radius:16px;background:var(--navy);color:#fff;padding:14px 16px;
