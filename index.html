@@ -712,6 +712,7 @@
       border: 1px solid var(--border-light);
       border-radius: 14px;
       overflow: hidden;
+      background: var(--white);
     }
     .comparison-row {
       display: grid;
@@ -721,7 +722,7 @@
       border-top: 1px solid var(--border-light);
     }
     .comparison-label {
-      padding: 22px 24px;
+      padding: 20px 24px;
       font-family: var(--font-display);
       font-weight: 600;
       color: var(--forest);
@@ -729,26 +730,42 @@
       line-height: 1.4;
       display: flex;
       align-items: center;
-      background: var(--meadow);
+      border-right: 1px solid var(--border-light);
     }
     .comparison-cell {
-      padding: 22px 24px;
+      padding: 20px 24px;
       font-size: 0.95rem;
       line-height: 1.6;
+      color: var(--text-secondary);
       display: flex;
       align-items: center;
+      gap: 10px;
     }
     .comparison-cell-not {
-      color: var(--text-secondary);
-      background: var(--white);
+      border-right: 1px solid var(--border-light);
+    }
+    .comparison-cell-not::before {
+      content: "\2715";
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      flex-shrink: 0;
     }
     .comparison-cell-yes {
       color: var(--forest);
-      background: var(--green-accent-pale);
       font-weight: 500;
     }
-    .comparison-row-header .comparison-label {
+    .comparison-cell-yes::before {
+      content: "\2713";
+      color: var(--green-accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .comparison-row-header {
       background: var(--forest);
+    }
+    .comparison-row-header .comparison-label {
+      border-right-color: rgba(255,255,255,0.15);
     }
     .comparison-row-header .comparison-cell {
       font-family: var(--font-display);
@@ -757,14 +774,11 @@
       font-size: 0.74rem;
       letter-spacing: 0.09em;
       padding: 18px 24px;
+      color: var(--white);
+      border-right-color: rgba(255,255,255,0.15);
     }
-    .comparison-row-header .comparison-cell-not {
-      color: var(--text-secondary);
-      background: var(--meadow);
-    }
-    .comparison-row-header .comparison-cell-yes {
-      color: var(--forest);
-      background: var(--green-accent-pale);
+    .comparison-row-header .comparison-cell::before {
+      content: none;
     }
     @media (max-width: 700px) {
       .comparison-row {
@@ -774,21 +788,18 @@
         display: none;
       }
       .comparison-label {
+        border-right: none;
         border-bottom: 1px solid var(--border-light);
       }
-      .comparison-cell::before {
-        content: attr(data-col);
-        display: block;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 4px;
-        color: var(--text-muted);
-      }
       .comparison-cell {
-        flex-direction: column;
-        align-items: flex-start;
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .comparison-row:last-child .comparison-cell-yes {
+        border-bottom: none;
+      }
+      .comparison-cell::before {
+        margin-top: 2px;
       }
     }
 
@@ -2470,18 +2481,18 @@
         </div>
         <div class="comparison-row">
           <div class="comparison-label">Basis of Trust</div>
-          <div class="comparison-cell comparison-cell-not" data-col="Not Certified">Based on self-reported claims</div>
-          <div class="comparison-cell comparison-cell-yes" data-col="Certified">Independently verified against published standards</div>
+          <div class="comparison-cell comparison-cell-not">Based on self-reported claims</div>
+          <div class="comparison-cell comparison-cell-yes">Independently verified against published standards</div>
         </div>
         <div class="comparison-row">
           <div class="comparison-label">Market Signal</div>
-          <div class="comparison-cell comparison-cell-not" data-col="Not Certified">Indistinguishable from any other company</div>
-          <div class="comparison-cell comparison-cell-yes" data-col="Certified">Publicly listed and badge-verified</div>
+          <div class="comparison-cell comparison-cell-not">Indistinguishable from any other company</div>
+          <div class="comparison-cell comparison-cell-yes">Publicly listed and badge-verified</div>
         </div>
         <div class="comparison-row">
           <div class="comparison-label">Liability Posture</div>
-          <div class="comparison-cell comparison-cell-not" data-col="Not Certified">Company bears full risk if a breach or resale incident occurs</div>
-          <div class="comparison-cell comparison-cell-yes" data-col="Certified">Demonstrated due diligence on record</div>
+          <div class="comparison-cell comparison-cell-not">Company bears full risk if a breach or resale incident occurs</div>
+          <div class="comparison-cell comparison-cell-yes">Demonstrated due diligence on record</div>
         </div>
       </div>
     </div>
