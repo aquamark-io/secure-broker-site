@@ -746,13 +746,13 @@
     }
     .comparison-cell-not::before {
       content: "\2715";
-      color: var(--text-muted);
+      color: #C0392B;
       font-size: 0.85rem;
       flex-shrink: 0;
     }
     .comparison-cell-yes {
       color: var(--forest);
-      font-weight: 500;
+      font-weight: 400;
     }
     .comparison-cell-yes::before {
       content: "\2713";
@@ -762,10 +762,10 @@
       flex-shrink: 0;
     }
     .comparison-row-header {
-      background: var(--forest);
+      background: var(--meadow);
     }
     .comparison-row-header .comparison-label {
-      border-right-color: rgba(255,255,255,0.15);
+      border-right-color: var(--border-light);
     }
     .comparison-row-header .comparison-cell {
       font-family: var(--font-display);
@@ -774,8 +774,8 @@
       font-size: 0.74rem;
       letter-spacing: 0.09em;
       padding: 18px 24px;
-      color: var(--white);
-      border-right-color: rgba(255,255,255,0.15);
+      color: var(--forest);
+      border-right-color: var(--border-light);
     }
     .comparison-row-header .comparison-cell::before {
       content: none;
@@ -2470,7 +2470,6 @@
   <section class="comparison-section">
     <div class="container">
       <div class="section-header" style="text-align: center; max-width: 640px; margin-left: auto; margin-right: auto;">
-        <div class="section-label" style="text-align: center;">The Difference</div>
         <h2 class="section-title">Certified vs. Not Certified</h2>
       </div>
       <div class="comparison-table reveal">
