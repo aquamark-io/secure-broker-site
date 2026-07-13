@@ -281,30 +281,30 @@
     .pub-join-btn:hover {
       background: var(--green-accent-soft);
     }
-    .pub-divider {
-      height: 1px;
-      background: var(--border-light);
-      margin-bottom: 32px;
-    }
     .pub-upcoming {
-      display: block;
-      padding: 22px 24px;
-      background: var(--meadow);
-      border-radius: 10px;
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      align-items: baseline;
+      gap: 20px;
+      padding: 18px 0 18px 18px;
+      border-left: 3px solid var(--green-accent);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
       margin-bottom: 32px;
     }
     .pub-upcoming-label {
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--green-accent);
-      margin-bottom: 8px;
+      margin: 0;
     }
     .pub-upcoming-title {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      line-height: 1.45;
       font-weight: 600;
-      color: var(--text-secondary);
+      color: var(--forest);
     }
     .pub-list {
       display: flex;
@@ -349,6 +349,7 @@
     @media (max-width: 600px) {
       .pub-main { padding: 40px 20px 64px; }
       .pub-header h1 { font-size: 1.9rem; }
+      .pub-upcoming { grid-template-columns: 1fr; gap: 5px; }
       .pub-item-title { font-size: 1.15rem; }
     }
 
@@ -685,7 +686,6 @@
       <a href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer" class="pub-join-btn">Join</a>
     </header>
 
-    <div class="pub-divider"></div>
 
     <div class="pub-upcoming">
       <div class="pub-upcoming-label">Coming Next</div>
