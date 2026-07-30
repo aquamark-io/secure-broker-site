@@ -97,7 +97,7 @@
       position: sticky;
       top: var(--utility-height);
       z-index: 150;
-      box-shadow: 0 1px 4px rgba(11,41,24,0.04);
+      
     }
     .main-nav .container {
       display: flex;
@@ -141,7 +141,7 @@
       font-size: 0.88rem;
       font-weight: 500;
       padding: 8px 14px;
-      border-radius: 6px;
+      border-radius:0;
       transition: all 0.2s;
     }
     .nav-links a:hover { background: var(--meadow); }
@@ -171,7 +171,7 @@
       font-size: 0.9rem;
       font-weight: 600;
       padding: 13px 26px;
-      border-radius: 6px;
+      border-radius:0;
       text-decoration: none;
       transition: all 0.25s;
       border: none;
@@ -179,8 +179,8 @@
     }
     .btn-primary:hover {
       background: var(--green-accent-soft);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(11,41,24,0.14);
+      
+      
     }
     .btn-ghost {
       display: inline-flex;
@@ -192,7 +192,7 @@
       font-size: 0.9rem;
       font-weight: 600;
       padding: 13px 26px;
-      border-radius: 6px;
+      border-radius:0;
       text-decoration: none;
       border: 1.5px solid var(--border);
       transition: all 0.25s;
@@ -276,7 +276,7 @@
       background: var(--green-accent-pale);
       border: 1px solid var(--border);
       padding: 8px 16px;
-      border-radius: 8px;
+      border-radius:0;
       font-size: 0.84rem;
       font-weight: 600;
       color: var(--forest);
@@ -319,14 +319,14 @@
     .filter-select {
       width: 100%;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius:0;
       outline: none;
       font-family: var(--font-body);
       font-size: 0.92rem;
       color: var(--text-primary);
       background: var(--white);
       padding: 11px 14px;
-      transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
       cursor: pointer;
       appearance: none;
       -webkit-appearance: none;
@@ -337,7 +337,7 @@
     }
     .filter-select:focus {
       border-color: var(--green-accent);
-      box-shadow: 0 0 0 3px rgba(61,163,102,0.10), 0 2px 8px rgba(61,163,102,0.08);
+      
     }
     .filter-select {
       text-align: left;
@@ -351,8 +351,8 @@
       margin-top: 4px;
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      box-shadow: 0 8px 24px rgba(11,41,24,0.10);
+      border-radius:0;
+      
       z-index: 100;
       max-height: 260px;
       overflow-y: auto;
@@ -397,18 +397,18 @@
     .filter-input {
       width: 100%;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius:0;
       outline: none;
       font-family: var(--font-body);
       font-size: 0.92rem;
       color: var(--text-primary);
       background: var(--white);
       padding: 11px 14px 11px 38px;
-      transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .filter-input:focus {
       border-color: var(--green-accent);
-      box-shadow: 0 0 0 3px rgba(61,163,102,0.10), 0 2px 8px rgba(61,163,102,0.08);
+      
     }
     .filter-input::placeholder { color: #8FBFA0; }
     .search-icon {
@@ -427,7 +427,7 @@
       font-size: 0.82rem;
       font-weight: 600;
       padding: 11px 18px;
-      border-radius: 8px;
+      border-radius:0;
       border: 1px solid var(--border);
       background: var(--white);
       color: var(--text-secondary);
@@ -492,10 +492,10 @@
     .registry-card {
       background: var(--meadow);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius:0;
       padding: 22px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(11,41,24,0.03);
+      
     }
 
     /* Empty state */
@@ -504,7 +504,7 @@
       align-items: center;
       justify-content: center;
       min-height: 64px;
-      border-radius: 10px;
+      border-radius:0;
       border: 1px dashed rgba(11,41,24,0.14);
       background: rgba(255,255,255,0.75);
       color: var(--text-muted);
@@ -521,7 +521,7 @@
     .empty-state-icon {
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      border-radius:0;
       background: var(--green-accent-pale);
       display: flex;
       align-items: center;
@@ -548,24 +548,24 @@
       display: none;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 16px;
-      border-radius: 10px;
+      border-radius:0;
     }
     /* Member cards */
     .member-card {
       background: var(--white);
       border: 1px solid var(--border-light);
-      border-radius: 10px;
+      border-radius:0;
       padding: 24px 20px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
       gap: 14px;
-      transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+      transition: border-color 0.3s ease;
     }
     .member-card:hover {
-      box-shadow: 0 6px 24px rgba(11,41,24,0.08);
-      transform: translateY(-2px);
+      
+      
       border-color: var(--frost);
     }
     .member-card-logo {
@@ -574,7 +574,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 8px;
+      border-radius:0;
       background: var(--meadow);
       border: 1px solid var(--border-light);
       overflow: hidden;
@@ -613,7 +613,7 @@
       font-weight: 600;
       letter-spacing: 0.02em;
       padding: 3px 9px;
-      border-radius: 999px;
+      border-radius:50%;
       background: rgba(61,163,102,0.12);
       color: #2D8A50;
       white-space: nowrap;
@@ -641,7 +641,7 @@
       color: #D4A017;
       background: rgba(255, 210, 0, 0.12);
       padding: 4px 10px;
-      border-radius: 999px;
+      border-radius:50%;
     }
     .charter-star svg {
       color: #FFD000;
@@ -670,18 +670,17 @@
     }
     .mini-cta-box {
       background: var(--forest);
-      border-radius: 14px;
+      border-radius:0;
       padding: 34px 28px;
       color: var(--white);
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: 0 8px 30px rgba(11,41,24,0.12);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      
+      transition: border-color 0.3s ease;
     }
     .mini-cta-box:hover {
-      box-shadow: 0 12px 40px rgba(11,41,24,0.18);
-      transform: translateY(-2px);
+      border-color: var(--green-accent);
     }
     .mini-cta-box::before {
       content: '';
@@ -728,7 +727,7 @@
       font-size: 0.9rem;
       font-weight: 500;
       padding: 13px 18px;
-      border-radius: 6px;
+      border-radius:0;
       text-decoration: none;
       border: 1.5px solid rgba(255,255,255,0.28);
       transition: all 0.25s;
@@ -888,7 +887,7 @@
     .mobile-menu .btn-member-mobile {
       display: block; margin-top: 24px; padding: 14px;
       background: var(--forest); color: var(--white);
-      text-align: center; border-radius: 8px; font-weight: 600;
+      text-align: center; border-radius:0; font-weight: 600;
       text-decoration: none; font-size: 0.95rem;
     }
   </style>
