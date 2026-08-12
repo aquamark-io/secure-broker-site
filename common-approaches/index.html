@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Example safeguards brokers use to deter misuse of merchant documents and data — Secure Broker™.">
+  <title>Common Approaches — Secure Broker™</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/green-rings.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --forest:#11352A;
+      --forest-mid:#1A4A34;
+      --sage:#2D5A3D;
+      --fern:#4A8B60;
+      --mint:#A3D4B0;
+      --frost:#D8EDE0;
+      --meadow:#EFF7F2;
+      --white:#FFFFFF;
+      --green-accent:#3DA366;
+      --green-accent-soft:#5FBF80;
+      --green-accent-pale:#E2F4E9;
+      --text-primary:#0B2918;
+      --text-secondary:#3D6B4E;
+      --text-muted:#6A9B7C;
+      --border:#C5DFD0;
+      --border-light:#DEF0E5;
+      --font-display:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+      --font-body:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+    }
+
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{font-family:var(--font-body);color:var(--text-primary);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:68px}
+    a{color:inherit}
+    .inline-link{color:#2563EB;font-weight:700;text-decoration:none}
+    .inline-link:hover{text-decoration:underline}
+
+    .main-nav{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:fixed;top:0;left:0;right:0;z-index:50;}
+    .nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{display:flex;align-items:center;text-decoration:none;color:var(--forest);gap:12px}
+    .logo-badge{width:30px;height:30px;display:block}
+    .logo-text{font-family:var(--font-display);font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+    .logo-tm{font-size:.55em;vertical-align:super;font-weight:400;margin-left:1px}
+    .nav-links{display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+    .nav-links a{text-decoration:none;color:var(--text-primary);font-size:.88rem;font-weight:500;padding:8px 12px;border-radius:0;transition:background .2s,color .2s}
+    .nav-links a:hover{background:var(--meadow)}
+    .nav-links .btn-member{background:var(--forest);color:var(--white);font-weight:600;margin-left:4px;padding:10px 18px}
+    .nav-links .btn-member:hover{background:var(--forest-mid)}
+
+    .mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}
+    .mobile-toggle span{display:block;width:22px;height:2px;background:var(--forest);margin:5px 0}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--white);z-index:1000;flex-direction:column;padding:24px}
+    .mobile-menu.active{display:flex}
+    .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px}
+    .mobile-menu-close{background:none;border:none;cursor:pointer;font-size:1.5rem;color:var(--forest);padding:8px}
+    .mobile-menu a{display:block;padding:14px 0;font-size:1.05rem;font-weight:500;color:var(--forest);text-decoration:none;border-bottom:1px solid var(--border-light)}
+    .mobile-menu a:last-child{border-bottom:none}
+    .mobile-menu .btn-member-mobile{display:block;margin-top:24px;padding:14px;background:var(--forest);color:var(--white);text-align:center;border-radius:0;text-decoration:none;font-weight:600}
+    @media (max-width:900px){
+      .nav-links{display:none}
+      .mobile-toggle{display:block}
+    }
+
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .container-narrow{max-width:900px;margin:0 auto;padding:0 24px}
+
+    .hero{background:var(--white);border-bottom:2px solid var(--border)}
+    .hero-join-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:13px 30px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--green-accent);color:var(--white);margin-top:22px}
+    .hero-join-btn:hover{background:var(--green-accent-soft)}
+    .hero-contact-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:11px 28px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--white);color:var(--green-accent);border:2px solid var(--green-accent);margin-top:22px}
+    .hero-contact-btn:hover{background:var(--green-accent-pale)}
+    .final-review-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+    .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{margin-top:0}
+
+    .hero::before{content:none}
+    .hero::after{content:none}
+    .hero-inner{position:relative;z-index:1;padding:40px 0 32px;display:block;max-width:760px}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.1rem,3.4vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--forest);max-width:620px;margin-bottom:16px}
+    .hero-notice{margin-top:10px;max-width:720px;font-size:1rem;line-height:1.5;color:var(--text-primary)}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green-accent);color:var(--white);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:0;text-decoration:none;transition:all .25s}
+    .btn-primary:hover{background:var(--green-accent-soft);}
+    .btn-join{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.01em;padding:11px 20px;border-radius:0;text-decoration:none;transition:background .2s}
+    .btn-join:hover{background:var(--forest-mid)}
+    .btn-join .arrow{font-size:1rem;line-height:1}
+    .btn-ghost{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--forest);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:0;text-decoration:none;border:2px solid var(--border);transition:all .25s}
+    .btn-ghost:hover{border-color:var(--forest);background:rgba(255,255,255,.45)}
+
+    section{padding:76px 0;border-bottom:1px solid var(--border-light)}
+    section:last-of-type{border-bottom:none}
+    .section-header{max-width:700px;margin-bottom:42px}
+    .section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+    .section-title{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;line-height:1.2;letter-spacing:-.015em;color:var(--forest);margin-bottom:14px}
+    .section-subtitle{font-size:1rem;color:var(--text-secondary);line-height:1.75;max-width:650px}
+
+    .process-section{background:var(--frost)}
+    .process-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .process-card{background:rgba(255,255,255,.62);border:1px solid rgba(11,41,24,.1);border-radius:0;padding:28px 26px;}
+    .process-num{width:42px;height:42px;border-radius:50%;background:var(--green-accent);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;margin-bottom:20px;}
+    .process-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--forest);margin-bottom:10px}
+    .process-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.68}
+
+    .requirements-section{background:var(--white);padding-top:72px}
+    .requirements-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:start;max-width:800px}
+    .sidebar{position:sticky;top:92px;background:var(--meadow);border:1px solid var(--border-light);border-radius:0;padding:24px}
+    .sidebar h3{font-family:var(--font-display);font-size:1rem;color:var(--forest);margin-bottom:14px}
+    .sidebar a{display:block;text-decoration:none;color:var(--text-secondary);font-size:.9rem;font-weight:500;padding:11px 0;border-top:1px solid var(--border-light)}
+    .sidebar .btn-join{display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);background:var(--forest);border-top:none;border-radius:0;padding:11px 20px;margin-top:14px;font-size:.85rem}
+    .sidebar .btn-join:hover{background:var(--forest-mid);color:var(--white)}
+    .sidebar a:hover{color:var(--green-accent)}
+    .req-list{display:grid;gap:18px}
+    .req-card{border:1px solid var(--border);border-radius:0;background:var(--white);overflow:hidden}
+    .req-card.req-card-intro{background:var(--green-accent-pale);border-color:rgba(61,163,102,.25)}
+    .req-card.req-card-intro>summary.req-top{background:var(--green-accent-pale)}
+    .req-card.req-card-intro[open]>summary.req-top{background:var(--frost)}
+    .req-card.req-card-intro .req-body{background:var(--green-accent-pale)}
+    .req-card>summary.req-top{list-style:none;cursor:pointer;position:relative;padding:24px 64px 22px 28px;background:var(--white);border-bottom:1px solid transparent;transition:border-color .2s}
+    .req-card>summary.req-top::-webkit-details-marker{display:none}
+    .req-card>summary.req-top::after{content:"";position:absolute;right:28px;top:34px;width:9px;height:9px;border-right:2px solid var(--text-muted);border-bottom:2px solid var(--text-muted);transform:rotate(45deg);transition:transform .2s,top .2s}
+    .req-card[open]>summary.req-top{border-bottom-color:var(--border-light);background:var(--meadow)}
+    .req-card[open]>summary.req-top::after{transform:rotate(-135deg);top:38px}
+    .req-top{padding:24px 28px 22px;background:var(--white);border-bottom:1px solid var(--border-light)}
+    .req-kicker{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+    .req-top h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--forest);letter-spacing:-.01em;margin-bottom:8px}
+    .req-top p{font-size:.95rem;color:var(--text-secondary);line-height:1.7;max-width:680px}
+    .req-body{padding:24px 28px 28px}
+    .evidence-block{padding:18px 0;border-top:1px solid var(--border-light)}
+    .evidence-block:first-child{border-top:none;padding-top:0}
+    .evidence-block h4{font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--forest);margin-bottom:8px}
+    .evidence-block p{font-size:.9rem;color:var(--text-secondary);line-height:1.68;margin-bottom:10px}
+    .example-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 8px}
+    .example-list{list-style:none;display:grid;gap:8px;margin:0}
+    .example-list li{position:relative;padding-left:18px;font-size:.88rem;color:var(--text-secondary);line-height:1.58}
+    .example-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green-accent)}
+    .process-checklist{list-style:none;display:grid;gap:14px;margin:0;padding:0}
+    .process-checklist li{position:relative;padding-left:30px;font-size:.93rem;color:var(--text-secondary);line-height:1.65}
+    .process-checklist li.important-note{color:#B91C1C;font-weight:600}
+    .process-checklist li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;background-image:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233DA366' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-repeat:no-repeat;background-size:contain}
+    .note{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.18);border-radius:0;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
+    .recommended{margin-top:12px;padding:14px 16px;background:#fbfbef;border:1px solid #ece8be;border-radius:0;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
+
+    /* Requirement 03 — conditional questionnaire */
+    .protection-intro{padding:18px 20px;background:var(--green-accent);border:1px solid var(--green-accent);font-size:.92rem;color:var(--white);line-height:1.65;margin-bottom:22px}
+    .questionnaire{display:grid;gap:18px}
+    .question-block{padding:20px;border:1px solid var(--border-light);background:var(--white)}
+    .question-label{font-family:var(--font-display);font-size:.96rem;font-weight:700;color:var(--forest);line-height:1.45;margin-bottom:5px}
+    .question-hint{font-size:.8rem;color:var(--text-muted);margin-bottom:12px}
+    .choice-grid{display:grid;gap:8px}
+    .choice-grid label{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border-light);background:#fff;cursor:pointer;font-size:.88rem;color:var(--text-secondary);line-height:1.45}
+    .choice-grid input{margin-top:3px;accent-color:var(--green-accent);flex:0 0 auto}
+    .question-select{width:100%;padding:11px 12px;border:1px solid var(--border);background:#fff;color:var(--text-primary);font:inherit;font-size:.9rem;border-radius:0}
+    .conditional-panel{display:none;margin-top:12px}
+    .conditional-panel.visible{display:block}
+    .branch-card{padding:18px;border:1px solid var(--border-light);background:#fbfdfb}
+    .branch-title{font-family:var(--font-display);font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
+    .result-callout{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.22);font-size:.87rem;color:var(--text-secondary);line-height:1.62}
+    .result-callout strong{color:var(--forest)}
+    .result-callout.neutral{background:#fbfbef;border-color:#ece8be}
+    .examples-toggle-public{margin-left:6px;background:transparent;border:0;padding:0;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;cursor:pointer}
+    .examples-public{display:none;margin-top:12px;padding:16px 18px;background:var(--meadow);border:1px solid var(--border-light)}
+    .examples-public.open{display:block}
+    .examples-public-title{font-family:var(--font-display);font-size:.86rem;font-weight:700;color:var(--forest);margin-bottom:6px}
+    .examples-public-note{font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin-bottom:10px}
+    .examples-public ul{list-style:none;display:grid;gap:7px;margin:0;padding:0}
+    .examples-public li{position:relative;padding-left:16px;font-size:.82rem;color:var(--text-secondary);line-height:1.5}
+    .examples-public li::before{content:"";position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:var(--green-accent)}
+    .questionnaire-reset{margin-top:4px;background:transparent;border:0;padding:0;color:var(--text-muted);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:underline}
+
+    @media(max-width:900px){
+      .requirements-layout{grid-template-columns:1fr;gap:30px}
+      .sidebar{position:relative;top:auto}
+      .process-list{grid-template-columns:1fr}
+    }
+    @media(max-width:640px){
+      .container,.container-narrow{padding:0 20px}
+      .hero-inner{padding:62px 0 54px;display:block}
+      section{padding:58px 0}
+      .btn-primary,.btn-ghost{width:100%}
+      .final-review-actions{flex-direction:column;align-items:stretch}
+      .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{width:100%}
+      .req-top,.req-body{padding-left:22px;padding-right:22px}
+      .req-card>summary.req-top{padding-right:54px}
+      .sidebar{display:none}
+    }
+  </style>
+<body>
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="/" class="logo" aria-label="Secure Broker Home">
+        <img class="logo-badge" src="/green-rings.png" alt="Secure Broker">
+        <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/publications/" target="_blank" rel="noopener noreferrer">Publications</a></li>
+        <li><a href="/contact/" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+        <li><a href="https://portal.securebroker.org/login" class="btn-member">Sign In</a></li>
+      </ul>
+      <button class="mobile-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo" aria-label="Secure Broker Home">
+        <img src="/green-rings.png" alt="Secure Broker" style="width:30px;height:30px;">
+        <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
+      </a>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
+    </div>
+    <a href="/publications/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">Publications</a>
+    <a href="/contact/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">Contact Us</a>
+    <a href="https://portal.securebroker.org/login" class="btn-member-mobile">Sign In</a>
+  </div>
+
+  <main>
+    <section style="padding:56px 0 80px;">
+      <div class="container">
+        <div style="max-width:760px; margin:0 auto;">
+          <a href="/program-standards/" class="inline-link" style="display:inline-block; margin-bottom:24px; font-size:.9rem; text-decoration:none;">&larr; Back to Guidelines</a>
+
+          <h1 style="font-family:var(--font-display); font-size:2rem; font-weight:800; color:var(--forest); letter-spacing:-.02em; margin-bottom:16px; line-height:1.2;">Common Approaches</h1>
+
+          <p style="font-size:1.05rem; color:var(--text-secondary); line-height:1.7; margin-bottom:10px;">The goal is to have a reasonable safeguard(s) in place to mitigate opportunities for unauthorized external sharing of sensitive information.</p>
+
+          <p style="font-size:1.05rem; color:var(--text-secondary); line-height:1.7; margin-bottom:36px;">These are just some examples to help you think through options based on your process &mdash; not a required list. <a href="/contact/" class="inline-link" target="_blank" rel="noopener noreferrer">Send us a message</a> if you&rsquo;re unclear &mdash; we&rsquo;re glad to help!</p>
+
+          <div class="req-card" style="padding:32px;">
+            <ul class="example-list">
+              <li>View-only document access</li>
+              <li>Secure document delivery &mdash; forms, links, API</li>
+              <li>Company-managed devices &mdash; blocking access to personal email, cloud storage sites, USB drives</li>
+              <li>Outbound email quarantine on specific messages (e.g. outbound + attachments + sent to external or personal domain)</li>
+              <li>Document watermarking &mdash; www.aquamark.io or equivalent</li>
+              <li>Attachments route automatically to a CRM or equivalent, limiting human access</li>
+              <li>DLP (Data Loss Prevention) software &mdash; detects sensitive content by pattern and blocks it from leaving, across email, uploads, and cloud sync</li>
+              <li>CASB (Cloud Access Security Broker) &mdash; restricts downloads or syncing from cloud storage to unmanaged devices</li>
+              <li>Enterprise browser or browser isolation tools &mdash; disables downloads, copy/paste, or screenshots within specific apps</li>
+              <li>Web/DNS filtering &mdash; a network-level rule (via a firewall, secure web gateway, or a DNS filtering service) that blocklists domains like gmail.com, outlook.com, yahoo.com on company networks or company-managed devices. Simplest, most common for smaller shops.</li>
+              <li>Browser management policies &mdash; Chrome Enterprise or Edge for Business lets IT push a policy restricting browser sign-in to only company-domain accounts, or block navigation to specific URLs entirely. Common if the company&rsquo;s already using Google Workspace or Microsoft 365 centrally.</li>
+              <li>&ldquo;Tenant restrictions&rdquo; &mdash; Microsoft and Google both let admins allow their own company&rsquo;s version of Gmail/Outlook while blocking any personal account of the same app, even in the same browser tab. So a rep can use their work Gmail freely but literally cannot log into a personal Gmail on that device. This is what a CASB typically enforces.</li>
+              <li>MDM/endpoint management (Intune, Jamf) &mdash; pushes any of the above as a device-level policy, so it applies regardless of network.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    var mobileMenu = document.getElementById('mobileMenu');
+    var mobileToggle = document.querySelector('.mobile-toggle');
+    var mobileClose = document.getElementById('mobileMenuClose');
+    function closeMobileMenu(){ mobileMenu.classList.remove('active'); }
+    if (mobileToggle) mobileToggle.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
+    if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+  </script>
+</body>
+</html>
