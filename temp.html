@@ -158,14 +158,7 @@
     .result-callout{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.22);font-size:.87rem;color:var(--text-secondary);line-height:1.62}
     .result-callout strong{color:var(--forest)}
     .result-callout.neutral{background:#fbfbef;border-color:#ece8be}
-    .examples-toggle-public{margin-left:6px;background:transparent;border:0;padding:0;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;cursor:pointer}
-    .examples-public{display:none;margin-top:12px;padding:16px 18px;background:var(--meadow);border:1px solid var(--border-light)}
-    .examples-public.open{display:block}
-    .examples-public-title{font-family:var(--font-display);font-size:.86rem;font-weight:700;color:var(--forest);margin-bottom:6px}
-    .examples-public-note{font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin-bottom:10px}
-    .examples-public ul{list-style:none;display:grid;gap:7px;margin:0;padding:0}
-    .examples-public li{position:relative;padding-left:16px;font-size:.82rem;color:var(--text-secondary);line-height:1.5}
-    .examples-public li::before{content:"";position:absolute;left:0;top:.58em;width:5px;height:5px;border-radius:50%;background:var(--green-accent)}
+    .examples-toggle-public{margin-left:6px;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;text-decoration:underline}
     .questionnaire-reset{margin-top:4px;background:transparent;border:0;padding:0;color:var(--text-muted);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:underline}
 
     @media(max-width:900px){
@@ -380,8 +373,7 @@
                       </div>
 
                       <div class="conditional-panel" data-result="sor-watermark-no">
-                        <div class="result-callout neutral"><strong>Additional safeguards are needed.</strong> The goal is to have reasonable safeguards in place to deter or mitigate opportunities for misuse of downloadable, unprotected submissions at scale. <button type="button" class="examples-toggle-public">See common approaches</button></div>
-                        <div class="examples-public"></div>
+                        <div class="result-callout neutral"><strong>Additional safeguards are needed.</strong> The goal is to have reasonable safeguards in place to deter or mitigate opportunities for misuse of downloadable, unprotected submissions at scale. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
                       </div>
                     </div>
                   </div>
@@ -401,8 +393,7 @@
                       </div>
 
                       <div class="conditional-panel" data-result="email-person">
-                        <div class="result-callout neutral"><strong>Safeguards are needed for the inbox.</strong> The goal is to deter or mitigate opportunities for misuse while the initial submission is accessible to individual users. <button type="button" class="examples-toggle-public">See common approaches</button></div>
-                        <div class="examples-public"></div>
+                        <div class="result-callout neutral"><strong>Safeguards are needed for the inbox.</strong> The goal is to deter or mitigate opportunities for misuse while the initial submission is accessible to individual users. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
                       </div>
                     </div>
                   </div>
@@ -410,8 +401,7 @@
                   <div class="conditional-panel" data-route-panel="other">
                     <div class="branch-card">
                       <div class="branch-title">Other Channel</div>
-                      <div class="result-callout neutral" style="margin-top:0;"><strong>Different workflow? That&rsquo;s okay.</strong> We&rsquo;re looking for how you prevent deal-processing personnel from downloading, exporting, or forwarding unprotected documents to themselves or outside the company. Alternative approaches are welcome if they meet that intent. <button type="button" class="examples-toggle-public">See common approaches</button></div>
-                      <div class="examples-public"></div>
+                      <div class="result-callout neutral" style="margin-top:0;"><strong>Different workflow? That&rsquo;s okay.</strong> We&rsquo;re looking for how you prevent deal-processing personnel from downloading, exporting, or forwarding unprotected documents to themselves or outside the company. Alternative approaches are welcome if they meet that intent. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
                     </div>
                   </div>
 
@@ -464,23 +454,6 @@
       var root = document.getElementById('protectionQuestionnaire');
       if (!root) return;
 
-      var examplesMarkup = '<div class="examples-public-title">Common Approaches</div>' +
-        '<div class="examples-public-note">The goal is to have a reasonable safeguard(s) in place to mitigate opportunities for unauthorized external sharing of sensitive information. <a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer">Send us a message</a> if you&rsquo;re unclear &mdash; we&rsquo;re glad to help! These are just some examples &mdash; not a required list.</div>' +
-        '<ul>' +
-          '<li>View-only document access.</li>' +
-          '<li>Company-managed devices that block access to personal email, cloud storage sites, or USB drives.</li>' +
-          '<li>Outbound email quarantine or rules for messages with attachments sent to external or personal domains.</li>' +
-          '<li>Document watermarking using Aquamark or equivalent.</li>' +
-          '<li>Attachments routing automatically to a CRM or equivalent, limiting human access.</li>' +
-          '<li>DLP (Data Loss Prevention) controls that detect sensitive content and block it from leaving through email, uploads, or cloud sync.</li>' +
-          '<li>CASB or cloud access controls that restrict downloads or syncing to unmanaged devices.</li>' +
-          '<li>Enterprise browser or browser isolation controls that disable downloads, copy/paste, or screenshots within specific apps.</li>' +
-          '<li>Web/DNS filtering or browser-management policies that restrict access to personal email or cloud-storage accounts on company-managed devices.</li>' +
-          '<li>MDM/endpoint management that enforces device-level restrictions.</li>' +
-        '</ul>';
-
-      root.querySelectorAll('.examples-public').forEach(function(panel){ panel.innerHTML = examplesMarkup; });
-
       function show(el, yes){ if (el) el.classList.toggle('visible', !!yes); }
 
       function evaluate(){
@@ -503,22 +476,11 @@
       }
 
       root.addEventListener('change', evaluate);
-      root.querySelectorAll('.examples-toggle-public').forEach(function(btn){
-        btn.addEventListener('click', function(){
-          var holder = btn.closest('.conditional-panel, .branch-card');
-          var panel = holder ? holder.querySelector('.examples-public') : null;
-          if (!panel) return;
-          var open = panel.classList.toggle('open');
-          btn.textContent = open ? 'Hide common approaches' : 'See common approaches';
-        });
-      });
 
       var reset = document.getElementById('protectionReset');
       if (reset) reset.addEventListener('click', function(){
         root.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function(el){ el.checked = false; });
         root.querySelectorAll('select').forEach(function(el){ el.value = ''; });
-        root.querySelectorAll('.examples-public').forEach(function(el){ el.classList.remove('open'); });
-        root.querySelectorAll('.examples-toggle-public').forEach(function(el){ el.textContent = 'See common approaches'; });
         evaluate();
       });
 
