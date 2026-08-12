@@ -235,9 +235,9 @@
               <li>Outbound email quarantine on specific messages (e.g. outbound + attachments + sent to external or personal domain)</li>
               <li>Document watermarking &mdash; <a class="inline-link" href="https://www.aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or equivalent</li>
               <li>Attachments route automatically to a CRM or equivalent, limiting human access</li>
-              <li>DLP (Data Loss Prevention) software &mdash; detects sensitive content by pattern and blocks it from leaving, across email, uploads, and cloud sync</li>
-              <li>CASB (Cloud Access Security Broker) &mdash; restricts downloads or syncing from cloud storage to unmanaged devices</li>
-              <li>Enterprise browser or browser isolation tools &mdash; disables downloads, copy/paste, or screenshots within specific apps</li>
+              <li>DLP (Data Loss Prevention) software (e.g. Microsoft Purview DLP) &mdash; detects sensitive content by pattern and blocks it from leaving, across email, uploads, and cloud sync</li>
+              <li>CASB (Cloud Access Security Broker) (e.g. Netskope) &mdash; restricts downloads or syncing from cloud storage to unmanaged devices</li>
+              <li>Enterprise browser or browser isolation tools (e.g. Island, Talon) &mdash; disables downloads, copy/paste, or screenshots within specific apps</li>
               <li>Web/DNS filtering &mdash; a network-level rule (via a firewall, secure web gateway, or a DNS filtering service) that blocklists domains like gmail.com, outlook.com, yahoo.com on company networks or company-managed devices. Simplest, most common for smaller shops.</li>
               <li>Browser management policies &mdash; Chrome Enterprise or Edge for Business lets IT push a policy restricting browser sign-in to only company-domain accounts, or block navigation to specific URLs entirely. Common if the company&rsquo;s already using Google Workspace or Microsoft 365 centrally.</li>
               <li>&ldquo;Tenant restrictions&rdquo; &mdash; Microsoft and Google both let admins allow their own company&rsquo;s version of Gmail/Outlook while blocking any personal account of the same app, even in the same browser tab. So a rep can use their work Gmail freely but literally cannot log into a personal Gmail on that device. This is what a CASB typically enforces.</li>
