@@ -142,7 +142,7 @@
     .recommended{margin-top:12px;padding:14px 16px;background:#fbfbef;border:1px solid #ece8be;border-radius:0;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
 
     /* Requirement 03 — conditional questionnaire */
-    .protection-intro{padding:18px 20px;background:var(--meadow);border:1px solid var(--border-light);font-size:.92rem;color:var(--text-secondary);line-height:1.65;margin-bottom:22px}
+    .protection-intro{padding:18px 20px;background:var(--green-accent);border:1px solid var(--green-accent);font-size:.92rem;color:var(--white);line-height:1.65;margin-bottom:22px}
     .questionnaire{display:grid;gap:18px}
     .question-block{padding:20px;border:1px solid var(--border-light);background:var(--white)}
     .question-label{font-family:var(--font-display);font-size:.96rem;font-weight:700;color:var(--forest);line-height:1.45;margin-bottom:5px}
@@ -274,7 +274,7 @@
               </summary>
               <div class="req-body">
                 <div class="evidence-block">
-                  <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. Each section includes examples, but alternative approaches are welcome if they meet the intent. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
+                  <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
                 </div>
               </div>
             </details>
@@ -332,17 +332,26 @@
               </summary>
               <div class="req-body">
                 <div class="protection-intro">
-                  This requirement follows the path of the initial submission. Answer the questions below to see how the guideline applies to your process. No specific software or tool is required.
+                  Answer the questions below to see how the guideline applies to your specific process.
                 </div>
 
                 <div class="questionnaire" id="protectionQuestionnaire">
                   <div class="question-block">
-                    <div class="question-label">Where do the application and any associated documents <u>first route</u>?</div>
+                    <div class="question-label">How do merchants apply?</div>
+                    <div class="question-hint">Select one.</div>
+                    <div class="choice-grid">
+                      <label><input type="radio" name="merchant-apply" value="online"> <span>Online</span></label>
+                      <label><input type="radio" name="merchant-apply" value="email"> <span>Email</span></label>
+                      <label><input type="radio" name="merchant-apply" value="both"> <span>Both</span></label>
+                    </div>
+                  </div>
+
+                  <div class="question-block">
+                    <div class="question-label">Where do the application and any associated documents <strong>FIRST ROUTE</strong>?</div>
                     <div class="question-hint">Select all that apply.</div>
                     <div class="choice-grid">
                       <label><input type="checkbox" name="route" value="sor"> <span>System of record (CRM or equivalent)</span></label>
                       <label><input type="checkbox" name="route" value="email"> <span>Email inbox</span></label>
-                      <label><input type="checkbox" name="route" value="cloud"> <span>Cloud storage (Google Drive, Dropbox, OneDrive, etc.)</span></label>
                       <label><input type="checkbox" name="route" value="other"> <span>Other</span></label>
                     </div>
                   </div>
@@ -400,34 +409,6 @@
 
                       <div class="conditional-panel" data-result="email-person">
                         <div class="result-callout neutral"><strong>Safeguards are needed for the inbox.</strong> The goal is to deter or mitigate opportunities for misuse while the initial submission is accessible to individual users.</div>
-                        <button type="button" class="examples-toggle-public">See common approaches</button>
-                        <div class="examples-public"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="conditional-panel" data-route-panel="cloud">
-                    <div class="branch-card">
-                      <div class="branch-title">Cloud Storage</div>
-                      <div class="question-label">How do you deter misuse?</div>
-                      <div class="question-hint">Select all that apply.</div>
-                      <div class="choice-grid">
-                        <label><input type="checkbox" name="cloud-method" value="view"> <span>View-only access</span></label>
-                        <label><input type="checkbox" name="cloud-method" value="watermark"> <span>Documents watermarked before or at the time of download</span></label>
-                        <label><input type="checkbox" name="cloud-method" value="restrictions"> <span>Special restrictions and/or access settings</span></label>
-                        <label><input type="checkbox" name="cloud-method" value="other"> <span>Other</span></label>
-                      </div>
-
-                      <div class="conditional-panel" data-result="cloud-view">
-                        <div class="result-callout"><strong>View-only access sufficiently addresses this path.</strong> Restricting downloads is a direct control: the initial submission remains within the system and cannot be extracted by individual users. The standard does not extend to subsequent day-to-day email exchanges with merchants, as misuse at scale is generally centered on the initial submission itself, rather than supplemental supporting documents exchanged later in the funding process.</div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="cloud-watermark">
-                        <div class="result-callout"><strong>Watermarking can satisfy this path.</strong> Watermarking points a downloaded document back to your office, reasonably deterring most misuse.</div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="cloud-additional">
-                        <div class="result-callout neutral"><strong>Alternative safeguards are welcome.</strong> Special restrictions, access settings, or other controls may satisfy the requirement if they reasonably deter or mitigate opportunities for misuse at scale.</div>
                         <button type="button" class="examples-toggle-public">See common approaches</button>
                         <div class="examples-public"></div>
                       </div>
@@ -494,7 +475,7 @@
       if (!root) return;
 
       var examplesMarkup = '<div class="examples-public-title">Common Approaches</div>' +
-        '<div class="examples-public-note">The goal is to have a reasonable safeguard(s) in place to mitigate opportunities for unauthorized external sharing of sensitive information. <a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer">Send us a message</a> if you're unclear &mdash; we're glad to help! These are just some examples &mdash; not a required list.</div>' +
+        '<div class="examples-public-note">The goal is to have a reasonable safeguard(s) in place to mitigate opportunities for unauthorized external sharing of sensitive information. <a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer">Send us a message</a> if you&rsquo;re unclear &mdash; we&rsquo;re glad to help! These are just some examples &mdash; not a required list.</div>' +
         '<ul>' +
           '<li>View-only document access.</li>' +
           '<li>Company-managed devices that block access to personal email, cloud storage sites, or USB drives.</li>' +
@@ -529,10 +510,6 @@
         show(root.querySelector('[data-result="email-auto"]'), emailRouting && emailRouting.value === 'auto');
         show(root.querySelector('[data-result="email-person"]'), emailRouting && emailRouting.value === 'person');
 
-        var cloud = Array.from(root.querySelectorAll('input[name="cloud-method"]:checked')).map(function(el){return el.value;});
-        show(root.querySelector('[data-result="cloud-view"]'), cloud.indexOf('view') !== -1);
-        show(root.querySelector('[data-result="cloud-watermark"]'), cloud.indexOf('watermark') !== -1);
-        show(root.querySelector('[data-result="cloud-additional"]'), cloud.indexOf('restrictions') !== -1 || cloud.indexOf('other') !== -1);
       }
 
       root.addEventListener('change', evaluate);
@@ -547,7 +524,7 @@
 
       var reset = document.getElementById('protectionReset');
       if (reset) reset.addEventListener('click', function(){
-        root.querySelectorAll('input[type="checkbox"]').forEach(function(el){ el.checked = false; });
+        root.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function(el){ el.checked = false; });
         root.querySelectorAll('select').forEach(function(el){ el.value = ''; });
         root.querySelectorAll('.examples-public').forEach(function(el){ el.classList.remove('open'); });
         root.querySelectorAll('.examples-toggle-public').forEach(function(el){ el.textContent = 'See common approaches'; });
