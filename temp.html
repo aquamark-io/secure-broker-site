@@ -70,6 +70,11 @@
     .hero{background:var(--white);border-bottom:2px solid var(--border)}
     .hero-join-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:13px 30px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--green-accent);color:var(--white);margin-top:22px}
     .hero-join-btn:hover{background:var(--green-accent-soft)}
+    .hero-contact-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:11px 28px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--white);color:var(--green-accent);border:2px solid var(--green-accent);margin-top:22px}
+    .hero-contact-btn:hover{background:var(--green-accent-pale)}
+    .final-review-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+    .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{margin-top:0}
+
     .hero::before{content:none}
     .hero::after{content:none}
     .hero-inner{position:relative;z-index:1;padding:40px 0 32px;display:block;max-width:760px}
@@ -173,6 +178,8 @@
       .hero-inner{padding:62px 0 54px;display:block}
       section{padding:58px 0}
       .btn-primary,.btn-ghost{width:100%}
+      .final-review-actions{flex-direction:column;align-items:stretch}
+      .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{width:100%}
       .req-top,.req-body{padding-left:22px;padding-right:22px}
       .req-card>summary.req-top{padding-right:54px}
       .sidebar{display:none}
@@ -190,7 +197,7 @@
       </a>
       <ul class="nav-links">
         <li><a href="/publications/" target="_blank" rel="noopener noreferrer">Publications</a></li>
-        <li><a href="/contact/" target="_blank" rel="noopener noreferrer">Get Listed</a></li>
+        <li><a href="/contact/" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
         <li><a href="https://portal.securebroker.org/login" class="btn-member">Sign In</a></li>
       </ul>
       <button class="mobile-toggle" aria-label="Menu">
@@ -208,7 +215,7 @@
       <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
     </div>
     <a href="/publications/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">Publications</a>
-    <a href="/contact/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">Get Listed</a>
+    <a href="/contact/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">Contact Us</a>
     <a href="https://portal.securebroker.org/login" class="btn-member-mobile">Sign In</a>
   </div>
 
@@ -454,8 +461,9 @@
                 <div class="evidence-block">
                   <h4>Membership</h4>
                   <p>No cost to join. Annual membership fee due only if you submit for final review. $499&ndash;$1,499/year, based on company size. Monthly option available. Membership supports program administration, independent evidence review, member support, ongoing program development, and maintenance of the public directory.</p>
-                  <div style="margin-top:6px;">
+                  <div class="final-review-actions">
                     <a href="https://securebroker.org/contact/" class="hero-join-btn">Join Program</a>
+                    <a href="https://securebroker.org/contact/" class="hero-contact-btn" target="_blank" rel="noopener noreferrer">Contact Us</a>
                   </div>
                 </div>
               </div>
@@ -486,7 +494,7 @@
       if (!root) return;
 
       var examplesMarkup = '<div class="examples-public-title">Common Approaches</div>' +
-        '<div class="examples-public-note">These are examples, not a required list. Depending on your process, one safeguard may be sufficient or additional safeguards may be needed.</div>' +
+        '<div class="examples-public-note">The goal is to have a reasonable safeguard(s) in place to mitigate opportunities for unauthorized external sharing of sensitive information. <a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener noreferrer">Send us a message</a> if you're unclear &mdash; we're glad to help! These are just some examples &mdash; not a required list.</div>' +
         '<ul>' +
           '<li>View-only document access.</li>' +
           '<li>Company-managed devices that block access to personal email, cloud storage sites, or USB drives.</li>' +
