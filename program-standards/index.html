@@ -312,6 +312,170 @@
                     <li>Attachments route automatically to a CRM or equivalent, limiting human access.</li>
                   </ul>
                 </div>
+                <div class="evidence-block">
+                  <h4>Try It: What Would You Need?</h4>
+                  <p>Answer a few quick questions about your process to see what would likely apply to you. This mirrors the same logic used in the member portal.</p>
+
+                  <div id="sbq-app" style="margin-top:16px;">
+
+                    <div class="example-label">Where do documents and data mainly flow?</div>
+                    <div style="display:flex; flex-direction:column; gap:8px; margin:10px 0 0;">
+                      <label class="sbq-option"><input type="checkbox" id="sbq-ch-sor"> System of record (CRM, portal, or equivalent)</label>
+                      <label class="sbq-option"><input type="checkbox" id="sbq-ch-email"> Email inbox</label>
+                      <label class="sbq-option"><input type="checkbox" id="sbq-ch-cloud"> Cloud storage (Google Drive, Dropbox, OneDrive, etc.)</label>
+                      <label class="sbq-option"><input type="checkbox" id="sbq-ch-other"> Other</label>
+                    </div>
+
+                    <div id="sbq-block-sor" class="sbq-block" style="display:none;">
+                      <div class="sbq-q">System of Record: are attachments view-only, or downloadable?</div>
+                      <label class="sbq-option"><input type="radio" name="sbq-sor-access" value="viewonly"> View-only</label>
+                      <label class="sbq-option"><input type="radio" name="sbq-sor-access" value="downloadable"> Downloadable</label>
+                      <div id="sbq-block-sor-watermark" class="sbq-subblock" style="display:none;">
+                        <div class="sbq-q">Are downloaded attachments watermarked?</div>
+                        <label class="sbq-option"><input type="radio" name="sbq-sor-watermark" value="yes"> Yes</label>
+                        <label class="sbq-option"><input type="radio" name="sbq-sor-watermark" value="no"> No</label>
+                      </div>
+                      <div id="sbq-feedback-sor" class="sbq-feedback"></div>
+                    </div>
+
+                    <div id="sbq-block-email" class="sbq-block" style="display:none;">
+                      <div class="sbq-q">Email Inbox: when a submission first reaches the inbox &mdash;</div>
+                      <label class="sbq-option"><input type="radio" name="sbq-email-routing" value="auto"> Routes automatically to the system of record &mdash; no human handling</label>
+                      <label class="sbq-option"><input type="radio" name="sbq-email-routing" value="human"> Reviewed and processed by a person</label>
+                      <div id="sbq-feedback-email" class="sbq-feedback"></div>
+                    </div>
+
+                    <div id="sbq-block-cloud" class="sbq-block" style="display:none;">
+                      <div class="sbq-q">Cloud Storage: how do you deter misuse?</div>
+                      <label class="sbq-option"><input type="checkbox" class="sbq-cloud-safeguard" value="viewonly"> View-only access</label>
+                      <label class="sbq-option"><input type="checkbox" class="sbq-cloud-safeguard" value="watermark"> Documents watermarked before or at the time of download</label>
+                      <label class="sbq-option"><input type="checkbox" class="sbq-cloud-safeguard" value="restrictions"> Special restrictions and/or access settings</label>
+                      <label class="sbq-option"><input type="checkbox" class="sbq-cloud-safeguard" value="other"> Other</label>
+                      <div id="sbq-feedback-cloud" class="sbq-feedback"></div>
+                    </div>
+
+                    <div id="sbq-block-other" class="sbq-block" style="display:none;">
+                      <div class="sbq-q">Other: this channel doesn't have specific examples &mdash; describe your process and the safeguards in place, and we'll review against the intent of the requirement.</div>
+                    </div>
+
+                    <div id="sbq-summary" style="display:none;">
+                      <div class="sbq-summary-title">Based on your answers</div>
+                      <ul id="sbq-summary-list"></ul>
+                    </div>
+
+                  </div>
+                </div>
+
+                <style>
+                  .sbq-option { display:flex; align-items:flex-start; gap:8px; font-size:.9rem; color:var(--text-secondary); margin-bottom:8px; cursor:pointer; line-height:1.5; }
+                  .sbq-option input { margin-top:3px; flex-shrink:0; }
+                  .sbq-block { margin-top:18px; padding-top:16px; border-top:1px solid var(--border-light); }
+                  .sbq-subblock { margin:12px 0 12px 4px; padding:12px 0 4px 16px; border-left:2px solid var(--border-light); }
+                  .sbq-q { font-weight:700; color:var(--forest); font-size:.92rem; margin-bottom:10px; }
+                  .sbq-feedback { display:none; margin-top:12px; padding:12px 14px; background:var(--green-accent-pale); border:1px solid rgba(61,163,102,.2); font-size:.86rem; color:var(--text-secondary); line-height:1.6; }
+                  #sbq-summary { margin-top:22px; padding:16px; background:var(--meadow); border:1px solid var(--border-light); }
+                  .sbq-summary-title { font-weight:700; color:var(--forest); font-size:.9rem; margin-bottom:8px; }
+                  #sbq-summary-list { margin:0; padding-left:18px; font-size:.86rem; color:var(--text-secondary); line-height:1.7; }
+                </style>
+
+                <script>
+                (function(){
+                  function $(id){ return document.getElementById(id); }
+                  function qsa(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+
+                  function update(){
+                    var chSor = $('sbq-ch-sor').checked;
+                    var chEmail = $('sbq-ch-email').checked;
+                    var chCloud = $('sbq-ch-cloud').checked;
+                    var chOther = $('sbq-ch-other').checked;
+
+                    $('sbq-block-sor').style.display = chSor ? '' : 'none';
+                    $('sbq-block-email').style.display = chEmail ? '' : 'none';
+                    $('sbq-block-cloud').style.display = chCloud ? '' : 'none';
+                    $('sbq-block-other').style.display = chOther ? '' : 'none';
+
+                    var summary = [];
+
+                    if (chSor) {
+                      var sorAccess = document.querySelector('input[name="sbq-sor-access"]:checked');
+                      var fb = $('sbq-feedback-sor');
+                      var wmBlock = $('sbq-block-sor-watermark');
+                      if (sorAccess && sorAccess.value === 'viewonly') {
+                        wmBlock.style.display = 'none';
+                        fb.style.display = '';
+                        fb.textContent = 'Restricting downloads is a direct control \u2014 the file never leaves the system for someone to misuse.';
+                        summary.push('System of Record: view-only access is sufficient on its own.');
+                      } else if (sorAccess && sorAccess.value === 'downloadable') {
+                        wmBlock.style.display = '';
+                        var sorWm = document.querySelector('input[name="sbq-sor-watermark"]:checked');
+                        if (sorWm && sorWm.value === 'yes') {
+                          fb.style.display = '';
+                          fb.textContent = 'Watermarking points a downloaded document back to your office, reasonably deterring most misuse.';
+                          summary.push('System of Record: show evidence of watermarking in place.');
+                        } else if (sorWm && sorWm.value === 'no') {
+                          fb.style.display = '';
+                          fb.textContent = 'You\u2019ll need to describe how you otherwise deter misuse of downloadable, unprotected attachments \u2014 for example, device controls, secure delivery, or outbound monitoring.';
+                          summary.push('System of Record: describe how you deter misuse of downloadable, unprotected attachments.');
+                        } else {
+                          fb.style.display = 'none';
+                        }
+                      } else {
+                        wmBlock.style.display = 'none';
+                        fb.style.display = 'none';
+                      }
+                    }
+
+                    if (chEmail) {
+                      var emailRouting = document.querySelector('input[name="sbq-email-routing"]:checked');
+                      var fbE = $('sbq-feedback-email');
+                      if (emailRouting && emailRouting.value === 'auto') {
+                        fbE.style.display = '';
+                        fbE.textContent = 'No manual handling means no opportunities for misuse \u2014 this channel is covered by what you already have in place for your system of record.';
+                        summary.push('Email Inbox: automatic routing is sufficient on its own.');
+                      } else if (emailRouting && emailRouting.value === 'human') {
+                        fbE.style.display = '';
+                        fbE.textContent = 'You\u2019ll need to describe how you deter misuse \u2014 for example, outbound quarantine or flagging, or device controls.';
+                        summary.push('Email Inbox: describe how you deter misuse of documents reviewed by a person.');
+                      } else {
+                        fbE.style.display = 'none';
+                      }
+                    }
+
+                    if (chCloud) {
+                      var cloudChecks = qsa('.sbq-cloud-safeguard').filter(function(c){ return c.checked; });
+                      var fbC = $('sbq-feedback-cloud');
+                      if (cloudChecks.length > 0) {
+                        fbC.style.display = '';
+                        fbC.textContent = 'Good \u2014 at least one safeguard in place here would satisfy this requirement.';
+                        summary.push('Cloud Storage: show evidence of the safeguard(s) selected.');
+                      } else {
+                        fbC.style.display = 'none';
+                      }
+                    }
+
+                    if (chOther) {
+                      summary.push('Other: describe your process and the safeguards in place.');
+                    }
+
+                    var summaryBox = $('sbq-summary');
+                    var summaryList = $('sbq-summary-list');
+                    if (summary.length > 0) {
+                      summaryBox.style.display = '';
+                      summaryList.innerHTML = summary.map(function(s){ return '<li>' + s + '</li>'; }).join('');
+                    } else {
+                      summaryBox.style.display = 'none';
+                    }
+                  }
+
+                  document.addEventListener('DOMContentLoaded', function(){
+                    var app = $('sbq-app');
+                    if (!app) return;
+                    app.addEventListener('change', update);
+                    update();
+                  });
+                })();
+                </script>
+
               </div>
             </details>
 
