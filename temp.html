@@ -79,7 +79,7 @@
     .hero::after{content:none}
     .hero-inner{position:relative;z-index:1;padding:40px 0 32px;display:block;max-width:760px}
     .hero h1{font-family:var(--font-display);font-size:clamp(2.1rem,3.4vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--forest);max-width:620px;margin-bottom:16px}
-    .hero-notice{margin-top:10px;max-width:720px;font-size:1rem;line-height:1.5;color:var(--text-primary)}
+    .hero-notice{margin-top:10px;max-width:720px;font-size:1.15rem;line-height:1.6;color:var(--text-primary)}
     .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green-accent);color:var(--white);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:0;text-decoration:none;transition:all .25s}
     .btn-primary:hover{background:var(--green-accent-soft);}
     .btn-join{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.01em;padding:11px 20px;border-radius:0;text-decoration:none;transition:background .2s}
@@ -235,6 +235,13 @@
 
         <div class="requirements-layout">
           <div class="req-list">
+            <div id="program-scope" style="padding:4px 4px 30px;">
+              <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:6px;">Program Scope</div>
+              <div style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;">
+                The program is strictly focused on reducing the misuse of business funding applications by encouraging stronger protection at the highest-concentration point of risk: the initial application package.
+              </div>
+            </div>
+
             <div id="scope" style="padding:4px 4px 30px;">
               <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:6px;">Average Time to Complete</div>
               <div style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;">
@@ -267,48 +274,6 @@
               <div class="req-body">
                 <div class="evidence-block">
                   <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
-                </div>
-              </div>
-            </details>
-
-            <details id="personnel" class="req-card">
-              <summary class="req-top">
-                <h3>Personnel Controls</h3>
-                <p>Basic personnel practices.</p>
-              </summary>
-              <div class="req-body">
-                <div class="evidence-block">
-                  <h4>Background Checks</h4>
-                  <p>Background checks are part of your hiring process.</p>
-                </div>
-                <div class="evidence-block">
-                  <h4>Password Policy</h4>
-                  <p>A password policy or system setting requiring strong passwords.</p>
-                </div>
-                <div class="evidence-block">
-                  <h4>Workstation &amp; Screen Security</h4>
-                  <p>A policy or setting requiring screens to lock when unattended. Not required but recommended &mdash; prohibit use of cell phone cameras at workstations.</p>
-                </div>
-                <div class="evidence-block">
-                  <h4>Off-Boarding Process</h4>
-                  <p>A process for promptly revoking access when personnel leave or change roles.</p>
-                </div>
-              </div>
-            </details>
-
-            <details id="system-access" class="req-card">
-              <summary class="req-top">
-                <h3>System Access</h3>
-                <p>MFA on systems where data is accessible.</p>
-              </summary>
-              <div class="req-body">
-                <div class="evidence-block">
-                  <h4>Multi-Factor Authentication</h4>
-                  <p>MFA enabled on email and CRM (or equivalent systems).</p>
-                </div>
-                <div class="evidence-block">
-                  <h4>Role-Based Access</h4>
-                  <p>Program recommendation (not required). Create and limit roles to only the accounts and information required for their job function.</p>
                 </div>
               </div>
             </details>
@@ -407,6 +372,48 @@
                   </div>
 
                   <button type="button" class="questionnaire-reset" id="protectionReset">Reset answers</button>
+                </div>
+              </div>
+            </details>
+
+            <details id="system-access" class="req-card">
+              <summary class="req-top">
+                <h3>System Access</h3>
+                <p>MFA on systems where data is accessible.</p>
+              </summary>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Multi-Factor Authentication</h4>
+                  <p>MFA enabled on email and CRM (or equivalent systems).</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Role-Based Access</h4>
+                  <p>Program recommendation (not required). Create and limit roles to only the accounts and information required for their job function.</p>
+                </div>
+              </div>
+            </details>
+
+            <details id="personnel" class="req-card">
+              <summary class="req-top">
+                <h3>Personnel Controls</h3>
+                <p>Basic personnel practices.</p>
+              </summary>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <h4>Background Checks</h4>
+                  <p>Background checks are part of your hiring process.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Password Policy</h4>
+                  <p>A password policy or system setting requiring strong passwords.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Workstation &amp; Screen Security</h4>
+                  <p>A policy or setting requiring screens to lock when unattended. Not required but recommended &mdash; prohibit use of cell phone cameras at workstations.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Off-Boarding Process</h4>
+                  <p>A process for promptly revoking access when personnel leave or change roles.</p>
                 </div>
               </div>
             </details>
