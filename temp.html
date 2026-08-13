@@ -27,6 +27,7 @@
       --text-muted:#6A9B7C;
       --border:#C5DFD0;
       --border-light:#DEF0E5;
+      --amber:#B8860B;
       --font-display:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
       --font-body:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
     }
@@ -159,6 +160,17 @@
     .result-callout strong{color:var(--forest)}
     .result-callout.attention{background:var(--white);border-color:var(--border)}
     .result-callout.attention strong{color:#B3261E}
+
+    .success-banner{display:flex;align-items:flex-start;gap:12px;margin-top:12px;padding:16px 18px;background:var(--green-accent-pale);border:1px solid var(--green-accent)}
+    .success-check{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--green-accent);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700}
+    .success-title{font-weight:700;color:var(--forest);font-size:.87rem;margin-bottom:4px}
+    .success-status{font-size:.76rem;font-weight:600;color:var(--amber);margin-bottom:8px}
+    .success-text{font-size:.87rem;color:var(--text-secondary);line-height:1.62}
+
+    .warning-banner{margin-top:12px;padding:16px 18px;background:var(--white);border:1px solid var(--border)}
+    .warning-title{font-weight:700;color:#B3261E;font-size:.87rem;margin-bottom:6px}
+    .warning-text{font-size:.87rem;color:var(--text-secondary);line-height:1.62}
+    .warning-text a{color:#2563EB;font-weight:700;text-decoration:underline}
     .examples-toggle-public{margin-left:6px;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;text-decoration:underline}
     .questionnaire-reset{margin-top:4px;background:transparent;border:0;padding:0;color:var(--text-muted);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:underline}
 
@@ -319,7 +331,14 @@
                       </select>
 
                       <div class="conditional-panel" data-result="sor-view">
-                        <div class="result-callout"><strong>This sufficiently addresses the requirement.</strong> Restricting downloads is a direct control. The initial application and associated documents remain within the system and cannot be extracted by individual users. This addresses the highest-concentration point of risk and satisfies the requirement. The standard does not extend to routine supplemental documents exchanged later in the funding process.</div>
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Requirement Satisfied</div>
+                            <div class="success-status">Pending evidence upload</div>
+                            <div class="success-text">Restricting downloads is a direct control. The initial application and associated documents remain within the system and cannot be extracted by individual users. This addresses the highest-concentration point of risk and satisfies the requirement. The standard does not extend to routine supplemental documents exchanged later in the funding process.</div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="conditional-panel" data-result="sor-download">
@@ -334,11 +353,21 @@
                       </div>
 
                       <div class="conditional-panel" data-result="sor-watermark-yes">
-                        <div class="result-callout"><strong>Watermarking can satisfy this path.</strong> Watermarking points a downloaded document back to your office, reasonably deterring most misuse.</div>
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Requirement Satisfied</div>
+                            <div class="success-status">Pending evidence upload</div>
+                            <div class="success-text">Watermarking points a downloaded document back to your office, reasonably deterring most misuse.</div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="conditional-panel" data-result="sor-watermark-no">
-                        <div class="result-callout attention"><strong>Safeguards are needed.</strong> Because your system of record allows downloads of unwatermarked or otherwise unprotected documents, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
+                        <div class="warning-banner">
+                          <div class="warning-title">Safeguards are needed</div>
+                          <div class="warning-text">Because your system of record allows downloads of unwatermarked or otherwise unprotected documents, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -354,11 +383,21 @@
                       </select>
 
                       <div class="conditional-panel" data-result="email-auto">
-                        <div class="result-callout"><strong>This sufficiently addresses the email intake path.</strong> No manual handling means no opportunities for misuse at this stage.</div>
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Requirement Satisfied</div>
+                            <div class="success-status">Pending evidence upload</div>
+                            <div class="success-text">No manual handling means no opportunities for misuse.</div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="conditional-panel" data-result="email-person">
-                        <div class="result-callout attention"><strong>Safeguards are needed.</strong> Because business funding applications flow through a human processing workflow rather than a controlled system of record, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
+                        <div class="warning-banner">
+                          <div class="warning-title">Safeguards are needed</div>
+                          <div class="warning-text">Because business funding applications flow through a human processing workflow rather than a controlled system of record, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+                        </div>
                       </div>
                     </div>
                   </div>
