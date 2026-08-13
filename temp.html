@@ -235,11 +235,41 @@
 
         <div class="requirements-layout">
           <div class="req-list">
-
-            <div class="section-header" style="margin-bottom:8px;">
-              <div class="section-label">Self-Check</div>
-              <p style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;max-width:620px;">Answer a few questions to see how your current process holds up against the guidelines. This is a quick self-check &mdash; the full verification process happens in the member portal.</p>
+            <div id="scope" style="padding:4px 4px 30px;">
+              <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:6px;">Average Time to Complete</div>
+              <div style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;">
+                Guidelines already met: 1&ndash;2 hours<br>
+                Guidelines not yet met: 1&ndash;2 days
+              </div>
             </div>
+
+            <details id="how-it-works" class="req-card req-card-intro">
+              <summary class="req-top">
+                <h3>How It Works</h3>
+              </summary>
+              <div class="req-body">
+                <ul class="process-checklist">
+                  <li><a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener">Submit request to join</a></li>
+                  <li>Added to directory as Applicant + announcement</li>
+                  <li>Receive member portal access</li>
+                  <li>Answer a few process questions &rarr; see your requirements</li>
+                  <li>Upload evidence within 90 days</li>
+                  <li>Extensions + support available</li>
+                  <li>Certified: directory updated, digital badge issued + certification announced</li>
+                </ul>
+              </div>
+            </details>
+
+            <details id="how-to-read" class="req-card req-card-intro">
+              <summary class="req-top">
+                <h3>Path to Certification</h3>
+              </summary>
+              <div class="req-body">
+                <div class="evidence-block">
+                  <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
+                </div>
+              </div>
+            </details>
 
             <details id="personnel" class="req-card">
               <summary class="req-top">
@@ -247,66 +277,21 @@
                 <p>Basic personnel practices.</p>
               </summary>
               <div class="req-body">
-                <div class="questionnaire">
-                  <div class="question-block">
-                    <div class="question-label">Are background checks conducted as part of your hiring process?</div>
-                    <select class="question-select selfcheck-select" data-key="bg-checks">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="bg-checks" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="bg-checks" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> Background checks need to be part of your hiring process for deal-processing roles. This is typically straightforward to put in place.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Do you have a password policy or system setting requiring strong passwords?</div>
-                    <select class="question-select selfcheck-select" data-key="password-policy">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="password-policy" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="password-policy" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A policy or system setting requiring strong passwords is needed.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Do screens lock when unattended?</div>
-                    <select class="question-select selfcheck-select" data-key="screen-lock">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="screen-lock" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong> Recommended (not required): prohibit use of cell phone cameras at workstations.</div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="screen-lock" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A policy or setting requiring screens to lock when unattended is needed.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Is there a documented process for promptly revoking access when personnel leave or change roles?</div>
-                    <select class="question-select selfcheck-select" data-key="offboarding">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="offboarding" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="offboarding" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A documented off-boarding process is needed.</div>
-                    </div>
-                  </div>
+                <div class="evidence-block">
+                  <h4>Background Checks</h4>
+                  <p>Background checks are part of your hiring process.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Password Policy</h4>
+                  <p>A password policy or system setting requiring strong passwords.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Workstation &amp; Screen Security</h4>
+                  <p>A policy or setting requiring screens to lock when unattended. Not required but recommended &mdash; prohibit use of cell phone cameras at workstations.</p>
+                </div>
+                <div class="evidence-block">
+                  <h4>Off-Boarding Process</h4>
+                  <p>A process for promptly revoking access when personnel leave or change roles.</p>
                 </div>
               </div>
             </details>
@@ -317,23 +302,11 @@
                 <p>MFA on systems where data is accessible.</p>
               </summary>
               <div class="req-body">
-                <div class="questionnaire">
-                  <div class="question-block">
-                    <div class="question-label">Is Multi-Factor Authentication (MFA) enabled on email and CRM (or equivalent systems)?</div>
-                    <select class="question-select selfcheck-select" data-key="mfa">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="mfa" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="mfa" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> MFA needs to be enabled on email and CRM (or equivalent systems).</div>
-                    </div>
-                  </div>
+                <div class="evidence-block">
+                  <h4>Multi-Factor Authentication</h4>
+                  <p>MFA enabled on email and CRM (or equivalent systems).</p>
                 </div>
-                <div class="evidence-block" style="margin-top:6px;">
+                <div class="evidence-block">
                   <h4>Role-Based Access</h4>
                   <p>Program recommendation (not required). Create and limit roles to only the accounts and information required for their job function.</p>
                 </div>
@@ -438,42 +411,6 @@
               </div>
             </details>
 
-            <div id="scope" style="padding:26px 4px 6px;">
-              <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:6px;">Average Time to Complete</div>
-              <div style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;">
-                Guidelines already met: 1&ndash;2 hours<br>
-                Guidelines not yet met: 1&ndash;2 days
-              </div>
-            </div>
-
-            <details id="how-it-works" class="req-card req-card-intro">
-              <summary class="req-top">
-                <h3>How It Works</h3>
-              </summary>
-              <div class="req-body">
-                <ul class="process-checklist">
-                  <li><a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener">Submit request to join</a></li>
-                  <li>Added to directory as Applicant + announcement</li>
-                  <li>Receive member portal access</li>
-                  <li>Answer a few process questions &rarr; see your requirements</li>
-                  <li>Upload evidence within 90 days</li>
-                  <li>Extensions + support available</li>
-                  <li>Certified: directory updated, digital badge issued + certification announced</li>
-                </ul>
-              </div>
-            </details>
-
-            <details id="how-to-read" class="req-card req-card-intro">
-              <summary class="req-top">
-                <h3>Path to Certification</h3>
-              </summary>
-              <div class="req-body">
-                <div class="evidence-block">
-                  <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
-                </div>
-              </div>
-            </details>
-
             <details id="final-review" class="req-card req-card-intro">
               <summary class="req-top">
                 <h3>Final Review</h3>
@@ -511,21 +448,6 @@
       });
       if(location.hash) openTarget(location.hash);
       window.addEventListener('hashchange', function(){ openTarget(location.hash); });
-    })();
-
-    // Personnel & System Access self-check questions
-    (function(){
-      document.querySelectorAll('.selfcheck-select').forEach(function(sel){
-        function evaluate(){
-          var key = sel.getAttribute('data-key');
-          var val = sel.value;
-          document.querySelectorAll('[data-selfcheck-result="' + key + '"]').forEach(function(panel){
-            panel.classList.toggle('visible', val === panel.getAttribute('data-value'));
-          });
-        }
-        sel.addEventListener('change', evaluate);
-        evaluate();
-      });
     })();
 
     // Requirement 03 conditional questionnaire
