@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Secure Broker™ certification requirements and evidence expectations for alternative finance brokerages.">
-  <title>Let's Get You Certified — Secure Broker™</title>
+  <meta name="description" content="Take a quick self-check to see how your process measures up to Secure Broker™ certification guidelines.">
+  <title>Check Your Certification Status — Secure Broker™</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/green-rings.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,8 @@
       --green-accent:#3DA366;
       --green-accent-soft:#5FBF80;
       --green-accent-pale:#E2F4E9;
+      --amber:#9A6B12;
+      --amber-pale:#FBF3E2;
       --text-primary:#0B2918;
       --text-secondary:#3D6B4E;
       --text-muted:#6A9B7C;
@@ -65,121 +67,116 @@
     }
 
     .container{max-width:1120px;margin:0 auto;padding:0 24px}
-    .container-narrow{max-width:900px;margin:0 auto;padding:0 24px}
+    .container-narrow{max-width:800px;margin:0 auto;padding:0 24px}
 
-    .hero{background:var(--white);border-bottom:2px solid var(--border)}
-    .hero-join-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:13px 30px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--green-accent);color:var(--white);margin-top:22px}
-    .hero-join-btn:hover{background:var(--green-accent-soft)}
-    .hero-contact-btn{display:inline-flex;align-items:center;justify-content:center;min-width:160px;padding:11px 28px;border-radius:0;font-family:var(--font-body);font-size:1rem;font-weight:600;text-decoration:none;transition:all .25s;background:var(--white);color:var(--green-accent);border:2px solid var(--green-accent);margin-top:22px}
-    .hero-contact-btn:hover{background:var(--green-accent-pale)}
-    .final-review-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
-    .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{margin-top:0}
+    /* ---------- Hero ---------- */
+    .hero{background:var(--meadow);border-bottom:2px solid var(--border);padding:64px 0 56px}
+    .hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--border);padding:7px 16px;font-size:.85rem;font-weight:600;color:var(--forest);margin-bottom:20px}
+    .hero-pill svg{width:14px;height:14px;flex-shrink:0}
+    .hero h1{font-family:var(--font-display);font-size:clamp(2.1rem,4vw,2.9rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;color:var(--forest);max-width:680px;margin-bottom:18px}
+    .hero-subtitle{font-size:1.15rem;line-height:1.65;color:var(--text-secondary);max-width:600px;margin-bottom:30px}
+    .hero-cta-row{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .btn-start-quiz{display:inline-flex;align-items:center;gap:10px;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:1.02rem;font-weight:700;padding:16px 30px;border-radius:0;text-decoration:none;transition:background .2s;border:none;cursor:pointer}
+    .btn-start-quiz:hover{background:var(--forest-mid)}
+    .btn-start-quiz .arrow{transition:transform .2s}
+    .btn-start-quiz:hover .arrow{transform:translateX(3px)}
+    .hero-meta{font-size:.88rem;color:var(--text-muted)}
 
-    .hero::before{content:none}
-    .hero::after{content:none}
-    .hero-inner{position:relative;z-index:1;padding:40px 0 32px;display:block;max-width:760px}
-    .hero h1{font-family:var(--font-display);font-size:clamp(2.1rem,3.4vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--forest);max-width:620px;margin-bottom:16px}
-    .hero-notice{margin-top:10px;max-width:720px;font-size:1rem;line-height:1.5;color:var(--text-primary)}
-    .btn-primary{display:inline-flex;align-items:center;justify-content:center;background:var(--green-accent);color:var(--white);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:0;text-decoration:none;transition:all .25s}
-    .btn-primary:hover{background:var(--green-accent-soft);}
-    .btn-join{display:inline-flex;align-items:center;gap:8px;background:var(--forest);color:var(--white);font-family:var(--font-body);font-size:.85rem;font-weight:600;letter-spacing:.01em;padding:11px 20px;border-radius:0;text-decoration:none;transition:background .2s}
-    .btn-join:hover{background:var(--forest-mid)}
-    .btn-join .arrow{font-size:1rem;line-height:1}
-    .btn-ghost{display:inline-flex;align-items:center;justify-content:center;background:transparent;color:var(--forest);font-family:var(--font-body);font-size:.9rem;font-weight:600;padding:13px 26px;border-radius:0;text-decoration:none;border:2px solid var(--border);transition:all .25s}
-    .btn-ghost:hover{border-color:var(--forest);background:rgba(255,255,255,.45)}
+    .hero-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
+    @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:32px} }
 
-    section{padding:76px 0;border-bottom:1px solid var(--border-light)}
-    section:last-of-type{border-bottom:none}
-    .section-header{max-width:700px;margin-bottom:42px}
-    .section-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
-    .section-title{font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.25rem);font-weight:700;line-height:1.2;letter-spacing:-.015em;color:var(--forest);margin-bottom:14px}
-    .section-subtitle{font-size:1rem;color:var(--text-secondary);line-height:1.75;max-width:650px}
+    .hero-side{border-left:3px solid var(--green-accent);padding-left:22px}
+    .hero-side-quote{font-size:1.02rem;line-height:1.68;color:var(--text-primary);margin-bottom:20px}
+    .stat-row{display:flex;gap:34px;flex-wrap:wrap}
+    .stat-num{font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--forest);line-height:1}
+    .stat-label{font-size:.8rem;color:var(--text-muted);margin-top:4px}
 
-    .process-section{background:var(--frost)}
-    .process-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-    .process-card{background:rgba(255,255,255,.62);border:1px solid rgba(11,41,24,.1);border-radius:0;padding:28px 26px;}
-    .process-num{width:42px;height:42px;border-radius:50%;background:var(--green-accent);color:var(--white);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;margin-bottom:20px;}
-    .process-card h3{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--forest);margin-bottom:10px}
-    .process-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.68}
+    /* ---------- Quiz ---------- */
+    .quiz-section{padding:70px 0 90px}
+    .quiz-shell{max-width:640px;margin:0 auto;background:var(--white);border:1px solid var(--border);}
+    .quiz-topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 26px;border-bottom:1px solid var(--border-light);background:var(--meadow)}
+    .quiz-step-count{font-size:.8rem;font-weight:700;color:var(--forest);letter-spacing:.02em}
+    .quiz-progress-track{flex:1;height:5px;background:var(--border-light);margin-left:18px;position:relative;overflow:hidden}
+    .quiz-progress-fill{height:100%;background:var(--green-accent);width:0%;transition:width .3s ease}
 
-    .requirements-section{background:var(--white);padding-top:72px}
-    .requirements-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;align-items:start;max-width:800px}
-    .sidebar{position:sticky;top:92px;background:var(--meadow);border:1px solid var(--border-light);border-radius:0;padding:24px}
-    .sidebar h3{font-family:var(--font-display);font-size:1rem;color:var(--forest);margin-bottom:14px}
-    .sidebar a{display:block;text-decoration:none;color:var(--text-secondary);font-size:.9rem;font-weight:500;padding:11px 0;border-top:1px solid var(--border-light)}
-    .sidebar .btn-join{display:flex;align-items:center;justify-content:center;text-align:center;color:var(--white);background:var(--forest);border-top:none;border-radius:0;padding:11px 20px;margin-top:14px;font-size:.85rem}
-    .sidebar .btn-join:hover{background:var(--forest-mid);color:var(--white)}
-    .sidebar a:hover{color:var(--green-accent)}
-    .req-list{display:grid;gap:18px}
-    .req-card{border:1px solid var(--border);border-radius:0;background:var(--white);overflow:hidden}
-    .req-card.req-card-intro{background:var(--green-accent-pale);border-color:rgba(61,163,102,.25)}
-    .req-card.req-card-intro>summary.req-top{background:var(--green-accent-pale)}
-    .req-card.req-card-intro[open]>summary.req-top{background:var(--frost)}
-    .req-card.req-card-intro .req-body{background:var(--green-accent-pale)}
-    .req-card>summary.req-top{list-style:none;cursor:pointer;position:relative;padding:24px 64px 22px 28px;background:var(--white);border-bottom:1px solid transparent;transition:border-color .2s}
-    .req-card>summary.req-top::-webkit-details-marker{display:none}
-    .req-card>summary.req-top::after{content:"";position:absolute;right:28px;top:34px;width:9px;height:9px;border-right:2px solid var(--text-muted);border-bottom:2px solid var(--text-muted);transform:rotate(45deg);transition:transform .2s,top .2s}
-    .req-card[open]>summary.req-top{border-bottom-color:var(--border-light);background:var(--meadow)}
-    .req-card[open]>summary.req-top::after{transform:rotate(-135deg);top:38px}
-    .req-top{padding:24px 28px 22px;background:var(--white);border-bottom:1px solid var(--border-light)}
-    .req-kicker{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
-    .req-top h3{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--forest);letter-spacing:-.01em;margin-bottom:8px}
-    .req-top p{font-size:.95rem;color:var(--text-secondary);line-height:1.7;max-width:680px}
-    .req-body{padding:24px 28px 28px}
-    .evidence-block{padding:18px 0;border-top:1px solid var(--border-light)}
-    .evidence-block:first-child{border-top:none;padding-top:0}
-    .evidence-block h4{font-family:var(--font-display);font-size:.98rem;font-weight:700;color:var(--forest);margin-bottom:8px}
-    .evidence-block p{font-size:.9rem;color:var(--text-secondary);line-height:1.68;margin-bottom:10px}
-    .example-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin:14px 0 8px}
-    .example-list{list-style:none;display:grid;gap:8px;margin:0}
-    .example-list li{position:relative;padding-left:18px;font-size:.88rem;color:var(--text-secondary);line-height:1.58}
-    .example-list li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--green-accent)}
-    .process-checklist{list-style:none;display:grid;gap:14px;margin:0;padding:0}
-    .process-checklist li{position:relative;padding-left:30px;font-size:.93rem;color:var(--text-secondary);line-height:1.65}
-    .process-checklist li.important-note{color:#B91C1C;font-weight:600}
-    .process-checklist li::before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;background-image:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233DA366' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");background-repeat:no-repeat;background-size:contain}
-    .note{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.18);border-radius:0;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
-    .recommended{margin-top:12px;padding:14px 16px;background:#fbfbef;border:1px solid #ece8be;border-radius:0;font-size:.88rem;color:var(--text-secondary);line-height:1.62}
+    .quiz-body{padding:38px 30px 30px}
+    .quiz-step{display:none}
+    .quiz-step.active{display:block}
+    .quiz-question{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--forest);line-height:1.35;margin-bottom:6px}
+    .quiz-hint{font-size:.85rem;color:var(--text-muted);margin-bottom:20px}
 
-    /* Requirement 03 — conditional questionnaire */
-    .protection-intro{padding:18px 20px;background:var(--green-accent);border:1px solid var(--green-accent);font-size:.92rem;color:var(--white);line-height:1.65;margin-bottom:22px}
-    .questionnaire{display:grid;gap:18px}
-    .question-block{padding:20px;border:1px solid var(--border-light);background:var(--white)}
-    .question-label{font-family:var(--font-display);font-size:.96rem;font-weight:700;color:var(--forest);line-height:1.45;margin-bottom:5px}
-    .question-hint{font-size:.8rem;color:var(--text-muted);margin-bottom:12px}
-    .choice-grid{display:grid;gap:8px}
-    .choice-grid label{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1px solid var(--border-light);background:#fff;cursor:pointer;font-size:.88rem;color:var(--text-secondary);line-height:1.45}
-    .choice-grid input{margin-top:3px;accent-color:var(--green-accent);flex:0 0 auto}
-    .question-select{width:100%;padding:11px 12px;border:1px solid var(--border);background:#fff;color:var(--text-primary);font:inherit;font-size:.9rem;border-radius:0}
-    .conditional-panel{display:none;margin-top:12px}
-    .conditional-panel.visible{display:block}
-    .branch-card{padding:18px;border:1px solid var(--border-light);background:#fbfdfb}
-    .branch-title{font-family:var(--font-display);font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px}
-    .result-callout{margin-top:12px;padding:14px 16px;background:var(--green-accent-pale);border:1px solid rgba(61,163,102,.22);font-size:.87rem;color:var(--text-secondary);line-height:1.62}
-    .result-callout strong{color:var(--forest)}
-    .result-callout.attention{background:var(--white);border-color:var(--border)}
-    .result-callout.attention strong{color:#B3261E}
-    .examples-toggle-public{margin-left:6px;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;text-decoration:underline}
-    .questionnaire-reset{margin-top:4px;background:transparent;border:0;padding:0;color:var(--text-muted);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:underline}
+    .yn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .yn-btn{padding:16px;text-align:center;border:2px solid var(--border);background:var(--white);font-family:var(--font-body);font-size:1rem;font-weight:700;color:var(--text-primary);cursor:pointer;transition:all .15s}
+    .yn-btn:hover{border-color:var(--green-accent)}
+    .yn-btn.selected{background:var(--forest);border-color:var(--forest);color:var(--white)}
 
-    @media(max-width:900px){
-      .requirements-layout{grid-template-columns:1fr;gap:30px}
-      .sidebar{position:relative;top:auto}
-      .process-list{grid-template-columns:1fr}
-    }
+    .choice-col{display:grid;gap:10px;margin-top:22px}
+    .choice-opt{display:flex;align-items:center;gap:12px;padding:14px 16px;border:2px solid var(--border);background:var(--white);cursor:pointer;font-size:.95rem;font-weight:500;color:var(--text-primary);transition:all .15s}
+    .choice-opt:hover{border-color:var(--green-accent)}
+    .choice-opt.selected{border-color:var(--forest);background:var(--meadow)}
+    .choice-opt .dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;position:relative}
+    .choice-opt.selected .dot{border-color:var(--forest)}
+    .choice-opt.selected .dot::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--forest)}
+    .choice-opt.checkbox .dot{border-radius:0}
+    .choice-opt.checkbox.selected .dot::after{border-radius:0}
+
+    .quiz-feedback{margin-top:22px;padding:16px 18px;border-left:4px solid var(--green-accent);background:var(--white);display:none}
+    .quiz-feedback.show{display:block}
+    .quiz-feedback.attn{border-left-color:var(--amber)}
+    .quiz-feedback-label{font-family:var(--font-display);font-size:.92rem;font-weight:700;color:var(--forest);margin-bottom:6px}
+    .quiz-feedback.attn .quiz-feedback-label{color:var(--amber)}
+    .quiz-feedback-text{font-size:.9rem;line-height:1.65;color:var(--text-secondary)}
+    .quiz-feedback-reassure{margin-top:10px;font-size:.85rem;line-height:1.6;color:var(--text-muted);font-style:italic}
+    .quiz-feedback a{color:#2563EB;font-weight:700;text-decoration:underline}
+
+    .quiz-navrow{display:flex;justify-content:space-between;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid var(--border-light)}
+    .quiz-btn{font-family:var(--font-body);font-size:.9rem;font-weight:700;padding:12px 24px;border:none;cursor:pointer;transition:all .15s}
+    .quiz-btn-back{background:transparent;color:var(--text-secondary)}
+    .quiz-btn-back:hover{color:var(--forest)}
+    .quiz-btn-next{background:var(--green-accent);color:var(--white)}
+    .quiz-btn-next:hover{background:var(--green-accent-soft)}
+    .quiz-btn-next:disabled{background:var(--border);color:var(--text-muted);cursor:not-allowed}
+    .quiz-btn-back:disabled{visibility:hidden}
+
+    /* Results */
+    .quiz-result{display:none;padding:38px 30px 34px}
+    .quiz-result.active{display:block}
+    .result-heading{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--forest);margin-bottom:10px}
+    .result-sub{font-size:.98rem;color:var(--text-secondary);line-height:1.65;margin-bottom:26px}
+    .result-list{list-style:none;display:grid;gap:10px;margin-bottom:28px}
+    .result-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9rem;color:var(--text-secondary);line-height:1.55;padding:12px 14px;border:1px solid var(--border-light)}
+    .result-list li .mark{flex-shrink:0;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:var(--white);border-radius:50%}
+    .result-list li.ok .mark{background:var(--green-accent)}
+    .result-list li.watch .mark{background:var(--amber)}
+    .result-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn-join-solid{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;background:var(--green-accent);color:var(--white);font-weight:700;font-size:.95rem;text-decoration:none;border:none;transition:background .2s}
+    .btn-join-solid:hover{background:var(--green-accent-soft)}
+    .btn-join-outline{display:inline-flex;align-items:center;justify-content:center;padding:12px 26px;background:var(--white);color:var(--forest);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid var(--forest)}
+    .result-footnote{margin-top:22px;font-size:.85rem;color:var(--text-muted);line-height:1.6}
+
     @media(max-width:640px){
-      .container,.container-narrow{padding:0 20px}
-      .hero-inner{padding:62px 0 54px;display:block}
-      section{padding:58px 0}
-      .btn-primary,.btn-ghost{width:100%}
-      .final-review-actions{flex-direction:column;align-items:stretch}
-      .final-review-actions .hero-join-btn,.final-review-actions .hero-contact-btn{width:100%}
-      .req-top,.req-body{padding-left:22px;padding-right:22px}
-      .req-card>summary.req-top{padding-right:54px}
-      .sidebar{display:none}
+      .hero{padding:44px 0 40px}
+      .hero-cta-row{flex-direction:column;align-items:flex-start}
+      .btn-start-quiz{width:100%;justify-content:center}
+      .quiz-body,.quiz-result{padding:28px 20px 24px}
+      .quiz-topbar{padding:14px 20px}
+      .yn-row{grid-template-columns:1fr}
     }
-  </style>
 
+    /* ---------- Formalities (below the quiz) ---------- */
+    .formalities{background:var(--meadow);padding:70px 0 80px;border-top:1px solid var(--border-light)}
+    .formalities-head{max-width:640px;margin:0 auto 36px;text-align:left}
+    .formalities-head h2{font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--forest);margin-bottom:8px}
+    .formalities-head p{font-size:.95rem;color:var(--text-secondary);line-height:1.65}
+    .formalities-grid{max-width:640px;margin:0 auto;display:grid;gap:16px}
+    .fcard{background:var(--white);border:1px solid var(--border);padding:26px 28px}
+    .fcard h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--forest);margin-bottom:12px}
+    .fcard p{font-size:.92rem;color:var(--text-secondary);line-height:1.7}
+    .step-num-list{list-style:none;counter-reset:steps;display:grid;gap:10px}
+    .step-num-list li{counter-increment:steps;display:flex;gap:12px;font-size:.9rem;color:var(--text-secondary);line-height:1.55}
+    .step-num-list li::before{content:counter(steps);flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--forest);color:var(--white);font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center}
+    .fcard-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -213,365 +210,440 @@
     <a href="https://portal.securebroker.org/login" class="btn-member-mobile">Sign In</a>
   </div>
 
-  <!-- HERO LOCKED — do not modify without explicit request -->
+  <!-- Hero -->
   <header class="hero">
     <div class="container">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1>Let's Get You Certified</h1>
-          <div class="hero-notice">
-            <p>Guidelines apply only to deal-processing roles. Evidence-based verification. No specific software or tools required. Guidelines public for transparency.</p>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            2-minute self-check
+          </div>
+          <h1>Check Your Certification Status</h1>
+          <p class="hero-subtitle">Whether you've already joined the program or you're just curious how your process stacks up, answer a few quick questions and see exactly where you stand. There's no wrong place to start.</p>
+          <div class="hero-cta-row">
+            <button type="button" class="btn-start-quiz" id="startQuizBtn">Take the Quiz <span class="arrow">&rarr;</span></button>
+            <span class="hero-meta">9 questions &middot; instant feedback</span>
+          </div>
+        </div>
+        <div class="hero-side">
+          <p class="hero-side-quote">The program is focused on reducing the misuse of business funding applications by encouraging stronger protection at the highest-concentration point of risk: the initial application package.</p>
+          <div class="stat-row">
+            <div>
+              <div class="stat-num">1&ndash;2 hrs</div>
+              <div class="stat-label">If guidelines already met</div>
+            </div>
+            <div>
+              <div class="stat-num">1&ndash;2 days</div>
+              <div class="stat-label">If not yet met</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </header>
-  <!-- END HERO LOCKED -->
 
-  <main>
-    <section id="requirements" class="requirements-section">
-      <div class="container">
+  <!-- Quiz -->
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <div class="quiz-shell">
+        <div class="quiz-topbar">
+          <div class="quiz-step-count" id="quizStepCount">Question 1</div>
+          <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+        </div>
 
+        <div class="quiz-body" id="quizBody">
 
-        <div class="requirements-layout">
-          <div class="req-list">
-
-            <div class="section-header" style="margin-bottom:8px;">
-              <div class="section-label">Self-Check</div>
-              <p style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;max-width:620px;">Answer a few questions to see how your current process holds up against the guidelines. This is a quick self-check &mdash; the full verification process happens in the member portal.</p>
+          <!-- Step: bg-checks -->
+          <div class="quiz-step" data-step="bg-checks">
+            <div class="quiz-question">Are background checks conducted as part of your hiring process?</div>
+            <div class="yn-row" data-yn="bg-checks">
+              <button type="button" class="yn-btn" data-value="yes">Yes</button>
+              <button type="button" class="yn-btn" data-value="no">No</button>
             </div>
-
-            <details id="personnel" class="req-card">
-              <summary class="req-top">
-                <h3>Personnel Controls</h3>
-                <p>Basic personnel practices.</p>
-              </summary>
-              <div class="req-body">
-                <div class="questionnaire">
-                  <div class="question-block">
-                    <div class="question-label">Are background checks conducted as part of your hiring process?</div>
-                    <select class="question-select selfcheck-select" data-key="bg-checks">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="bg-checks" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="bg-checks" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> Background checks need to be part of your hiring process for deal-processing roles. This is typically straightforward to put in place.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Do you have a password policy or system setting requiring strong passwords?</div>
-                    <select class="question-select selfcheck-select" data-key="password-policy">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="password-policy" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="password-policy" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A policy or system setting requiring strong passwords is needed.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Do screens lock when unattended?</div>
-                    <select class="question-select selfcheck-select" data-key="screen-lock">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="screen-lock" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong> Recommended (not required): prohibit use of cell phone cameras at workstations.</div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="screen-lock" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A policy or setting requiring screens to lock when unattended is needed.</div>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Is there a documented process for promptly revoking access when personnel leave or change roles?</div>
-                    <select class="question-select selfcheck-select" data-key="offboarding">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="offboarding" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="offboarding" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> A documented off-boarding process is needed.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </details>
-
-            <details id="system-access" class="req-card">
-              <summary class="req-top">
-                <h3>System Access</h3>
-                <p>MFA on systems where data is accessible.</p>
-              </summary>
-              <div class="req-body">
-                <div class="questionnaire">
-                  <div class="question-block">
-                    <div class="question-label">Is Multi-Factor Authentication (MFA) enabled on email and CRM (or equivalent systems)?</div>
-                    <select class="question-select selfcheck-select" data-key="mfa">
-                      <option value="">Select one</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                    <div class="conditional-panel" data-selfcheck-result="mfa" data-value="yes">
-                      <div class="result-callout"><strong>This meets the requirement.</strong></div>
-                    </div>
-                    <div class="conditional-panel" data-selfcheck-result="mfa" data-value="no">
-                      <div class="result-callout attention"><strong>This is required.</strong> MFA needs to be enabled on email and CRM (or equivalent systems).</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="evidence-block" style="margin-top:6px;">
-                  <h4>Role-Based Access</h4>
-                  <p>Program recommendation (not required). Create and limit roles to only the accounts and information required for their job function.</p>
-                </div>
-              </div>
-            </details>
-
-            <details id="document-protection" class="req-card">
-              <summary class="req-top">
-                <h3>Document &amp; Data Protection</h3>
-                <p>Deterring misuse.</p>
-              </summary>
-              <div class="req-body">
-                <div class="protection-intro">
-                  Answer the questions below to see how the guideline applies to your specific process.
-                </div>
-
-                <div class="questionnaire" id="protectionQuestionnaire">
-                  <div class="question-block">
-                    <div class="question-label">How do merchants apply?</div>
-                    <div class="question-hint">Select one.</div>
-                    <div class="choice-grid">
-                      <label><input type="radio" name="merchant-apply" value="online"> <span>Online</span></label>
-                      <label><input type="radio" name="merchant-apply" value="email"> <span>Email</span></label>
-                      <label><input type="radio" name="merchant-apply" value="both"> <span>Both</span></label>
-                    </div>
-                  </div>
-
-                  <div class="question-block">
-                    <div class="question-label">Where do the application and any associated documents <strong>FIRST ROUTE</strong>?</div>
-                    <div class="question-hint">Select all that apply.</div>
-                    <div class="choice-grid">
-                      <label><input type="checkbox" name="route" value="sor"> <span>System of record (CRM or equivalent)</span></label>
-                      <label><input type="checkbox" name="route" value="email"> <span>Email inbox</span></label>
-                      <label><input type="checkbox" name="route" value="other"> <span>Other</span></label>
-                    </div>
-                  </div>
-
-                  <div class="conditional-panel" data-route-panel="sor">
-                    <div class="branch-card">
-                      <div class="branch-title">System of Record</div>
-                      <div class="question-label">Are attachments view-only, or downloadable?</div>
-                      <select class="question-select" data-branch-select="sor-access">
-                        <option value="">Select one</option>
-                        <option value="view">View-only</option>
-                        <option value="download">Downloadable</option>
-                      </select>
-
-                      <div class="conditional-panel" data-result="sor-view">
-                        <div class="result-callout"><strong>This sufficiently addresses the requirement.</strong> Restricting downloads is a direct control. The initial application and associated documents remain within the system and cannot be extracted by individual users. This addresses the highest-concentration point of risk and satisfies the requirement. The standard does not extend to routine supplemental documents exchanged later in the funding process.</div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="sor-download">
-                        <div style="margin-top:16px;">
-                          <div class="question-label">Are downloaded attachments watermarked?</div>
-                          <select class="question-select" data-branch-select="sor-watermark">
-                            <option value="">Select one</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="sor-watermark-yes">
-                        <div class="result-callout"><strong>Watermarking can satisfy this path.</strong> Watermarking points a downloaded document back to your office, reasonably deterring most misuse.</div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="sor-watermark-no">
-                        <div class="result-callout attention"><strong>Safeguards are needed.</strong> Because your system of record allows downloads of unwatermarked or otherwise unprotected documents, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="conditional-panel" data-route-panel="email">
-                    <div class="branch-card">
-                      <div class="branch-title">Email Inbox</div>
-                      <div class="question-label">When a submission first reaches the inbox &mdash;</div>
-                      <select class="question-select" data-branch-select="email-routing">
-                        <option value="">Select one</option>
-                        <option value="auto">Routes automatically to the system of record &mdash; no human handling</option>
-                        <option value="person">Reviewed and processed by a person</option>
-                      </select>
-
-                      <div class="conditional-panel" data-result="email-auto">
-                        <div class="result-callout"><strong>This sufficiently addresses the email intake path.</strong> No manual handling means no opportunities for misuse at this stage.</div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="email-person">
-                        <div class="result-callout attention"><strong>Safeguards are needed.</strong> Because business funding applications flow through a human processing workflow rather than a controlled system of record, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="conditional-panel" data-route-panel="other">
-                    <div class="branch-card">
-                      <div class="branch-title">Other Channel</div>
-                      <div class="result-callout" style="margin-top:0;"><strong>Different workflow? That&rsquo;s okay.</strong> We&rsquo;re looking for how you prevent deal-processing personnel from downloading, exporting, or forwarding unprotected documents to themselves or outside the company. Alternative approaches are welcome if they meet that intent. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer" class="examples-toggle-public">See common approaches</a></div>
-                    </div>
-                  </div>
-
-                  <button type="button" class="questionnaire-reset" id="protectionReset">Reset answers</button>
-                </div>
-              </div>
-            </details>
-
-            <div id="scope" style="padding:26px 4px 6px;">
-              <div style="font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--forest);margin-bottom:6px;">Average Time to Complete</div>
-              <div style="font-size:.95rem;color:var(--text-secondary);line-height:1.7;">
-                Guidelines already met: 1&ndash;2 hours<br>
-                Guidelines not yet met: 1&ndash;2 days
-              </div>
+            <div class="quiz-feedback" data-feedback-for="bg-checks" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">This meets the requirement.</div>
             </div>
-
-            <details id="how-it-works" class="req-card req-card-intro">
-              <summary class="req-top">
-                <h3>How It Works</h3>
-              </summary>
-              <div class="req-body">
-                <ul class="process-checklist">
-                  <li><a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener">Submit request to join</a></li>
-                  <li>Added to directory as Applicant + announcement</li>
-                  <li>Receive member portal access</li>
-                  <li>Answer a few process questions &rarr; see your requirements</li>
-                  <li>Upload evidence within 90 days</li>
-                  <li>Extensions + support available</li>
-                  <li>Certified: directory updated, digital badge issued + certification announced</li>
-                </ul>
-              </div>
-            </details>
-
-            <details id="how-to-read" class="req-card req-card-intro">
-              <summary class="req-top">
-                <h3>Path to Certification</h3>
-              </summary>
-              <div class="req-body">
-                <div class="evidence-block">
-                  <p style="font-size:1rem;">Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
-                </div>
-              </div>
-            </details>
-
-            <details id="final-review" class="req-card req-card-intro">
-              <summary class="req-top">
-                <h3>Final Review</h3>
-                <p>A collaborative path to certification.</p>
-              </summary>
-              <div class="req-body">
-                <div class="evidence-block">
-                  <p>Please allow up to five business days for review. We&rsquo;ll assess your evidence, confirm your business registration, and conduct limited public-record checks. If any evidence does not meet the intent of a safeguard, we&rsquo;ll provide feedback and ample time to address it.</p>
-                </div>
-                <div class="evidence-block">
-                  <h4>Membership</h4>
-                  <p>No cost to join. Annual membership fee due only if you submit for final review. $499&ndash;$1,499/year, based on company size. Monthly option available. Membership supports program administration, independent evidence review, member support, ongoing program development, and maintenance of the public directory.</p>
-                  <div class="final-review-actions">
-                    <a href="https://securebroker.org/contact/" class="hero-join-btn">Join Program</a>
-                    <a href="https://securebroker.org/contact/" class="hero-contact-btn" target="_blank" rel="noopener noreferrer">Contact Us</a>
-                  </div>
-                </div>
-              </div>
-            </details>
+            <div class="quiz-feedback attn" data-feedback-for="bg-checks" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">Background checks need to be part of your hiring process for deal-processing roles &mdash; typically straightforward to put in place.</div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
           </div>
+
+          <!-- Step: password-policy -->
+          <div class="quiz-step" data-step="password-policy">
+            <div class="quiz-question">Do you have a password policy or system setting requiring strong passwords?</div>
+            <div class="yn-row" data-yn="password-policy">
+              <button type="button" class="yn-btn" data-value="yes">Yes</button>
+              <button type="button" class="yn-btn" data-value="no">No</button>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="password-policy" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">This meets the requirement.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="password-policy" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">A policy or system setting requiring strong passwords is needed.</div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: screen-lock -->
+          <div class="quiz-step" data-step="screen-lock">
+            <div class="quiz-question">Do screens lock when unattended?</div>
+            <div class="yn-row" data-yn="screen-lock">
+              <button type="button" class="yn-btn" data-value="yes">Yes</button>
+              <button type="button" class="yn-btn" data-value="no">No</button>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="screen-lock" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">This meets the requirement. Recommended (not required): prohibit use of cell phone cameras at workstations.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="screen-lock" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">A policy or setting requiring screens to lock when unattended is needed.</div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: offboarding -->
+          <div class="quiz-step" data-step="offboarding">
+            <div class="quiz-question">Is there a documented process for promptly revoking access when personnel leave or change roles?</div>
+            <div class="yn-row" data-yn="offboarding">
+              <button type="button" class="yn-btn" data-value="yes">Yes</button>
+              <button type="button" class="yn-btn" data-value="no">No</button>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="offboarding" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">This meets the requirement.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="offboarding" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">A documented off-boarding process is needed.</div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: mfa -->
+          <div class="quiz-step" data-step="mfa">
+            <div class="quiz-question">Is Multi-Factor Authentication (MFA) enabled on email and CRM (or equivalent systems)?</div>
+            <div class="yn-row" data-yn="mfa">
+              <button type="button" class="yn-btn" data-value="yes">Yes</button>
+              <button type="button" class="yn-btn" data-value="no">No</button>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="mfa" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">This meets the requirement.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="mfa" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">MFA needs to be enabled on email and CRM (or equivalent systems).</div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: merchant-apply (context, no pass/fail) -->
+          <div class="quiz-step" data-step="merchant-apply">
+            <div class="quiz-question">How do merchants apply?</div>
+            <div class="quiz-hint">Select one.</div>
+            <div class="choice-col" data-choice="merchant-apply">
+              <div class="choice-opt" data-value="online"><span class="dot"></span>Online</div>
+              <div class="choice-opt" data-value="email"><span class="dot"></span>Email</div>
+              <div class="choice-opt" data-value="both"><span class="dot"></span>Both</div>
+            </div>
+          </div>
+
+          <!-- Step: document-routing (multi) -->
+          <div class="quiz-step" data-step="document-routing">
+            <div class="quiz-question">Where do the application and any associated documents first route?</div>
+            <div class="quiz-hint">Select all that apply.</div>
+            <div class="choice-col" data-multi="document-routing">
+              <div class="choice-opt checkbox" data-value="sor"><span class="dot"></span>System of record (CRM or equivalent)</div>
+              <div class="choice-opt checkbox" data-value="email"><span class="dot"></span>Email inbox</div>
+              <div class="choice-opt checkbox" data-value="other"><span class="dot"></span>Other</div>
+            </div>
+          </div>
+
+          <!-- Step: sor-access -->
+          <div class="quiz-step" data-step="sor-access" data-show-if="document-routing:sor">
+            <div class="quiz-question">In your system of record, are attachments view-only, or downloadable?</div>
+            <div class="choice-col" data-choice="sor-access">
+              <div class="choice-opt" data-value="view"><span class="dot"></span>View-only</div>
+              <div class="choice-opt" data-value="download"><span class="dot"></span>Downloadable</div>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="sor-access" data-value="view">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">Restricting downloads is a direct control. The initial application and associated documents remain within the system and cannot be extracted by individual users. This addresses the highest-concentration point of risk and satisfies the requirement.</div>
+            </div>
+          </div>
+
+          <!-- Step: sor-watermark -->
+          <div class="quiz-step" data-step="sor-watermark" data-show-if="sor-access:download">
+            <div class="quiz-question">Are downloaded attachments watermarked?</div>
+            <div class="choice-col" data-choice="sor-watermark">
+              <div class="choice-opt" data-value="yes"><span class="dot"></span>Yes</div>
+              <div class="choice-opt" data-value="no"><span class="dot"></span>No</div>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="sor-watermark" data-value="yes">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">Watermarking points a downloaded document back to your office, reasonably deterring most misuse.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="sor-watermark" data-value="no">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">Because your system of record allows downloads of unwatermarked or otherwise unprotected documents, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: email-routing -->
+          <div class="quiz-step" data-step="email-routing" data-show-if="document-routing:email">
+            <div class="quiz-question">When a submission first reaches the email inbox&hellip;</div>
+            <div class="choice-col" data-choice="email-routing">
+              <div class="choice-opt" data-value="auto"><span class="dot"></span>Routes automatically to the system of record &mdash; no human handling</div>
+              <div class="choice-opt" data-value="person"><span class="dot"></span>Reviewed and processed by a person</div>
+            </div>
+            <div class="quiz-feedback" data-feedback-for="email-routing" data-value="auto">
+              <div class="quiz-feedback-label">You're covered</div>
+              <div class="quiz-feedback-text">No manual handling means no opportunities for misuse at this stage.</div>
+            </div>
+            <div class="quiz-feedback attn" data-feedback-for="email-routing" data-value="person">
+              <div class="quiz-feedback-label">Worth a look</div>
+              <div class="quiz-feedback-text">Because business funding applications flow through a human processing workflow rather than a controlled system of record, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+              <div class="quiz-feedback-reassure">Each company&rsquo;s circumstances are reviewed holistically. A &ldquo;No&rdquo; response alone does not prevent certification.</div>
+            </div>
+          </div>
+
+          <!-- Step: other-channel (info only) -->
+          <div class="quiz-step" data-step="other-channel" data-show-if="document-routing:other">
+            <div class="quiz-question">Other channel</div>
+            <div class="quiz-feedback show">
+              <div class="quiz-feedback-label">Different workflow? That's okay</div>
+              <div class="quiz-feedback-text">We're looking for how you prevent deal-processing personnel from downloading, exporting, or forwarding unprotected documents to themselves or outside the company. Alternative approaches are welcome if they meet that intent. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Results -->
+        <div class="quiz-result" id="quizResult">
+          <div class="result-heading">You're closer than you think.</div>
+          <p class="result-sub">Here's a quick recap of your answers. None of this locks you out of certification &mdash; it just shows where our team can help.</p>
+          <ul class="result-list" id="resultList"></ul>
+          <div class="result-actions">
+            <a href="https://securebroker.org/contact/" class="btn-join-solid">Join Program</a>
+            <a href="https://securebroker.org/contact/" class="btn-join-outline" target="_blank" rel="noopener noreferrer">Contact Us</a>
+          </div>
+          <p class="result-footnote">This was just a self-check. Once you join, the member portal walks you through the full, fully interactive verification process &mdash; with evidence uploads, guided examples, and support along the way.</p>
+        </div>
+
+        <div class="quiz-navrow" id="quizNavRow" style="padding:0 30px 26px;">
+          <button type="button" class="quiz-btn quiz-btn-back" id="quizBackBtn">Back</button>
+          <button type="button" class="quiz-btn quiz-btn-next" id="quizNextBtn" disabled>Next</button>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Formalities -->
+  <section class="formalities">
+    <div class="container">
+      <div class="formalities-head">
+        <h2>The formalities</h2>
+        <p>Once you're ready, here's exactly how joining and certification work.</p>
+      </div>
+      <div class="formalities-grid">
+
+        <div class="fcard">
+          <h3>How It Works</h3>
+          <ul class="step-num-list">
+            <li><a class="inline-link" href="https://securebroker.org/contact/" target="_blank" rel="noopener">Submit request to join</a></li>
+            <li>Added to directory as Applicant + announcement</li>
+            <li>Receive member portal access</li>
+            <li>Answer a few process questions &rarr; see your requirements</li>
+            <li>Upload evidence within 90 days</li>
+            <li>Extensions + support available</li>
+            <li>Certified: directory updated, digital badge issued + certification announced</li>
+          </ul>
+        </div>
+
+        <div class="fcard">
+          <h3>Path to Certification</h3>
+          <p>Join, then work toward certification with our support or self-service. The process is collaborative and focused on helping you meet the standard rather than finding reasons for disqualification.</p>
+        </div>
+
+        <div class="fcard">
+          <h3>Final Review</h3>
+          <p>Please allow up to five business days for review. We'll assess your evidence, confirm your business registration, and conduct limited public-record checks. If any evidence doesn't meet the intent of a safeguard, we'll provide feedback and ample time to address it.</p>
+          <p style="margin-top:14px;"><strong style="color:var(--forest);">Membership:</strong> No cost to join. Annual membership fee due only if you submit for final review. $499&ndash;$1,499/year, based on company size. Monthly option available. Membership supports program administration, independent evidence review, member support, ongoing program development, and maintenance of the public directory.</p>
+          <div class="fcard-actions">
+            <a href="https://securebroker.org/contact/" class="btn-join-solid">Join Program</a>
+            <a href="https://securebroker.org/contact/" class="btn-join-outline" target="_blank" rel="noopener noreferrer">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <script>
-    (function(){
-      var openTarget = function(hash){
-        if(!hash) return;
-        var el = document.querySelector(hash);
-        if(el && el.tagName === 'DETAILS') el.open = true;
-      };
-      document.querySelectorAll('.sidebar a[href^="#"]').forEach(function(link){
-        link.addEventListener('click', function(){ openTarget(link.getAttribute('href')); });
-      });
-      if(location.hash) openTarget(location.hash);
-      window.addEventListener('hashchange', function(){ openTarget(location.hash); });
-    })();
-
-    // Personnel & System Access self-check questions
-    (function(){
-      document.querySelectorAll('.selfcheck-select').forEach(function(sel){
-        function evaluate(){
-          var key = sel.getAttribute('data-key');
-          var val = sel.value;
-          document.querySelectorAll('[data-selfcheck-result="' + key + '"]').forEach(function(panel){
-            panel.classList.toggle('visible', val === panel.getAttribute('data-value'));
-          });
-        }
-        sel.addEventListener('change', evaluate);
-        evaluate();
-      });
-    })();
-
-    // Requirement 03 conditional questionnaire
-    (function(){
-      var root = document.getElementById('protectionQuestionnaire');
-      if (!root) return;
-
-      function show(el, yes){ if (el) el.classList.toggle('visible', !!yes); }
-
-      function evaluate(){
-        var routes = Array.from(root.querySelectorAll('input[name="route"]:checked')).map(function(el){return el.value;});
-        root.querySelectorAll('[data-route-panel]').forEach(function(panel){
-          show(panel, routes.indexOf(panel.getAttribute('data-route-panel')) !== -1);
-        });
-
-        var sorAccess = root.querySelector('[data-branch-select="sor-access"]');
-        var sorWatermark = root.querySelector('[data-branch-select="sor-watermark"]');
-        show(root.querySelector('[data-result="sor-view"]'), sorAccess && sorAccess.value === 'view');
-        show(root.querySelector('[data-result="sor-download"]'), sorAccess && sorAccess.value === 'download');
-        show(root.querySelector('[data-result="sor-watermark-yes"]'), sorAccess && sorAccess.value === 'download' && sorWatermark && sorWatermark.value === 'yes');
-        show(root.querySelector('[data-result="sor-watermark-no"]'), sorAccess && sorAccess.value === 'download' && sorWatermark && sorWatermark.value === 'no');
-
-        var emailRouting = root.querySelector('[data-branch-select="email-routing"]');
-        show(root.querySelector('[data-result="email-auto"]'), emailRouting && emailRouting.value === 'auto');
-        show(root.querySelector('[data-result="email-person"]'), emailRouting && emailRouting.value === 'person');
-
-      }
-
-      root.addEventListener('change', evaluate);
-
-      var reset = document.getElementById('protectionReset');
-      if (reset) reset.addEventListener('click', function(){
-        root.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(function(el){ el.checked = false; });
-        root.querySelectorAll('select').forEach(function(el){ el.value = ''; });
-        evaluate();
-      });
-
-      evaluate();
-    })();
-
     var mobileMenu = document.getElementById('mobileMenu');
     var mobileToggle = document.querySelector('.mobile-toggle');
     var mobileClose = document.getElementById('mobileMenuClose');
     function closeMobileMenu(){ mobileMenu.classList.remove('active'); }
     if (mobileToggle) mobileToggle.addEventListener('click', function(){ mobileMenu.classList.add('active'); });
     if (mobileClose) mobileClose.addEventListener('click', closeMobileMenu);
+
+    (function(){
+      var stepEls = Array.prototype.slice.call(document.querySelectorAll('.quiz-step'));
+      var answers = {};
+      var current = 0;
+      var quizBody = document.getElementById('quizBody');
+      var quizResult = document.getElementById('quizResult');
+      var quizNavRow = document.getElementById('quizNavRow');
+      var backBtn = document.getElementById('quizBackBtn');
+      var nextBtn = document.getElementById('quizNextBtn');
+      var stepCountEl = document.getElementById('quizStepCount');
+      var progressFill = document.getElementById('quizProgressFill');
+      var startBtn = document.getElementById('startQuizBtn');
+
+      function stepVisible(el){
+        var cond = el.getAttribute('data-show-if');
+        if (!cond) return true;
+        var parts = cond.split(':');
+        var key = parts[0], val = parts[1];
+        var a = answers[key];
+        if (Array.isArray(a)) return a.indexOf(val) !== -1;
+        return a === val;
+      }
+
+      function visibleSteps(){
+        return stepEls.filter(stepVisible);
+      }
+
+      function isAnswered(el){
+        var id = el.getAttribute('data-step');
+        if (el.querySelector('[data-yn]') || el.querySelector('[data-choice]')) {
+          return answers[id] !== undefined;
+        }
+        if (el.querySelector('[data-multi]')) {
+          return Array.isArray(answers[id]) && answers[id].length > 0;
+        }
+        return true; // info-only steps
+      }
+
+      function renderFeedback(el){
+        var id = el.getAttribute('data-step');
+        var val = answers[id];
+        el.querySelectorAll('[data-feedback-for]').forEach(function(fb){
+          var show = fb.getAttribute('data-feedback-for') === id && fb.getAttribute('data-value') === val;
+          fb.classList.toggle('show', show);
+        });
+      }
+
+      function render(){
+        var vis = visibleSteps();
+        stepEls.forEach(function(el){ el.classList.remove('active'); });
+        if (current >= vis.length) { showResults(); return; }
+        quizBody.style.display = '';
+        quizResult.classList.remove('active');
+        var el = vis[current];
+        el.classList.add('active');
+        renderFeedback(el);
+        stepCountEl.textContent = 'Question ' + (current + 1);
+        progressFill.style.width = Math.round(((current) / vis.length) * 100) + '%';
+        backBtn.disabled = current === 0;
+        nextBtn.textContent = (current === vis.length - 1) ? 'See My Results' : 'Next';
+        nextBtn.disabled = !isAnswered(el);
+      }
+
+      function showResults(){
+        quizBody.style.display = 'none';
+        quizResult.classList.add('active');
+        quizNavRow.style.display = 'none';
+        progressFill.style.width = '100%';
+        stepCountEl.textContent = 'Results';
+
+        var labels = {
+          'bg-checks': 'Background checks',
+          'password-policy': 'Password policy',
+          'screen-lock': 'Screen lock',
+          'offboarding': 'Off-boarding process',
+          'mfa': 'Multi-factor authentication',
+          'sor-watermark': 'Watermarking downloaded attachments',
+          'email-routing': 'Email submission handling'
+        };
+        var list = document.getElementById('resultList');
+        list.innerHTML = '';
+        Object.keys(labels).forEach(function(key){
+          if (answers[key] === undefined) return;
+          var isGood = (answers[key] === 'yes' || answers[key] === 'auto' || answers[key] === 'view');
+          var li = document.createElement('li');
+          li.className = isGood ? 'ok' : 'watch';
+          li.innerHTML = '<span class="mark">' + (isGood ? '\u2713' : '!') + '</span><span>' + labels[key] + (isGood ? ' &mdash; meets the requirement' : ' &mdash; worth a look before certification') + '</span>';
+          list.appendChild(li);
+        });
+      }
+
+      function goNext(){
+        var vis = visibleSteps();
+        if (current < vis.length - 1) { current++; render(); }
+        else { current = vis.length; render(); }
+        quizBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      function goBack(){
+        if (current > 0) { current--; render(); }
+      }
+
+      quizBody.addEventListener('click', function(e){
+        var ynBtn = e.target.closest('.yn-btn');
+        if (ynBtn) {
+          var group = ynBtn.closest('[data-yn]');
+          var key = group.getAttribute('data-yn');
+          answers[key] = ynBtn.getAttribute('data-value');
+          group.querySelectorAll('.yn-btn').forEach(function(b){ b.classList.toggle('selected', b === ynBtn); });
+          renderFeedback(ynBtn.closest('.quiz-step'));
+          nextBtn.disabled = false;
+          return;
+        }
+        var choiceOpt = e.target.closest('.choice-opt:not(.checkbox)');
+        if (choiceOpt) {
+          var cgroup = choiceOpt.closest('[data-choice]');
+          var ckey = cgroup.getAttribute('data-choice');
+          answers[ckey] = choiceOpt.getAttribute('data-value');
+          cgroup.querySelectorAll('.choice-opt').forEach(function(o){ o.classList.toggle('selected', o === choiceOpt); });
+          renderFeedback(choiceOpt.closest('.quiz-step'));
+          nextBtn.disabled = false;
+          return;
+        }
+        var multiOpt = e.target.closest('.choice-opt.checkbox');
+        if (multiOpt) {
+          var mgroup = multiOpt.closest('[data-multi]');
+          var mkey = mgroup.getAttribute('data-multi');
+          var cur = Array.isArray(answers[mkey]) ? answers[mkey].slice() : [];
+          var val = multiOpt.getAttribute('data-value');
+          var idx = cur.indexOf(val);
+          var nowSelected;
+          if (idx === -1) { cur.push(val); nowSelected = true; } else { cur.splice(idx, 1); nowSelected = false; }
+          answers[mkey] = cur;
+          multiOpt.classList.toggle('selected', nowSelected);
+          nextBtn.disabled = cur.length === 0;
+          return;
+        }
+      });
+
+      nextBtn.addEventListener('click', goNext);
+      backBtn.addEventListener('click', goBack);
+
+      if (startBtn) {
+        startBtn.addEventListener('click', function(){
+          document.getElementById('quiz').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      render();
+    })();
   </script>
 </body>
 </html>
