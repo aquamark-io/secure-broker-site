@@ -227,19 +227,19 @@
 
           <div class="req-card" style="padding:32px;">
             <ul class="example-list">
-              <li>View-only document access</li>
-              <li>Secure document delivery &mdash; forms, links, API</li>
-              <li>Company-managed devices &mdash; blocking access to personal email, cloud storage sites, USB drives</li>
-              <li>Outbound email quarantine on specific messages (e.g. outbound + attachments + sent to external or personal domain)</li>
-              <li>Document watermarking &mdash; <a class="inline-link" href="https://www.aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or equivalent</li>
-              <li>Attachments route automatically to a CRM or equivalent, limiting human access</li>
-              <li>DLP (Data Loss Prevention) software (e.g. Microsoft Purview DLP) &mdash; detects sensitive content by pattern and blocks it from leaving, across email, uploads, and cloud sync</li>
-              <li>CASB (Cloud Access Security Broker) (e.g. Netskope) &mdash; restricts downloads or syncing from cloud storage to unmanaged devices</li>
-              <li>Enterprise browser or browser isolation tools (e.g. Island, Talon) &mdash; disables downloads, copy/paste, or screenshots within specific apps</li>
-              <li>Web/DNS filtering &mdash; a network-level rule (via a firewall, secure web gateway, or a DNS filtering service) that blocklists domains like gmail.com, outlook.com, yahoo.com on company networks or company-managed devices. Simplest, most common for smaller shops.</li>
-              <li>Browser management policies &mdash; Chrome Enterprise or Edge for Business lets IT push a policy restricting browser sign-in to only company-domain accounts, or block navigation to specific URLs entirely. Common if the company&rsquo;s already using Google Workspace or Microsoft 365 centrally.</li>
-              <li>&ldquo;Tenant restrictions&rdquo; &mdash; Microsoft and Google both let admins allow their own company&rsquo;s version of Gmail/Outlook while blocking any personal account of the same app, even in the same browser tab. So a rep can use their work Gmail freely but literally cannot log into a personal Gmail on that device. This is what a CASB typically enforces.</li>
-              <li>MDM/endpoint management (Intune, Jamf) &mdash; pushes any of the above as a device-level policy, so it applies regardless of network.</li>
+              <li>View-only document access.</li>
+              <li>Secure document delivery &mdash; forms, links, API.</li>
+              <li>Company-managed devices &mdash; restricting access to unauthorized cloud storage, USB drives, and other removable or external transfer methods.</li>
+              <li>Email account / tenant restrictions &mdash; allow access to approved company email accounts while blocking personal or unauthorized email accounts on company-managed devices.</li>
+              <li>Outbound email quarantine on specific messages (e.g. outbound + attachments + sent to external or personal domain).</li>
+              <li>CASB (Cloud Access Security Broker) (e.g. Netskope) &mdash; applies access and data controls across cloud applications, such as restricting personal accounts, downloads, uploads, syncing, or use from unmanaged devices. Netskope describes CASB as a policy-enforcement layer for managed and unmanaged cloud applications.</li>
+              <li>Document watermarking &mdash; <a class="inline-link" href="https://www.aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or equivalent.</li>
+              <li>Attachments route automatically to a CRM or equivalent, limiting human access via email.</li>
+              <li>Enterprise browser or browser isolation tools (e.g. Island) &mdash; can restrict downloads, copy/paste, screenshots, uploads, or other data movement within specific apps.</li>
+              <li>Web/DNS filtering &mdash; rules enforced through a firewall, secure web gateway, DNS filtering service, or managed device that block access to selected domains such as personal email or cloud-storage sites.</li>
+              <li>Browser management policies &mdash; settings configured through browser management platforms such as Chrome Enterprise/Google Admin or Microsoft Intune, Group Policy, and Edge for Business to restrict browser sign-in to approved company accounts, block specific websites, or enforce other browser-level controls. Microsoft Edge specifically supports policies restricting which accounts may sign in.</li>
+              <li>MDM / endpoint management (e.g. Intune, Jamf) &mdash; centrally applies and enforces device-level security policies, such as app restrictions, browser controls, USB restrictions, and access requirements, regardless of the network being used.</li>
+              <li>DLP (Data Loss Prevention) software (e.g. Microsoft Purview DLP) &mdash; detects sensitive information and applies rules to prevent or restrict unauthorized sharing through email, uploads, cloud apps, or other transfer methods. Microsoft Purview DLP supports policies that can block external email sharing based on configured conditions.</li>
             </ul>
           </div>
         </div>
