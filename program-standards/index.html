@@ -173,6 +173,8 @@
     .warning-text a{color:#2563EB;font-weight:700;text-decoration:underline}
     .examples-toggle-public{margin-left:6px;color:#2563EB;font:inherit;font-size:.84rem;font-weight:700;text-decoration:underline}
     .questionnaire-reset{margin-top:4px;background:transparent;border:0;padding:0;color:var(--text-muted);font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;text-decoration:underline}
+    .complete-banner{display:flex;align-items:center;gap:10px;margin-top:22px;margin-bottom:4px;padding:14px 18px;background:var(--forest);color:var(--white);font-size:.88rem;font-weight:600}
+    .complete-banner .success-check{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--white);color:var(--forest);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800}
 
     @media(max-width:900px){
       .requirements-layout{grid-template-columns:1fr;gap:30px}
@@ -413,6 +415,13 @@
                     </div>
                   </div>
 
+                  <div class="conditional-panel" id="questionnaireComplete">
+                    <div class="complete-banner">
+                      <div class="success-check">&#10003;</div>
+                      <div>Questions complete &mdash; continue reviewing the remaining standards below.</div>
+                    </div>
+                  </div>
+
                   <button type="button" class="questionnaire-reset" id="protectionReset">Reset answers</button>
                 </div>
               </div>
@@ -529,6 +538,21 @@
         var emailRouting = root.querySelector('[data-branch-select="email-routing"]');
         show(root.querySelector('[data-result="email-auto"]'), emailRouting && emailRouting.value === 'auto');
         show(root.querySelector('[data-result="email-person"]'), emailRouting && emailRouting.value === 'person');
+
+        function routeResolved(route){
+          if (route === 'sor') {
+            if (!sorAccess) return false;
+            if (sorAccess.value === 'view') return true;
+            if (sorAccess.value === 'download') return !!(sorWatermark && sorWatermark.value);
+            return false;
+          }
+          if (route === 'email') {
+            return !!(emailRouting && emailRouting.value);
+          }
+          return false;
+        }
+        var complete = routes.length > 0 && routes.every(routeResolved);
+        show(document.getElementById('questionnaireComplete'), complete);
 
       }
 
