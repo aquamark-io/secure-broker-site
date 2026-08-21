@@ -307,12 +307,12 @@
             <details id="document-protection" class="req-card">
               <summary class="req-top">
                 <h3>1. Submission Protection</h3>
-                <p>Deterring misuse.</p>
+                <p>Reasonable safeguards for the initial submission package.</p>
                 <span class="req-quiz-badge">Quiz</span>
               </summary>
               <div class="req-body">
                 <div class="protection-intro">
-                  Answer the questions below to see how the guideline applies to your specific process.
+                  <strong>What we're evaluating:</strong> this requirement focuses on the initial submission package &mdash; the business funding application and supporting documents, such as bank statements &mdash; at the point where deal-processing personnel first have access to them. We're looking for reasonable safeguards that reduce the opportunity for, or deter, unauthorized sharing or misuse. No specific technology is required, and different approaches may satisfy the same objective.
                 </div>
 
                 <div class="questionnaire" id="protectionQuestionnaire">
@@ -350,36 +350,76 @@
                           <div class="success-check">&#10003;</div>
                           <div>
                             <div class="success-title">Requirement Satisfied</div>
-                            <div class="success-text">View-only access prevents users from extracting submission documents, satisfying the requirement at the highest-concentration point of risk. The standard does not extend to subsequent routine email exchanges.</div>
+                            <div class="success-text">View-only access materially limits users' ability to remove or redistribute the original submission documents, satisfying this requirement at the initial submission stage. The standard does not extend to routine supplemental documents exchanged later in the funding process.</div>
                           </div>
                         </div>
                       </div>
 
                       <div class="conditional-panel" data-result="sor-download">
                         <div style="margin-top:16px;">
-                          <div class="question-label">Are downloaded documents protected either by watermarks, passwords or an equivalent?</div>
-                          <select class="question-select" data-branch-select="sor-watermark">
-                            <option value="">Select one</option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div class="conditional-panel" data-result="sor-watermark-yes">
-                        <div class="success-banner">
-                          <div class="success-check">&#10003;</div>
-                          <div>
-                            <div class="success-title">Requirement Satisfied</div>
-                            <div class="success-text">Watermarking points a downloaded document back to your office, reasonably deterring most misuse. Passwords prevent document access altogether. Either method acceptable.</div>
+                          <div class="question-label">Which safeguards are in place for downloadable submission documents?</div>
+                          <div class="question-hint">Select all that apply.</div>
+                          <div class="choice-grid">
+                            <label><input type="checkbox" name="sor-safeguard" value="watermark" data-safeguard-group="sor"> <span><strong>Company-branded watermarking</strong> &mdash; downloaded documents contain the company name, logo, or another identifying mark.</span></label>
+                            <label><input type="checkbox" name="sor-safeguard" value="monitoring" data-safeguard-group="sor"> <span><strong>User activity monitoring and accountability</strong> &mdash; downloads are logged by user, the logs are reviewed, and personnel acknowledge their activity is monitored.</span></label>
+                            <label><input type="checkbox" name="sor-safeguard" value="transfer" data-safeguard-group="sor"> <span><strong>Unauthorized transfer methods are restricted</strong> &mdash; company-managed devices restrict personal email, personal cloud storage, or removable media.</span></label>
+                            <label><input type="checkbox" name="sor-safeguard" value="other" data-safeguard-group="sor"> <span><strong>We use another safeguard</strong> &mdash; tell us how your process works.</span></label>
+                            <label><input type="checkbox" name="sor-safeguard" value="none" data-safeguard-group="sor"> <span>None of these / I&rsquo;m not sure</span></label>
                           </div>
                         </div>
                       </div>
 
-                      <div class="conditional-panel" data-result="sor-watermark-no">
+                      <div class="conditional-panel" data-result="sor-watermark">
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Requirement Satisfied</div>
+                            <div class="success-text">A company-branded watermark reasonably deters misuse by tying a downloaded copy back to your office. Individualized or forensic watermarking is not required, subject to evidence verification.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="conditional-panel" data-result="sor-monitoring">
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Likely Satisfied</div>
+                            <div class="success-text">This approach satisfies the requirement when all three are true: downloads are attributable to individual users, the logs or reports are actually reviewed, and personnel acknowledge their activity is monitored. Passive logs that nobody reviews are not sufficient on their own.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="conditional-panel" data-result="sor-transfer">
+                        <div class="success-banner">
+                          <div class="success-check">&#10003;</div>
+                          <div>
+                            <div class="success-title">Likely Satisfied</div>
+                            <div class="success-text">A reasonable configuration that materially restricts obvious unauthorized transfer paths &mdash; such as personal email, personal cloud storage, or removable media &mdash; is sufficient. Not every control is required.</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="conditional-panel" data-result="sor-other">
                         <div class="warning-banner">
-                          <div class="warning-title">Safeguards are needed</div>
-                          <div class="warning-text">Because your system of record allows downloads of unwatermarked or otherwise unprotected documents, safeguards are needed to either deter misuse or reduce the technical opportunity for unauthorized sharing. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a></div>
+                          <div class="warning-title">Review Needed</div>
+                          <div class="warning-text">Every company operates differently. Tell us how your process protects downloadable submission documents, and we&rsquo;ll review whether it meets the objective of this requirement.</div>
+                        </div>
+                        <div class="inquiry-form" style="margin-top:14px; padding:16px 18px; background:#fbfdfb; border:1px solid var(--border-light);">
+                          <div class="question-label" style="margin-bottom:10px;">Tell us about your safeguard</div>
+                          <div style="display:grid; gap:10px;">
+                            <input type="text" class="question-select" id="sorOtherName" placeholder="Name">
+                            <input type="text" class="question-select" id="sorOtherCompany" placeholder="Company">
+                            <input type="email" class="question-select" id="sorOtherEmail" placeholder="Email">
+                            <textarea class="question-select" id="sorOtherDescription" rows="3" placeholder="Brief description of safeguard" style="resize:vertical; font:inherit;"></textarea>
+                            <button type="button" class="hero-join-btn" id="sorOtherSubmit" style="margin-top:0; min-width:0; width:fit-content;">Submit for review</button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="conditional-panel" data-result="sor-none">
+                        <div class="warning-banner">
+                          <div class="warning-title">Additional Safeguards May Be Needed</div>
+                          <div class="warning-text">Because the initial submission documents can be downloaded, a reasonable safeguard should be in place to reduce the opportunity for, or deter, unauthorized sharing or misuse. <a href="/common-approaches/" target="_blank" rel="noopener noreferrer">See common approaches</a> or contact us and we&rsquo;ll help you evaluate your current process.</div>
                         </div>
                       </div>
                     </div>
@@ -400,7 +440,7 @@
                           <div class="success-check">&#10003;</div>
                           <div>
                             <div class="success-title">Requirement Satisfied</div>
-                            <div class="success-text">No manual handling means no opportunities for misuse.</div>
+                            <div class="success-text">The initial submission package routes into the system without human handling at this stage, materially reducing the opportunity for misuse during intake.</div>
                           </div>
                         </div>
                       </div>
@@ -519,11 +559,16 @@
         });
 
         var sorAccess = root.querySelector('[data-branch-select="sor-access"]');
-        var sorWatermark = root.querySelector('[data-branch-select="sor-watermark"]');
         show(root.querySelector('[data-result="sor-view"]'), sorAccess && sorAccess.value === 'view');
         show(root.querySelector('[data-result="sor-download"]'), sorAccess && sorAccess.value === 'download');
-        show(root.querySelector('[data-result="sor-watermark-yes"]'), sorAccess && sorAccess.value === 'download' && sorWatermark && sorWatermark.value === 'yes');
-        show(root.querySelector('[data-result="sor-watermark-no"]'), sorAccess && sorAccess.value === 'download' && sorWatermark && sorWatermark.value === 'no');
+
+        var sorSafeguardBoxes = Array.from(root.querySelectorAll('input[data-safeguard-group="sor"]'));
+        var sorChecked = sorSafeguardBoxes.filter(function(cb){ return cb.checked; }).map(function(cb){ return cb.value; });
+        show(root.querySelector('[data-result="sor-watermark"]'), sorAccess && sorAccess.value === 'download' && sorChecked.indexOf('watermark') !== -1);
+        show(root.querySelector('[data-result="sor-monitoring"]'), sorAccess && sorAccess.value === 'download' && sorChecked.indexOf('monitoring') !== -1);
+        show(root.querySelector('[data-result="sor-transfer"]'), sorAccess && sorAccess.value === 'download' && sorChecked.indexOf('transfer') !== -1);
+        show(root.querySelector('[data-result="sor-other"]'), sorAccess && sorAccess.value === 'download' && sorChecked.indexOf('other') !== -1);
+        show(root.querySelector('[data-result="sor-none"]'), sorAccess && sorAccess.value === 'download' && sorChecked.indexOf('none') !== -1);
 
         var emailRouting = root.querySelector('[data-branch-select="email-routing"]');
         show(root.querySelector('[data-result="email-auto"]'), emailRouting && emailRouting.value === 'auto');
@@ -533,7 +578,7 @@
           if (route === 'sor') {
             if (!sorAccess) return false;
             if (sorAccess.value === 'view') return true;
-            if (sorAccess.value === 'download') return !!(sorWatermark && sorWatermark.value);
+            if (sorAccess.value === 'download') return sorChecked.length > 0;
             return false;
           }
           if (route === 'email') {
@@ -547,6 +592,32 @@
       }
 
       root.addEventListener('change', evaluate);
+
+      // "None" is mutually exclusive with the other safeguard options
+      root.querySelectorAll('input[data-safeguard-group="sor"]').forEach(function(cb){
+        cb.addEventListener('change', function(){
+          var group = root.querySelectorAll('input[data-safeguard-group="sor"]');
+          if (cb.value === 'none' && cb.checked) {
+            group.forEach(function(other){ if (other !== cb) other.checked = false; });
+          } else if (cb.value !== 'none' && cb.checked) {
+            group.forEach(function(other){ if (other.value === 'none') other.checked = false; });
+          }
+        });
+      });
+
+      // "Other safeguard" inline inquiry — opens a pre-filled email to the program team
+      var sorOtherSubmit = document.getElementById('sorOtherSubmit');
+      if (sorOtherSubmit) {
+        sorOtherSubmit.addEventListener('click', function(){
+          var name = (document.getElementById('sorOtherName').value || '').trim();
+          var company = (document.getElementById('sorOtherCompany').value || '').trim();
+          var email = (document.getElementById('sorOtherEmail').value || '').trim();
+          var description = (document.getElementById('sorOtherDescription').value || '').trim();
+          var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nSafeguard description:\n' + description;
+          var mailto = 'mailto:info@aquamark.io?subject=' + encodeURIComponent('Submission Protection — safeguard review (Secure Broker)') + '&body=' + encodeURIComponent(body);
+          window.location.href = mailto;
+        });
+      }
 
       var reset = document.getElementById('protectionReset');
       if (reset) reset.addEventListener('click', function(){
