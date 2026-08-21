@@ -326,7 +326,7 @@
                     </div>
                   </div>
 
-                  <div class="question-block">
+                  <div class="question-block conditional-panel" id="routeQuestionBlock">
                     <div class="question-label">Where do the application and any associated documents <strong>FIRST ROUTE</strong>?</div>
                     <div class="question-hint">Select all that apply.</div>
                     <div class="choice-grid">
@@ -544,6 +544,9 @@
       function show(el, yes){ if (el) el.classList.toggle('visible', !!yes); }
 
       function evaluate(){
+        var merchantApply = root.querySelector('input[name="merchant-apply"]:checked');
+        show(document.getElementById('routeQuestionBlock'), !!merchantApply);
+
         var routes = Array.from(root.querySelectorAll('input[name="route"]:checked')).map(function(el){return el.value;});
         root.querySelectorAll('[data-route-panel]').forEach(function(panel){
           show(panel, routes.indexOf(panel.getAttribute('data-route-panel')) !== -1);
