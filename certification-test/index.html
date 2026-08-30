@@ -295,6 +295,43 @@
       .safeguard-detail-toggle{width:22px;height:22px;min-width:22px;}
       .questionnaire-reset{margin-left:20px;}
     }
+
+
+    /* Broker visual alignment with funder guidelines */
+    :root{
+      --broker-heading:#1F2933;
+      --broker-body:#4A5561;
+      --broker-muted:#7A8490;
+    }
+
+    /* Neutral text palette: retain green for brand surfaces, not copy */
+    body,.hero-notice,.section-subtitle,.sidebar a,.req-top p,.evidence-block p,.example-list li,.process-checklist li,.note,.recommended,.question-hint,.choice-grid label,.safeguard-option-title,.details-modal p,.safeguard-option-body p,.question-select,.result-callout,.success-text,.warning-text,.accepted-subtext,.result-note{color:var(--broker-body);}
+    .logo,.mobile-menu-close,.mobile-menu a,.hero h1,.section-title,.sidebar h3,.process-card h3,.req-top h3,.evidence-block h4,.question-label,.accepted-heading,.result-callout strong,.success-title,.safeguard-option-title{color:var(--broker-heading);}
+    .section-label,.req-kicker,.example-label,.question-hint,.branch-title,.accepted-subtext,.questionnaire-reset,.details-modal-close{color:var(--broker-muted);}
+    #program-scope strong[style*="var(--forest)"]{color:var(--broker-heading)!important;}
+    #how-it-works .process-checklist li::before{color:var(--broker-heading);}
+    .example-list li::before{background:var(--broker-heading);}
+    .req-quiz-badge{color:var(--broker-heading);}
+    .req-quiz-badge::before{background:var(--broker-heading);}
+    .questionnaire-reset:hover{color:var(--broker-heading);border-color:var(--broker-heading);}
+
+    /* Intro / closing card header colors */
+    .req-card.req-card-accent{border-color:var(--green-accent);}
+    .req-card.req-card-accent>summary.req-top,
+    .req-card.req-card-accent[open]>summary.req-top{background:var(--green-accent);border-bottom-color:rgba(255,255,255,.3);}
+    .req-card.req-card-accent>summary.req-top h3{color:var(--white);margin-bottom:0;}
+    .req-card.req-card-accent>summary.req-top::after{border-color:var(--white);}
+
+    #program-scope.req-card.req-card-solid{border-color:var(--forest);}
+    #program-scope.req-card.req-card-solid>summary.req-top,
+    #program-scope.req-card.req-card-solid[open]>summary.req-top{background:var(--forest);}
+
+    .req-card.req-card-dark{border-color:var(--forest);}
+    .req-card.req-card-dark>summary.req-top,
+    .req-card.req-card-dark[open]>summary.req-top{background:var(--forest);border-bottom-color:rgba(255,255,255,.3);}
+    .req-card.req-card-dark>summary.req-top h3{color:var(--white);margin-bottom:0;}
+    .req-card.req-card-dark>summary.req-top::after{border-color:var(--white);}
+
   </style>
 
 </head>
@@ -364,7 +401,7 @@
               </div>
             </details>
 
-            <details id="how-it-works" class="req-card req-card-intro">
+            <details id="how-it-works" class="req-card req-card-intro req-card-accent">
               <summary class="req-top">
                 <h3>How It Works</h3>
               </summary>
@@ -379,7 +416,7 @@
               </div>
             </details>
 
-            <details id="how-to-read" class="req-card req-card-intro">
+            <details id="how-to-read" class="req-card req-card-intro req-card-accent">
               <summary class="req-top">
                 <h3>Path to Certification</h3>
               </summary>
@@ -652,7 +689,7 @@
               </div>
             </details>
 
-            <details id="final-review" class="req-card req-card-intro">
+            <details id="final-review" class="req-card req-card-intro req-card-dark">
               <summary class="req-top">
                 <h3>Final Review</h3>
               </summary>
