@@ -356,12 +356,9 @@
       padding: 88px 0;
     }
     .mission-inner {
-      max-width: 1120px;
+      max-width: 960px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 56px;
-      align-items: start;
+      display: block;
     }
     .mission-eyebrow {
       font-family: var(--font-display);
@@ -392,7 +389,9 @@
       margin: 20px 0 0;
     }
     .mission-statement-card {
-      padding: 20px 22px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 30px 34px;
       background: #F7FCF9;
       border: 1px solid rgba(255,255,255,0.65);
       border-radius: 0;
@@ -426,7 +425,7 @@
       .mission-inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
       .mission-eyebrow { text-align: center; align-items: center; }
       .mission-eyebrow-rule { margin: 14px auto 0; }
-      .mission-body p { text-align: left; margin: 0; }
+      .mission-body p { text-align: center; margin: 0; }
       .scope-aside { text-align: left; padding: 14px 18px; }
       .scope-aside p { margin: 0; font-size: 0.85rem; max-width: none; }
     }
@@ -2444,7 +2443,7 @@
   <!-- Participant Carousel -->
   <section class="carousel-section">
     <div style="text-align: center; margin-bottom: 32px;">
-      <div class="section-label">Trusted by Brokers and Funders</div>
+      <div class="section-label" style="color: #7A7F86;">Trusted by Brokers and Funders</div>
     </div>
     <div class="carousel-track-wrapper">
       <div class="carousel-fade carousel-fade-left"></div>
@@ -2484,17 +2483,9 @@
   <section class="mission-section">
     <div class="container">
       <div class="mission-inner reveal">
-        <div class="mission-heading-col">
-          <div class="mission-eyebrow">
-            <span class="mission-eyebrow-line2">Our</span>
-            <span class="mission-eyebrow-line1">Mission</span>
-          </div>
-          <div class="mission-eyebrow-rule"></div>
-        </div>
-        <div class="mission-content-col">
-          <div class="mission-statement-card">
-            <div class="mission-body">
-<p><span class="mission-brand">Secure Broker™</span> is a new industry initiative working to reduce the widespread theft of business funding applications. The program certifies brokers taking steps to protect submission packages, where most of the activity is concentrated. The goal is to establish a practical framework that reduces opportunities for theft, distinguishes responsible operators, and helps create an environment where small business owners can seek alternative capital with greater confidence and better outcomes.</p>            </div>
+        <div class="mission-statement-card">
+          <div class="mission-body">
+            <p><span class="mission-brand">Secure Broker™</span> is a new industry initiative working to reduce the widespread theft of business funding applications. The program certifies brokers taking steps to protect submission packages, where most of the activity is concentrated. The goal is to establish a practical framework that reduces opportunities for theft, distinguishes responsible operators, and helps create an environment where small business owners can seek alternative capital with greater confidence and better outcomes.</p>
           </div>
         </div>
       </div>
@@ -2505,7 +2496,6 @@
   <section id="newsletter" class="newsletter-section">
     <div class="newsletter-grid reveal">
       <div class="newsletter-left">
-        <div class="newsletter-rule"></div>
         <h2 class="section-title">Stay Informed</h2>
         <p class="section-subtitle">Program updates, certification news,<br> security tips, educational content.</p>
       </div>
@@ -2610,7 +2600,7 @@
   <!-- Leadership -->
   <section id="leadership" class="leadership-section">
     <div class="container">
-      <div class="section-label">Leadership</div>
+      <div class="section-label" style="color: #7A7F86;">Leadership</div>
       <h2 class="section-title" style="margin-bottom: 36px;">Program Director</h2>
       <div class="leadership-content reveal">
         <div class="leadership-bio">
@@ -2675,7 +2665,6 @@
       <div class="reveal" style="max-width: 820px; margin: 0 auto; text-align: center;">
 
         <!-- Header -->
-        <div class="section-label" style="color: var(--green-accent-soft);">Membership</div>
         <h2 class="section-title" style="color: var(--white); margin-bottom: 1.15rem; font-size: clamp(2.45rem, 5vw, 3.55rem); line-height: 1.02; letter-spacing: -0.04em;">Join Program</h2>
 
         <!-- Terms -->
@@ -2697,7 +2686,7 @@
   <section id="press" class="press-section">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">Press &amp; Media</div>
+        <div class="section-label" style="color: #7A7F86;">Press &amp; Media</div>
         <h2 class="section-title">In the News</h2>
       </div>
       <div class="press-grid reveal">
