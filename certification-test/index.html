@@ -277,10 +277,10 @@
     .safeguard-option-row{padding:6px 0;min-height:auto;}
     .safeguard-option-main{display:inline-flex;align-items:center;gap:8px;flex:0 1 auto;cursor:default;}
     .safeguard-option-title{font-size:.94rem;font-weight:400;color:#1F2933;}
-    .safeguard-detail-toggle{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;border:1px solid #D1D5DB;border-radius:3px;background:#F5F5F5;color:#6B7280;font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.6;cursor:pointer;vertical-align:middle;}
-    .safeguard-detail-toggle:hover{background:#E5E7EB;color:#4B5563;border-color:#C4C9D0;}
+    .safeguard-detail-toggle{display:inline-flex;align-items:center;justify-content:center;padding:3px 10px;border:1px solid var(--green-accent);border-radius:3px;background:transparent;color:var(--green-accent);font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.6;cursor:pointer;vertical-align:middle;}
+    .safeguard-detail-toggle:hover{background:var(--green-accent);color:var(--white);border-color:var(--green-accent);}
     .safeguard-option-body{display:none!important;}
-    .safeguard-other-trigger.active{background:#E5E7EB;border-color:#BFC5CC;color:#4B5563;}
+    .safeguard-other-trigger.active{background:var(--forest-mid);border-color:var(--forest-mid);}
 
     .details-modal-overlay{background:rgba(11,41,24,.48);}
     .details-modal{max-width:540px;border:1px solid var(--border);padding:32px 34px;box-shadow:0 24px 70px rgba(11,41,24,.18);}
@@ -292,26 +292,8 @@
 
     @media(max-width:640px){
       #document-protection .question-block,#document-protection .branch-card{padding-left:20px;padding-right:20px;}
-      .safeguard-option-row{
-        flex-direction:row;
-        align-items:center;
-        justify-content:flex-start;
-        gap:0;
-        padding:8px 0;
-      }
-      .safeguard-option-main{
-        display:inline-flex;
-        align-items:center;
-        gap:10px;
-        width:auto;
-      }
-      .safeguard-detail-toggle{
-        width:auto;
-        flex:0 0 auto;
-        font-size:.68rem;
-        padding:3px 10px;
-        text-align:center;
-      }
+      .safeguard-option-row{padding:8px 16px;}
+      .safeguard-detail-toggle{padding:4px 12px;}
       .questionnaire-reset{margin-left:20px;}
     }
 
@@ -502,10 +484,10 @@
                               <div class="safeguard-option-body">
                                 <p>Restrictions are in place to reduce common ways documents could be moved outside the company. Examples include:</p>
                                 <ul class="example-list" style="margin-top:14px;">
-                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:#4FA3D1">Group Policy (GPO)</strong> on Windows devices.</li>
-                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:#4FA3D1">Windows 365</strong>, <strong style="color:#4FA3D1">Azure Virtual Desktop</strong>, and <strong style="color:#4FA3D1">Amazon WorkSpaces</strong>.</li>
-                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:#4FA3D1">Microsoft Intune</strong> and <strong style="color:#4FA3D1">Jamf</strong>.</li>
-                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:#4FA3D1"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:#4FA3D1"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
+                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:var(--green-accent)">Group Policy (GPO)</strong> on Windows devices.</li>
+                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:var(--green-accent)">Windows 365</strong>, <strong style="color:var(--green-accent)">Azure Virtual Desktop</strong>, and <strong style="color:var(--green-accent)">Amazon WorkSpaces</strong>.</li>
+                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:var(--green-accent)">Microsoft Intune</strong> and <strong style="color:var(--green-accent)">Jamf</strong>.</li>
+                                  <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:var(--green-accent)"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:var(--green-accent)"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
                                 </ul>
                                 <p style="margin-top:14px;">Examples of restrictions include:</p>
                                 <ul class="example-list" style="margin-top:14px;">
@@ -584,10 +566,10 @@
                                   <div class="safeguard-option-body">
                                     <p>Restrictions are in place to reduce common ways documents could be moved outside the company. Examples include:</p>
                                     <ul class="example-list" style="margin-top:14px;">
-                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:#4FA3D1">Group Policy (GPO)</strong> on Windows devices.</li>
-                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:#4FA3D1">Windows 365</strong>, <strong style="color:#4FA3D1">Azure Virtual Desktop</strong>, and <strong style="color:#4FA3D1">Amazon WorkSpaces</strong>.</li>
-                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:#4FA3D1">Microsoft Intune</strong> and <strong style="color:#4FA3D1">Jamf</strong>.</li>
-                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:#4FA3D1"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:#4FA3D1"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
+                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:var(--green-accent)">Group Policy (GPO)</strong> on Windows devices.</li>
+                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:var(--green-accent)">Windows 365</strong>, <strong style="color:var(--green-accent)">Azure Virtual Desktop</strong>, and <strong style="color:var(--green-accent)">Amazon WorkSpaces</strong>.</li>
+                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:var(--green-accent)">Microsoft Intune</strong> and <strong style="color:var(--green-accent)">Jamf</strong>.</li>
+                                      <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:var(--green-accent)"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:var(--green-accent)"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
                                     </ul>
                                     <p style="margin-top:14px;">Examples of restrictions include:</p>
                                     <ul class="example-list" style="margin-top:14px;">
@@ -642,10 +624,10 @@
                             <div class="safeguard-option-body">
                               <p>Restrictions are in place to reduce common ways documents could be moved outside the company. Examples include:</p>
                               <ul class="example-list" style="margin-top:14px;">
-                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:#4FA3D1">Group Policy (GPO)</strong> on Windows devices.</li>
-                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:#4FA3D1">Windows 365</strong>, <strong style="color:#4FA3D1">Azure Virtual Desktop</strong>, and <strong style="color:#4FA3D1">Amazon WorkSpaces</strong>.</li>
-                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:#4FA3D1">Microsoft Intune</strong> and <strong style="color:#4FA3D1">Jamf</strong>.</li>
-                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:#4FA3D1"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:#4FA3D1"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
+                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Managed devices:</strong> Company-owned computers configured with security rules that control what users can access, download, or move. Examples may include <strong style="color:var(--green-accent)">Group Policy (GPO)</strong> on Windows devices.</li>
+                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Virtual/remote workspaces:</strong> A controlled company desktop or workspace that employees access remotely. Files and applications stay inside that environment rather than on the employee’s personal device. Examples include <strong style="color:var(--green-accent)">Windows 365</strong>, <strong style="color:var(--green-accent)">Azure Virtual Desktop</strong>, and <strong style="color:var(--green-accent)">Amazon WorkSpaces</strong>.</li>
+                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Endpoint management:</strong> Software used to centrally apply and enforce security settings on employee devices, such as blocking USB, restricting apps, or controlling file transfers. Examples include <strong style="color:var(--green-accent)">Microsoft Intune</strong> and <strong style="color:var(--green-accent)">Jamf</strong>.</li>
+                                <li><strong style="background:#FFF3B0; padding:1px 4px;">Enterprise browser controls:</strong> A managed browser that limits what users can do inside the browser, such as blocking personal email, cloud storage, downloads, or copy/paste. Examples include <strong style="color:var(--green-accent)"><a href="https://www.island.io/" target="_blank" rel="noopener noreferrer" style="color:inherit;">Island</a></strong> and <strong style="color:var(--green-accent)"><a href="https://www.paloaltonetworks.com/sase/prisma-browser" target="_blank" rel="noopener noreferrer" style="color:inherit;">Prisma</a></strong>.</li>
                               </ul>
                               <p style="margin-top:14px;">Examples of restrictions include:</p>
                               <ul class="example-list" style="margin-top:14px;">
