@@ -299,9 +299,9 @@
 
     .scope-lime-note{background:rgba(223,240,41,0.35);color:#000000;font-size:.92rem;line-height:1.55;font-weight:600;padding:14px 18px;margin:0 0 22px;}
     #questionnaireComplete.scope-lime-note{margin:20px 0 0;}
-    .questionnaire-reset{display:inline-flex;align-items:center;justify-content:center;margin:22px 24px 22px;color:#000000;font-size:.86rem;font-weight:700;text-decoration:none;border:none;background:#DFF029;cursor:pointer;font-family:inherit;padding:11px 24px;transition:filter .15s;}
+    .questionnaire-reset{display:inline-flex;align-items:center;justify-content:center;justify-self:start;width:auto;margin:22px 24px 22px;color:#000000!important;font-size:.92rem;font-weight:700;text-decoration:none;border:none;background:#DFF029;cursor:pointer;font-family:inherit;padding:10px 22px;transition:filter .15s;}
     .questionnaire-reset:hover{filter:brightness(.94);}
-    .questionnaire-reset:hover{color:#1F2933;border-color:#1F2933;}
+    .questionnaire-reset:hover{color:#000000;}
 
     @media(max-width:640px){
       #document-protection .question-block,#document-protection .branch-card{padding-left:20px;padding-right:20px;}
@@ -339,11 +339,11 @@
     /* Neutral text palette: retain green for brand surfaces, not copy */
     body,.hero-notice,.section-subtitle,.sidebar a,.req-top p,.evidence-block p,.example-list li,.process-checklist li,.note,.recommended,.question-hint,.choice-grid label,.safeguard-option-title,.details-modal p,.safeguard-option-body p,.question-select,.result-callout,.success-text,.warning-text,.accepted-subtext,.result-note{color:var(--broker-body);}
     .logo,.mobile-menu-close,.mobile-menu a,.hero h1,.section-title,.sidebar h3,.process-card h3,.req-top h3,.evidence-block h4,.question-label,.accepted-heading,.result-callout strong,.success-title,.safeguard-option-title{color:var(--broker-heading);}
-    .section-label,.req-kicker,.example-label,.question-hint,.branch-title,.accepted-subtext,.questionnaire-reset,.details-modal-close{color:var(--broker-muted);}
+    .section-label,.req-kicker,.example-label,.question-hint,.branch-title,.accepted-subtext,.details-modal-close{color:var(--broker-muted);}
     #program-scope strong[style*="var(--forest)"]{color:var(--broker-heading)!important;}
     #how-it-works .process-checklist li::before{color:var(--broker-heading);}
     .example-list li::before{background:var(--broker-heading);}
-    .questionnaire-reset:hover{color:var(--broker-heading);border-color:var(--broker-heading);}
+    .questionnaire-reset:hover{color:#000000;}
 
     /* Intro / closing card header colors */
         .req-card.req-card-accent>summary.req-top,
@@ -384,7 +384,7 @@
       border-top-color:var(--green-accent);
     }
 
-    .safeguard-detail-toggle.safeguard-methods-toggle{background:#DFF029;border-color:#DFF029;color:#000000;}.safeguard-detail-toggle.safeguard-methods-toggle:hover{filter:brightness(.94);}
+    .safeguard-detail-toggle.safeguard-methods-toggle{background:#DFF029;border-color:#DFF029;color:#000000;padding:6px 16px;font-size:.78rem;}.safeguard-detail-toggle.safeguard-methods-toggle:hover{filter:brightness(.94);}
 
     #document-protection>summary.start-quiz-top{display:flex;align-items:center;justify-content:flex-start;padding:16px 20px;background:var(--white);border-bottom:1px solid transparent;}
     #document-protection[open]>summary.start-quiz-top{border-bottom-color:var(--border-light);background:var(--meadow);}
@@ -531,7 +531,7 @@
                                 </div>
                               </div>
                               <div class="safeguard-option-body">
-                                <p><strong style="background:#FFF3B0; padding:1px 4px;">For non-manager roles</strong>, this item can clear upon receipt of one of the following:</p>
+                                <p><strong style="background:#FFF3B0; padding:1px 4px;">For deal-processing roles</strong>, this item can clear upon receipt of one of the following:</p>
                                 <ol class="example-list" style="margin-top:14px; padding-left:20px;">
                                   <li>Change document access to view-only</li>
                                   <li>If documents must remain downloadable, browser restrictions that block access to personal email and cloud storage domains, along with device controls that prevent file transfers through USB.</li>
@@ -609,7 +609,7 @@
                                     </div>
                                   </div>
                                   <div class="safeguard-option-body">
-                                    <p><strong style="background:#FFF3B0; padding:1px 4px;">For non-manager roles</strong>, this item can clear upon receipt of one of the following:</p>
+                                    <p><strong style="background:#FFF3B0; padding:1px 4px;">For deal-processing roles</strong>, this item can clear upon receipt of one of the following:</p>
                                     <ol class="example-list" style="margin-top:14px; padding-left:20px;">
                                       <li>Change document access to view-only</li>
                                       <li>If documents must remain downloadable, browser restrictions that block access to personal email and cloud storage domains, along with device controls that prevent file transfers through USB.</li>
@@ -663,7 +663,7 @@
                               </div>
                             </div>
                             <div class="safeguard-option-body">
-                              <p><strong style="background:#FFF3B0; padding:1px 4px;">For non-manager roles</strong>, this item can clear upon receipt of one of the following:</p>
+                              <p><strong style="background:#FFF3B0; padding:1px 4px;">For deal-processing roles</strong>, this item can clear upon receipt of one of the following:</p>
                               <ol class="example-list" style="margin-top:14px; padding-left:20px;">
                                 <li>Change document access to view-only</li>
                                 <li>If documents must remain downloadable, browser restrictions that block access to personal email and cloud storage domains, along with device controls that prevent file transfers through USB.</li>
@@ -702,7 +702,7 @@
                       </div>
                     </div>
                   </div>
-                  <div id="questionnaireComplete" class="conditional-panel scope-lime-note quiz-complete-note"><p style="margin:0 0 10px;"><strong>Quiz complete.</strong></p><p style="margin:0 0 8px;">We&rsquo;ll also ask about:</p><ul style="margin:0 0 12px; padding-left:20px;"><li>System Access &mdash; MFA enabled for email and your system of record?</li><li>Personnel Controls &mdash; background checks, screen lock enabled, and documented off-boarding process.</li></ul><p style="margin:0;">Companies are reviewed holistically. &ldquo;No&rdquo; responses do not automatically prevent certification.</p></div>
+                  <div id="questionnaireComplete" class="conditional-panel scope-lime-note quiz-complete-note"><p style="margin:0 0 10px;"><strong>Quiz complete.</strong></p><p style="margin:0 0 10px;">We&rsquo;ll also ask about System Access and Personnel Controls. Companies are reviewed holistically. &ldquo;No&rdquo; responses do not automatically prevent certification.</p><ul style="margin:0; padding-left:20px;"><li>Is MFA enabled for email and system of record?</li><li>Do you run background checks?</li><li>Is screen lock enabled?</li><li>Do you have a documented off-boarding process?</li></ul></div>
                   <button type="button" class="questionnaire-reset" id="protectionReset">Reset answers</button>
                 </div>
               </div>
