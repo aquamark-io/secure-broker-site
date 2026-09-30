@@ -2950,5 +2950,49 @@
   </script>
 
 
+<!-- AB 2116 notify popup — paste just before </body> on securebroker.org/index.html -->
+<div id="sb-notify" role="dialog" aria-modal="true" aria-labelledby="sb-notify-title" hidden
+  style="position:fixed; inset:0; z-index:9999; display:flex; align-items:center; justify-content:center; padding:24px; background:rgba(31,41,55,0.45);">
+  <div style="position:relative; width:100%; max-width:440px; background:#FFFFFF; border:1px solid #D4DBE3; padding:40px 36px 36px; text-align:center;">
+    <button type="button" id="sb-notify-close" aria-label="Close"
+      style="position:absolute; top:10px; right:12px; background:none; border:0; font-size:24px; line-height:1; color:#6B7C8E; cursor:pointer; padding:6px;">&times;</button>
+    <h2 id="sb-notify-title" style="margin:0; font-size:22px; line-height:30px; font-weight:700; color:#1F2937;">
+      You’re on the list.
+    </h2>
+    <p style="margin:12px 0 0; font-size:15px; line-height:24px; color:#4A5568;">
+      We’ll notify you when our AB 2116 readiness guidance is available.
+    </p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('notify') !== 'ab2116') return;
+
+    var modal = document.getElementById('sb-notify');
+    var closeBtn = document.getElementById('sb-notify-close');
+
+    function close() {
+      modal.hidden = true;
+      document.removeEventListener('keydown', onKey);
+    }
+    function onKey(e) { if (e.key === 'Escape') close(); }
+
+    modal.hidden = false;
+    closeBtn.focus();
+    closeBtn.addEventListener('click', close);
+    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+    document.addEventListener('keydown', onKey);
+
+    // Clean the URL so a refresh or shared link doesn't reopen the popup
+    params.delete('notify');
+    var qs = params.toString();
+    history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+  })();
+</script>
+<style>
+  #sb-notify[hidden] { display: none !important; }
+</style>
 </body>
 </html>
