@@ -17,18 +17,16 @@
       --utility-height-mobile: 0px;
       --nav-height: 68px;
       --navy: #0F2137;
-      --forest: #0F2137;
-      --forest-mid: #1A3455;
-      --sage: #3D5A80;
-      --fern: #6B8BAD;
-      --moss: #7BBCE1;
-      --mint: #C5D9E8;
-      --frost: #EFF4F8;
-      --meadow: #F6F9FC;
+      --navy-mid: #1A3455;
+      --slate: #3D5A80;
+      --steel: #6B8BAD;
+      --ice: #C5D9E8;
+      --pearl: #EFF4F8;
+      --cloud: #F6F9FC;
       --white: #FFFFFF;
-      --green-accent: #4FA3D1;
-      --green-accent-soft: #7BBCE1;
-      --green-accent-pale: #E7F2FA;
+      --blue-accent: #4FA3D1;
+      --blue-accent-soft: #7BBCE1;
+      --blue-accent-pale: #E7F2FA;
       --text-primary: #0F2137;
       --text-secondary: #4A6480;
       --text-muted: #7A96AE;
@@ -50,7 +48,7 @@
 
     /* UTILITY BAR */
     .utility-bar {
-      background: linear-gradient(90deg, #0D2A1C 0%, #123820 52%, #174528 100%);
+      background: linear-gradient(90deg, #0D1B2D 0%, #13263D 52%, #17304C 100%);
       color: var(--white);
       font-size: 0.82rem; font-weight: 600;
       height: var(--utility-height);
@@ -68,7 +66,7 @@
     }
     .utility-banner-link:hover { background: rgba(255,255,255,0.04); }
     .utility-copy { display: inline-flex; align-items: baseline; gap: 8px; flex-wrap: wrap; justify-content: center; }
-    .utility-eyebrow { color: var(--green-accent-soft); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; font-weight: 700; }
+    .utility-eyebrow { color: var(--blue-accent-soft); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.68rem; font-weight: 700; }
     .utility-message { color: rgba(255,255,255,0.95); }
     @media (max-width: 640px) {
       body { padding-top: calc(var(--utility-height-mobile) + var(--nav-height)); }
@@ -88,7 +86,7 @@
       
     }
     .main-nav .container { display: flex; justify-content: space-between; align-items: center; height: 68px; }
-    .logo { display: flex; align-items: center; text-decoration: none; color: var(--forest); gap: 12px; }
+    .logo { display: flex; align-items: center; text-decoration: none; color: var(--navy); gap: 12px; }
     .logo-text { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
     .logo-tm { font-size: 0.55em; vertical-align: super; font-weight: 400; margin-left: 1px; }
     .logo-badge-lg { width: 44px; height: 44px; }
@@ -98,30 +96,30 @@
       font-size: 0.88rem; font-weight: 500; padding: 8px 14px;
       border-radius:0; transition: all 0.2s;
     }
-    .nav-links a:hover { background: var(--meadow); }
-    .nav-links .btn-member { background: var(--forest); color: var(--white); font-weight: 600; margin-left: 6px; }
-    .nav-links .btn-member:hover { background: var(--forest-mid); }
+    .nav-links a:hover { background: var(--pearl); }
+    .nav-links .btn-member { background: var(--navy); color: var(--white); font-weight: 600; margin-left: 6px; }
+    .nav-links .btn-member:hover { background: var(--navy-mid); }
     .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--forest); margin: 5px 0; }
+    .mobile-toggle span { display: block; width: 22px; height: 2px; background: var(--navy); margin: 5px 0; }
 
     .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
     .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
     /* PAGE HEADER */
     .page-header {
-      background: var(--meadow);
+      background: var(--cloud);
       border-bottom: 1px solid var(--border-light);
       padding: 64px 0 56px;
       text-align: center;
     }
     .page-header .section-label {
       font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--green-accent); margin-bottom: 12px;
+      text-transform: uppercase; color: var(--blue-accent); margin-bottom: 12px;
     }
     .page-header h1 {
       font-family: var(--font-display);
       font-size: 2.4rem; font-weight: 700; line-height: 1.2;
-      letter-spacing: -0.02em; color: var(--forest); margin-bottom: 12px;
+      letter-spacing: -0.02em; color: var(--navy); margin-bottom: 12px;
     }
     .page-header p {
       font-size: 1.12rem; color: var(--text-secondary); line-height: 1.7;
@@ -137,7 +135,7 @@
     }
     .terms-body h2 {
       font-family: var(--font-display);
-      font-size: 1.15rem; font-weight: 700; color: var(--forest);
+      font-size: 1.35rem; font-weight: 700; color: var(--navy);
       margin: 48px 0 14px; padding-top: 32px;
       border-top: 1px solid var(--border-light);
     }
@@ -160,13 +158,13 @@
       content: '';
       position: absolute; left: 0; top: 14px;
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--green-accent);
+      background: var(--blue-accent);
     }
     .terms-divider {
       font-family: var(--font-display);
-      font-size: 1.35rem; font-weight: 700; color: var(--forest);
+      font-size: 1.35rem; font-weight: 700; color: var(--navy);
       margin: 56px 0 8px; padding-top: 40px;
-      border-top: 2px solid var(--forest);
+      border-top: 2px solid var(--navy);
       letter-spacing: -0.01em;
     }
     .terms-body .contact-block {
@@ -174,7 +172,7 @@
       font-size: 1.04rem; color: var(--text-secondary); line-height: 1.75;
     }
     .terms-body .contact-block a {
-      color: var(--green-accent); text-decoration: none;
+      color: var(--blue-accent); text-decoration: none;
     }
     .terms-body .contact-block a:hover { text-decoration: underline; }
 
@@ -185,17 +183,17 @@
       list-style: none; cursor: pointer; position: relative;
       padding: 18px 56px 18px 22px; border-bottom: 1px solid transparent;
       font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
-      color: var(--forest); transition: background 0.2s, border-color 0.2s;
+      color: var(--navy); transition: background 0.2s, border-color 0.2s;
     }
     .ds-card > summary::-webkit-details-marker { display: none; }
     .ds-card > summary::after {
       content: ""; position: absolute; right: 26px; top: 22px;
       width: 11px; height: 11px;
-      border-right: 3px solid var(--green-accent); border-bottom: 3px solid var(--green-accent);
+      border-right: 3px solid var(--blue-accent); border-bottom: 3px solid var(--blue-accent);
       transform: rotate(45deg); transition: transform 0.2s, top 0.2s;
     }
-    .ds-card > summary:hover { background: var(--meadow); }
-    .ds-card[open] > summary { background: var(--meadow); border-bottom-color: var(--border-light); }
+    .ds-card > summary:hover { background: var(--cloud); }
+    .ds-card[open] > summary { background: var(--cloud); border-bottom-color: var(--border-light); }
     .ds-card[open] > summary::after { transform: rotate(-135deg); top: 28px; }
     .ds-body { padding: 20px 22px 22px; }
     .terms-body .ds-body > :last-child { margin-bottom: 0; }
@@ -203,52 +201,52 @@
     .terms-body .ds-body ol.ds-sub li { counter-increment: ds; padding: 2px 0 2px 32px; }
     .terms-body .ds-body ol.ds-sub li::before {
       content: "(" counter(ds) ")"; background: none; width: auto; height: auto;
-      border-radius: 0; top: 2px; font-weight: 600; color: var(--forest);
+      border-radius: 0; top: 2px; font-weight: 600; color: var(--navy);
     }
     .ds-body a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-    .ds-sub-head { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; color: var(--forest); margin: 0 0 8px; }
+    .ds-sub-head { font-family: var(--font-display); font-size: 1.02rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
     .terms-body .ds-body ul.ds-nested ul { margin: 6px 0 4px; }
     .terms-body .ds-body ul.ds-nested ul li { padding-left: 18px; }
     .terms-body .ds-body ul.ds-nested ul li::before { width: 5px; height: 5px; background: transparent; border: 1.5px solid var(--text-muted, #8A96A3); top: 13px; }
     .terms-body .ds-body ul.ds-nested em { font-style: normal; font-weight: 600; }
-    .ds-label { margin: 22px 0 8px !important; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--green-accent) !important; line-height: 1.4 !important; }
+    .ds-label { margin: 22px 0 8px !important; font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-accent) !important; line-height: 1.4 !important; }
     .ds-req { display: grid; gap: 10px; margin: 0 0 6px; }
-    .ds-req-item { background: var(--meadow); border: 1px solid var(--border-light); border-left: 3px solid var(--green-accent); padding: 12px 16px; }
-    .ds-req-item strong { display: block; font-family: var(--font-display); color: var(--forest); font-size: 0.98rem; margin-bottom: 2px; }
+    .ds-req-item { background: var(--cloud); border: 1px solid var(--border-light); border-left: 3px solid var(--blue-accent); padding: 12px 16px; }
+    .ds-req-item strong { display: block; font-family: var(--font-display); color: var(--navy); font-size: 0.98rem; margin-bottom: 2px; }
     .ds-req-item span { font-size: 0.98rem; color: var(--text-secondary); line-height: 1.6; }
-    .terms-body .ds-body ol.ds-sub li.ds-or-li { counter-increment: none; padding: 8px 0 8px 32px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; letter-spacing: 0.12em; color: var(--green-accent); }
+    .terms-body .ds-body ol.ds-sub li.ds-or-li { counter-increment: none; padding: 8px 0 8px 32px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; letter-spacing: 0.12em; color: var(--blue-accent); }
     .terms-body .ds-body ol.ds-sub li.ds-or-li::before { content: none; }
-    .terms-body .ds-opt-title { font-family: var(--font-display); font-size: 1.08rem; font-weight: 700; color: var(--forest); margin: 0 0 8px; padding: 0; border: 0; }
+    .terms-body .ds-opt-title { font-family: var(--font-display); font-size: 1.08rem; font-weight: 700; color: var(--navy); margin: 0 0 8px; padding: 0; border: 0; }
     .terms-body .ds-sep { border: 0; border-top: 1px solid var(--border-light); margin: 26px 0; }
     .terms-body .ds-req-list { margin: 10px 0 0; }
-    .terms-body .ds-req-list strong { color: var(--forest); font-weight: 600; }
-    .terms-body .ds-tools-lead { margin: 22px 0 6px !important; font-size: 0.92rem !important; font-weight: 600; color: var(--forest) !important; }
+    .terms-body .ds-req-list strong { color: var(--navy); font-weight: 600; }
+    .terms-body .ds-tools-lead { margin: 22px 0 6px !important; font-size: 0.92rem !important; font-weight: 600; color: var(--navy) !important; }
     .terms-body ul.ds-tools { margin: 0; }
     .terms-body ul.ds-tools li { font-size: 0.92rem; line-height: 1.6; padding-top: 2px; padding-bottom: 2px; color: var(--text-secondary); }
     .terms-body ul.ds-tools li::before { width: 4px; height: 4px; top: 12px; opacity: 0.7; }
     .ds-path { background: #FFF9D6; padding: 3px 8px; }
-    .ds-or { display: flex; align-items: center; gap: 14px; margin: 22px 0; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; color: var(--green-accent); }
+    .ds-or { display: flex; align-items: center; gap: 14px; margin: 22px 0; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; color: var(--blue-accent); }
     .ds-or::before, .ds-or::after { content: ""; flex: 1; height: 1px; background: var(--border-light); }
     @media (max-width: 640px) { .ds-card > summary { padding: 16px 50px 16px 18px; font-size: 1.05rem; } .ds-body { padding: 16px 18px 18px; } }
 
     /* FOOTER */
-    footer { background: var(--forest); color: var(--mint); padding: 56px 0 0; }
+    footer { background: var(--navy); color: var(--ice); padding: 56px 0 0; }
     .footer-grid {
       display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
       gap: 44px; padding-bottom: 44px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .footer-brand p { font-size: 0.86rem; color: var(--mint); line-height: 1.7; margin-top: 14px; max-width: 280px; }
-    .footer-brand p a { color: var(--mint); text-decoration: underline; transition: color 0.2s; }
-    .footer-brand p a:hover { color: var(--green-accent-soft); }
+    .footer-brand p { font-size: 0.86rem; color: var(--ice); line-height: 1.7; margin-top: 14px; max-width: 280px; }
+    .footer-brand p a { color: var(--ice); text-decoration: underline; transition: color 0.2s; }
+    .footer-brand p a:hover { color: var(--blue-accent-soft); }
     .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 14px; }
-    .footer-col a { display: block; font-size: 0.86rem; color: var(--fern); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a { display: block; font-size: 0.86rem; color: var(--steel); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
     .footer-col a:hover { color: var(--white); }
     .footer-bottom {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 0; font-size: 0.78rem; color: var(--sage);
+      padding: 20px 0; font-size: 0.78rem; color: var(--slate);
     }
-    .footer-bottom a { color: var(--fern); text-decoration: none; }
+    .footer-bottom a { color: var(--steel); text-decoration: none; }
     .footer-bottom a:hover { color: var(--white); }
 
     /* RESPONSIVE */
@@ -279,10 +277,10 @@
     .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 1000; flex-direction: column; padding: 24px; }
     .mobile-menu.active { display: flex; }
     .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
-    .mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--forest); padding: 8px; }
-    .mobile-menu a { display: block; padding: 14px 0; font-size: 1.05rem; font-weight: 500; color: var(--forest); text-decoration: none; border-bottom: 1px solid var(--border-light); }
+    .mobile-menu-close { background: none; border: none; cursor: pointer; font-size: 1.5rem; color: var(--navy); padding: 8px; }
+    .mobile-menu a { display: block; padding: 14px 0; font-size: 1.05rem; font-weight: 500; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--border-light); }
     .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu .btn-member-mobile { display: block; margin-top: 24px; padding: 14px; background: var(--forest); color: var(--white); text-align: center; border-radius:0; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
+    .mobile-menu .btn-member-mobile { display: block; margin-top: 24px; padding: 14px; background: var(--navy); color: var(--white); text-align: center; border-radius:0; font-weight: 600; text-decoration: none; font-size: 0.95rem; }
 
     .terms-body ol { margin: 0 0 14px; padding-left: 22px; }
     .terms-body ol li {
@@ -290,7 +288,7 @@
       padding: 4px 0 4px 6px;
     }
     .terms-body strong { color: var(--navy); font-weight: 600; }
-    .terms-body a { color: var(--green-accent); text-decoration: none; }
+    .terms-body a { color: var(--blue-accent); text-decoration: none; }
     .terms-body a:hover { text-decoration: underline; }
     .terms-body p.lead + h2 { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border-light); }
       .page-header .container-narrow > p { max-width: 800px; margin-left: auto; margin-right: auto; text-wrap: balance; }
@@ -331,8 +329,123 @@
     .terms-body .ds-guidance .ds-sep{margin:28px 0;}
       .terms-body h2.ds-guidance-title{font-size:1.6rem;}
     @media (max-width:640px){.terms-body h2.ds-guidance-title{font-size:1.35rem;}}
+
+    /* Download Safeguards: simple decision paths and optional implementation details */
+    .terms-body { padding-top: 42px; }
+    .ds-notice { background:#FFFFFF; border:1px solid #DDE5EC; padding:17px 20px; margin-bottom:28px; }
+    .terms-body .ds-notice p { margin:0; font-size:1.04rem; line-height:1.75; }
+    .ds-context { margin:18px 0 26px !important; font-size:1.04rem !important; line-height:1.75 !important; }
+    .ds-paths { display:grid; gap:18px; }
+    .ds-path-card { padding:25px 27px 24px; background:#F8FAFC; border:1px solid #DCE4EC; }
+    .terms-body .ds-path-card h2 { margin:0 0 7px; padding:0; border:0; font-size:1.35rem; line-height:1.6; }
+    .terms-body .ds-path-subtitle { font-size:1.04rem; margin:0 0 17px; line-height:1.75; }
+    .terms-body .ds-choose { margin:0 0 8px; font-size:.72rem; letter-spacing:.09em; font-weight:700; text-transform:uppercase; color:#3D5A80; }
+    .terms-body ol.ds-options { margin:0; padding-left:23px; }
+    .terms-body ol.ds-options li { padding:5px 0 5px 3px; font-size:1.04rem; line-height:1.75; }
+    .terms-body ol.ds-options li::marker { color:#1A3455; font-weight:700; }
+    .terms-body .ds-setup h2 { margin:39px 0 6px; padding:0; border:0; font-size:1.35rem; }
+    .terms-body .ds-setup-intro { font-size:1.04rem; margin-bottom:17px; line-height:1.75; }
+    .ds-accordion-list { display:grid; gap:10px; }
+    .ds-accordion { border:1px solid #D9E1EA; background:#fff; }
+    .ds-accordion summary { cursor:pointer; padding:16px 46px 16px 19px; background:#F1F4F7; list-style:none; position:relative; }
+    .ds-accordion summary::-webkit-details-marker { display:none; }
+    .ds-accordion summary::after { content:''; position:absolute; width:9px; height:9px; right:23px; top:26px; border-right:2px solid #3D5A80; border-bottom:2px solid #3D5A80; transform:rotate(45deg); transition:transform .2s; }
+    .ds-accordion[open] summary::after { transform:rotate(225deg); top:30px; }
+    .ds-accordion summary:hover { background:#E9EEF3; }
+    .ds-accordion summary:focus-visible { outline:2px solid #4FA3D1; outline-offset:2px; }
+    .ds-accordion summary strong { display:block; font-size:1.15rem; line-height:1.6; }
+    .ds-accordion summary small { display:block; font-size:1.04rem; font-weight:400; color:#4A6480; margin-top:2px; line-height:1.5; }
+    .ds-accordion-body { padding:19px 22px 21px; border-top:1px solid #DDE5EC; }
+    .terms-body .ds-accordion-body p, .terms-body .ds-accordion-body li { font-size:1.04rem; line-height:1.75; }
+    .terms-body .ds-accordion-body p { margin-bottom:12px; }
+    .terms-body .ds-accordion-body ul { margin:4px 0 15px; }
+    .terms-body .ds-accordion-body li { padding-top:3px; padding-bottom:3px; }
+    .terms-body .ds-accordion-body h3 { margin:18px 0 8px; font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:#3D5A80; }
+    .terms-body .ds-accordion-body ul.ds-tool-list li { font-size:.92rem; }
+    @media(max-width:640px) {
+      .terms-body { padding-top:26px; }
+      .ds-notice { padding:14px 15px; }
+      .ds-path-card { padding:19px 17px; }
+      .terms-body .ds-path-card h2 { font-size:1.2rem; }
+      .ds-accordion summary { padding:14px 42px 14px 15px; }
+      .ds-accordion summary::after { right:18px; }
+      .ds-accordion-body { padding:16px; }
+    }
+
+    /* Match the original Download Safeguards page's type hierarchy and placement.
+       Keep these rules after the existing styles to avoid the new card typography. */
+    .page-header { display:none; }
+    .terms-body { padding-top:30px; }
+    .terms-body .ds-original-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size:2.25rem; font-weight:400; letter-spacing:normal;
+      line-height:1.25; color:#0F2137; margin:0 0 34px;
+    }
+    .terms-body .ds-path-card h2,
+    .terms-body .ds-setup h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size:1.7rem; font-weight:400; letter-spacing:normal;
+      line-height:1.4; color:#0F2137;
+    }
+    .terms-body .ds-path-card h2 { margin-bottom:12px; }
+    .terms-body .ds-setup h2 { margin-top:42px; margin-bottom:12px; }
+    .terms-body .ds-notice p,
+    .terms-body .ds-context,
+    .terms-body .ds-path-subtitle,
+    .terms-body .ds-options li,
+    .terms-body .ds-setup-intro,
+    .terms-body .ds-accordion-body p,
+    .terms-body .ds-accordion-body li { color:#3d4b60; }
+    .terms-body .ds-path-card h2, .terms-body .ds-setup h2 { text-transform:none; }
+    .ds-accordion summary strong { font-family:var(--font-body); font-weight:600; }
+    @media(max-width:640px){
+      .terms-body .ds-original-title {font-size:1.85rem; margin-bottom:24px;}
+      .terms-body .ds-path-card h2,.terms-body .ds-setup h2 {font-size:1.45rem;}
+    }
   </style>
   <link rel="stylesheet" href="/clean.css?v=6">
+  <style>
+    /* Navigation is fixed; reserve its full height even when the title header is hidden.
+       Placed after clean.css so site-wide overrides cannot conceal the page title. */
+    html body { padding-top: calc(var(--utility-height) + 68px) !important; }
+    @media (max-width: 600px) {
+      html body { padding-top: calc(var(--utility-height-mobile) + 56px) !important; }
+    }
+
+    /* Spacing fixes: the site-wide h2 divider (border + top padding) was being applied
+       inside the path cards, leaving an empty band and a stray line above each heading. */
+    .terms-body .ds-path-card h2 {
+      margin: 0 0 6px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      line-height: 1.3 !important;
+    }
+    .terms-body .ds-path-card { padding: 26px 28px 22px; }
+    .terms-body .ds-path-subtitle { margin: 0 0 18px !important; }
+    .terms-body .ds-choose { margin: 0 0 6px !important; }
+    .terms-body ol.ds-options li { padding: 4px 0 4px 4px; }
+
+    /* Setup tips: one clean divider, with room between it and the heading */
+    .terms-body .ds-setup { margin-top: 48px; padding-top: 36px; border-top: 1px solid #DCE4EC; }
+    .terms-body .ds-setup h2 {
+      margin: 0 0 6px !important;
+      padding: 0 !important;
+      border: 0 !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Key-rule notice: left accent bar so it reads as the primary requirement */
+    .ds-notice { border-left: 4px solid #E53935 !important; padding-left: 22px !important; }
+
+    /* Accordion: center the chevron on the two-line header */
+    .ds-accordion summary::after { top: 50% !important; margin-top: -7px; }
+    .ds-accordion[open] summary::after { margin-top: -2px; }
+
+    @media (max-width: 640px) {
+      .terms-body .ds-path-card { padding: 20px 18px 18px; }
+      .terms-body .ds-setup { margin-top: 36px; padding-top: 28px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -366,66 +479,93 @@
   <div class="terms-body">
     <div class="container-narrow">
 
-      <div class="ds-important"><svg class="alert-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 22.5 21h-21L12 2.5z" fill="#C62828"/><rect x="11" y="9" width="2" height="6.5" rx="1" fill="#fff"/><circle cx="12" cy="18" r="1.15" fill="#fff"/></svg><p><strong>Important.</strong> Program requirements apply to non‑management roles. If your process requires downloading submission files, add safeguards ASAP to prevent them from leaving the company.</p></div>
+      <h1 class="ds-original-title">Download Safeguards</h1>
 
-      <h2>If downloadable from email</h2>
-      <p>For submissions that arrive by email and are processed by a person.<span style="display:block; margin:14px 0 10px; text-decoration:underline; text-underline-offset:3px;">Choose at least one:</span></p>
-      <ol class="ds-steps">
-        <li><strong>Change to automated intake.</strong> Continue receiving email submissions.</li>
-        <li><strong>Watermark before the inbox.</strong> <a href="https://aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> email watermarking or an equivalent provider.</li>
-        <li><strong>Browser and device controls.</strong> Block personal email, cloud storage sites, and USB.</li>
-      </ol>
+      <div class="ds-notice"><p><strong>Downloadable files require safeguards.</strong> If non-management staff can download submission documents, safeguards must be in place to reduce the risk of files leaving the company.</p></div>
 
-      <h2>If downloadable from system of record</h2>
-      <p>For your CRM or other system of record.<span style="display:block; margin:14px 0 10px; text-decoration:underline; text-underline-offset:3px;">Choose at least one:</span></p>
-      <ol class="ds-steps">
-        <li><strong>Change to view-only access.</strong> Staff can view files but can&rsquo;t download them.</li>
-        <li><strong>Watermark.</strong> Before files are stored, or at download, using <a href="https://aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or an equivalent service.</li>
-        <li><strong>Browser and device controls.</strong> Block personal email, cloud storage sites, and USB.</li>
-      </ol>
+      <div class="ds-paths">
+        <section class="ds-path-card" aria-labelledby="email-heading">
+          <h2 id="email-heading">If downloadable from email</h2>
+          <p class="ds-path-subtitle">For submissions that arrive by email and are processed by a person.</p>
+          <p class="ds-choose">Choose at least one:</p>
+          <ol class="ds-options">
+            <li><strong>Automated intake.</strong> Route submissions directly into your system of record, so staff do not handle files in email.</li>
+            <li><strong>Watermarking.</strong> Watermark files before they reach the inbox.</li>
+            <li><strong>Browser and device controls.</strong> Block personal email, cloud storage, and USB transfers.</li>
+          </ol>
+        </section>
 
-      <h2 class="ds-guidance-title">Setup tips</h2>
-      <div class="ds-guidance ds-details-doc">
-            <h3 class="ds-opt-title">Automate email intake</h3>
-            <p><strong>No watermarking or browser controls needed.</strong> Continue receiving email submissions.</p>
-            <ul class="ds-req-list">
-              <li><strong>Email address:</strong> Used only for routing. Staff should not work out of this mailbox.</li>
-              <li><strong>Routing:</strong> Files should route to system of record automatically.</li>
-              <li><strong>System of record:</strong> Once stored, system of record safeguards still apply: view-only, watermarking, or browser and device controls.</li>
-            </ul>
-            <p class="ds-tools-lead">Tools that can help</p>
-            <ul class="ds-tools">
-              <li>Inbound email parsing (developer setup): Postmark, SendGrid, Mailgun</li>
-                            <li>Automation tools: Zapier, Make, Microsoft Power Automate</li>
+        <section class="ds-path-card" aria-labelledby="sor-heading">
+          <h2 id="sor-heading">If downloadable from your system of record</h2>
+          <p class="ds-path-subtitle">For your CRM or other system of record.</p>
+          <p class="ds-choose">Choose at least one:</p>
+          <ol class="ds-options">
+            <li><strong>View-only access.</strong> Staff can view files but cannot download them.</li>
+            <li><strong>Watermarking.</strong> Watermark files before storage or at download.</li>
+            <li><strong>Browser and device controls.</strong> Block personal email, cloud storage, and USB transfers.</li>
+          </ol>
+        </section>
+      </div>
 
-              <li>Built-in email intake in your CRM or loan platform</li>
-            </ul>
-            <hr class="ds-sep">
-            <h3 class="ds-opt-title">Watermarking</h3>
-            <p><strong>No browser or device controls needed.</strong> Watermarking is accepted as a reasonable deterrent against theft. Watermarks should include your company name or logo. <a href="https://aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or an equivalent service can be used, and watermarked files can stay downloadable.</p>
-            <p><strong>If you accept email submissions and people open them:</strong> watermark files before they reach the inbox. This also covers your system of record, since stored files are already watermarked.</p>
-            <p><strong>If files go straight to your system of record</strong> (online applications, or email routed automatically): watermark files before they&rsquo;re stored, or at the time of download.</p>
-            <hr class="ds-sep">
-            <h3 class="ds-opt-title">Browser and device controls</h3>
-            <p><strong>No watermarking needed.</strong> Files can stay downloadable from email and your system of record if these controls block personal email, cloud storage sites, and USB.</p>
-            <p>Safeguards must restrict personnel from moving data outside the company. At a minimum:</p>
-            <ul class="ds-req-list">
-              <li><strong>Domain restrictions:</strong> Block access to personal email, personal cloud storage, and unauthorized file-transfer services.</li>
-              <li><strong>USB restrictions:</strong> Block or restrict copying company files to physical media.</li>
-            </ul>
-            <p class="ds-tools-lead">Tools that can help</p>
-            <ul class="ds-tools">
-              <li>Endpoint/MDM policies: Microsoft Intune, Jamf, Hexnode, or ManageEngine</li>
-              <li>Windows Group Policy (GPO): built into Windows</li>
-              <li>Virtual desktops: Windows 365, Azure Virtual Desktop, or Amazon WorkSpaces</li>
-              <li>Enterprise browsers: Island or Talon</li>
-              <li>Web/DNS filtering: Palo Alto Prisma, Cloudflare One, or DNSFilter</li>
-            </ul>
-            <hr class="ds-sep">
-            <h3 class="ds-opt-title">Other safeguards</h3>
-            <p>Other safeguards are acceptable if they meet the intent. <a href="https://securebroker.org/contact/">Send us a message</a>.</p>
-          </div>
+      <section class="ds-setup" aria-labelledby="setup-heading">
+        <h2 id="setup-heading">Setup tips</h2>
+        <p class="ds-setup-intro">Select a safeguard for implementation guidance and examples of tools that can help.</p>
+        <div class="ds-accordion-list">
+          <details class="ds-accordion">
+            <summary><span><strong>Automate email intake</strong><small>Route submissions directly into your system of record.</small></span></summary>
+            <div class="ds-accordion-body">
+              <p><strong>No email watermarking or browser controls needed for this intake path.</strong> You can continue receiving email submissions, provided staff do not work from the intake mailbox.</p>
+              <ul>
+                <li><strong>Email address:</strong> Used only for routing. Staff should not work out of this mailbox.</li>
+                <li><strong>Routing:</strong> Files should route to your system of record automatically.</li>
+                <li><strong>System of record:</strong> Once stored, files still require safeguards there: view-only access, watermarking, or browser and device controls.</li>
+              </ul>
+              <h3>Tools that can help</h3>
+              <ul class="ds-tool-list">
+                <li>Inbound email parsing (developer setup): Postmark, SendGrid, Mailgun</li>
+                <li>Automation tools: Zapier, Make, Microsoft Power Automate</li>
+                <li>Built-in email intake in your CRM or loan platform</li>
+              </ul>
+            </div>
+          </details>
 
+          <details class="ds-accordion">
+            <summary><span><strong>Watermarking</strong><small>Keep files downloadable with visible company attribution.</small></span></summary>
+            <div class="ds-accordion-body">
+              <p><strong>No browser or device controls needed for this option.</strong> Watermarking is accepted as a reasonable deterrent against theft. Watermarks should include your company name or logo. <a href="https://aquamark.io/" target="_blank" rel="noopener noreferrer">Aquamark</a> or an equivalent service can be used, and watermarked files can remain downloadable.</p>
+              <p><strong>If people open email submissions:</strong> Watermark files before they reach the inbox. This also covers files subsequently stored in your system of record, since they are already watermarked.</p>
+              <p><strong>If files go directly to your system of record:</strong> For online applications or automatically routed email, watermark before storage or at the time of download.</p>
+            </div>
+          </details>
+
+          <details class="ds-accordion">
+            <summary><span><strong>Browser and device controls</strong><small>Restrict transfers through personal accounts and USB.</small></span></summary>
+            <div class="ds-accordion-body">
+              <p><strong>No watermarking needed for this option.</strong> Files can remain downloadable from email and your system of record if controls block personal email, cloud storage sites, and USB transfers.</p>
+              <p>Safeguards must restrict personnel from moving data outside the company. At a minimum:</p>
+              <ul>
+                <li><strong>Domain restrictions:</strong> Block access to personal email, personal cloud storage, and unauthorized file-transfer services.</li>
+                <li><strong>USB restrictions:</strong> Block or restrict copying company files to physical media.</li>
+              </ul>
+              <h3>Tools that can help</h3>
+              <ul class="ds-tool-list">
+                <li>Endpoint/MDM policies: Microsoft Intune, Jamf, Hexnode, or ManageEngine</li>
+                <li>Windows Group Policy (GPO): built into Windows</li>
+                <li>Virtual desktops: Windows 365, Azure Virtual Desktop, or Amazon WorkSpaces</li>
+                <li>Enterprise browsers: Island or Talon</li>
+                <li>Web/DNS filtering: Palo Alto Prisma, Cloudflare One, or DNSFilter</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="ds-accordion">
+            <summary><span><strong>Other safeguards</strong><small>Alternative approaches may also be acceptable.</small></span></summary>
+            <div class="ds-accordion-body">
+              <p>Other safeguards are acceptable if they meet the program's intent. <a href="https://securebroker.org/contact/">Send us a message</a> to discuss your approach.</p>
+            </div>
+          </details>
+        </div>
+      </section>
 
     </div>
   </div>
@@ -437,7 +577,7 @@
         <img src="../../green-rings.png" alt="Secure Broker" style="width:30px;height:30px;">
         <div class="logo-text">Secure Broker<span class="logo-tm">™</span></div>
       </a>
-      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">&#10005;</button>
+      <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">✕</button>
     </div>
     <a href="https://securebroker.org" onclick="closeMobileMenu()">For Brokers</a>
     <a href="https://securefunder.org" onclick="closeMobileMenu()">For Funders</a>
