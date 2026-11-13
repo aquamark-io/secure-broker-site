@@ -442,6 +442,14 @@
     .wizard-section-label::before{content:'';width:22px;height:1.5px;background:var(--green-accent);}
   </style>
 
+<style id="menu-all-sizes">
+  /* Menu: hamburger at every screen size; on desktop the menu opens as a panel from the right */
+  .main-nav .nav-links { display: none !important; }
+  .main-nav .mobile-toggle { display: block !important; }
+  @media (min-width: 901px) {
+    .mobile-menu { left: auto !important; width: 380px; max-width: 100%; box-shadow: -12px 0 32px rgba(14, 27, 46, .15); }
+  }
+</style>
 </head>
 <body>
   <!-- Navigation -->
@@ -1039,5 +1047,8 @@
   }
 </script>
 
+<script>
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { var m = document.getElementById('mobileMenu'); if (m) { m.classList.remove('active'); document.body.style.overflow = ''; } } });
+</script>
 </body>
 </html>
